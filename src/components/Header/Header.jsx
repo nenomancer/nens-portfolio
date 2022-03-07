@@ -4,8 +4,11 @@ import styles from "./Header.module.css";
 const Header = ({ onShowAbout }) => {
   return (
     <div className={styles["main-nav"]}>
-      <div className={styles["profile-pic"]} onClick={onShowAbout}>
-        <img src="gallery/profile-pic.jpg" alt="profile-pic" />
+      <div>
+        <div className={styles["profile-pic"]} onClick={onShowAbout}>
+          <img src="gallery/profile-pic.jpg" alt="profile-pic" />
+        </div>
+        <span className={styles.logo}>Nebojsa</span>
       </div>
       <ul>
         <li>All</li>

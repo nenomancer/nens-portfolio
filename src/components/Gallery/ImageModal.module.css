@@ -1,5 +1,5 @@
 .image-modal {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
@@ -14,25 +14,25 @@
   background-color: black;
   width: 100vw;
   position: absolute;
-  height: 100vh;
+  /* height: 100vh; */
+  min-height: 100%;
   opacity: 0.95;
 }
 
 .container {
   width: 70vw;
   z-index: 10;
-  background: linear-gradient(#0f0f0f, #0c0c0c);
+  /* background: linear-gradient(#0f0f0f, #0c0c0c); */
+  background-color: red;
 }
 
 .image {
   text-align: center;
+  position: relative;
+  height: 100vh;
 }
 
 .container img {
-  /* max-height: 90vh;
-  max-width: 70vw; */
-
-  /* display: block; */
   object-fit: contain;
   transition: all 0s;
 }

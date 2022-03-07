@@ -25,6 +25,10 @@
   height: 100%;
 }
 
+.logo {
+  display: inline;
+}
+
 /* -------------- NAVBAR -------------- */
 .main-nav ul {
   list-style: none;
