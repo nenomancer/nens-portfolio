@@ -1,11 +1,21 @@
 import React from "react";
 import styles from "./Tile.module.css";
 
-const Tile = ({ name, src, alt, desc, viewHandler, setSelectedImg }) => {
+const Tile = ({
+  name,
+  src,
+  alt,
+  desc,
+  gridSize,
+  viewHandler,
+  setSelectedImg,
+}) => {
   const onClickHandler = (e) => {
     const imgSrc = e.target.nextElementSibling.getAttribute("src");
     const imgName = e.target.children[0].textContent;
     const imgDesc = e.target.children[1].textContent;
+
+    console.log(gridSize);
     const selectedImg = {
       src: imgSrc,
       name: imgName,
@@ -16,8 +26,10 @@ const Tile = ({ name, src, alt, desc, viewHandler, setSelectedImg }) => {
     setSelectedImg(selectedImg);
   };
 
+  
+
   return (
-    <div className={styles.tile} onClick={onClickHandler}>
+    <div className={`${styles.tile} ${gridSize.toString()}`} onClick={onClickHandler}>
       <div className={styles.info}>
         <div className={styles.name}>{name}</div>
         <div className={styles.desc}>{desc}</div>

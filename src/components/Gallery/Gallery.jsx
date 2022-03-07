@@ -25,12 +25,13 @@ const Gallery = ({
       {/* displaying the photos */}
       {artwork.map((item) => (
         <Tile
-          className={styles.tile}
+          
           key={item.id}
           name={item.name}
           src={item.src}
           alt={item.alt}
           desc={item.desc}
+          gridSize={item.gridSize}
           viewHandler={viewHandler}
           setSelectedImg={setSelectedImg}
         />
