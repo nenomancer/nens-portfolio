@@ -1,0 +1,54 @@
+.tile {
+  overflow: hidden;
+  z-index: 2;
+}
+.tile:hover {
+  cursor: pointer;
+}
+
+.info {
+  position: absolute;
+  height: 250px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  background: linear-gradient(to bottom, transparent 0%, black 100%);
+  padding: 15px;
+  opacity: 0;
+  transition: all 0.5s;
+  z-index: 2;
+}
+
+.info:hover {
+  opacity: 100;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  transition: all ease-in-out .5s;
+}
+
+.tile:hover img {
+  transform: scale(1.25);
+}
+
+.name {
+  /* background-color: red; */
+  padding-bottom: 10px;
+  pointer-events: none;
+}
+
+.desc {
+  /* background-color: black; */
+  max-height: 75px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  pointer-events: none;
+  /* padding: 5px 10px; */
+}

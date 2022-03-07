@@ -1,0 +1,17 @@
+.about {
+    position: absolute;
+    z-index: 10;
+    height: 100vh;
+    width: 70vw;
+    display: flex;
+}
+
+.info {
+    background: linear-gradient(#111, #444);
+    background-image: url("../../../public/gallery/profile-pic.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: multiply;
+    max-width: 100%;
+}
