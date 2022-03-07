@@ -82,8 +82,8 @@ function App() {
 
   // ---------- GALLERY FILTER ----------
 
-  const [filter, setFilter] = useState("all");
-  const [filteredTiles, setFilteredTiles] = useState([]);
+  const [filter, setFilter] = useState("all"); // This is for the top filter bar
+  const [filteredTiles, setFilteredTiles] = useState([]); // This is for the artwork tiles
 
   useEffect(() => {
     filter === "all"
@@ -93,7 +93,7 @@ function App() {
 
   const onSetFilterHandler = (e) => {
     setFilter(e.target.textContent.toLowerCase());
-  
+    let choice = e.target.value;
   };
 
   // -------- IMAGE MODAL ---------

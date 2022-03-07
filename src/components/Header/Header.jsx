@@ -11,7 +11,7 @@ const Header = ({ onShowAbout, onSetFilter }) => {
         {/* <span className={styles.name}>Nebojsa Kovacevik</span> */}
       </div>
       <ul onClick={onSetFilter}>
-        <li><a href="#">All</a></li>
+        <li><a href="#" >All</a></li>
         <li><a href="#">Photos</a></li>
         <li><a href="#">Videos</a></li>
         <li><a href="#">Music</a></li>
