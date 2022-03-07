@@ -2,17 +2,23 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0 40px;
+  margin: 0 2rem;
+  padding-top: 0.5rem;
 }
 
-/* ----------- PROFILE PIC ------------- */
+/* ----------- LOGO ------------- */
+.logo {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+
 .profile-pic {
-  width: 50px;
-  height: 50px;
+  width: 2rem;
+  height: 2rem;
   border-radius: 50%;
   overflow: hidden;
   transition: all 0.2s;
-  margin: 0.5rem 0;
 }
 
 .profile-pic:hover {
@@ -25,22 +31,33 @@
   height: 100%;
 }
 
-.logo {
-  display: inline;
+.name {
+  margin-left: 1rem;
 }
 
 /* -------------- NAVBAR -------------- */
 .main-nav ul {
   list-style: none;
+  position: relative;
 }
 
 .main-nav li {
+  position: relative;
   display: inline;
+  margin: 2px;
   color: inherit;
-  padding: 2rem;
 }
 
-.main-nav li:hover {
-  color: #adadad;
-  cursor: pointer;
+.main-nav li a {
+  padding: 0.5rem 2rem;
+  text-decoration: none;
+  color: #e3e3e3;
+}
+
+.main-nav li a:hover {
+  color: lightblue;
+}
+
+.active {
+  color: green;
 }

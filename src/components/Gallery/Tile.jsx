@@ -26,10 +26,11 @@ const Tile = ({
     setSelectedImg(selectedImg);
   };
 
-  
-
   return (
-    <div className={`${styles.tile} ${gridSize.toString()}`} onClick={onClickHandler}>
+    <div
+      className={`${styles.tile} ${gridSize === "wide" && styles.wide} `}
+      onClick={onClickHandler}
+    >
       <div className={styles.info}>
         <div className={styles.name}>{name}</div>
         <div className={styles.desc}>{desc}</div>

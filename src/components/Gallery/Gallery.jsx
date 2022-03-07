@@ -28,6 +28,7 @@ const Gallery = ({
           
           key={item.id}
           name={item.name}
+          type={item.type}
           src={item.src}
           alt={item.alt}
           desc={item.desc}
