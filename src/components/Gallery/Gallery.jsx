@@ -35,6 +35,9 @@ const Gallery = ({
           setSelectedImg={setSelectedImg}
         />
       ))}
+
+
+      <div>asdasd</div>
     </div>
   );
 };
