@@ -30,13 +30,13 @@ img {
 
 /* ------------ INFO SECTION ------------- */
 .info {
+  background-color: green;
   position: absolute;
-  min-height: 250px;
   height: 100%;
-  min-width: 250px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  align-items: flex-start;
   background: linear-gradient(
     to bottom,
     transparent 0%,
@@ -56,6 +56,7 @@ img {
   /* background-color: red; */
   padding-bottom: 10px;
   pointer-events: none;
+  justify-self: left;
 }
 
 .desc {
@@ -68,5 +69,5 @@ img {
   -webkit-line-clamp: 2;
   pointer-events: none;
   bottom: 0;
-  /* padding: 5px 10px; */
+  text-align: left;
 }

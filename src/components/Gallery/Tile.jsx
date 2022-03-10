@@ -28,7 +28,9 @@ const Tile = ({
 
   return (
     <div
-      className={`${styles.tile} ${gridSize === "wide" && styles.wide} `}
+      className={`${styles.tile} ${gridSize === "wide" && styles.wide} ${
+        gridSize === "tall" && styles.tall
+      }`}
       onClick={onClickHandler}
     >
       <div className={styles.info}>
