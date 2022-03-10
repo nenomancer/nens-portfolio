@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import styles from "./ImageModal.module.css";
+import "./ImageModal.css";
 
 const ImageModal = ({ showImageModal, setShowImageModal, selectedImg }) => {
   const handleEscape = (e) => {
@@ -13,22 +13,22 @@ const ImageModal = ({ showImageModal, setShowImageModal, selectedImg }) => {
   }, [showImageModal]);
 
   return (
-    <div className={styles["image-modal"]}>
+    <div className="image-modal">
       {/* backdrop */}
       <div
-        className={styles.backdrop}
+        className="image-modal__backdrop"
         onClick={() => setShowImageModal(false)}
       />
 
-      <div className={styles.container}>
+      <div className="image-modal__container">
         {/* image */}
-        <div className={styles.image}>
+        <div className="image-modal__image">
           <img src={selectedImg.src} alt="" />
         </div>
         {/* info box */}
-        <div className={styles.info}>
-          <div className={styles.name}>{selectedImg.name}</div>
-          <div className={styles.desc}>{selectedImg.desc}</div>
+        <div className="image-modal__info">
+          <div className="image-modal__name">{selectedImg.name}</div>
+          <div className="image-modal__desc">{selectedImg.desc}</div>
         </div>
       </div>
     </div>

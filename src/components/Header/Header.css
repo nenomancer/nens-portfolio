@@ -1,19 +1,14 @@
-.main-nav {
+.nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin: 0 2rem;
-  padding-top: 0.5rem;
+  justify-content: right;
+  margin: 1rem 2rem;
+  /* padding-top: 0.5rem; */
 }
 
 /* ----------- LOGO ------------- */
-.logo {
-  display: flex;
-  align-items: center;
-  margin: 0.5rem 0;
-}
 
-.profile-pic {
+.nav__profile-pic {
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
@@ -21,40 +16,37 @@
   transition: all 0.2s;
 }
 
-.profile-pic:hover {
+.nav__profile-pic:hover {
   cursor: pointer;
   transform: scale(1.2);
 }
 
-.profile-pic img {
+.nav__profile-pic img {
   width: 100%;
   height: 100%;
 }
 
-.name {
-  margin-left: 1rem;
-}
-
 /* -------------- NAVBAR -------------- */
-.main-nav ul {
+.nav ul {
   list-style: none;
   position: relative;
+  margin-right: 1rem;
 }
 
-.main-nav li {
+.nav li {
   position: relative;
   display: inline;
-  margin: 2px;
+  margin: .5em;
   color: inherit;
 }
 
-.main-nav li a {
+.nav li a {
   padding: 0.5rem 2rem;
   text-decoration: none;
   color: #e3e3e3;
 }
 
-.main-nav li a:hover {
+.nav li a:hover {
   color: lightblue;
 }
 

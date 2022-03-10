@@ -10,7 +10,7 @@
   justify-content: center;
 }
 
-.backdrop {
+.image-modal__backdrop {
   background-color: black;
   width: 100vw;
   position: absolute;
@@ -19,25 +19,25 @@
   opacity: 0.95;
 }
 
-.container {
+.image-modal__container {
   width: 70vw;
   z-index: 10;
   /* background: linear-gradient(#0f0f0f, #0c0c0c); */
   /* background-color: red; */
 }
 
-.image {
+.image-modal__image {
   text-align: center;
   position: relative;
   height: 100vh;
 }
 
-.container img {
+.image-modal__container img {
   object-fit: contain;
   transition: all 0s;
 }
 
-.info {
+.image-modal__info {
   position: absolute;
   background: linear-gradient(
     transparent 0%,
@@ -51,12 +51,12 @@
   overflow: hidden;
 }
 
-.info .name {
+.image-modal__name {
   font-size: 36px;
   font-weight: 600;
 }
 
-.info .desc {
+.image-modal__desc {
   font-size: 16px;
   line-height: 24px;
   font-weight: 200;

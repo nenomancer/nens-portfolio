@@ -29,7 +29,7 @@ img {
 
 
 /* ------------ INFO SECTION ------------- */
-.info {
+.tile__info {
   background-color: green;
   position: absolute;
   height: 100%;
@@ -48,18 +48,18 @@ img {
   z-index: 2;
 }
 
-.info:hover {
+.tile__info:hover {
   opacity: 100;
 }
 
-.name {
+.tile__name {
   /* background-color: red; */
   padding-bottom: 10px;
   pointer-events: none;
   justify-self: left;
 }
 
-.desc {
+.tile__desc {
   /* background-color: black; */
   /* width: 100%; */
   max-height: 75px;

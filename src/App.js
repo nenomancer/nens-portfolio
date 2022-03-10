@@ -93,7 +93,8 @@ function App() {
 
   const onSetFilterHandler = (e) => {
     setFilter(e.target.textContent.toLowerCase());
-    let choice = e.target.value;
+    console.log(e.target);
+    e.target.classList.add("active");
   };
 
   // -------- IMAGE MODAL ---------

@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Gallery.module.css";
+import "./Gallery.css";
 import Tile from "./Tile";
 import ImageModal from "./ImageModal";
 
@@ -12,7 +12,7 @@ const Gallery = ({
   setSelectedImg,
 }) => {
   return (
-    <div className={styles.gallery}>
+    <div className="gallery">
       {/* displaying the image modal */}
       {showImageModal && (
         <ImageModal

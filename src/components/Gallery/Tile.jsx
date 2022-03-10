@@ -1,5 +1,6 @@
 import React from "react";
-import styles from "./Tile.module.css";
+// import styles from "./Tile.module.css";
+import "./Tile.css";
 
 const Tile = ({
   name,
@@ -27,15 +28,10 @@ const Tile = ({
   };
 
   return (
-    <div
-      className={`${styles.tile} ${gridSize === "wide" && styles.wide} ${
-        gridSize === "tall" && styles.tall
-      }`}
-      onClick={onClickHandler}
-    >
-      <div className={styles.info}>
-        <div className={styles.name}>{name}</div>
-        <div className={styles.desc}>{desc}</div>
+    <div className="tile" onClick={onClickHandler}>
+      <div className="tile__info">
+        <div className="tile__name">{name}</div>
+        <div className="tile__desc">{desc}</div>
       </div>
 
       <img src={src} alt={alt} />
