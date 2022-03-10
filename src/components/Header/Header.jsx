@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
 
 const Header = ({ onShowAbout, onSetFilter }) => {
+
   return (
     <div className="nav">
       <ul onClick={onSetFilter}>
         <li>
-          <a href="#">All</a>
+          <a href="#" className="active">
+            All
+          </a>
         </li>
         <li>
           <a href="#">Photos</a>

@@ -91,10 +91,10 @@ function App() {
       : setFilteredTiles(artwork.filter((item) => item.type === filter));
   }, [filter]);
 
+  // ------------- NAV STYLES ------------------
+
   const onSetFilterHandler = (e) => {
     setFilter(e.target.textContent.toLowerCase());
-    console.log(e.target);
-    e.target.classList.add("active");
   };
 
   // -------- IMAGE MODAL ---------

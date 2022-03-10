@@ -1,7 +1,7 @@
 import React from "react";
 import "./Gallery.css";
 import Tile from "./Tile";
-import ImageModal from "./ImageModal";
+import ImageModal from "../ImageModal/ImageModal";
 
 const Gallery = ({
   artwork,
@@ -25,7 +25,6 @@ const Gallery = ({
       {/* displaying the photos */}
       {artwork.map((item) => (
         <Tile
-          
           key={item.id}
           name={item.name}
           type={item.type}

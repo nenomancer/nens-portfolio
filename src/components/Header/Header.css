@@ -50,6 +50,10 @@
   color: lightblue;
 }
 
-.active {
+.nav li .active {
   color: green;
+}
+
+.nav li .gaz {
+  color: red;
 }
