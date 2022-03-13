@@ -28,7 +28,7 @@ const Tile = ({
   };
 
   return (
-    <div className="tile" onClick={onClickHandler}>
+    <div className={`${"tile"}, ${gridSize}`} onClick={onClickHandler}>
       <div className="tile__info">
         <div className="tile__name">{name}</div>
         <div className="tile__desc">{desc}</div>
