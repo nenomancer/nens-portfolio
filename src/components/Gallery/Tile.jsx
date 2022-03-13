@@ -12,7 +12,10 @@ const Tile = ({
   setSelectedImg,
 }) => {
   const onClickHandler = (e) => {
-    const imgSrc = e.target.nextElementSibling.getAttribute("src");
+    let imgContainer = e.target.nextElementSibling;
+    let img = imgContainer.children[0];
+    console.log(img.getAttribute("src"));
+    const imgSrc = img.getAttribute("src");
     const imgName = e.target.children[0].textContent;
     const imgDesc = e.target.children[1].textContent;
 
@@ -28,13 +31,14 @@ const Tile = ({
   };
 
   return (
-    <div className={`${"tile"}, ${gridSize}`} onClick={onClickHandler}>
+    <div className={`${"tile__container"} ${gridSize}`} onClick={onClickHandler}>
       <div className="tile__info">
         <div className="tile__name">{name}</div>
         <div className="tile__desc">{desc}</div>
       </div>
-
-      <img src={src} alt={alt} />
+      <div className="tile__img-container">
+        <img src={src} alt={alt} />
+      </div>
     </div>
   );
 };
