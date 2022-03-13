@@ -5,6 +5,10 @@ import Gallery from "./components/Gallery/Gallery";
 import Header from "./components/Header/Header";
 
 function App() {
+  // https://photos.app.goo.gl/fNLoS2YtqYtzn9HG8 <--- Projects album
+  // https://photos.app.goo.gl/kM96symj4vyLiiNT7 <---- First pic
+  // https://photos.app.goo.gl/NEH1VzjKanZjqDjJ7 <---- Second pic
+
   const artwork = [
     {
       id: "1",
@@ -82,31 +86,25 @@ function App() {
 
   // ---------- GALLERY FILTER ----------
 
-  const [filter, setFilter] = useState("all"); // This is for the top filter bar
+  const [filterType, setFilterType] = useState("all"); // This is for the top filterType bar
   const [filteredTiles, setFilteredTiles] = useState([]); // This is for the artwork tiles
 
   useEffect(() => {
-    filter === "all"
+    filterType === "all"
       ? setFilteredTiles(artwork)
-      : setFilteredTiles(artwork.filter((item) => item.type === filter));
-  }, [filter]);
-
-  // ------------- NAV STYLES ------------------
-
-  const onSetFilterHandler = (e) => {
-    setFilter(e.target.textContent.toLowerCase());
-  };
+      : setFilteredTiles(artwork.filter((item) => item.type === filterType)); // SETS WHICH TILES ARE VISIBLE
+  }, [filterType]);
 
   // -------- IMAGE MODAL ---------
   const [showImageModal, setShowImageModal] = useState(false);
   const [selectedImg, setSelectedImg] = useState({});
   const [showAbout, setShowAbout] = useState(false);
 
-  const viewHandler = (e) => {
+  const viewHandler = () => {
     setShowImageModal(true);
   };
 
-  const onShowAboutHandler = (e) => {
+  const onShowAboutHandler = () => {
     setShowAbout(true);
   };
 
@@ -115,7 +113,7 @@ function App() {
       {showAbout && <About />}
       <Header
         onShowAbout={onShowAboutHandler}
-        onSetFilter={onSetFilterHandler}
+        onSetFilter={setFilterType}
       />
       <Gallery
         artwork={filteredTiles}

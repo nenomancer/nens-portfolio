@@ -2,24 +2,46 @@ import React, { useState } from "react";
 import "./Header.css";
 
 const Header = ({ onShowAbout, onSetFilter }) => {
+  const navItems = [
+    {
+      title: "All",
+      id: 1,
+    },
+    {
+      title: "Photos",
+      id: 2,
+    },
+    {
+      title: "Videos",
+      id: 3,
+    },
+    {
+      title: "Music",
+      id: 4,
+    },
+  ];
+
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   return (
     <div className="nav">
-      <ul onClick={onSetFilter}>
-        <li>
-          <a href="#" className="active">
-            All
-          </a>
-        </li>
-        <li>
-          <a href="#">Photos</a>
-        </li>
-        <li>
-          <a href="#">Videos</a>
-        </li>
-        <li>
-          <a href="#">Music</a>
-        </li>
+      <ul>
+        {navItems.map((navItem, index) => {
+          return (
+            <li key={navItem.id}>
+              <a
+                href="#"
+                className={index === selectedIndex ? "active" : ""}
+                onClick={() => {
+                  setSelectedIndex(index);
+                  onSetFilter(navItem.title.toLowerCase());
+                }}
+              >
+                {navItem.title}
+              </a>
+            </li>
+          );
+        })}
       </ul>
       <div className="nav__profile-pic" onClick={onShowAbout}>
         <img src="gallery/profile-pic.jpg" alt="profile-pic" />

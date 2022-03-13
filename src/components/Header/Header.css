@@ -1,4 +1,5 @@
 .nav {
+  --accent-color: rgb(38, 190, 217);
   display: flex;
   align-items: center;
   justify-content: right;
@@ -47,11 +48,11 @@
 }
 
 .nav li a:hover {
-  color: lightblue;
+  color: var(--accent-color);
 }
 
 .nav li .active {
-  color: green;
+  color: var(--accent-color);
 }
 
 .nav li .gaz {
