@@ -8,26 +8,28 @@ const Tile = ({
   alt,
   desc,
   gridSize,
+  index,
   viewHandler,
   setSelectedImg,
 }) => {
   const onClickHandler = (e) => {
-    let imgContainer = e.target.nextElementSibling;
-    let img = imgContainer.children[0];
-    console.log(img.getAttribute("src"));
-    const imgSrc = img.getAttribute("src");
-    const imgName = e.target.children[0].textContent;
-    const imgDesc = e.target.children[1].textContent;
+    // let imgContainer = e.target.nextElementSibling;
+    // let img = imgContainer.children[0];
 
-    console.log(gridSize);
-    const selectedImg = {
-      src: imgSrc,
-      name: imgName,
-      desc: imgDesc,
-    };
+    // const imgSrc = img.getAttribute("src");
+    // const imgName = e.target.children[0].textContent;
+    // const imgDesc = e.target.children[1].textContent;
 
-    viewHandler();
-    setSelectedImg(selectedImg);
+    // console.log(gridSize);
+    // const selectedImg = {
+    //   src: imgSrc,
+    //   name: imgName,
+    //   desc: imgDesc,
+    // };
+    console.log(e.index);
+
+    // viewHandler();
+    // setSelectedImg(selectedImg);
   };
 
   return (

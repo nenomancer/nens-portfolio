@@ -11,6 +11,7 @@ const Gallery = ({
   selectedImg,
   setSelectedImg,
 }) => {
+
   return (
     <div className="gallery">
       {/* displaying the image modal */}
@@ -23,9 +24,10 @@ const Gallery = ({
         />
       )}
       {/* displaying the photos */}
-      {artwork.map((item) => (
+      {artwork.map((item, index) => (
         <Tile
           key={item.id}
+          index={index}
           name={item.name}
           type={item.type}
           src={item.src}
