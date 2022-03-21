@@ -28,10 +28,10 @@ const Header = ({ onShowAbout, onSetFilter }) => {
       <ul>
         {navItems.map((navItem, index) => {
           return (
-            <li key={navItem.id}>
+            <li key={navItem.id} className={index === selectedIndex ? "active" : ""}>
               <a
                 href="#"
-                className={index === selectedIndex ? "active" : ""}
+                
                 onClick={() => {
                   setSelectedIndex(index);
                   onSetFilter(navItem.title.toLowerCase());

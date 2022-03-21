@@ -1,4 +1,4 @@
-.tile__container{
+.tile__container {
   overflow: hidden;
   z-index: 2;
   position: relative;
@@ -27,6 +27,14 @@ img {
   transform: scale(1.1);
 }
 
+.active img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 800px;
+  height: 800px;
+}
+
 /* ------------ INFO SECTION ------------- */
 .tile__info {
   background-color: green;
@@ -51,17 +59,15 @@ img {
   opacity: 100;
 }
 
-
-
 .tile__name {
   padding-bottom: 10px;
   pointer-events: none;
   justify-self: left;
   opacity: 0;
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
-.tile__info:hover .tile__name{
+.tile__info:hover .tile__name {
   opacity: 100;
 }
 
@@ -75,10 +81,10 @@ img {
   bottom: 0;
   text-align: left;
   opacity: 0;
-  transition: all .75s ease-in-out;
+  transition: all 0.75s ease-in-out;
 }
 
-.tile__info:hover .tile__desc{
+.tile__info:hover .tile__desc {
   opacity: 100;
 }
 
@@ -86,3 +92,29 @@ img {
   height: 100%;
   width: 100%;
 }
+
+/* img {
+  width: 1000px;
+  height: 600px;
+  border-radius: 10px;
+}
+
+.right-arrow{
+  position: absolute;
+  top: 50%;
+  right: 32px;
+  font-size: 3rem;
+  color: #000;
+  cursor: pointer;
+  user-select: none;
+}
+
+.left-arrow{
+  position: absolute;
+  top: 50%;
+  left: 32px;
+  font-size: 3rem;
+  color: #000;
+  cursor: pointer;
+  user-select: none;
+} */

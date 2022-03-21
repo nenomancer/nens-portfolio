@@ -1,10 +1,16 @@
 .nav {
   --accent-color: rgb(38, 190, 217);
+  background-color: black;
+  position: sticky;
+  left: 0;
+  top: 0;
   display: flex;
   align-items: center;
   justify-content: right;
-  margin: 1rem 2rem;
+  /* margin: 1rem 2rem; */
   /* padding-top: 0.5rem; */
+  padding: 1rem 2rem;
+  z-index: 10;
 }
 
 /* ----------- LOGO ------------- */
@@ -38,7 +44,25 @@
   position: relative;
   display: inline;
   margin: .5em;
+  
   color: inherit;
+  background-color: #000;
+  width: 200px;
+  height: 20em;
+}
+
+.nav li::before {
+  content: "";
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  position: absolute;
+}
+
+.active {
+  padding: 2em 0;
+  border-radius: 0 0 50% 50%;
 }
 
 .nav li a {

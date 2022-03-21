@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "./ImageModal.css";
 import Info from "./Info";
 
-const ImageModal = ({ showImageModal, setShowImageModal, selectedImg }) => {
+const ImageModal = ({ artwork, showImageModal, setShowImageModal, selectedImg }) => {
   const handleEscape = (e) => {
     if (e.key === "Escape") setShowImageModal(false);
     console.log(e.key);
