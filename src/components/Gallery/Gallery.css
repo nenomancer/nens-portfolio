@@ -4,12 +4,11 @@
   grid-template-columns: repeat(auto-fill, minmax(250px, 2fr));
   grid-auto-rows: 250px 2fr;
   grid-auto-flow: dense;
-  grid-gap: .5rem;
-
-  margin: .5rem auto;
-  border-radius: .5rem;
+  grid-gap: 0.5rem;
+  overflow: hidden;
+  margin: 0.5rem auto;
+  border-radius: 0.5rem;
   /*---------------------------------*/
-
 
   /* position: relative;
   height: 100vh;

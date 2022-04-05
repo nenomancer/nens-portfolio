@@ -11,26 +11,8 @@ const Tile = ({
   index,
   viewHandler,
   setSelectedImg,
+  onClickHandler,
 }) => {
-  const onClickHandler = (e) => {
-    let imgContainer = e.target.nextElementSibling;
-    let img = imgContainer.children[0];
-
-    const imgSrc = img.getAttribute("src");
-    const imgName = e.target.children[0].textContent;
-    const imgDesc = e.target.children[1].textContent;
-
-    const selectedImg = {
-      src: imgSrc,
-      name: imgName,
-      desc: imgDesc,
-    };
-    console.log(index);
-
-    viewHandler();
-    setSelectedImg(selectedImg);
-  };
-
   return (
     <div
       className={`${"tile__container"} ${gridSize}`}

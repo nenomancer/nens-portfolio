@@ -13,11 +13,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  background-color: rgb(36, 36, 36);
+  background-color: rgb(20, 20, 20);
   color: white;
   overflow-y: scroll;
   height: 500px;
   width: 100%;
-  scrollbar-color: red blue;
 }
 

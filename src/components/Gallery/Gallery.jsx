@@ -11,26 +11,56 @@ const Gallery = ({
   selectedImg,
   setSelectedImg,
 }) => {
-  const [current, setCurrent] = useState(0);
-  const length = artwork.length;
+  const [current, setCurrent] = useState({});
+  // const length = artwork.length;
 
-  const nextSlide = () => {
-    setCurrent(current === length - 1 ? 0 : current + 1);
+  // const nextSlide = () => {
+  //   setCurrent(current === length - 1 ? 0 : current + 1);
+  // };
+
+  // const prevSlide = () => {
+  //   setCurrent(current === 0 ? length - 1 : current - 1);
+  // };
+
+  // const onClickHandler = (e) => {};
+  // if (!Array.isArray(artwork) || artwork.length <= 0) {
+  //   return null;
+  // }
+
+  const imageClickHandler = (theIndex) => {
+    const selectedImage = artwork[theIndex];
+    setCurrent(selectedImage);
+    setShowImageModal(true);
   };
 
-  const prevSlide = () => {
-    setCurrent(current === 0 ? length - 1 : current - 1);
+  const navigationClickHandler = (type) => {
+    const selectedItemIndex = artwork.findIndex((el) => el.id === current.id);
+    let updatedCurrentImage;
+
+    switch (type) {
+      case "left":
+        if (selectedItemIndex === 0) {
+          updatedCurrentImage = artwork.length - 1;
+        } else {
+          updatedCurrentImage = selectedItemIndex - 1;
+        }
+        break;
+      case "right":
+        if (selectedItemIndex === artwork.length - 1) {
+          updatedCurrentImage = 0;
+        } else {
+          updatedCurrentImage = selectedItemIndex + 1;
+        }
+        break;
+      default:
+        break;
+    }
+
+      setCurrent(artwork[updatedCurrentImage]);
   };
-
-  const onClickHandler = (e) => {};
-
-
-  if (!Array.isArray(artwork) || artwork.length <= 0) {
-    return null;
-  }
 
   return (
-    <div className="gallery">
+    <div className={"gallery"}>
       {/* this is a carousel example */}
       {/* <div className="left-arrow" onClick={prevSlide}>
         LEVO
@@ -51,13 +81,16 @@ const Gallery = ({
         );
       })} */}
 
+
       {/* displaying the image modal */}
       {showImageModal && (
         <ImageModal
           artwork={artwork}
           showImageModal={showImageModal}
           setShowImageModal={setShowImageModal}
-          selectedImg={selectedImg}
+          selectedImg={current}
+          setSelectedImg={setSelectedImg}
+          navigationClick={(type) => navigationClickHandler(type)}
         />
       )}
       {/* displaying the photos */}
@@ -73,8 +106,13 @@ const Gallery = ({
           gridSize={item.gridSize}
           viewHandler={viewHandler}
           setSelectedImg={setSelectedImg}
+          onClickHandler={() => imageClickHandler(index)}
         />
       ))}
+
+      <video>
+        <source src="https://photos.app.goo.gl/pgFzv1XjZd1LXPaZ9" type="video/mp4"/>
+      </video>
     </div>
   );
 };

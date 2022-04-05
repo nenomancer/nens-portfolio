@@ -72,7 +72,7 @@ export const ArtworkData = [
     gridSize: "tall",
   },
   {
-    id: "1",
+    id: "9",
     name: "earf",
     type: "photos",
     src: "gallery/earf.png",
@@ -81,7 +81,7 @@ export const ArtworkData = [
     gridSize: "",
   },
   {
-    id: "2",
+    id: "10",
     name: "pluto",
     type: "videos",
     src: "gallery/pluto.png",
@@ -90,7 +90,7 @@ export const ArtworkData = [
     gridSize: "wide",
   },
   {
-    id: "3",
+    id: "11",
     name: "river",
     type: "photos",
     src: "gallery/river.jpg",
@@ -99,7 +99,7 @@ export const ArtworkData = [
     gridSize: "tall",
   },
   {
-    id: "4",
+    id: "14",
     type: "music",
     name: "philharmony",
     src: "gallery/philharmony.png",
@@ -108,7 +108,7 @@ export const ArtworkData = [
     gridSize: "wide tall",
   },
   {
-    id: "5",
+    id: "15",
     type: "photos",
     name: "earf",
     src: "gallery/earf.png",
@@ -117,7 +117,7 @@ export const ArtworkData = [
     gridSize: "",
   },
   {
-    id: "6",
+    id: "16",
     type: "videos",
     name: "pluto",
     src: "gallery/pluto.png",
@@ -126,7 +126,7 @@ export const ArtworkData = [
     gridSize: "",
   },
   {
-    id: "7",
+    id: "17",
     type: "photos",
     name: "river",
     src: "gallery/river.jpg",
@@ -135,7 +135,7 @@ export const ArtworkData = [
     gridSize: "wide",
   },
   {
-    id: "8",
+    id: "18",
     type: "videos",
     name: "philharmony",
     src: "gallery/philharmony.png",
@@ -144,3 +144,5 @@ export const ArtworkData = [
     gridSize: "tall",
   },
 ];
+
+

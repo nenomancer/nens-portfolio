@@ -2,23 +2,23 @@ import React, { useEffect } from "react";
 import "./ImageModal.css";
 import Info from "./Info";
 
-const ImageModal = ({ artwork, showImageModal, setShowImageModal, selectedImg }) => {
+const ImageModal = ({ artwork, showImageModal, setShowImageModal, selectedImg, setSelectedImg, navigationClick }) => {
   const handleEscape = (e) => {
     if (e.key === "Escape") setShowImageModal(false);
-    console.log(e.key);
-    console.log(selectedImg);
+    // console.log(e.key);
+    // console.log(selectedImg);
   };
 
   useEffect(() => {
     document.addEventListener("keydown", handleEscape);
   }, [showImageModal]);
 
-  return (
+   return (
     <div className="image-modal">
       <div className="image-modal__container">
         <div className="image-modal__nav">
-          <span className="image-modal__nav-left">LEVO</span>
-          <span className="image-modal__nav-right">DESNO</span>
+          <span onClick={() => navigationClick("left")} className="image-modal__nav-left">LEVO</span>
+          <span onClick={() => navigationClick("right")} className="image-modal__nav-right">DESNO</span>
         </div>
         {/* IMAGE MODAL IMAGE*/}
         <div className="image-modal__image">
