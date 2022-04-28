@@ -3,16 +3,9 @@ import "./Gallery.css";
 import Tile from "./Tile";
 import ImageModal from "../ImageModal/ImageModal";
 
-const Gallery = ({
-  artwork,
-  viewHandler,
-  showImageModal,
-  setShowImageModal,
-  selectedImg,
-  setSelectedImg,
-}) => {
+const Gallery = (props) => {
   const [current, setCurrent] = useState({});
-  // const length = artwork.length;
+  // const length = props.artwork.length;
 
   // const nextSlide = () => {
   //   setCurrent(current === length - 1 ? 0 : current + 1);
@@ -23,40 +16,52 @@ const Gallery = ({
   // };
 
   // const onClickHandler = (e) => {};
-  // if (!Array.isArray(artwork) || artwork.length <= 0) {
+  // if (!Array.isArray(props.artwork) || props.artwork.length <= 0) {
   //   return null;
   // }
 
-  const imageClickHandler = (theIndex) => {
-    const selectedImage = artwork[theIndex];
+  const imageClickHandler = (index) => {
+    const selectedImage = props.artwork[index];
     setCurrent(selectedImage);
-    setShowImageModal(true);
+    props.setShowImageModal(true);
   };
 
   const navigationClickHandler = (type) => {
-    const selectedItemIndex = artwork.findIndex((el) => el.id === current.id);
-    let updatedCurrentImage;
+    const selectedItemIndex = props.artwork.findIndex(
+      (el) => el.id === current.id
+    );
+    let updatedIndex;
 
-    switch (type) {
-      case "left":
-        if (selectedItemIndex === 0) {
-          updatedCurrentImage = artwork.length - 1;
-        } else {
-          updatedCurrentImage = selectedItemIndex - 1;
-        }
-        break;
-      case "right":
-        if (selectedItemIndex === artwork.length - 1) {
-          updatedCurrentImage = 0;
-        } else {
-          updatedCurrentImage = selectedItemIndex + 1;
-        }
-        break;
-      default:
-        break;
+    
+    if (type === "left") {
+      updatedIndex = selectedItemIndex + 1;
     }
+    console.log(updatedIndex);
 
-      setCurrent(artwork[updatedCurrentImage]);
+    setCurrent(props.artwork[updatedIndex]);
+    // switch (type) {
+    //   case "left":
+    //     console.log(selectedItemIndex)
+    //     if (selectedItemIndex === 0) {
+    //       updatedIndex = props.artwork.length - 1;
+    //     } else {
+    //       updatedIndex = selectedItemIndex - 1;
+    //     }
+    //     break;
+    //   case "right":
+    //     console.log(selectedItemIndex)
+
+    //     if (selectedItemIndex === props.artwork.length - 1) {
+    //       updatedIndex = 0;
+    //     } else {
+    //       updatedIndex = selectedItemIndex + 1;
+    //     }
+    //     break;
+    //   default:
+    //     break;
+    // }
+
+    // setCurrent(props.artwork[updatedIndex]);
   };
 
   return (
@@ -68,7 +73,7 @@ const Gallery = ({
       <div className="right-arrow" onClick={nextSlide}>
         DESNO
       </div>
-      {artwork.map((item, index) => {
+      {props.artwork.map((item, index) => {
         return (
           <div
             className={index === current ? "slide active" : "slide"}
@@ -81,37 +86,38 @@ const Gallery = ({
         );
       })} */}
 
-
       {/* displaying the image modal */}
-      {showImageModal && (
+      {props.showImageModal && (
         <ImageModal
-          artwork={artwork}
-          showImageModal={showImageModal}
-          setShowImageModal={setShowImageModal}
+          artwork={props.artwork}
+          showImageModal={props.showImageModal}
+          setShowImageModal={props.setShowImageModal}
           selectedImg={current}
-          setSelectedImg={setSelectedImg}
+          setSelectedImg={props.setSelectedImg}
           navigationClick={(type) => navigationClickHandler(type)}
         />
       )}
       {/* displaying the photos */}
-      {artwork.map((item, index) => (
+      {props.artwork.map((item, index) => (
         <Tile
           key={index}
           index={index}
           name={item.name}
           type={item.type}
           src={item.src}
-          alt={item.alt}
           desc={item.desc}
           gridSize={item.gridSize}
-          viewHandler={viewHandler}
-          setSelectedImg={setSelectedImg}
+          viewHandler={props.viewHandler}
+          setSelectedImg={props.setSelectedImg}
           onClickHandler={() => imageClickHandler(index)}
         />
       ))}
 
       <video>
-        <source src="https://photos.app.goo.gl/pgFzv1XjZd1LXPaZ9" type="video/mp4"/>
+        <source
+          src="https://photos.app.goo.gl/pgFzv1XjZd1LXPaZ9"
+          type="video/mp4"
+        />
       </video>
     </div>
   );

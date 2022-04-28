@@ -28,14 +28,14 @@ function App() {
     setShowImageModal(true);
   };
 
-  const onShowAboutHandler = () => {
-    setShowAbout(true);
-  };
+  // const onShowAboutHandler = () => {
+  //   setShowAbout(true);
+  // };
 
   return (
     <Container>
-      {showAbout && <About />}
-      <Header onShowAbout={onShowAboutHandler} onSetFilter={setFilterType} />
+      {showAbout && <About setShowAbout={setShowAbout} />}
+      <Header setShowAbout={setShowAbout} onSetFilter={setFilterType} />
       <Gallery
         artwork={filteredTiles}
         viewHandler={viewHandler}
@@ -44,7 +44,6 @@ function App() {
         selectedImg={selectedImg}
         setSelectedImg={setSelectedImg}
       />
-      
     </Container>
   );
 }

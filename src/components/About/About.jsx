@@ -1,7 +1,7 @@
 import React from "react";
 import "./About.css";
 
-const About = () => {
+const About = (props) => {
   return (
     <div className="about">
       <div className="about__info">
@@ -10,6 +10,7 @@ const About = () => {
         architecto rem delectus similique tenetur facilis libero mollitia
         cupiditate ipsa. Recusandae?
       </div>
+      <div onClick={() =>props.setShowAbout(false)}>X</div>
     </div>
   );
 };
