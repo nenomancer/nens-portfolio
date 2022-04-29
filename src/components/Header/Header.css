@@ -60,6 +60,8 @@
   padding: 0.5rem 2rem;
   text-decoration: none;
   color: #e3e3e3;
+  transition: all .25s linear;
+
 }
 
 .nav li a:hover {

@@ -37,7 +37,7 @@ const TileModal = (props) => {
 
           {/* RENDER VIDEO IF THE ARTWORK IS A VIDEO */}
           {props.selectedTile.type === "videos" && (
-            <video width="100%" controls autoPlay poster={props.selectedTile.thumb}>
+            <video height="100%" controls poster={props.selectedTile.thumb}>
               <source src={props.selectedTile.src} type="video/mp4" />
             </video>
           )}

@@ -110,12 +110,9 @@ const Gallery = (props) => {
         />
       ))}
 
-      <video>
-        <source
-          src="https://photos.app.goo.gl/pgFzv1XjZd1LXPaZ9"
-          type="video/mp4"
-        />
-      </video>
+      <div className="stars stars-front"></div>
+      <div className="stars stars-mid"></div>
+      <div className="stars stars-back"></div>
     </div>
   );
 };
