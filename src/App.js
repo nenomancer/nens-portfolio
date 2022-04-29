@@ -20,12 +20,12 @@ function App() {
   }, [filterType]);
 
   // -------- IMAGE MODAL ---------
-  const [showImageModal, setShowImageModal] = useState(false);
+  const [showTileModal, setShowTileModal] = useState(false);
   const [selectedImg, setSelectedImg] = useState({});
   const [showAbout, setShowAbout] = useState(false);
 
   const viewHandler = () => {
-    setShowImageModal(true);
+    setShowTileModal(true);
   };
 
   // const onShowAboutHandler = () => {
@@ -39,8 +39,8 @@ function App() {
       <Gallery
         artwork={filteredTiles}
         viewHandler={viewHandler}
-        showImageModal={showImageModal}
-        setShowImageModal={setShowImageModal}
+        showTileModal={showTileModal}
+        setShowTileModal={setShowTileModal}
         selectedImg={selectedImg}
         setSelectedImg={setSelectedImg}
       />

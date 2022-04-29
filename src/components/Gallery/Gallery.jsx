@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Gallery.css";
 import Tile from "./Tile";
-import ImageModal from "../ImageModal/ImageModal";
+import TileModal from "../TileModal/TileModal";
 
 const Gallery = (props) => {
   const [current, setCurrent] = useState({});
@@ -19,11 +19,16 @@ const Gallery = (props) => {
   // if (!Array.isArray(props.artwork) || props.artwork.length <= 0) {
   //   return null;
   // }
+  // ASSIGN IDs TO EVERY ARTWORK
+  for (let i = 0; i < props.artwork.length; i++) {
+    props.artwork[i].id = i;
+  }
 
-  const imageClickHandler = (index) => {
-    const selectedImage = props.artwork[index];
-    setCurrent(selectedImage);
-    props.setShowImageModal(true);
+  // HANDLE CLICK ON TILE
+  const tileClickHandler = (index) => {
+    const selectedTile = props.artwork[index];
+    setCurrent(selectedTile);
+    props.setShowTileModal(true);
   };
 
   const navigationClickHandler = (type) => {
@@ -32,36 +37,28 @@ const Gallery = (props) => {
     );
     let updatedIndex;
 
-    
-    if (type === "left") {
-      updatedIndex = selectedItemIndex + 1;
+    // -------------------------------
+
+    switch (type) {
+      case "left":
+        if (selectedItemIndex === 0) {
+          updatedIndex = props.artwork.length - 1;
+        } else {
+          updatedIndex = selectedItemIndex - 1;
+        }
+        break;
+      case "right":
+        if (selectedItemIndex === props.artwork.length - 1) {
+          updatedIndex = 0;
+        } else {
+          updatedIndex = selectedItemIndex + 1;
+        }
+        break;
+      default:
+        break;
     }
-    console.log(updatedIndex);
 
     setCurrent(props.artwork[updatedIndex]);
-    // switch (type) {
-    //   case "left":
-    //     console.log(selectedItemIndex)
-    //     if (selectedItemIndex === 0) {
-    //       updatedIndex = props.artwork.length - 1;
-    //     } else {
-    //       updatedIndex = selectedItemIndex - 1;
-    //     }
-    //     break;
-    //   case "right":
-    //     console.log(selectedItemIndex)
-
-    //     if (selectedItemIndex === props.artwork.length - 1) {
-    //       updatedIndex = 0;
-    //     } else {
-    //       updatedIndex = selectedItemIndex + 1;
-    //     }
-    //     break;
-    //   default:
-    //     break;
-    // }
-
-    // setCurrent(props.artwork[updatedIndex]);
   };
 
   return (
@@ -80,20 +77,20 @@ const Gallery = (props) => {
             key={index}
           >
             {index === current && (
-              <img src={item.src} alt={item.alt} className="image" />
+              <Tile src={item.src} alt={item.alt} className="tile" />
             )}
           </div>
         );
       })} */}
 
-      {/* displaying the image modal */}
-      {props.showImageModal && (
-        <ImageModal
+      {/* displaying the tile modal */}
+      {props.showTileModal && (
+        <TileModal
           artwork={props.artwork}
-          showImageModal={props.showImageModal}
-          setShowImageModal={props.setShowImageModal}
-          selectedImg={current}
-          setSelectedImg={props.setSelectedImg}
+          showTileModal={props.showTileModal}
+          setShowTileModal={props.setShowTileModal}
+          selectedTile={current}
+          setSelectedTile={props.setSelectedTile}
           navigationClick={(type) => navigationClickHandler(type)}
         />
       )}
@@ -108,8 +105,8 @@ const Gallery = (props) => {
           desc={item.desc}
           gridSize={item.gridSize}
           viewHandler={props.viewHandler}
-          setSelectedImg={props.setSelectedImg}
-          onClickHandler={() => imageClickHandler(index)}
+          setSelectedTile={props.setSelectedTile}
+          onClickHandler={() => tileClickHandler(index)}
         />
       ))}
 
