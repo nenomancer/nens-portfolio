@@ -1,6 +1,20 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  /* CSS VARIABLES */
+  --sidebar-width: 200px;
+
+}
+
 .gallery {
-  /* width: 99%; */
-  width: 90%;
+  top: 0;
+  right: 0.5rem;
+  width: calc(100% - var(--sidebar-width) - 1rem);
   max-height: 2400px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 2fr));
@@ -10,13 +24,66 @@
   overflow: hidden;
   margin: 0.5rem auto;
   border-radius: 0.5rem;
-  /*---------------------------------*/
+}
 
-  /* position: relative;
-  height: 100vh;
+.nav-container {
+  --accent-color: rgb(38, 190, 217);
+  background-color: black;
+  position: sticky;
+  left: 0;
+  top: 0;
   display: flex;
-  justify-content: center;
-  align-items: center; */
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 10;
+  width: var(--sidebar-width);
+  min-height: 100vh;
+}
+
+/* ----------- LOGO ------------- */
+
+.profile-pic {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: all 0.2s;
+  margin-bottom: 20px;
+}
+
+.profile-pic:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+}
+
+/* -------------- NAVBAR -------------- */
+
+.nav-items {
+  list-style: none;
+  text-align: right;
+}
+
+.nav-item {
+  margin-bottom: 1rem;
+}
+.nav-item a {
+  text-decoration: none;
+  color: #e3e3e3;
+  transition: all .25s linear;
+}
+
+.nav-item a:hover {
+  color: var(--accent-color);
+}
+
+.nav-item .active {
+  color: var(--accent-color);
 }
 
 .stars {
@@ -28,3 +95,5 @@
   width: 1px;
   height: 1px;
 }
+
+

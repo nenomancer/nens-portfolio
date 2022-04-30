@@ -4,11 +4,11 @@ import { ArtworkData } from "../../ArtworkData";
 
 const Header = (props) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const tags = ["blender", "3d"]
+  const tags = ["blender", "3d"];
 
   // const removeDuplicates = (index) => {
   //   tags.map((tag) => {
-  //     if 
+  //     if
   //   })
   // }
 
@@ -22,13 +22,9 @@ const Header = (props) => {
   //   tags.push(ArtworkData[i])
   // }
 
-
-
   // tags[0].forEach((tag) => {
   //   return tag.join();
   // })
-
-
 
   const navItems = [
     {
@@ -47,28 +43,21 @@ const Header = (props) => {
       title: "Music",
       id: 4,
     },
-    {
-      title: "Tags",
-      id: 5,
-      tags: tags,
-    },
+    // {
+    //   title: "Tags",
+    //   id: 5,
+    //   tags: tags,
+    // },
   ];
   return (
-    <div className="nav">
-      <ul>
+    <div className="nav-container">
+      <div className="profile-pic" onClick={() => props.setShowAbout(true)}>
+        <img src="gallery/profile-pic.jpg" alt="profile-pic" />
+      </div>
+      <ul className="nav-items">
         {navItems.map((navItem, index) => {
           return (
-            navItem.title === "Tags" ? <li key={navItem.id}>
-            <a
-              href="#"
-              className={index === selectedIndex ? "active" : ""}
-              onClick={() => {
-                console.log("TAG")
-              }}
-            >
-              {navItem.title}
-            </a>
-          </li> : <li key={navItem.id}>
+            <li key={navItem.id} className="nav-item">
               <a
                 href="#"
                 className={index === selectedIndex ? "active" : ""}
@@ -83,9 +72,6 @@ const Header = (props) => {
           );
         })}
       </ul>
-      <div className="nav__profile-pic" onClick={() => props.setShowAbout(true)}>
-        <img src="gallery/profile-pic.jpg" alt="profile-pic" />
-      </div>
     </div>
   );
 };
