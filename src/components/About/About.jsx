@@ -4,13 +4,9 @@ import "./About.css";
 const About = (props) => {
   return (
     <div className="about">
-      <div className="about__info">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla facere
-        alias, debitis dolorem nostrum at consequatur, corrupti numquam sequi
-        architecto rem delectus similique tenetur facilis libero mollitia
-        cupiditate ipsa. Recusandae?
-      </div>
-      <div onClick={() =>props.setShowAbout(false)}>X</div>
+      <img src="gallery/profile-pic.jpg" alt="" className="about__picture" />
+      <div className="about__info">My name is Neno</div>
+      <div onClick={() => props.setShowAbout(false)}>X</div>
     </div>
   );
 };

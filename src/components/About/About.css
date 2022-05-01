@@ -1,19 +1,17 @@
 .about {
-    /* position: absolute; */
-    clear: both;
-    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 15;
+    width: 100vw;
     height: 100vh;
-    display: flex;
-    justify-content: center;
+    background-color: red;
     /* align-items: center; */
 }
 
-.about__info {
-    background: linear-gradient(#111, #444);
-    background-image: url("../../../public/gallery/profile-pic.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-blend-mode: multiply;
-    max-width: 100%;
+.about__picture {
+    height: 250px;
+    width: 250px;
+
 }
+

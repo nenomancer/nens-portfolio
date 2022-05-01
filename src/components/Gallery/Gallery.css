@@ -86,6 +86,7 @@
   border-radius: 50%;
   overflow: hidden;
   transition: all 0.5s;
+  filter: grayscale(100%);
 }
 
 .profile-pic::after{
