@@ -50,10 +50,14 @@ const Header = (props) => {
     // },
   ];
   return (
-    <div className="nav-container">
+    <div className="header">
       <div className="profile-pic" onClick={() => props.setShowAbout(true)}>
         <img src="gallery/profile-pic.jpg" alt="profile-pic" />
       </div>
+      {/* <div className="logo">
+        <span className="logo-main">N</span>
+        <span className="logo-sub">ebojsa Kovacevik</span>
+      </div> */}
       <ul className="nav-items">
         {navItems.map((navItem, index) => {
           return (

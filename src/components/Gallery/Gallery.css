@@ -8,13 +8,12 @@
 
   /* CSS VARIABLES */
   --sidebar-width: 200px;
-
 }
 
 .gallery {
   top: 0;
   right: 0.5rem;
-  width: calc(100% - var(--sidebar-width) - 1rem);
+  width: 95%;
   max-height: 2400px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 2fr));
@@ -26,35 +25,76 @@
   border-radius: 0.5rem;
 }
 
-.nav-container {
+/* HEADER STYLES */
+
+.header {
   --accent-color: rgb(38, 190, 217);
   background-color: black;
   position: sticky;
   left: 0;
   top: 0;
+  height: 4rem;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  padding: 1rem 2rem;
+  justify-content: space-between;
   z-index: 10;
-  width: var(--sidebar-width);
-  min-height: 100vh;
+  overflow: hidden;
 }
 
 /* ----------- LOGO ------------- */
 
+.logo {
+  font-size: 36px;
+  text-transform: uppercase;
+  margin: .5rem;
+  margin-left: 2rem;
+  text-align: center;
+  transform-origin: left;
+  transition: all 2s linear;
+}
+
+.logo:hover {
+  /* transform: scale(1.1); */
+}
+
+.logo-main {
+  text-align: center;
+  padding-left: 1rem;
+}
+
+
+.logo-sub {
+  /* display: none; */
+  color: transparent;
+  position: relative;
+  padding-right: 1rem;
+  transition: all .5s linear;
+}
+
+.logo-main:hover,
+.logo-main:hover + .logo-sub,
+.logo-sub:hover {
+  display: inline;
+  cursor: pointer;
+  color: white;
+}
+
 .profile-pic {
-  width: 4rem;
-  height: 4rem;
+  width: 3rem;
+  height: 3rem;
+  margin-left: 3rem;
   border-radius: 50%;
   overflow: hidden;
-  transition: all 0.2s;
-  margin-bottom: 20px;
+  transition: all 0.5s;
+}
+
+.profile-pic::after{
+  content: "N";
 }
 
 .profile-pic:hover {
   cursor: pointer;
-  transform: scale(1.2);
+  transform: rotateY(360deg)
 }
 
 .profile-pic img {
@@ -63,19 +103,16 @@
 }
 
 /* -------------- NAVBAR -------------- */
-
-.nav-items {
-  list-style: none;
-  text-align: right;
-}
-
 .nav-item {
-  margin-bottom: 1rem;
+  list-style: none;
+  display: inline;
 }
+
 .nav-item a {
   text-decoration: none;
   color: #e3e3e3;
-  transition: all .25s linear;
+  transition: all 0.25s linear;
+  padding: 1rem 3rem;
 }
 
 .nav-item a:hover {
@@ -95,5 +132,3 @@
   width: 1px;
   height: 1px;
 }
-
-
