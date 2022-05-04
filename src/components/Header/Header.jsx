@@ -63,7 +63,6 @@ const Header = (props) => {
           return (
             <li key={navItem.id} className="nav-item">
               <a
-                href="#"
                 className={index === selectedIndex ? "active" : ""}
                 onClick={() => {
                   setSelectedIndex(index);
