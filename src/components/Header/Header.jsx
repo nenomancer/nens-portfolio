@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Header.css";
-import { ArtworkData } from "../../ArtworkData";
 
 const Header = (props) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const tags = ["blender", "3d"];
+  // const tags = ["blender", "3d"];
 
   // const removeDuplicates = (index) => {
   //   tags.map((tag) => {
