@@ -78,9 +78,9 @@ const Gallery = (props) => {
         />
       ))}
 
-      <div className="stars stars-front"></div>
+      {/* <div className="stars stars-front"></div>
       <div className="stars stars-mid"></div>
-      <div className="stars stars-back"></div>
+      <div className="stars stars-back"></div> */}
     </div>
   );
 };

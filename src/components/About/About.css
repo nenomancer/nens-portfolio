@@ -51,7 +51,7 @@
 
 /* LEFT INFO STYLES  */
 .about__skills h2 {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 .about__skills-icons-container {
   position: relative;
@@ -103,18 +103,17 @@
   transform: translateX(-50%);
   border-width: 10px;
   border-style: solid;
-  border-color: transparent transparent  transparent;
+  border-color: transparent transparent transparent;
   rotate: -135deg;
-
 }
 
-.about__skills-tooltip, .about__skills-tooltip::before {
+.about__skills-tooltip,
+.about__skills-tooltip::before {
   box-shadow: 1px 1px 2px black;
 }
 
 .about__skills-icons:hover + .about__skills-tooltip {
   visibility: visible;
-  
 }
 
 .about__skills-tooltip:hover {
@@ -138,9 +137,11 @@
 }
 
 /* ABOUT RIGHT  */
-h1, h2, h3{
+h1,
+h2,
+h3 {
   font-weight: 200;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 p {
