@@ -7,11 +7,25 @@
   padding: 0;
 
   /* CSS VARIABLES */
+  --accent-color: rgb(38, 190, 217);
+
+  --tooltip-color: rgb(32, 32, 32);
   --sidebar-width: 200px;
 }
 
+body {
+  margin: 0;
+  /* font-family: "Rubik"; */
+  font-family: "Radio Canada", "sans-serif";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(20, 20, 20);
+  color: white;
+  overflow-y: scroll;
+  width: 100%;
+}
+
 .gallery {
-  top: 0;
   right: 0.5rem;
   width: 95%;
   max-height: 2400px;
@@ -28,7 +42,6 @@
 /* HEADER STYLES */
 
 .header {
-  --accent-color: rgb(38, 190, 217);
   background-color: black;
   position: sticky;
   left: 0;
@@ -46,15 +59,11 @@
 .logo {
   font-size: 36px;
   text-transform: uppercase;
-  margin: .5rem;
+  margin: 0.5rem;
   margin-left: 2rem;
   text-align: center;
   transform-origin: left;
   transition: all 2s linear;
-}
-
-.logo:hover {
-  /* transform: scale(1.1); */
 }
 
 .logo-main {
@@ -62,13 +71,12 @@
   padding-left: 1rem;
 }
 
-
 .logo-sub {
   /* display: none; */
   color: transparent;
   position: relative;
   padding-right: 1rem;
-  transition: all .5s linear;
+  transition: all 0.5s linear;
 }
 
 .logo-main:hover,
@@ -79,28 +87,25 @@
   color: white;
 }
 
-.profile-pic {
+.logo-container {
   width: 3rem;
   height: 3rem;
   margin-left: 3rem;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   overflow: hidden;
   transition: all 0.5s;
-  filter: grayscale(100%);
 }
 
-.profile-pic::after{
-  content: "N";
-}
-
-.profile-pic:hover {
+.logo-container:hover {
   cursor: pointer;
-  transform: rotateY(360deg)
+  transform: rotateY(180deg);
 }
 
-.profile-pic img {
+.logo-container img {
   width: 100%;
   height: 100%;
+  border: 2px solid var(--accent-color);
+  border-radius: 50%;
 }
 
 /* -------------- NAVBAR -------------- */

@@ -1,17 +1,133 @@
 .about {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 15;
-    width: 100vw;
-    height: 100vh;
-    background-color: red;
-    /* align-items: center; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 15;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+}
+.about__backdrop {
+  background-color: black;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  /* height: 100vh; */
+  min-height: 100%;
+  opacity: 0.95;
+}
+
+.about__container {
+  /* background-color: rgb(89, 161, 160); */
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  overflow: auto;
+}
+
+.about__left {
+  /* display: flex;
+    flex-direction: column; */
 }
 
 .about__picture {
-    height: 250px;
-    width: 250px;
+  height: 250px;
+  width: 250px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
 
+.about__info {
+  /* background-color: red; */
+  padding: 2rem;
+}
+
+.about__info p,
+h2 {
+  margin-bottom: 1rem;
+  font-weight: 100;
+}
+
+.about__skills {
+  padding: 1rem;
+}
+
+.about__skills a {
+  position: relative;
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.5rem;
+}
+
+.about__skills-icons {
+  cursor: pointer;
+}
+
+.about__skills-tooltip {
+  visibility: hidden;
+  position: absolute;
+  left: -130%;
+  top: 2.2rem;
+  width: 120px;
+  background-color: var(--tooltip-color);
+  color: white;
+  padding: .5rem 0;
+  border-radius: 6px;
+font-size: 12px;
+  font-weight: 100;
+  text-align: center;
+  z-index: 1;
+}
+
+.about__skills-tooltip::after {
+  content: " ";
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  /* margin-left: -50px; */
+  transform: translateX(-50%);
+  border-width: 15px;
+  border-style: solid;
+  border-color: transparent transparent var(--tooltip-color) transparent;
+}
+
+.about__skills-icons:hover + .about__skills-tooltip {
+  visibility: visible;
+}
+
+.about__skills-tooltip:hover {
+  cursor: pointer;
+  visibility: visible;
+}
+
+.about__skills progress {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 80%;
+  margin-bottom: 5px;
+  border-radius: 5000px;
+  height: 1rem;
+  border: none;
+}
+
+::-webkit-progress-bar {
+
+}
+
+::-moz-progress-bar {
+  background-color: var(--accent-color);
+  border-radius: 5000px;
 }
 

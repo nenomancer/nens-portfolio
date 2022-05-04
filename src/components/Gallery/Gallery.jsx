@@ -5,20 +5,7 @@ import TileModal from "../TileModal/TileModal";
 
 const Gallery = (props) => {
   const [current, setCurrent] = useState({});
-  // const length = props.artwork.length;
 
-  // const nextSlide = () => {
-  //   setCurrent(current === length - 1 ? 0 : current + 1);
-  // };
-
-  // const prevSlide = () => {
-  //   setCurrent(current === 0 ? length - 1 : current - 1);
-  // };
-
-  // const onClickHandler = (e) => {};
-  // if (!Array.isArray(props.artwork) || props.artwork.length <= 0) {
-  //   return null;
-  // }
   // ASSIGN IDs TO EVERY ARTWORK
   for (let i = 0; i < props.artwork.length; i++) {
     props.artwork[i].id = i;
@@ -31,6 +18,7 @@ const Gallery = (props) => {
     props.setShowTileModal(true);
   };
 
+  // HANDLE MODAL NAVIGATION
   const navigationClickHandler = (type) => {
     const selectedItemIndex = props.artwork.findIndex(
       (el) => el.id === current.id
@@ -63,26 +51,6 @@ const Gallery = (props) => {
 
   return (
     <div className={"gallery"}>
-      {/* this is a carousel example */}
-      {/* <div className="left-arrow" onClick={prevSlide}>
-        LEVO
-      </div>
-      <div className="right-arrow" onClick={nextSlide}>
-        DESNO
-      </div>
-      {props.artwork.map((item, index) => {
-        return (
-          <div
-            className={index === current ? "slide active" : "slide"}
-            key={index}
-          >
-            {index === current && (
-              <Tile src={item.src} alt={item.alt} className="tile" />
-            )}
-          </div>
-        );
-      })} */}
-
       {/* displaying the tile modal */}
       {props.showTileModal && (
         <TileModal
