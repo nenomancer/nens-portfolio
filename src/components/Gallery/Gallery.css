@@ -115,14 +115,14 @@ body {
   display: inline;
 }
 
-.nav-item a {
+.nav-item span {
   text-decoration: none;
   color: #e3e3e3;
   transition: all 0.25s linear;
   padding: 1rem 3rem;
 }
 
-.nav-item a:hover {
+.nav-item span:hover {
   color: var(--accent-color);
 }
 
