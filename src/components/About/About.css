@@ -34,11 +34,6 @@
   overflow: auto;
 }
 
-.about__left {
-  /* display: flex;
-    flex-direction: column; */
-}
-
 /* PICTURE STYLES  */
 .about__picture {
   height: 250px;
@@ -53,20 +48,13 @@
 .about__skills h2 {
   margin-bottom: 0.5rem;
 }
-.about__skills-icons-container {
-  position: relative;
-  display: inline-block;
-  width: 2rem;
-  height: 2rem;
-  margin-right: 0.5rem;
-}
 
 .about__skills-icons {
   cursor: pointer;
 }
 
 /* TOOLTIP STYLES */
-.about__skills-tooltip {
+/* .about__skills-tooltip {
   visibility: hidden;
   position: absolute;
   left: 50%;
@@ -82,7 +70,7 @@
   font-weight: 100;
   text-align: center;
   z-index: 1;
-}
+} */
 
 .about__skills-tooltip::after {
   content: " ";
@@ -121,20 +109,7 @@
   visibility: visible;
 }
 
-.about__skills progress {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 80%;
-  margin-bottom: 5px;
-  border-radius: 5000px;
-  height: 1rem;
-  border: none;
-}
 
-::-moz-progress-bar {
-  background-color: var(--accent-color);
-  border-radius: 5000px;
-}
 
 /* ABOUT RIGHT  */
 h1,
@@ -147,3 +122,53 @@ h3 {
 p {
   margin-bottom: 1rem;
 }
+
+.icon-container {
+  display: inline-block;
+  /* background-color: aliceblue; */
+  position: relative;
+  text-align: center;
+}
+
+.icon {
+  display: block;
+  /* background-color: red; */
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.tooltip {
+  /* visibility: hidden; */
+  display: block;
+  background-color: blue;
+  position: absolute;
+  width: 140px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  margin-top: 0.25rem;
+  font-size: small;
+  z-index: 50;
+}
+
+.icon:hover + .tooltip {
+  visibility: visible;
+}
+
+.tooltip progress {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 80%;
+  margin-bottom: 5px;
+  border-radius: 5000px;
+  height: .5rem;
+  border: none;
+}
+
+::-moz-progress-bar {
+    background-color: var(--accent-color);
+    border-radius: 5000px;
+  }

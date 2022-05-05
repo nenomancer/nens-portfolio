@@ -1,5 +1,6 @@
 import React from "react";
 import "./About.css";
+import AboutIcon from "./AboutIcon";
 import AboutSkills from "./AboutSkills";
 
 const About = (props) => {
@@ -100,17 +101,23 @@ const About = (props) => {
             <img src="gallery/profile-pic.jpg" alt="" />
           </div>
           <h2>Contact</h2>
-          <AboutSkills title="Contact" icons={socialIcons} />
+          {socialIcons.map((icon) => (
+            <AboutIcon icon={icon}/>
+          ))}
+          {/* <AboutSkills title="Contact" icons={socialIcons} /> */}
 
           <h2>Skills</h2>
           <h3>Visual</h3>
-          <AboutSkills title="Skills" icons={visualIcons} />
+          {visualIcons.map((icon) => (
+            <AboutIcon icon={icon}/>
+          ))}
+          {/* <AboutSkills title="Skills" icons={visualIcons} /> */}
 
           <h3>Audio</h3>
-          <AboutSkills title="Skills" icons={audioIcons} />
+          {/* <AboutSkills title="Skills" icons={audioIcons} /> */}
 
           <h3>Code</h3>
-          <AboutSkills title="Skills" icons={visualIcons} />
+          {/* <AboutSkills title="Skills" icons={visualIcons} /> */}
           {/* <div className="about__skills">
             <h2>Skills:</h2>
             <img
