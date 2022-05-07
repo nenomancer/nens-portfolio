@@ -10,9 +10,9 @@
 .icon {
   display: block;
   /* background-color: red; */
-  width: 2rem;
-  height: 2rem;
-  margin-right: .5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: .25rem;
   cursor: pointer;
 }
 
@@ -35,6 +35,8 @@
 .icon:hover + .tooltip, .tooltip:hover {
   visibility: visible;
   background-color: var(--tooltip-color);
+  box-shadow: inset 0 0 5px 2px hsl(0, 0%, 14%);
+
   color: white;
   cursor: pointer;
   /* box-shadow: 1px 3px rgba(0, 0, 0, 0.1); */

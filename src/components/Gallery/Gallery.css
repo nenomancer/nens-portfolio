@@ -7,9 +7,15 @@
   padding: 0;
 
   /* CSS VARIABLES */
-  --accent-color: rgb(38, 190, 217);
-
-  --tooltip-color: rgb(32, 32, 32);
+  --accent-color: hsl(189, 70%, 50%);
+  
+  --bg-color: hsl(0, 0%, 3%);
+  --modal-color: hsl(0, 0%, 7%);
+  --info-box-color: hsl(0, 0%, 11%);
+  --tooltip-color: hsl(0, 0%, 13%);
+  
+  --highlight-color: hsl(0, 0%, 24%);
+  
   --sidebar-width: 200px;
 }
 
@@ -19,7 +25,7 @@ body {
   font-family: "Radio Canada", "sans-serif";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(20, 20, 20);
+  background-color: var(--bg-color);
   color: white;
   overflow-y: scroll;
   width: 100%;

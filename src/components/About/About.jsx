@@ -107,50 +107,40 @@ const About = (props) => {
     },
   ];
 
+  const toggleContainer = (index) => {
+    const containers = document.getElementsByClassName("info-container");
+    for (let item of containers) {
+      item === containers[index]
+        ? item.classList.toggle("open")
+        : item.classList.remove("open");
+    }
+    // containers[index].classList.toggle("open");
+  };
+
   return (
     <div className="about">
       <div className="container">
         <div>
-          <img src="https://i.imgur.com/fLFzM2Y.png" alt="" />
-          <h1>NEBOJSA KOVACEVIK</h1>
+          <img id="profile-pic" src="https://i.imgur.com/fLFzM2Y.png" alt="" />
         </div>
-        {/* <div className="left">
-          <div className="picture">
-            <img src="https://i.imgur.com/fLFzM2Y.png" alt="" />
-          </div>
-          <div className="info-container">
-            <h2>Contact</h2>
-            <a href="mailto:nebojsa.kovacevik@gmail.com">
-              nebojsa.kovacevik@gmail.com
-            </a>
-            <p>+389 71 909 352</p>
-            <div className="icons">
-              {socialIcons.map((icon) => (
-                <AboutIcon icon={icon} />
-              ))}
-            </div>
-          </div>
 
-          <div className="info-container">
-            <h2>Skills</h2>
-            <h3>Visual</h3>
-            <div className="icons">
-              {visualIcons.map((icon) => (
-                <AboutIcon icon={icon} />
-              ))}
-            </div>
-            <h3>Audio</h3>
-            <div className="icons">
-              {audioIcons.map((icon) => (
-                <AboutIcon icon={icon} />
-              ))}
-            </div>
-            <h3>Code</h3>
-          </div>
-        </div> */}
         <div className="right">
-          <div className="info-container">
-            <h1>Nebojsa Kovacevik</h1>
+          <div id="main-container" className="info-container">
+            {/* NAME AND CONTACT INFO  */}
+            <h1 id="name">NEBOJSA KOVACEVIK</h1>
+            <p id="basic-info">
+              <a href="mailto:nebojsa.kovacevik@gmail.com">
+                nebojsa.kovacevik@gmail.com
+              </a>{" "}
+              | +389 71 909 352 | Skopje, Macedonia
+              <div id="contact-info">
+                {socialIcons.map((icon) => (
+                  <AboutIcon icon={icon} />
+                ))}
+              </div>
+            </p>
+
+            {/* ABOUT THIS WEBSITE  */}
             <p>
               This website has been my project for the last few months. I made
               it in order to sharpen my web development skills (mainly React and
@@ -164,7 +154,10 @@ const About = (props) => {
             </p>
             <p>Feel free to contact me, and I hope you enjoy!</p>
           </div>
-          <div className="info-container">
+          <div
+            className="info-container open"
+            onClick={() => toggleContainer(1)}
+          >
             <h1>Work Experience</h1>
             <h2>
               VFX Artist,{" "}
@@ -192,7 +185,7 @@ const About = (props) => {
             </p>
           </div>
 
-          <div className="info-container">
+          <div className="info-container" onClick={() => toggleContainer(2)}>
             <h1>Latest Projects</h1>
             <h2>
               <a
@@ -229,6 +222,23 @@ const About = (props) => {
               making some of the elements react to certain frequencies of the
               song.
             </p>
+          </div>
+
+          <div className="info-container" onClick={() => toggleContainer(3)}>
+            <h1>Skills</h1>
+            <div className="skills-container">
+              <h2>Visual</h2>
+              {visualIcons.map((icon) => (
+                <AboutIcon icon={icon} />
+              ))}
+            </div>
+            <div className="skills-container">
+              <h2>Audio</h2>
+              {audioIcons.map((icon) => (
+                <AboutIcon icon={icon} />
+              ))}
+            </div>
+            <div className="skills-container"></div>
           </div>
         </div>
       </div>
