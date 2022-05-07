@@ -1,0 +1,57 @@
+.icon-container {
+  display: inline-block;
+  /* background-color: aliceblue; */
+  position: relative;
+  text-align: center;
+  font-weight: 100;
+  font-size: 12px;
+}
+
+.icon {
+  display: block;
+  /* background-color: red; */
+  width: 2rem;
+  height: 2rem;
+  margin-right: .5rem;
+  cursor: pointer;
+}
+
+.tooltip {
+  visibility: hidden;
+  display: block;
+  position: absolute;
+  background-color: transparent;
+  color: transparent;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  margin-top: 0.25rem;
+  z-index: 1;
+  transition: 0.25s all linear;
+}
+
+.icon:hover + .tooltip, .tooltip:hover {
+  visibility: visible;
+  background-color: var(--tooltip-color);
+  color: white;
+  cursor: pointer;
+  /* box-shadow: 1px 3px rgba(0, 0, 0, 0.1); */
+}
+
+
+.tooltip progress {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 80%;
+  margin-bottom: 5px;
+  border-radius: 5000px;
+  height: 0.5rem;
+  border: none;
+}
+
+::-moz-progress-bar {
+  background-color: var(--accent-color);
+  border-radius: 5000px;
+}

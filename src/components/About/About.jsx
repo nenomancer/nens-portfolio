@@ -86,8 +86,22 @@ const About = (props) => {
     },
     {
       type: "audio",
+      name: "audacity",
+      icon: "icons/software/audacity.png",
+      info: "NUKE: Expert level knowledge of all it's capabilities",
+      level: 10,
+    },
+    {
+      type: "audio",
       name: "maschine",
       icon: "icons/software/maschine.png",
+      info: "NUKE: Expert level knowledge of all it's capabilities",
+      level: 10,
+    },
+    {
+      type: "audio",
+      name: "cubase",
+      icon: "icons/software/cubase.png",
       info: "NUKE: Expert level knowledge of all it's capabilities",
       level: 10,
     },
@@ -95,49 +109,47 @@ const About = (props) => {
 
   return (
     <div className="about">
-      <div className="about__container">
-        <div className="about__left">
-          <div className="about__picture">
-            <img src="gallery/profile-pic.jpg" alt="" />
-          </div>
-          <h2>Contact</h2>
-          {socialIcons.map((icon) => (
-            <AboutIcon icon={icon}/>
-          ))}
-          {/* <AboutSkills title="Contact" icons={socialIcons} /> */}
-
-          <h2>Skills</h2>
-          <h3>Visual</h3>
-          {visualIcons.map((icon) => (
-            <AboutIcon icon={icon}/>
-          ))}
-          {/* <AboutSkills title="Skills" icons={visualIcons} /> */}
-
-          <h3>Audio</h3>
-          {/* <AboutSkills title="Skills" icons={audioIcons} /> */}
-
-          <h3>Code</h3>
-          {/* <AboutSkills title="Skills" icons={visualIcons} /> */}
-          {/* <div className="about__skills">
-            <h2>Skills:</h2>
-            <img
-              className="about__skills-icons"
-              src="icons/software/photoshop.png"
-              alt="Photoshop"
-            />
-            <img
-              className="about__skills-icons"
-              src="icons/software/photoshop.png"
-              alt="Photoshop"
-            />
-            <h4>Visual</h4>
-            <h4>Audio</h4>
-            <h4>Code</h4>
-          </div> */}
+      <div className="container">
+        <div>
+          <img src="https://i.imgur.com/fLFzM2Y.png" alt="" />
+          <h1>NEBOJSA KOVACEVIK</h1>
         </div>
-        <div className="about__right">
-          <div className="about__info">
-            {/* <h1 className="about__h2">About Me</h1> */}
+        {/* <div className="left">
+          <div className="picture">
+            <img src="https://i.imgur.com/fLFzM2Y.png" alt="" />
+          </div>
+          <div className="info-container">
+            <h2>Contact</h2>
+            <a href="mailto:nebojsa.kovacevik@gmail.com">
+              nebojsa.kovacevik@gmail.com
+            </a>
+            <p>+389 71 909 352</p>
+            <div className="icons">
+              {socialIcons.map((icon) => (
+                <AboutIcon icon={icon} />
+              ))}
+            </div>
+          </div>
+
+          <div className="info-container">
+            <h2>Skills</h2>
+            <h3>Visual</h3>
+            <div className="icons">
+              {visualIcons.map((icon) => (
+                <AboutIcon icon={icon} />
+              ))}
+            </div>
+            <h3>Audio</h3>
+            <div className="icons">
+              {audioIcons.map((icon) => (
+                <AboutIcon icon={icon} />
+              ))}
+            </div>
+            <h3>Code</h3>
+          </div>
+        </div> */}
+        <div className="right">
+          <div className="info-container">
             <h1>Nebojsa Kovacevik</h1>
             <p>
               This website has been my project for the last few months. I made
@@ -152,12 +164,75 @@ const About = (props) => {
             </p>
             <p>Feel free to contact me, and I hope you enjoy!</p>
           </div>
+          <div className="info-container">
+            <h1>Work Experience</h1>
+            <h2>
+              VFX Artist,{" "}
+              <a
+                href="https://fx3x.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                FX3X
+              </a>{" "}
+              <span>02.2016-12.2021</span>
+            </h2>
+            <p>
+              As a senior VFX artist and CG generalist, I have been tasked with
+              problems of high complexity, which require not only artistic
+              skills, but logical problem-solving, automation and optimization.
+            </p>
+            <p>
+              My portfolio now consists of over 40 feature length films and
+              popular TV shows, some of which are: Thor: Ragnarok, Black
+              Panther, Guardians of the Galaxy, Spider man: Homecoming, Star
+              Wars: The Last Jedi & The Rise of Skywalker, Alien: Covenant,
+              X-Men: Apocalypse, Mission Impossible: Fallout, Ghost in the
+              Shell, The Mandalorian, Star Trek: Discovery, etc.
+            </p>
+          </div>
+
+          <div className="info-container">
+            <h1>Latest Projects</h1>
+            <h2>
+              <a
+                href="https://www.youtube.com/watch?v=3UDbgvsJYYU&list=PLR4U_V3XMRwsrO7vh8wcn_OJRIUfNjd7Z"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Neizbruseni Kamenja
+              </a>
+              <span>Sound Production / 3D Animation</span>
+            </h2>
+            <p>
+              A half length album, project on which all seven songs were
+              produced by me. I also created unique procedural animations for
+              all of the songs, making elements of the animations react to
+              certain frequencies.
+            </p>
+            <h2>
+              <a
+                href="https://www.youtube.com/watch?v=VF8CRfzoeGY"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Vrvot na Trkaloto
+              </a>
+              <span>Mixed 3D & 2D Animation</span>
+            </h2>
+            <p>
+              On this project I was given a concept art for the overall look, so
+              I can create an animation which will loop throughout the song.
+              Firstly, I hand animated the two characters using Blender's Grease
+              Pencil, making sure to give them a different walking style. I then
+              created and animated the scene using Blender's 3D capabilities,
+              making some of the elements react to certain frequencies of the
+              song.
+            </p>
+          </div>
         </div>
       </div>
-      <div
-        className="about__backdrop"
-        onClick={() => props.setShowAbout(false)}
-      ></div>
+      <div className="backdrop" onClick={() => props.setShowAbout(false)}></div>
     </div>
   );
 };
