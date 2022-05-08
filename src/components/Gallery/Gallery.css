@@ -7,15 +7,15 @@
   padding: 0;
 
   /* CSS VARIABLES */
-  --accent-color: hsl(189, 70%, 50%);
-  
+  --accent-color: hsl(197, 91%, 58%);
+
   --bg-color: hsl(0, 0%, 3%);
   --modal-color: hsl(0, 0%, 7%);
   --info-box-color: hsl(0, 0%, 11%);
   --tooltip-color: hsl(0, 0%, 13%);
-  
+
   --highlight-color: hsl(0, 0%, 24%);
-  
+
   --sidebar-width: 200px;
 }
 
@@ -37,8 +37,7 @@ body {
   max-height: 2400px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 2fr));
-  /* grid-auto-rows: auto; */
-  grid-auto-rows: minmax(30px, 2fr);
+  grid-template-rows: repeat(auto-fill, minmax(250px, 2fr));
   grid-auto-flow: dense;
   grid-gap: 0.5rem;
   overflow: hidden;
@@ -46,95 +45,6 @@ body {
   border-radius: 0.5rem;
 }
 
-/* HEADER STYLES */
-
-.header {
-  background-color: black;
-  position: sticky;
-  left: 0;
-  top: 0;
-  height: 4rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 10;
-  overflow: hidden;
-}
-
-/* ----------- LOGO ------------- */
-
-.logo {
-  font-size: 36px;
-  text-transform: uppercase;
-  margin: 0.5rem;
-  margin-left: 2rem;
-  text-align: center;
-  transform-origin: left;
-  transition: all 2s linear;
-}
-
-.logo-main {
-  text-align: center;
-  padding-left: 1rem;
-}
-
-.logo-sub {
-  /* display: none; */
-  color: transparent;
-  position: relative;
-  padding-right: 1rem;
-  transition: all 0.5s linear;
-}
-
-.logo-main:hover,
-.logo-main:hover + .logo-sub,
-.logo-sub:hover {
-  display: inline;
-  cursor: pointer;
-  color: white;
-}
-
-.logo-container {
-  width: 3rem;
-  height: 3rem;
-  margin-left: 3rem;
-  /* border-radius: 50%; */
-  overflow: hidden;
-  transition: all 0.5s;
-}
-
-.logo-container:hover {
-  cursor: pointer;
-  transform: rotateY(180deg);
-}
-
-.logo-container img {
-  width: 100%;
-  height: 100%;
-  border: 2px solid var(--accent-color);
-  border-radius: 50%;
-}
-
-/* -------------- NAVBAR -------------- */
-.nav-item {
-  list-style: none;
-  display: inline;
-}
-
-.nav-item a {
-  text-decoration: none;
-  color: #e3e3e3;
-  transition: all 0.25s linear;
-  padding: 1rem 3rem;
-}
-
-.nav-item a:hover {
-  color: var(--accent-color);
-}
-
-.nav-item .active {
-  color: var(--accent-color);
-}
 
 .stars {
   background-color: red;
@@ -144,4 +54,13 @@ body {
   background-color: orange;
   width: 1px;
   height: 1px;
+}
+
+@media only screen and (max-width: 700px) {
+  .gallery {
+    grid-template-columns: repeat(250px);
+    grid-template-rows: repeat(250px);
+  }
+
+
 }

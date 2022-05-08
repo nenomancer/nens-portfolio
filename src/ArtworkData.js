@@ -28,7 +28,7 @@ export const ArtworkData = [
     type: "videos",
     src: "https://i.imgur.com/T1Eploe.mp4",
     desc: "Inspired by the intro of Marvel's \"What If...\" series, I was trying to achieve a procedural shading based on the camera's position.",
-    gridSize: "tall",
+    gridSize: "",
   },
 
   {
@@ -98,7 +98,13 @@ export const ArtworkData = [
     desc: "My first try to sculpt in Blender. I think it turned out great.",
     gridSize: "",
   },
-
+  {
+    name: "Ladybugs",
+    type: "videos",
+    src: "https://i.imgur.com/EbHBNyM.mp4",
+    desc: "Ladybugs on flowers, morphing into spiders on skulls.",
+    gridSize: "",
+  },
   {
     name: "The Hidden Planet",
     type: "photos",
@@ -110,7 +116,7 @@ export const ArtworkData = [
     name: "Microcubes",
     type: "photos",
     src: "https://i.imgur.com/bAR6oFX.jpg",
-    desc: "Inspired by the intro of Marvel's \"What If...\" series, I was trying to achieve a procedural shading based on the camera's position.",
+    desc: "Procedurally created microstructures in Blender.",
     gridSize: "",
   },
   {
@@ -134,18 +140,12 @@ export const ArtworkData = [
     desc: "One of my first tries at A.I. animation and sound design.",
     gridSize: "",
   },
-  {
-    name: "Ladybugz",
-    type: "videos",
-    src: "https://i.imgur.com/EbHBNyM.mp4",
-    desc: "One of my first tries at A.I. animation and sound design.",
-    gridSize: "tall",
-  },
+
   {
     name: "The Portal",
     type: "photos",
     src: "https://i.imgur.com/aQgq262.jpg",
-    desc: "Winning design for the CD and vinyl cover of LD Pistolero ft. DJ Goce - Chija si",
+    desc: "Procedural terrain with some experimental lighting.",
     gridSize: "",
   },
 ];

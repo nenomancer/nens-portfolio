@@ -8,12 +8,16 @@
 }
 
 .icon {
-  display: block;
+  display: inline-block;
+  font-size: 1rem;
   /* background-color: red; */
   width: 1.5rem;
   height: 1.5rem;
   margin-right: .25rem;
   cursor: pointer;
+}
+svg {
+  color: white;
 }
 
 .tooltip {

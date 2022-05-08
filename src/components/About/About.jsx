@@ -1,32 +1,41 @@
 import React from "react";
 import "./About.css";
 import AboutIcon from "./AboutIcon";
-import AboutSkills from "./AboutSkills";
+
+import { IconContext } from "react-icons";
+
+import { MdEmail } from "react-icons/md";
+import { AiFillPhone } from "react-icons/ai";
+import { IoLocationSharp } from "react-icons/io5";
+
+import { FaFacebookF } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 
 const About = (props) => {
   const socialIcons = [
     {
       name: "Facebook",
       link: "https://www.facebook.com/nebojsa.kovacevik/",
-      icon: "icons/social/facebook.png",
+      icon: "icons/social/facebook-brands.svg",
       info: "My Facebook profile",
     },
     {
       name: "Instagram",
       link: "https://www.instagram.com/loopmaster.n/",
-      icon: "icons/social/instagram.png",
+      icon: "icons/social/instagram.svg",
       info: "My Instagram profile",
     },
     {
       name: "Github",
       link: "https://github.com/nenomancer",
-      icon: "icons/social/github.png",
+      icon: "icons/social/github.svg",
       info: "My Github profile",
     },
     {
       name: "LinkedIn",
       link: "https://www.linkedin.com/in/nebojsa-kovacevik-5a923515a/",
-      icon: "icons/social/linkedin.png",
+      icon: "icons/social/linkedin.svg",
       info: "My LinkedIn profile",
     },
   ];
@@ -109,50 +118,52 @@ const About = (props) => {
 
   const toggleContainer = (index) => {
     const containers = document.getElementsByClassName("info-container");
+
     for (let item of containers) {
       item === containers[index]
         ? item.classList.toggle("open")
         : item.classList.remove("open");
+      containers[index].classList.toggle("open");
     }
-    // containers[index].classList.toggle("open");
   };
 
   return (
     <div className="about">
       <div className="container">
-        <div>
-          <img id="profile-pic" src="https://i.imgur.com/fLFzM2Y.png" alt="" />
-        </div>
-
         <div className="right">
           <div id="main-container" className="info-container">
             {/* NAME AND CONTACT INFO  */}
-            <h1 id="name">NEBOJSA KOVACEVIK</h1>
-            <p id="basic-info">
-              <a href="mailto:nebojsa.kovacevik@gmail.com">
-                nebojsa.kovacevik@gmail.com
-              </a>{" "}
-              | +389 71 909 352 | Skopje, Macedonia
-              <div id="contact-info">
-                {socialIcons.map((icon) => (
-                  <AboutIcon icon={icon} />
+            <img
+              id="profile-pic"
+              src="https://i.imgur.com/fLFzM2Y.png"
+              alt=""
+            />
+
+            <span>
+              <h1 id="name">NEBOJSA KOVACEVIK</h1>
+              <div id="basic-info">
+                <p>
+                  nebojsa.kovacevik@gmail.com | +389 71 909 352 | Skopje,
+                  Macedonia
+                </p>
+                {socialIcons.map((icon, index) => (
+                  <AboutIcon icon={icon} key={index} />
                 ))}
               </div>
-            </p>
-
-            {/* ABOUT THIS WEBSITE  */}
-            <p>
-              This website has been my project for the last few months. I made
-              it in order to sharpen my web development skills (mainly React and
-              CSS), but also for me to have all my work in one place, in the
-              highest quality possible.
-            </p>
-            <p>
-              Professionally I am a senior VFX artist, but this is mainly a
-              showcase of my hobbies and interests: 3D renders, animations,
-              generative art, sound design, etc.
-            </p>
-            <p>Feel free to contact me, and I hope you enjoy!</p>
+              {/* ABOUT THIS WEBSITE  */}
+              <p>
+                This website has been my project for the last few months. I made
+                it in order to sharpen my web development skills (mainly React
+                and CSS), but also for me to have all my work in one place, in
+                the highest quality possible.
+              </p>
+              <p>
+                Professionally I am a senior VFX artist, but this is mainly a
+                showcase of my hobbies and interests: 3D renders, animations,
+                generative art, sound design, etc.
+              </p>
+              <p>Feel free to contact me, and I hope you enjoy!</p>
+            </span>
           </div>
           <div
             className="info-container open"
@@ -224,18 +235,22 @@ const About = (props) => {
             </p>
           </div>
 
-          <div className="info-container" onClick={() => toggleContainer(3)}>
+          <div
+            className="info-container"
+            id="skills-container"
+            onClick={() => toggleContainer(3)}
+          >
             <h1>Skills</h1>
             <div className="skills-container">
               <h2>Visual</h2>
-              {visualIcons.map((icon) => (
-                <AboutIcon icon={icon} />
+              {visualIcons.map((icon, index) => (
+                <AboutIcon icon={icon} key={index} />
               ))}
             </div>
             <div className="skills-container">
               <h2>Audio</h2>
-              {audioIcons.map((icon) => (
-                <AboutIcon icon={icon} />
+              {audioIcons.map((icon, index) => (
+                <AboutIcon icon={icon} key={index} />
               ))}
             </div>
             <div className="skills-container"></div>

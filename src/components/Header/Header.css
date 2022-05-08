@@ -1,0 +1,123 @@
+/* HEADER STYLES */
+
+.header {
+  background-color: black;
+  position: sticky;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+  overflow: hidden;
+}
+
+/* ----------- LOGO ------------- */
+
+.logo {
+  font-size: 36px;
+  text-transform: uppercase;
+  margin: 0.5rem;
+  margin-left: 2rem;
+  text-align: center;
+  transform-origin: left;
+  transition: all 2s linear;
+}
+
+.logo-main {
+  text-align: center;
+  padding-left: 1rem;
+}
+
+.logo-sub {
+  /* display: none; */
+  color: transparent;
+  position: relative;
+  padding-right: 1rem;
+  transition: all 0.5s linear;
+}
+
+.logo-main:hover,
+.logo-main:hover + .logo-sub,
+.logo-sub:hover {
+  display: inline;
+  cursor: pointer;
+  color: white;
+}
+
+.logo-container {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  margin-left: 3rem;
+  /* border-radius: 50%; */
+  overflow: hidden;
+  transition: all 0.5s;
+}
+
+.logo-container::after {
+  display: hidden;
+  content: "About";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  height: 3rem;
+  background-color: red;
+}
+
+.logo-container:hover {
+  cursor: pointer;
+  transform: rotateX(180deg);
+}
+
+.logo-container:hover + .logo-container::after {
+  opacity: 100;
+}
+
+.logo-container img {
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--accent-color);
+  border-radius: 50%;
+}
+
+/* -------------- NAVBAR -------------- */
+.nav-items {
+  list-style: none;
+  display: flex;
+  height: 100%;
+  width: 50%;
+  margin-right: 2rem;
+  max-width: 400px;
+  align-items: center;
+  /* background-color: red; */
+  justify-content: space-between;
+}
+
+.nav-item span {
+  text-decoration: none;
+  color: #e3e3e3;
+  transition: all 0.25s linear;
+  /* background-color: blue; */
+  padding: 1rem .75rem;
+}
+
+.nav-item span:hover {
+  color: var(--accent-color);
+  cursor: pointer;
+}
+
+.nav-item .active {
+  color: var(--accent-color);
+}
+@media only screen and (max-width: 800px) {
+  .nav-items {
+    width: 70%;
+  }
+  .logo-container {
+      margin-left: 2rem;
+  }
+}

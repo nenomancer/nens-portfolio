@@ -62,7 +62,7 @@ const Header = (props) => {
         {navItems.map((navItem, index) => {
           return (
             <li key={navItem.id} className="nav-item">
-              <a
+              <span
                 className={index === selectedIndex ? "active" : ""}
                 onClick={() => {
                   setSelectedIndex(index);
@@ -70,7 +70,7 @@ const Header = (props) => {
                 }}
               >
                 {navItem.title}
-              </a>
+              </span>
             </li>
           );
         })}
