@@ -2,45 +2,39 @@ import React from "react";
 import "./About.css";
 import AboutIcon from "./AboutIcon";
 
-import { IconContext } from "react-icons";
-
 import { IoClose } from "react-icons/io5";
-
-import { MdEmail } from "react-icons/md";
-import { AiFillPhone } from "react-icons/ai";
-import { IoLocationSharp } from "react-icons/io5";
 
 import { BsFacebook } from "react-icons/bs";
 import { BsLinkedin } from "react-icons/bs";
 import { BsInstagram } from "react-icons/bs";
 
 const About = (props) => {
-  const socialIcons = [
-    {
-      name: "Facebook",
-      link: "https://www.facebook.com/nebojsa.kovacevik/",
-      icon: "icons/social/facebook-brands.svg",
-      info: "My Facebook profile",
-    },
-    {
-      name: "Instagram",
-      link: "https://www.instagram.com/loopmaster.n/",
-      icon: "icons/social/instagram.svg",
-      info: "My Instagram profile",
-    },
-    {
-      name: "Github",
-      link: "https://github.com/nenomancer",
-      icon: "icons/social/github.svg",
-      info: "My Github profile",
-    },
-    {
-      name: "LinkedIn",
-      link: "https://www.linkedin.com/in/nebojsa-kovacevik-5a923515a/",
-      icon: "icons/social/linkedin.svg",
-      info: "My LinkedIn profile",
-    },
-  ];
+  // const socialIcons = [
+  //   {
+  //     name: "Facebook",
+  //     link: "https://www.facebook.com/nebojsa.kovacevik/",
+  //     icon: "icons/social/facebook-brands.svg",
+  //     info: "My Facebook profile",
+  //   },
+  //   {
+  //     name: "Instagram",
+  //     link: "https://www.instagram.com/loopmaster.n/",
+  //     icon: "icons/social/instagram.svg",
+  //     info: "My Instagram profile",
+  //   },
+  //   {
+  //     name: "Github",
+  //     link: "https://github.com/nenomancer",
+  //     icon: "icons/social/github.svg",
+  //     info: "My Github profile",
+  //   },
+  //   {
+  //     name: "LinkedIn",
+  //     link: "https://www.linkedin.com/in/nebojsa-kovacevik-5a923515a/",
+  //     icon: "icons/social/linkedin.svg",
+  //     info: "My LinkedIn profile",
+  //   },
+  // ];
 
   const visualIcons = [
     {
