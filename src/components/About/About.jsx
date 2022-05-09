@@ -4,13 +4,15 @@ import AboutIcon from "./AboutIcon";
 
 import { IconContext } from "react-icons";
 
+import { IoClose } from "react-icons/io5";
+
 import { MdEmail } from "react-icons/md";
 import { AiFillPhone } from "react-icons/ai";
 import { IoLocationSharp } from "react-icons/io5";
 
-import { FaFacebookF } from "react-icons/fa";
-import { FaLinkedinIn } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
+import { BsFacebook } from "react-icons/bs";
+import { BsLinkedin } from "react-icons/bs";
+import { BsInstagram } from "react-icons/bs";
 
 const About = (props) => {
   const socialIcons = [
@@ -121,140 +123,149 @@ const About = (props) => {
 
     for (let item of containers) {
       item === containers[index]
-        ? item.classList.toggle("open")
+        ? item.classList.add("open")
         : item.classList.remove("open");
-      containers[index].classList.toggle("open");
+      // containers[index].classList.toggle("open");
     }
   };
 
   return (
     <div className="about">
       <div className="container">
-        <div className="right">
-          <div id="main-container" className="info-container">
-            {/* NAME AND CONTACT INFO  */}
-            <img
-              id="profile-pic"
-              src="https://i.imgur.com/fLFzM2Y.png"
-              alt=""
-            />
+        <button id="close-button" onClick={() => props.setShowAbout(false)}>
+          <IoClose />
+        </button>
+        <div id="top-container">
+          <img id="profile-pic" src="https://i.imgur.com/fLFzM2Y.png" alt="" />
 
-            <span>
-              <h1 id="name">NEBOJSA KOVACEVIK</h1>
-              <div id="basic-info">
-                <p>
-                  nebojsa.kovacevik@gmail.com | +389 71 909 352 | Skopje,
-                  Macedonia
-                </p>
-                {socialIcons.map((icon, index) => (
+          <div id="basic-info">
+            <h1 id="name">NEBOJSA KOVACEVIK</h1>
+            <p>
+              nebojsa.kovacevik@gmail.com | +389 71 909 352 | Skopje, Macedonia
+              |{" "}
+              <span id="social-icons">
+                {/* {socialIcons.map((icon, index) => (
                   <AboutIcon icon={icon} key={index} />
-                ))}
-              </div>
-              {/* ABOUT THIS WEBSITE  */}
-              <p>
-                This website has been my project for the last few months. I made
-                it in order to sharpen my web development skills (mainly React
-                and CSS), but also for me to have all my work in one place, in
-                the highest quality possible.
-              </p>
-              <p>
-                Professionally I am a senior VFX artist, but this is mainly a
-                showcase of my hobbies and interests: 3D renders, animations,
-                generative art, sound design, etc.
-              </p>
-              <p>Feel free to contact me, and I hope you enjoy!</p>
-            </span>
-          </div>
-          <div
-            className="info-container open"
-            onClick={() => toggleContainer(1)}
-          >
-            <h1>Work Experience</h1>
-            <h2>
-              VFX Artist,{" "}
-              <a
-                href="https://fx3x.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                FX3X
-              </a>{" "}
-              <span>02.2016-12.2021</span>
-            </h2>
-            <p>
-              As a senior VFX artist and CG generalist, I have been tasked with
-              problems of high complexity, which require not only artistic
-              skills, but logical problem-solving, automation and optimization.
-            </p>
-            <p>
-              My portfolio now consists of over 40 feature length films and
-              popular TV shows, some of which are: Thor: Ragnarok, Black
-              Panther, Guardians of the Galaxy, Spider man: Homecoming, Star
-              Wars: The Last Jedi & The Rise of Skywalker, Alien: Covenant,
-              X-Men: Apocalypse, Mission Impossible: Fallout, Ghost in the
-              Shell, The Mandalorian, Star Trek: Discovery, etc.
+                ))} */}
+                <a href="facebook.com">
+                  <BsFacebook className="social-icon" />
+                  <span className="tooltip">Agaas</span>
+                  <BsInstagram className="social-icon" />
+                  <span className="tooltip">Instaa</span>
+                  <BsLinkedin className="social-icon" />
+                  <span className="tooltip">Linkiding</span>
+                </a>
+              </span>
             </p>
           </div>
+        </div>
+        <div className="info-container open" onClick={() => toggleContainer(0)}>
+          {/* NAME AND CONTACT INFO  */}
+          <h1>About</h1>
+          <hr />
+          <h2>Me</h2>
+          <p>Sit still, you don't know me.</p>
+          {/* ABOUT THIS WEBSITE  */}
+          <h2>This Website</h2>
+          <p>
+            This has been my project for the last few months. I made it in order
+            to practice my web development skills (mainly React and CSS), but
+            also for me to have all my work in one place, in the highest quality
+            possible.
+          </p>
+          <p>
+            Professionally I am a senior VFX artist, but this portfolio is
+            mainly a showcase of my other hobbies and interests: 3D renders,
+            animations, generative art, sound design, etc.
+          </p>
+          <p>Feel free to contact me, and I hope you enjoy!</p>
+        </div>
+        <div className="info-container" onClick={() => toggleContainer(1)}>
+          <h1>Work Experience</h1>
+          <hr />
+          <h2>
+            VFX Artist,{" "}
+            <a
+              href="https://fx3x.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              FX3X
+            </a>{" "}
+            <span>02.2016-12.2021</span>
+          </h2>
+          <p>
+            As a senior VFX artist and CG generalist, I have been tasked with
+            problems of high complexity, which require not only artistic skills,
+            but logical problem-solving, automation and optimization.
+          </p>
+          <p>
+            My portfolio now consists of over 40 feature length films and
+            popular TV shows, some of which are: Thor: Ragnarok, Black Panther,
+            Guardians of the Galaxy, Spider man: Homecoming, Star Wars: The Last
+            Jedi & The Rise of Skywalker, Alien: Covenant, X-Men: Apocalypse,
+            Mission Impossible: Fallout, Ghost in the Shell, The Mandalorian,
+            Star Trek: Discovery, etc.
+          </p>
+        </div>
 
-          <div className="info-container" onClick={() => toggleContainer(2)}>
-            <h1>Latest Projects</h1>
-            <h2>
-              <a
-                href="https://www.youtube.com/watch?v=3UDbgvsJYYU&list=PLR4U_V3XMRwsrO7vh8wcn_OJRIUfNjd7Z"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Neizbruseni Kamenja
-              </a>
-              <span>Sound Production / 3D Animation</span>
-            </h2>
-            <p>
-              A half length album, project on which all seven songs were
-              produced by me. I also created unique procedural animations for
-              all of the songs, making elements of the animations react to
-              certain frequencies.
-            </p>
-            <h2>
-              <a
-                href="https://www.youtube.com/watch?v=VF8CRfzoeGY"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Vrvot na Trkaloto
-              </a>
-              <span>Mixed 3D & 2D Animation</span>
-            </h2>
-            <p>
-              On this project I was given a concept art for the overall look, so
-              I can create an animation which will loop throughout the song.
-              Firstly, I hand animated the two characters using Blender's Grease
-              Pencil, making sure to give them a different walking style. I then
-              created and animated the scene using Blender's 3D capabilities,
-              making some of the elements react to certain frequencies of the
-              song.
-            </p>
-          </div>
+        <div className="info-container" onClick={() => toggleContainer(2)}>
+          <h1>Latest Projects</h1>
+          <hr />
+          <h2>
+            <a
+              href="https://www.youtube.com/watch?v=3UDbgvsJYYU&list=PLR4U_V3XMRwsrO7vh8wcn_OJRIUfNjd7Z"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Neizbruseni Kamenja
+            </a>
+            <span>Sound Production / 3D Animation</span>
+          </h2>
+          <p>
+            A half length album consisting of seven tracks. I worked on the
+            production, and also created unique procedural animations for all of
+            the songs.
+          </p>
+          <hr />
 
-          <div
-            className="info-container"
-            id="skills-container"
-            onClick={() => toggleContainer(3)}
-          >
-            <h1>Skills</h1>
-            <div className="skills-container">
-              <h2>Visual</h2>
-              {visualIcons.map((icon, index) => (
-                <AboutIcon icon={icon} key={index} />
-              ))}
-            </div>
-            <div className="skills-container">
-              <h2>Audio</h2>
-              {audioIcons.map((icon, index) => (
-                <AboutIcon icon={icon} key={index} />
-              ))}
-            </div>
-            <div className="skills-container"></div>
+          <h2>
+            <a
+              href="https://www.youtube.com/watch?v=VF8CRfzoeGY"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Vrvot na Trkaloto
+            </a>
+            <span>Mixed 3D & 2D Animation</span>
+          </h2>
+          <p>
+            A looping animation for a single. The environment is modeled and
+            animated in 3D, while the two characters are 2D hand-animated. All
+            of it was made in Blender.
+          </p>
+        </div>
+
+        <div
+          className="info-container"
+          id="skills-container"
+          onClick={() => toggleContainer(3)}
+        >
+          <h1>Skills</h1>
+          <hr />
+          <h2>Visual</h2>
+          <div className="skills-container">
+            {visualIcons.map((icon, index) => (
+              <AboutIcon icon={icon} key={index} />
+            ))}
           </div>
+          <h2>Audio</h2>
+          <div className="skills-container">
+            {audioIcons.map((icon, index) => (
+              <AboutIcon icon={icon} key={index} />
+            ))}
+          </div>
+          <div className="skills-container"></div>
         </div>
       </div>
       <div className="backdrop" onClick={() => props.setShowAbout(false)}></div>
