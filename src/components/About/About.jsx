@@ -157,8 +157,6 @@ const About = (props) => {
           {/* NAME AND CONTACT INFO  */}
           <h1>About</h1>
           <hr />
-          <h2>Me</h2>
-          <p>Sit still, you don't know me.</p>
           {/* ABOUT THIS WEBSITE  */}
           <h2>This Website</h2>
           <p>

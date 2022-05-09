@@ -52,7 +52,7 @@ const Header = (props) => {
     <div className="header">
       <div className="logo-container" onClick={() => props.setShowAbout(true)}>
         {/* <img className="" src="gallery/profile-pic.jpg" alt="profile-pic" /> */}
-        <img src="gallery/nens-logo.png" alt="nens-logo" />
+        <img src="icons/nens-logo.png" alt="nens-logo" />
       </div>
       {/* <div className="logo">
         <span className="logo-main">N</span>
