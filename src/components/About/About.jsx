@@ -4,6 +4,8 @@ import AboutIcon from "./AboutIcon";
 
 import { IoClose } from "react-icons/io5";
 
+import { IconContext } from "react-icons";
+
 import { BsFacebook } from "react-icons/bs";
 import { BsLinkedin } from "react-icons/bs";
 import { BsInstagram } from "react-icons/bs";
@@ -152,24 +154,23 @@ const About = (props) => {
           <div id="basicc">
             <h1 id="name">NEBOJSA KOVACEVIK</h1>
             <p id="basic-info">
-              nebojsa.kovacevik@gmail.com | +389 71 909 352 | Skopje, Macedonia
-              |{" "}
+              <span>nebojsa.kovacevik@gmail.com </span>|{" "}
+              <span>+389 71 909 352</span> | <span>Skopje, Macedonia</span> |{" "}
               <span>
-                {/* {socialIcons.map((icon, index) => (
-                  <AboutIcon icon={icon} key={index} />
-                ))} */}
-                <a href="facebook.com" id="social-icons">
-                  <BsFacebook className="social-icon" />
-                  <span className="tooltip">Agaas</span>
-                </a>
-                <a href="facebook.com" id="social-icons">
-                  <BsInstagram className="social-icon" />
-                  <span className="tooltip">Instaa</span>
-                </a>
-                <a href="linkedin.com" id="social-icons">
-                  <BsLinkedin className="social-icon" />
-                  <span className="tooltip">Linkiding</span>
-                </a>
+                <IconContext.Provider value={{ className: "social-icons" }}>
+                  <a href="facebook.com" id="social-icons">
+                    <BsFacebook />
+                    <span className="tooltip">Agaas</span>
+                  </a>
+                  <a href="facebook.com" id="social-icons">
+                    <BsInstagram />
+                    <span className="tooltip">Instaa</span>
+                  </a>
+                  <a href="linkedin.com" id="social-icons">
+                    <BsLinkedin />
+                    <span className="tooltip">Linkiding</span>
+                  </a>
+                </IconContext.Provider>
               </span>
             </p>
           </div>

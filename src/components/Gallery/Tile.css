@@ -119,3 +119,18 @@ img {
   cursor: pointer;
   user-select: none;
 } */
+
+
+@media (max-width: 700px) {
+  /* .gallery {
+    grid-template-columns: repeat(250px);
+    grid-template-rows: repeat(250px);
+  } */
+
+  .tall {
+    grid-row: span 1;
+  }
+  .wide {
+    grid-column: span 1;
+  }
+}

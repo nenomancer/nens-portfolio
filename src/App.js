@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { ArtworkData } from "./ArtworkData";
 import About from "./components/About/About";
 import Container from "./components/Container/Container";
@@ -33,7 +33,7 @@ function App() {
   // };
 
   return (
-    <Container>
+    <Fragment>
       {showAbout && <About setShowAbout={setShowAbout} />}
       <Header setShowAbout={setShowAbout} onSetFilter={setFilterType} />
       <Gallery
@@ -44,7 +44,7 @@ function App() {
         selectedImg={selectedImg}
         setSelectedImg={setSelectedImg}
       />
-    </Container>
+    </Fragment>
   );
 }
 

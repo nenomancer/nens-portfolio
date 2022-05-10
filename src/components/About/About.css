@@ -85,12 +85,6 @@ a:hover {
   margin-bottom: .5rem;
 }
 
-#basicc {
-  /* background-color: yellow; */
-  padding: 0;
-  margin: 0;
-}
-
 #profile-pic {
   object-position: 65%;
   height: 100px;
@@ -113,23 +107,25 @@ a:hover {
 
 #basic-info {
   font-size: 0.75rem;
+  /* color: var(--color-text-primary); */
+  color: red;
   /* font-size: 0.75vw; */
   /* padding: 0; */
   /* text-align: center; */
   /* background-color: blue; */
 }
 
-#basic-info a:hover {
+#basic-info:hover {
   color: var(--color-accent);
 }
 
-#social-icons {
+.social-icons {
   display: inline-block;
   position: relative;
   transform: translateY(0.1rem);
-  text-align: center;
-  font-weight: 100;
+  color: orange;
   /* font-size: 12px; */
+  margin-right: .25rem;
   /* background-color: rebeccapurple; */
 }
 
@@ -153,7 +149,10 @@ a:hover {
   margin-bottom: 0.5rem;
   height: 4rem;
   overflow: hidden;
-  box-shadow: inset 0 0 10px 5px var(--color-tooltip);
+  box-shadow: inset 0 0 20px 0 var(--color-tooltip);
+  /* border: 2px solid var(--color-tooltip); */
+  border: 2px solid hsl(0, 0%, 14%);
+
   /* transition: all 0.5s linear; */
 }
 

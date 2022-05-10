@@ -14,8 +14,8 @@
   --info-box-color: hsl(0, 0%, 11%);
   --color-tooltip: hsl(0, 0%, 13%);
 
-  --color-text-primary: hsl(187, 27%, 81%);
-  
+  --color-text-primary: hsl(200, 4%, 84%);
+
   --highlight-color: hsl(0, 0%, 24%);
 
   --sidebar-width: 200px;
@@ -47,7 +47,6 @@ body {
   border-radius: 0.5rem;
 }
 
-
 .stars {
   background-color: red;
 }
@@ -58,11 +57,9 @@ body {
   height: 1px;
 }
 
-@media only screen and (max-width: 700px) {
+@media (max-width: 700px) {
   .gallery {
-    grid-template-columns: repeat(250px);
-    grid-template-rows: repeat(250px);
+    /* grid-template-rows: repeat(250px); */
+    /* grid-template-rows:repeat(250px); */
   }
-
-
 }
