@@ -1,7 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
 import { ArtworkData } from "./ArtworkData";
 import About from "./components/About/About";
-import Container from "./components/Container/Container";
 import Gallery from "./components/Gallery/Gallery";
 import Header from "./components/Header/Header";
 
