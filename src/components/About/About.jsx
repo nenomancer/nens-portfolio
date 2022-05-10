@@ -112,22 +112,31 @@ const About = (props) => {
     },
   ];
 
-  const codeIcons = [ 
+  const codeIcons = [
     {
       type: "code",
       name: "HTML5",
       icon: "icons/software/html.png",
-      info: "HTML5: Excellent grasp of all it's functions."
-    }
-  ]
+      info: "HTML5: Excellent grasp of all it's functions.",
+    },
+  ];
   const toggleContainer = (index) => {
     const containers = document.getElementsByClassName("info-container");
+
+    // for (let item of containers) {
+    //   if (item === containers[index]) {
+    //     item.style.height = "max-content";
+    //     item.style.overflow = "visible";
+    //   } else {
+    //     item.style.height = "4rem";
+    //     item.style.overflow = "hidden";
+    //   }
+    // }
 
     for (let item of containers) {
       item === containers[index]
         ? item.classList.add("open")
         : item.classList.remove("open");
-      // containers[index].classList.toggle("open");
     }
   };
 
@@ -140,24 +149,24 @@ const About = (props) => {
         <div id="top-container">
           <img id="profile-pic" src="https://i.imgur.com/xpeKyE5.jpg" alt="" />
 
-          <div id="basic-info">
+          <div id="basicc">
             <h1 id="name">NEBOJSA KOVACEVIK</h1>
-            <p>
+            <p id="basic-info">
               nebojsa.kovacevik@gmail.com | +389 71 909 352 | Skopje, Macedonia
               |{" "}
               <span>
                 {/* {socialIcons.map((icon, index) => (
                   <AboutIcon icon={icon} key={index} />
                 ))} */}
-                <a href="facebook.com"  id="social-icons">
+                <a href="facebook.com" id="social-icons">
                   <BsFacebook className="social-icon" />
                   <span className="tooltip">Agaas</span>
                 </a>
-                <a href="facebook.com"  id="social-icons">
+                <a href="facebook.com" id="social-icons">
                   <BsInstagram className="social-icon" />
                   <span className="tooltip">Instaa</span>
                 </a>
-                <a href="linkedin.com"  id="social-icons">
+                <a href="linkedin.com" id="social-icons">
                   <BsLinkedin className="social-icon" />
                   <span className="tooltip">Linkiding</span>
                 </a>
@@ -165,6 +174,8 @@ const About = (props) => {
             </p>
           </div>
         </div>
+
+        {/* ABOUT  */}
         <div className="info-container open" onClick={() => toggleContainer(0)}>
           {/* NAME AND CONTACT INFO  */}
           <h1>About</h1>
@@ -183,6 +194,8 @@ const About = (props) => {
           </p>
           <p>Feel free to contact me, and I hope you enjoy!</p>
         </div>
+
+        {/* WORK EXPERIENCE  */}
         <div className="info-container" onClick={() => toggleContainer(1)}>
           <h1>Work Experience</h1>
           <h2>
@@ -211,6 +224,7 @@ const About = (props) => {
           </p>
         </div>
 
+        {/* LATEST PROJECTS  */}
         <div className="info-container" onClick={() => toggleContainer(2)}>
           <h1>Latest Projects</h1>
           <h2>
@@ -245,7 +259,7 @@ const About = (props) => {
             of it was made in Blender.
           </p>
         </div>
-
+        {/* SKILLS */}
         <div
           className="info-container"
           id="skills-container"
