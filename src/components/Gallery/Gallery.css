@@ -7,13 +7,15 @@
   padding: 0;
 
   /* CSS VARIABLES */
-  --accent-color: hsl(197, 91%, 58%);
+  --color-accent: hsl(197, 88%, 43%);
 
   --bg-color: hsl(0, 0%, 3%);
   --modal-color: hsl(0, 0%, 7%);
   --info-box-color: hsl(0, 0%, 11%);
-  --tooltip-color: hsl(0, 0%, 13%);
+  --color-tooltip: hsl(0, 0%, 13%);
 
+  --color-text-primary: hsl(187, 27%, 81%);
+  
   --highlight-color: hsl(0, 0%, 24%);
 
   --sidebar-width: 200px;

@@ -55,28 +55,28 @@ const About = (props) => {
       type: "visual",
       name: "Premiere Pro",
       icon: "icons/software/premiere.png",
-      info: "Premier Pro: Very good knowledge of most of it's capabilities",
+      info: "Premier Pro: Very good knowledge of most of it's functions",
       level: 8,
     },
     {
       type: "visual",
       name: "DaVinci",
       icon: "icons/software/davinci.png",
-      info: "Davinci Resolve: Expert level knowledge of all it's capabilities",
+      info: "Davinci Resolve: Excellent grasp of all it's functions",
       level: 10,
     },
     {
       type: "visual",
       name: "Blender",
       icon: "icons/software/blender.png",
-      info: "Blender: Expert level knowledge of all it's capabilities",
+      info: "Blender: Excellent grasp of all it's functions",
       level: 10,
     },
     {
       type: "visual",
       name: "Nuke",
       icon: "icons/software/nuke.png",
-      info: "NUKE: Expert level knowledge of all it's capabilities",
+      info: "NUKE: Excellent grasp of all it's functions",
       level: 10,
     },
   ];
@@ -86,32 +86,40 @@ const About = (props) => {
       type: "audio",
       name: "ableton",
       icon: "icons/software/ableton.png",
-      info: "Ableton: Expert level knowledge of all it's capabilities",
+      info: "Ableton: Excellent grasp of all it's functions",
       level: 10,
     },
     {
       type: "audio",
       name: "audacity",
       icon: "icons/software/audacity.png",
-      info: "NUKE: Expert level knowledge of all it's capabilities",
+      info: "Audacity: Excellent grasp of all it's functions",
       level: 10,
     },
     {
       type: "audio",
       name: "maschine",
       icon: "icons/software/maschine.png",
-      info: "NUKE: Expert level knowledge of all it's capabilities",
+      info: "Maschine: Excellent grasp of all it's functions",
       level: 10,
     },
     {
       type: "audio",
       name: "cubase",
       icon: "icons/software/cubase.png",
-      info: "NUKE: Expert level knowledge of all it's capabilities",
+      info: "Cubase: Excellent grasp of all it's functions",
       level: 10,
     },
   ];
 
+  const codeIcons = [ 
+    {
+      type: "code",
+      name: "HTML5",
+      icon: "icons/software/html.png",
+      info: "HTML5: Excellent grasp of all it's functions."
+    }
+  ]
   const toggleContainer = (index) => {
     const containers = document.getElementsByClassName("info-container");
 
@@ -130,22 +138,26 @@ const About = (props) => {
           <IoClose />
         </button>
         <div id="top-container">
-          <img id="profile-pic" src="https://i.imgur.com/fLFzM2Y.png" alt="" />
+          <img id="profile-pic" src="https://i.imgur.com/xpeKyE5.jpg" alt="" />
 
           <div id="basic-info">
             <h1 id="name">NEBOJSA KOVACEVIK</h1>
             <p>
               nebojsa.kovacevik@gmail.com | +389 71 909 352 | Skopje, Macedonia
               |{" "}
-              <span id="social-icons">
+              <span>
                 {/* {socialIcons.map((icon, index) => (
                   <AboutIcon icon={icon} key={index} />
                 ))} */}
-                <a href="facebook.com">
+                <a href="facebook.com"  id="social-icons">
                   <BsFacebook className="social-icon" />
                   <span className="tooltip">Agaas</span>
+                </a>
+                <a href="facebook.com"  id="social-icons">
                   <BsInstagram className="social-icon" />
                   <span className="tooltip">Instaa</span>
+                </a>
+                <a href="linkedin.com"  id="social-icons">
                   <BsLinkedin className="social-icon" />
                   <span className="tooltip">Linkiding</span>
                 </a>
@@ -156,7 +168,6 @@ const About = (props) => {
         <div className="info-container open" onClick={() => toggleContainer(0)}>
           {/* NAME AND CONTACT INFO  */}
           <h1>About</h1>
-          <hr />
           {/* ABOUT THIS WEBSITE  */}
           <h2>This Website</h2>
           <p>
@@ -174,7 +185,6 @@ const About = (props) => {
         </div>
         <div className="info-container" onClick={() => toggleContainer(1)}>
           <h1>Work Experience</h1>
-          <hr />
           <h2>
             VFX Artist,{" "}
             <a
@@ -203,7 +213,6 @@ const About = (props) => {
 
         <div className="info-container" onClick={() => toggleContainer(2)}>
           <h1>Latest Projects</h1>
-          <hr />
           <h2>
             <a
               href="https://www.youtube.com/watch?v=3UDbgvsJYYU&list=PLR4U_V3XMRwsrO7vh8wcn_OJRIUfNjd7Z"
@@ -219,7 +228,6 @@ const About = (props) => {
             production, and also created unique procedural animations for all of
             the songs.
           </p>
-          <hr />
 
           <h2>
             <a
@@ -244,7 +252,6 @@ const About = (props) => {
           onClick={() => toggleContainer(3)}
         >
           <h1>Skills</h1>
-          <hr />
           <h2>Visual</h2>
           <div className="skills-container">
             {visualIcons.map((icon, index) => (
@@ -257,7 +264,12 @@ const About = (props) => {
               <AboutIcon icon={icon} key={index} />
             ))}
           </div>
-          <div className="skills-container"></div>
+          <h2>Code</h2>
+          <div className="skills-container">
+            {codeIcons.map((icon, index) => (
+              <AboutIcon icon={icon} key={index} />
+            ))}
+          </div>
         </div>
       </div>
       <div className="backdrop" onClick={() => props.setShowAbout(false)}></div>
