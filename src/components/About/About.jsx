@@ -142,6 +142,11 @@ const About = (props) => {
     }
   };
 
+  const clickCopyHandler = (e) => {
+    console.log(e.target.textContent);
+    navigator.clipboard.writeText(e.target.textContent);
+  };
+
   return (
     <div className="about">
       <div className="container">
@@ -149,30 +154,58 @@ const About = (props) => {
           <IoClose />
         </button>
         <div id="top-container">
-          <img id="profile-pic" src="https://i.imgur.com/xpeKyE5.jpg" alt="" />
+          <img id="profile-pic" src="https://imgur.com/fLFzM2Y.png" alt="" />
 
-          <div id="basicc">
+          <div id="name-container">
             <h1 id="name">NEBOJSA KOVACEVIK</h1>
-            <p id="basic-info">
-              <span>nebojsa.kovacevik@gmail.com </span>|{" "}
-              <span>+389 71 909 352</span> | <span>Skopje, Macedonia</span> |{" "}
+            <span id="basic-info-container">
               <span>
-                <IconContext.Provider value={{ className: "social-icons" }}>
-                  <a href="facebook.com" id="social-icons">
-                    <BsFacebook />
-                    <span className="tooltip">Agaas</span>
-                  </a>
-                  <a href="facebook.com" id="social-icons">
-                    <BsInstagram />
-                    <span className="tooltip">Instaa</span>
-                  </a>
-                  <a href="linkedin.com" id="social-icons">
-                    <BsLinkedin />
-                    <span className="tooltip">Linkiding</span>
-                  </a>
-                </IconContext.Provider>
+                <span className="basic-info" onClick={clickCopyHandler}>
+                  nebojsa.kovacevik@gmail.com
+                </span>{" "}
+                | <span className="tooltip">Click to copy email adress</span>
+              </span>{" "}
+              <span>
+                <span className="basic-info" onClick={clickCopyHandler}>
+                  {" "}
+                  +389 71 909 352
+                </span>{" "}
+                | <span className="tooltip">Click to copy phone number</span>
+              </span>{" "}
+              <span className="basic-info">Skopje, Macedonia</span> |{" "}
+              <span>
+                {/* <IconContext.Provider value={{ className: "basic-info" }}> */}
+                <a
+                  href="https://www.facebook.com/nebojsa.kovacevik/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <BsFacebook className="basic-info social-icons" />
+                  <span className="tooltip">
+                    Click to visit Facebook profile
+                  </span>
+                </a>
+                <a
+                  href="https://www.instagram.com/loopmaster.n/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <BsInstagram className="basic-info social-icons" />
+                  <span className="tooltip">
+                    Click to visit Instagram profile
+                  </span>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/nebojsa-kovacevik-5a923515a/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <BsLinkedin className="basic-info social-icons" />
+                  <span className="tooltip">Linkiding</span>
+                </a>
+                {/* </IconContext.Provider> */}
               </span>
-            </p>
+            </span>
           </div>
         </div>
 

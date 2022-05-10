@@ -19,11 +19,11 @@ function AboutIcon(props) {
         </div>
       )}
       <div className="tooltip">
-        {/* {props.icon.level && (
+        {props.icon.level && (
           <progress value={props.icon.level} max="10">
             {props.icon.level}/10
           </progress>
-        )} */}
+        )}
         {props.icon.info}
       </div>
     </div>

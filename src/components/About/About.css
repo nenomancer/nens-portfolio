@@ -48,6 +48,8 @@ p {
 }
 
 a {
+  position: relative; /* IMPORTANT FOR THE TOOLTIP POSITION */
+  display: inline-block;
   color: var(--color-text-primary);
   text-decoration: none;
   font-weight: 500;
@@ -77,64 +79,61 @@ a:hover {
 /* TOP CONTAINER STYLES  */
 
 #top-container {
+  position: relative;
   display: flex;
   /* flex-direction: column; */
   /* background-color: red; */
   align-items: center;
   border-radius: 0.5rem;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 #profile-pic {
   object-position: 65%;
   height: 100px;
   width: 100px;
-  background-color: purple;
+  /* background-color: purple; */
   margin: 0.5rem;
   /* transform: translateY(10px); */
   border-radius: 50%;
 }
-
 #name {
-  /* font-weight: 600; */
-  /* font-size: 3vw; */
-  /* letter-spacing: -2px; */
   /* background-color: purple; */
-  /* line-height: 3vw; */
-  /* text-align: center; */
-  /* padding-top: 1rem; */
+  /* OVA TREBA DA SE VIDI  */
 }
 
-#basic-info {
+#name-container {
+  /* background-color: red; */
+  /* I OVA ISTO */
+}
+
+#basic-info-container {
+  position: relative;
   font-size: 0.75rem;
-  /* color: var(--color-text-primary); */
-  color: red;
-  /* font-size: 0.75vw; */
-  /* padding: 0; */
-  /* text-align: center; */
+  color: var(--color-text-primary);
   /* background-color: blue; */
 }
 
-#basic-info:hover {
-  color: var(--color-accent);
-}
-
-.social-icons {
+#basic-info-container > span {
   display: inline-block;
   position: relative;
-  transform: translateY(0.1rem);
-  color: orange;
-  /* font-size: 12px; */
-  margin-right: .25rem;
+}
+
+.basic-info {
+  display: inline-block;
+  position: relative;
+  color: var(--color-text-primary);
   /* background-color: rebeccapurple; */
 }
 
-.social-icon {
-  display: inline-block;
-
-  margin-right: 0.25rem;
+.basic-info:hover {
+  color: var(--color-accent);
   cursor: pointer;
-  /* background-color: red; */
+}
+
+.social-icons {
+  transform: translateY(0.1rem);
+  margin-right: 0.25rem;
 }
 
 /* STYLES FOR A CLOSED CONTAINER / DEFAULT  */
@@ -197,6 +196,7 @@ a:hover {
 /* SKILLS CONTAINER STYLES  */
 
 .skills-container {
+  /* display: inline; */
   margin: 0 1rem;
   padding-bottom: 1rem;
 }
@@ -221,15 +221,3 @@ a:hover {
   cursor: pointer;
   background-color: hsl(0, 0%, 5%);
 }
-
-/* ANIMATIONS  */
-@keyframes overflowAnim {
-  from {
-    overflow: hidden;
-  }
-  to {
-    overflow: visible;
-  }
-}
-
-/* MEDIA QUERIES  */
