@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
 import "./TileModal.css";
-import Info from "./Info";
+
+import { IoClose } from "react-icons/io5";
+import { MdNavigateNext } from "react-icons/md";
+import { MdNavigateBefore } from "react-icons/md";
 
 const TileModal = (props) => {
   // HANDLE KEY NAVIGATION
@@ -13,8 +16,6 @@ const TileModal = (props) => {
       props.navigationClick("left");
     }
 
-    console.log(e.key);
-    // console.log(selectedTile);
   };
 
   // ADD LISTENER FOR NAVIGATION
@@ -29,22 +30,19 @@ const TileModal = (props) => {
   return (
     <div className="tile-modal">
       <div className="tile-modal-container">
-        <div className="tile-modal__nav">
-          <img
-            className="tile-modal__nav-left"
-            onClick={() => props.navigationClick("left")}
-            src="icons/navigation/arrow-point-to-right.png"
-            alt="Left"
-          />
-          <img
-            src="icons/navigation/arrow-point-to-right.png"
-            onClick={() => props.navigationClick("right")}
-            className="tile-modal__nav-right"
-            alt="right"
-          />
-        </div>
+        <button id="close-button" onClick={() => props.setShowTileModal(false)}>
+          <IoClose />
+        </button>
+        <MdNavigateBefore
+          className="nav-left nav-icons"
+          onClick={() => props.navigationClick("left")}
+        />
+        <MdNavigateNext
+          className="nav-right nav-icons"
+          onClick={() => props.navigationClick("right")}
+        />
         {/* SHOW IMAGE IN TILE MODAL*/}
-        <div className="tile-modal__tile">
+        <div className="tile">
           {/* RENDER IMG IF THE ARTWORK IS A PHOTO */}
           {props.selectedTile.type === "photos" && (
             <img src={props.selectedTile.src} alt={props.name} />
@@ -52,19 +50,25 @@ const TileModal = (props) => {
 
           {/* RENDER VIDEO IF THE ARTWORK IS A VIDEO */}
           {props.selectedTile.type === "videos" && (
-            <video height="100%" width="100%" controls poster={props.selectedTile.thumb}>
+            <video
+              height="100%"
+              width="100%"
+              controls
+              className="video"
+              poster={props.selectedTile.thumb}
+            >
               <source src={props.selectedTile.src} type="video/mp4" />
             </video>
           )}
         </div>
         {/* IMAGE MODAL INFO */}
-        <Info selectedTile={props.selectedTile} />
+        {/* <div id="info">
+          <h2>{props.selectedTile.name}</h2>
+          <span>{props.selectedTile.desc}</span>
+        </div> */}
       </div>
       {/* IMAGE MODAL BACKDROP */}
-      <div
-        className="backdrop"
-        onClick={() => props.setShowTileModal(false)}
-      />
+      <div className="backdrop" onClick={() => props.setShowTileModal(false)} />
     </div>
   );
 };

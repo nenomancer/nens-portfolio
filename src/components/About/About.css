@@ -11,7 +11,7 @@
   text-align: left;
 }
 .backdrop {
-  background-color: var(--bg-color);
+  background-color: var(--color-bg);
   width: 100vw;
   position: absolute;
   top: 0;
@@ -23,31 +23,31 @@
 
 /* DEFAULT TEXT STYLES  */
 
-h1,
-h2,
-h3 {
+.about h1,
+.about h2,
+.about h3 {
   /* font-weight: 400; */
   /* text-align: center; */
   padding: 0 1rem;
 }
 
-h2 {
+.about h2 {
   font-weight: 400;
   margin-bottom: 0.5rem;
 }
 
-h2 span {
+.about h2 span {
   display: block;
   font-size: 0.75rem;
 }
 
-p {
+.about p {
   padding: 0 1rem;
   margin-bottom: 1rem;
   line-height: 1.5rem;
 }
 
-a {
+.about a {
   position: relative; /* IMPORTANT FOR THE TOOLTIP POSITION */
   display: inline-block;
   color: var(--color-text-primary);
@@ -56,7 +56,7 @@ a {
   transition: color 0.25s linear;
 }
 
-a:hover {
+.about a:hover {
   color: var(--color-accent);
 }
 
@@ -71,7 +71,7 @@ a:hover {
   border-radius: 0.5rem;
   /* display: flex; */
   /* flex-direction: column; */
-  background-color: var(--modal-color);
+  background-color: var(--color-modal);
   overflow: auto;
   transition: all 1s linear;
 }
@@ -138,10 +138,10 @@ a:hover {
 
 .info-container {
   /* display: inline-block; */
-  background-color: var(--info-box-color);
+  background-color: var(--color-info-box);
   border-radius: 0.5rem;
   /* padding: 1rem; */
-  /* color: var(--modal-color); */
+  /* color: var(--color-modal); */
   color: var(--color-text-primary);
   margin-bottom: 0.5rem;
   height: 4rem;
@@ -167,7 +167,7 @@ a:hover {
   height: 4rem;
   cursor: pointer;
   margin-bottom: 1rem;
-  border-bottom: 1px solid var(--modal-color);
+  border-bottom: 1px solid var(--color-modal);
   /* box-shadow: inset 0 0 1px 1px white; */
 }
 

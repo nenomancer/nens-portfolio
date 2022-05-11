@@ -141,7 +141,7 @@ const About = (props) => {
   };
 
   const clickCopyHandler = (e) => {
-    console.log(e.target.textContent);
+    alert(e.target.textContent);
     navigator.clipboard.writeText(e.target.textContent);
   };
 
@@ -203,6 +203,7 @@ const About = (props) => {
                 </a>
                 {/* </IconContext.Provider> */}
               </span>
+              {/* <span id="copy-message">You copied</span> */}
             </span>
           </div>
         </div>

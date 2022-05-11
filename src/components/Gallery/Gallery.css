@@ -9,16 +9,14 @@
   /* CSS VARIABLES */
   --color-accent: hsl(197, 88%, 43%);
 
-  --bg-color: hsl(0, 0%, 3%);
-  --modal-color: hsl(0, 0%, 7%);
-  --info-box-color: hsl(0, 0%, 11%);
+  --color-bg: hsl(0, 0%, 3%);
+  --color-modal: hsl(0, 0%, 7%);
+  --color-info-box: hsl(0, 0%, 11%);
   --color-tooltip: hsl(0, 0%, 13%);
 
   --color-text-primary: hsl(200, 4%, 84%);
 
-  --highlight-color: hsl(0, 0%, 24%);
-
-  --sidebar-width: 200px;
+  --color-highlight: hsl(0, 0%, 24%);
 }
 
 body {
@@ -27,7 +25,7 @@ body {
   font-family: "Radio Canada", "sans-serif";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--bg-color);
+  background-color: var(--color-bg);
   color: white;
   overflow-y: scroll;
   width: 100%;
