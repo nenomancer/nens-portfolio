@@ -10,7 +10,7 @@
   /* justify-content: center; */
 }
 
-.tile-modal__backdrop {
+.backdrop {
   background-color: black;
   width: 100vw;
   position: absolute;
@@ -19,13 +19,14 @@
   opacity: 0.95;
 }
 
-.tile-modal__container {
-  width: 80%;
+.tile-modal-container {
+  width: 90%;
   z-index: 10;
   display: grid;
   align-items: center;
-  /* background: linear-gradient(#0f0f0f, #0c0c0c); */
   margin: 0 auto;
+  padding: 1rem;
+  /* background-color: red; */
 }
 
 .tile-modal__tile {
@@ -34,16 +35,17 @@
   height: 90vh;
 }
 
-.tile-modal__container img {
+.tile-modal__tile img,
+.tile-modal__tile video {
   object-fit: contain;
   transition: all 0s;
 }
 
-.tile-modal__tile video {
+/* .tile-modal__tile video {
   object-fit: contain;
   top: 500px;
   transition: all 0s;
-}
+} */
 
 .tile-modal__nav {
   position: absolute;
@@ -69,4 +71,3 @@
 .tile-modal__nav-right {
   margin-right: 1em;
 }
-

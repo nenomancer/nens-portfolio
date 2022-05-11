@@ -28,7 +28,7 @@ const TileModal = (props) => {
 
   return (
     <div className="tile-modal">
-      <div className="tile-modal__container">
+      <div className="tile-modal-container">
         <div className="tile-modal__nav">
           <img
             className="tile-modal__nav-left"
@@ -52,7 +52,7 @@ const TileModal = (props) => {
 
           {/* RENDER VIDEO IF THE ARTWORK IS A VIDEO */}
           {props.selectedTile.type === "videos" && (
-            <video height="100%" controls poster={props.selectedTile.thumb}>
+            <video height="100%" width="100%" controls poster={props.selectedTile.thumb}>
               <source src={props.selectedTile.src} type="video/mp4" />
             </video>
           )}
@@ -62,7 +62,7 @@ const TileModal = (props) => {
       </div>
       {/* IMAGE MODAL BACKDROP */}
       <div
-        className="tile-modal__backdrop"
+        className="backdrop"
         onClick={() => props.setShowTileModal(false)}
       />
     </div>

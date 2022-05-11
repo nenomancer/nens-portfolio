@@ -62,7 +62,7 @@ a:hover {
 
 /* MAIN CONTAINER STYLES  */
 
-.container {
+.about-container {
   position: relative;
   width: 800px;
   height: 90%;
@@ -93,18 +93,16 @@ a:hover {
   height: 100px;
   width: 100px;
   /* background-color: purple; */
+  /* margin: 0.5rem 1rem; */
   margin: 0.5rem;
+  margin-right: 2rem;
   /* transform: translateY(10px); */
   border-radius: 50%;
 }
 #name {
   /* background-color: purple; */
+  padding: 0;
   /* OVA TREBA DA SE VIDI  */
-}
-
-#name-container {
-  /* background-color: red; */
-  /* I OVA ISTO */
 }
 
 #basic-info-container {
@@ -215,6 +213,7 @@ a:hover {
   background-color: transparent;
   font-size: 1rem;
   font-weight: 700;
+  z-index: 1;
 }
 
 #close-button:hover {

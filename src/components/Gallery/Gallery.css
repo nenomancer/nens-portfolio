@@ -57,9 +57,7 @@ body {
   height: 1px;
 }
 
-@media (max-width: 700px) {
+/* @media (max-width: 700px) {
   .gallery {
-    /* grid-template-rows: repeat(250px); */
-    /* grid-template-rows:repeat(250px); */
   }
-}
+} */

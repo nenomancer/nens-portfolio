@@ -147,7 +147,7 @@ const About = (props) => {
 
   return (
     <div className="about">
-      <div className="container">
+      <div className="about-container">
         <button id="close-button" onClick={() => props.setShowAbout(false)}>
           <IoClose />
         </button>
