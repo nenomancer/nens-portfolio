@@ -148,13 +148,14 @@ const About = (props) => {
   return (
     <div className="about">
       <div className="about-container">
-        <button id="close-button" onClick={() => props.setShowAbout(false)}>
-          <IoClose />
-        </button>
+        <IoClose
+          id="close-button"
+          onClick={() => props.setShowAbout(false)}
+        />
         <div id="top-container">
           <img id="profile-pic" src="https://imgur.com/fLFzM2Y.png" alt="" />
 
-          <div id="name-container">
+          <div>
             <h1 id="name">NEBOJSA KOVACEVIK</h1>
             <span id="basic-info-container">
               <span>

@@ -64,6 +64,7 @@ img {
   padding-bottom: 10px;
   pointer-events: none;
   justify-self: left;
+  font-weight: 600;
   opacity: 0;
   transition: all 0.5s ease-in-out;
 }
@@ -79,6 +80,7 @@ img {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   pointer-events: none;
+  font-weight: 200;
   bottom: 0;
   text-align: left;
   opacity: 0;

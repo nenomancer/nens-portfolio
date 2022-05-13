@@ -16,74 +16,20 @@
 
 /* ----------- LOGO ------------- */
 
-.logo {
-  font-size: 36px;
-  text-transform: uppercase;
-  margin: 0.5rem;
-  margin-left: 2rem;
-  text-align: center;
-  transform-origin: left;
-  transition: all 2s linear;
-}
-
-.logo-main {
-  text-align: center;
-  padding-left: 1rem;
-}
-
-.logo-sub {
-  /* display: none; */
-  color: transparent;
-  position: relative;
-  padding-right: 1rem;
-  transition: all 0.5s linear;
-}
-
-.logo-main:hover,
-.logo-main:hover + .logo-sub,
-.logo-sub:hover {
-  display: inline;
-  cursor: pointer;
-  color: white;
-}
-
 .logo-container {
-  position: relative;
-  /* width: 3rem; */
   max-width: 2.5rem;
   min-width: 2rem;
-  /* height: 3rem; */
+  /* height: inherit; */
   margin-left: 3rem;
-  /* border-radius: 50%; */
   overflow: hidden;
   transition: all 0.5s;
-}
-
-.logo-container::after {
-  display: hidden;
-  content: "About";
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  left: 0;
-  height: 3rem;
-  background-color: red;
+  
 }
 
 .logo-container:hover {
   cursor: pointer;
-  transform: rotateX(180deg);
-}
-
-.logo-container:hover + .logo-container::after {
-  opacity: 100;
-}
-
-.logo-container img {
-  /* width: 100%; */
-  /* height: 100%; */
-  /* border: 2px solid var(--color-accent); */
-  /* border-radius: 50%; */
+  /* animation-name: logoHoverAnim; */
+  animation-duration: .25s;
 }
 
 /* -------------- NAVBAR -------------- */
@@ -95,7 +41,6 @@
   margin-right: 2rem;
   max-width: 400px;
   align-items: center;
-  /* background-color: red; */
   justify-content: space-between;
 }
 
@@ -121,5 +66,17 @@
   }
   .logo-container {
       margin-left: 1rem;
+  }
+}
+
+@keyframes logoHoverAnim {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.2;
+  }
+  100% {
+    scale: 1;
   }
 }

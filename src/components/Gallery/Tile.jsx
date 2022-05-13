@@ -17,11 +17,14 @@ const Tile = (props) => {
         {props.type === "photos" && <img src={props.src} alt={props.name} />}
 
         {/* RENDER VIDEO IF THE ARTWORK IS A VIDEO */}
-        {props.type === "videos" && (
-          <video>
-            <source src={props.src} type="video/mp4" />
-          </video>
-        )}
+        {props.type === "videos" &&
+          (props.youtube === true ? (
+            <img src={`https://img.youtube.com/vi/${props.videoId}/hqdefault.jpg`} />
+          ) : (
+            <video>
+              <source src={props.src} type="video/mp4" />
+            </video>
+          ))}
         {/* <img src={props.src} alt={props.name} /> */}
       </div>
     </div>

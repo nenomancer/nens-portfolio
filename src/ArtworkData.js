@@ -148,4 +148,13 @@ export const ArtworkData = [
     desc: "Procedural terrain with some experimental lighting.",
     gridSize: "",
   },
+  {
+    name: "Smaragd",
+    type: "videos",
+    src: "//www.youtube.com/embed/3UDbgvsJYYU",
+    desc: "Smaragd",
+    youtube: true,
+    videoId: "3UDbgvsJYYU",
+    gridSize: "",
+  },
 ];

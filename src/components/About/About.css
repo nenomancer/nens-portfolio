@@ -90,17 +90,22 @@
 
 #profile-pic {
   object-position: 65%;
-  height: 100px;
-  width: 100px;
+  height: 120px;
+  width: 120px;
   /* background-color: purple; */
   /* margin: 0.5rem 1rem; */
   margin: 0.5rem;
   margin-right: 2rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--color-tooltip);
   /* transform: translateY(10px); */
-  border-radius: 50%;
+  /* border-radius: 50%; */
 }
+
 #name {
   /* background-color: purple; */
+  font-size: 2.75rem;
+  line-height: 2.25rem;
   padding: 0;
   /* OVA TREBA DA SE VIDI  */
 }
@@ -137,20 +142,19 @@
 /* STYLES FOR A CLOSED CONTAINER / DEFAULT  */
 
 .info-container {
-  /* display: inline-block; */
   background-color: var(--color-info-box);
   border-radius: 0.5rem;
-  /* padding: 1rem; */
-  /* color: var(--color-modal); */
   color: var(--color-text-primary);
   margin-bottom: 0.5rem;
   height: 4rem;
   overflow: hidden;
   box-shadow: inset 0 0 20px 0 var(--color-tooltip);
-  /* border: 2px solid var(--color-tooltip); */
   border: 2px solid hsl(0, 0%, 14%);
+  transition: all 0.25s linear;
+}
 
-  /* transition: all 0.5s linear; */
+.info-container:hover {
+  background-color: hsl(0, 0%, 14%);
 }
 
 .info-container h1 {
@@ -158,7 +162,7 @@
 }
 
 .info-container h1:hover {
-  color: var(--color-accent);
+  /* color: var(--color-accent); */
 }
 
 .info-container > h1 {
@@ -168,7 +172,6 @@
   cursor: pointer;
   margin-bottom: 1rem;
   border-bottom: 1px solid var(--color-modal);
-  /* box-shadow: inset 0 0 1px 1px white; */
 }
 
 /* STYLES FOR AN OPEN CONTAINER  */
@@ -178,6 +181,12 @@
   box-shadow: inset 0 0 15px hsl(0, 0%, 5%);
   border: 2px solid hsl(0, 0%, 10%);
   overflow: visible;
+}
+
+
+.open:hover {
+  background-color: var(--color-info-box);
+  /* background-color: inherit; */
 }
 
 .open h1:hover {
@@ -205,18 +214,18 @@
   position: absolute;
   top: 0;
   right: 0;
-  display: block;
-  width: 50px;
-  height: 50px;
-  border-radius: 0;
-  border: 0;
-  background-color: transparent;
-  font-size: 1rem;
-  font-weight: 700;
+
+  font-size: 4rem;
+  padding: 1rem;
+  color: var(--color-bg);
+  border-radius: 0.5rem;
+  transition: all 0.25s linear;
+  /* background-color: red; */
   z-index: 1;
 }
 
 #close-button:hover {
   cursor: pointer;
-  background-color: hsl(0, 0%, 5%);
+  /* background-color: hsl(0, 0%, 5%); */
+  color: var(--color-text-primary);
 }
