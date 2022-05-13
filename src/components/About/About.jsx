@@ -152,7 +152,7 @@ const About = (props) => {
           id="close-button"
           onClick={() => props.setShowAbout(false)}
         />
-        <div id="top-container">
+        <div id="about-header">
           <img id="profile-pic" src="https://imgur.com/fLFzM2Y.png" alt="" />
 
           <div>
