@@ -1,5 +1,6 @@
 .icon-container {
-  display: inline-block;
+  display: inline;
+
   /* background-color: aliceblue; */
   position: relative;
   text-align: center;
@@ -11,14 +12,20 @@
   display: inline-block;
   font-size: 1rem;
   /* background-color: red; */
-  width: 2rem;
-  height: 2rem;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
   cursor: pointer;
-  border: 2px solid hsl(0, 0%, 14%);
+  width: 75px;
+  /* border: 2px solid hsl(0, 0%, 14%); */
 }
-svg {
-  color: white;
+
+.icon img {
+  width: 2rem;
+  margin-bottom: .25rem;
+}
+
+.icon span {
+  display: block;
+  font-size: .75rem;
 }
 
 .tooltip {

@@ -41,42 +41,42 @@ const About = (props) => {
       type: "visual",
       name: "Photoshop",
       icon: "icons/software/photoshop.png",
-      info: "Adobe Photoshop. Extensive knowledge.",
+      info: "Excellent grasp of it's functions and capabilities",
       level: 10,
     },
     {
       type: "visual",
       name: "After Effects",
       icon: "icons/software/after-effects.png",
-      info: "After Effects: Advanced knowledge ",
+      info: "Very good grasp of it's functions and capabilities",
       level: 9,
     },
     {
       type: "visual",
       name: "Premiere Pro",
       icon: "icons/software/premiere.png",
-      info: "Premier Pro: Very good knowledge of most of it's functions",
+      info: "Very good grasp of it's functions and capabilities",
       level: 8,
     },
     {
       type: "visual",
       name: "DaVinci",
       icon: "icons/software/davinci.png",
-      info: "Davinci Resolve: Excellent grasp of all it's functions",
+      info: "Excellent grasp of it's functions and capabilities",
       level: 10,
     },
     {
       type: "visual",
       name: "Blender",
       icon: "icons/software/blender.png",
-      info: "Blender: Excellent grasp of all it's functions",
+      info: "Excellent grasp of it's functions and capabilities",
       level: 10,
     },
     {
       type: "visual",
       name: "Nuke",
       icon: "icons/software/nuke.png",
-      info: "NUKE: Excellent grasp of all it's functions",
+      info: "Excellent grasp of it's functions and capabilities",
       level: 10,
     },
   ];
@@ -84,30 +84,30 @@ const About = (props) => {
   const audioIcons = [
     {
       type: "audio",
-      name: "ableton",
+      name: "Ableton",
       icon: "icons/software/ableton.png",
-      info: "Ableton: Excellent grasp of all it's functions",
+      info: "Excellent grasp of it's functions and capabilities",
       level: 10,
     },
     {
       type: "audio",
-      name: "audacity",
+      name: "Audacity",
       icon: "icons/software/audacity.png",
-      info: "Audacity: Excellent grasp of all it's functions",
+      info: "Excellent grasp of it's functions and capabilities",
       level: 10,
     },
     {
       type: "audio",
-      name: "maschine",
+      name: "Maschine",
       icon: "icons/software/maschine.png",
-      info: "Maschine: Excellent grasp of all it's functions",
+      info: "Excellent grasp of it's functions and capabilities",
       level: 10,
     },
     {
       type: "audio",
-      name: "cubase",
+      name: "Cubase",
       icon: "icons/software/cubase.png",
-      info: "Cubase: Excellent grasp of all it's functions",
+      info: "Excellent grasp of it's functions and capabilities",
       level: 10,
     },
   ];
@@ -117,7 +117,15 @@ const About = (props) => {
       type: "code",
       name: "HTML5",
       icon: "icons/software/html.png",
-      info: "HTML5: Excellent grasp of all it's functions.",
+      info: "Excellent grasp of it's functions and capabilities.",
+      level: 10,
+    },
+    {
+      type: "code",
+      name: "CSS3",
+      icon: "icons/software/css.png",
+      info: "Excellent grasp of it's functions and capabilities.",
+      level: 10,
     },
   ];
   const toggleContainer = (index) => {
@@ -148,10 +156,7 @@ const About = (props) => {
   return (
     <div className="about">
       <div className="about-container">
-        <IoClose
-          id="close-button"
-          onClick={() => props.setShowAbout(false)}
-        />
+        <IoClose id="close-button" onClick={() => props.setShowAbout(false)} />
         <div id="about-header">
           <img id="profile-pic" src="https://imgur.com/fLFzM2Y.png" alt="" />
 
@@ -195,12 +200,14 @@ const About = (props) => {
                   </span>
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/nebojsa-kovacevik-5a923515a/"
+                  href="https://www.linkedin.com/in/nebojsa-kovacevik/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <BsLinkedin className="basic-info social-icons" />
-                  <span className="tooltip">Linkiding</span>
+                  <span className="tooltip">
+                    Click to visit LinkedIn profile
+                  </span>
                 </a>
                 {/* </IconContext.Provider> */}
               </span>
