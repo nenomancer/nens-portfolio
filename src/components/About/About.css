@@ -83,20 +83,20 @@
   display: flex;
   /* flex-direction: column; */
   /* background-color: red; */
-  align-items: center;
+  align-items: flex-end;
   border-radius: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  padding: .5rem 0;
 }
 
 #profile-pic {
   object-position: 65%;
-  height: 120px;
-  width: 120px;
-  /* background-color: purple; */
-  /* margin: 0.5rem 1rem; */
-  margin: 0.5rem;
-  margin-right: 2rem;
-  border-radius: 0.5rem;
+  height: 100px;
+  width: 100px;
+  margin-right: 1rem;
+  margin-left: 2rem;
+  /* border-radius: 0.5rem; */
+  border-radius: 50%;
   border: 2px solid var(--color-tooltip);
   /* transform: translateY(10px); */
   /* border-radius: 50%; */

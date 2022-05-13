@@ -19,7 +19,9 @@ const Tile = (props) => {
         {/* RENDER VIDEO IF THE ARTWORK IS A VIDEO */}
         {props.type === "videos" &&
           (props.youtube === true ? (
-            <img src={`https://img.youtube.com/vi/${props.videoId}/hqdefault.jpg`} />
+            <video>
+              <source src={props.src} type="video/mp4" />
+            </video>
           ) : (
             <video>
               <source src={props.src} type="video/mp4" />

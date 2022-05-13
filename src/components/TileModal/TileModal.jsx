@@ -52,6 +52,7 @@ const TileModal = (props) => {
           {props.selectedTile.type === "videos" &&
             (props.selectedTile.youtube === true ? (
               <iframe
+                title={props.selectedTile.name}
                 width="100%"
                 height="100%"
                 src={`${props.selectedTile.src}?modestbranding=0&autoplay=1&showinfo=0&controls=0`}
