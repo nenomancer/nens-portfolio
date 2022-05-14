@@ -3,12 +3,6 @@ import React from "react";
 import "./Tile.css";
 
 const Tile = (props) => {
-  const length = props.src.length;
-  let videoId = "";
-  if (props.type === "youtube") {
-    videoId = props.src.slice(props.src.length - 11);
-  }
-  console.log(videoId);
   return (
     <div
       className={`${"tile__container"} ${props.gridSize}`}
