@@ -30,7 +30,7 @@ const Tile = (props) => {
             // WHICH IS THE VIDEO'S ID NUMBER
             src={`https://i3.ytimg.com/vi/${props.src.slice(
               props.src.length - 11
-            )}/hqdefault.jpg`}
+            )}/hqdefault.jpg`} alt={props.name}
           />
         )}
       </div>
