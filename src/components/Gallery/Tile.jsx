@@ -3,6 +3,12 @@ import React from "react";
 import "./Tile.css";
 
 const Tile = (props) => {
+  const length = props.src.length;
+  let videoId = "";
+  if (props.type === "youtube") {
+    videoId = props.src.slice(props.src.length - 11);
+  }
+  console.log(videoId);
   return (
     <div
       className={`${"tile__container"} ${props.gridSize}`}
@@ -17,17 +23,22 @@ const Tile = (props) => {
         {props.type === "photos" && <img src={props.src} alt={props.name} />}
 
         {/* RENDER VIDEO IF THE ARTWORK IS A VIDEO */}
-        {props.type === "videos" &&
-          (props.youtube === true ? (
-            <video>
-              <source src={props.src} type="video/mp4" />
-            </video>
-          ) : (
-            <video>
-              <source src={props.src} type="video/mp4" />
-            </video>
-          ))}
-        {/* <img src={props.src} alt={props.name} /> */}
+        {props.type === "videos" && (
+          <video>
+            <source src={props.src} type="video/mp4" />
+          </video>
+        )}
+
+        {/* RENDER YOUTUBE THUMBNAIL IF THE ARTWORK IS A YOUTUBE VIDEO */}
+        {props.type === "youtube" && (
+          <img
+            // GET THE FULL LINK OF THE VIDEO, AND ONLY TAKE  THE LAST 11 CHARACTERS,
+            // WHICH IS THE VIDEO'S ID NUMBER
+            src={`https://i3.ytimg.com/vi/${props.src.slice(
+              props.src.length - 11
+            )}/hqdefault.jpg`}
+          />
+        )}
       </div>
     </div>
   );

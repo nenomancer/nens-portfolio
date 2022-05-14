@@ -107,8 +107,8 @@ const About = (props) => {
       type: "audio",
       name: "Cubase",
       icon: "icons/software/cubase.png",
-      info: "Excellent grasp of it's functions and capabilities",
-      level: 10,
+      info: "Very good grasp of it's functions and capabilities",
+      level: 7,
     },
   ];
 

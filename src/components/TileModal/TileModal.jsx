@@ -49,26 +49,28 @@ const TileModal = (props) => {
           )}
 
           {/* RENDER VIDEO IF THE ARTWORK IS A VIDEO */}
-          {props.selectedTile.type === "videos" &&
-            (props.selectedTile.youtube === true ? (
-              <iframe
-                title={props.selectedTile.name}
-                width="100%"
-                height="100%"
-                src={`${props.selectedTile.src}?modestbranding=0&autoplay=1&showinfo=0&controls=0`}
-                frameborder="0"
-              ></iframe>
-            ) : (
-              <video
-                height="100%"
-                width="100%"
-                controls
-                className="video"
-                poster={props.selectedTile.thumb}
-              >
-                <source src={props.selectedTile.src} type="video/mp4" />
-              </video>
-            ))}
+          {props.selectedTile.type === "videos" && (
+            <video
+              height="100%"
+              width="100%"
+              controls
+              className="video"
+              poster={props.selectedTile.thumb}
+            >
+              <source src={props.selectedTile.src} type="video/mp4" />
+            </video>
+          )}
+
+          {/* RENDER IFRAME IF THE ARTWORK IS A YOUTUBE VIDEO  */}
+          {props.selectedTile.type === "youtube" && (
+            <iframe
+              title={props.selectedTile.name}
+              width="100%"
+              height="100%"
+              src={`${props.selectedTile.src}?modestbranding=0&autoplay=1&showinfo=0&controls=0`}
+              frameborder="0"
+            ></iframe>
+          )}
         </div>
         {/* IMAGE MODAL INFO */}
         {/* <div id="info">
