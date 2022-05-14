@@ -1,5 +1,4 @@
 import React from "react";
-// import styles from "./Tile.module.css";
 import "./Tile.css";
 
 const Tile = (props) => {
@@ -30,7 +29,8 @@ const Tile = (props) => {
             // WHICH IS THE VIDEO'S ID NUMBER
             src={`https://i3.ytimg.com/vi/${props.src.slice(
               props.src.length - 11
-            )}/hqdefault.jpg`} alt={props.name}
+            )}/hqdefault.jpg`}
+            alt={props.name}
           />
         )}
       </div>

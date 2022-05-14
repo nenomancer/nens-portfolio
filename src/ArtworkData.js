@@ -14,7 +14,13 @@ export const ArtworkData = [
     desc: "I was learning to rig when I did this one, added some realistic texture with the hair particle system.",
     gridSize: "tall wide",
   },
-
+  {
+    name: "Topaz",
+    type: "youtube",
+    src: "//www.youtube.com/embed/dO-GHJkrh5A",
+    desc: "Smaragd",
+    gridSize: "",
+  },
   {
     name: "The Last Voyage",
     type: "photos",
@@ -23,13 +29,7 @@ export const ArtworkData = [
     desc: "An attempt at creating a procedural scene. The ship and dock were added to .",
     gridSize: "wide",
   },
-  {
-    name: "Topaz",
-    type: "youtube",
-    src: "//www.youtube.com/embed/dO-GHJkrh5A",
-    desc: "Smaragd",
-    gridSize: "",
-  },
+
   {
     name: "Stairway",
     type: "videos",
