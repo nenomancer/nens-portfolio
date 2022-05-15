@@ -44,12 +44,12 @@ const TileModal = (props) => {
         {/* SHOW IMAGE IN TILE MODAL*/}
         <div className="tile">
           {/* RENDER IMG IF THE ARTWORK IS A PHOTO */}
-          {props.selectedTile.type === "photos" && (
+          {props.selectedTile.type.includes("photo") && (
             <img src={props.selectedTile.src} alt={props.name} />
           )}
 
           {/* RENDER VIDEO IF THE ARTWORK IS A VIDEO */}
-          {props.selectedTile.type === "videos" && (
+          {props.selectedTile.type.includes("video") && (
             <video
               height="100%"
               width="100%"
@@ -62,7 +62,7 @@ const TileModal = (props) => {
           )}
 
           {/* RENDER IFRAME IF THE ARTWORK IS A YOUTUBE VIDEO  */}
-          {props.selectedTile.type === "youtube" && (
+          {props.selectedTile.type.includes("youtube") && (
             <iframe
               title={props.selectedTile.name}
               width="100%"
