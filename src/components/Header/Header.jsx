@@ -3,27 +3,6 @@ import "./Header.css";
 
 const Header = (props) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
-  // const tags = ["blender", "3d"];
-
-  // const removeDuplicates = (index) => {
-  //   tags.map((tag) => {
-  //     if
-  //   })
-  // }
-
-  // tags.push(
-  //   ArtworkData.map((artwork, index) => {
-  //     return artwork.tags;
-  //   })
-  // );
-
-  // for (let i=1; i<=ArtworkData.length; i++) {
-  //   tags.push(ArtworkData[i])
-  // }
-
-  // tags[0].forEach((tag) => {
-  //   return tag.join();
-  // })
 
   const navItems = [
     {
@@ -31,15 +10,15 @@ const Header = (props) => {
       id: 1,
     },
     {
-      title: "Photos",
+      title: "Photo",
       id: 2,
     },
     {
-      title: "Videos",
+      title: "Video",
       id: 3,
     },
     {
-      title: "Music",
+      title: "Audio",
       id: 4,
     },
     // {

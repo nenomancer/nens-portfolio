@@ -14,7 +14,7 @@ function App() {
     filterType === "all"
       ? setFilteredTiles(ArtworkData)
       : setFilteredTiles(
-          ArtworkData.filter((item) => item.type === filterType || item.type === "youtube")
+          ArtworkData.filter((item) => item.type.includes(filterType))
         ); // SETS WHICH TILES ARE VISIBLE
   }, [filterType]);
 

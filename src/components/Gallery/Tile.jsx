@@ -13,17 +13,19 @@ const Tile = (props) => {
       </div>
       <div className="tile__img-container">
         {/* RENDER IMG IF THE ARTWORK IS A PHOTO */}
-        {props.type === "photos" && <img src={props.src} alt={props.name} />}
+        {props.type.includes("photo") && (
+          <img src={props.src} alt={props.name} />
+        )}
 
         {/* RENDER VIDEO IF THE ARTWORK IS A VIDEO */}
-        {props.type === "videos" && (
+        {props.type.includes("video") && (
           <video>
             <source src={props.src} type="video/mp4" />
           </video>
         )}
 
         {/* RENDER YOUTUBE THUMBNAIL IF THE ARTWORK IS A YOUTUBE VIDEO */}
-        {props.type === "youtube" && (
+        {props.type.includes("youtube") && (
           <img
             // GET THE FULL LINK OF THE VIDEO, AND ONLY TAKE  THE LAST 11 CHARACTERS,
             // WHICH IS THE VIDEO'S ID NUMBER
