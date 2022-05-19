@@ -27,16 +27,23 @@ const Header = (props) => {
     //   tags: tags,
     // },
   ];
+
+  const onClickHandler = () => {
+    props.setShowAbout(true);
+    document.querySelector("#logo").style.animationPlayState = "paused";
+  };
   return (
     <div className="header">
-      <div className="logo-container" onClick={() => props.setShowAbout(true)}>
+      <div className="logo-container" onClick={onClickHandler}>
         {/* <img className="" src="gallery/profile-pic.jpg" alt="profile-pic" /> */}
-        <img src="icons/nens-logo.png" alt="nens-logo" />
+        <img src="icons/nens-logo.png" alt="nens-logo" id="logo" />
+        <span id="about-me">More info</span>
       </div>
+
       {/* <div className="logo">
-        <span className="logo-main">N</span>
-        <span className="logo-sub">ebojsa Kovacevik</span>
-      </div> */}
+          <span className="logo-main">N</span>
+          <span className="logo-sub">ebojsa Kovacevik</span>
+        </div> */}
       <ul className="nav-items">
         {navItems.map((navItem, index) => {
           return (
