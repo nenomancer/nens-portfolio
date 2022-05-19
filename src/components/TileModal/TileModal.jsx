@@ -49,7 +49,7 @@ const TileModal = (props) => {
           )}
 
           {/* RENDER VIDEO IF THE ARTWORK IS A VIDEO */}
-          {props.selectedTile.type.includes("video") && (
+          {props.selectedTile.type[0] === "video" && (
             <video
               height="100%"
               width="100%"
@@ -62,7 +62,7 @@ const TileModal = (props) => {
           )}
 
           {/* RENDER IFRAME IF THE ARTWORK IS A YOUTUBE VIDEO  */}
-          {props.selectedTile.type.includes("youtube") && (
+          {props.selectedTile.type[0] === ("youtube") && (
             <iframe
               title={props.selectedTile.name}
               width="100%"

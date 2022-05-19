@@ -16,7 +16,7 @@ export const ArtworkData = [
   },
   {
     name: "Topaz",
-    type: ["youtube", "audio"],
+    type: ["youtube", "video", "audio"],
     src: "//www.youtube.com/embed/dO-GHJkrh5A",
     desc: "Smaragd",
     gridSize: "",
@@ -55,7 +55,7 @@ export const ArtworkData = [
   },
   {
     name: "Opal",
-    type: ["youtube", "audio"],
+    type: ["youtube", "video", "audio"],
     src: "//www.youtube.com/embed/KsevmMGJ3Cw",
     desc: "Smaragd",
     gridSize: "",
@@ -77,7 +77,7 @@ export const ArtworkData = [
   },
   {
     name: "Smaragd",
-    type: ["youtube", "audio"],
+    type: ["youtube", "video", "audio"],
     src: "//www.youtube.com/embed/3UDbgvsJYYU",
     desc: "Smaragd",
     gridSize: "",
@@ -114,7 +114,7 @@ export const ArtworkData = [
   },
   {
     name: "Zhad",
-    type: ["youtube", "audio"],
+    type: ["youtube", "video", "audio"],
     src: "//www.youtube.com/embed/1TlzEe03FDY",
     desc: "Smaragd",
     gridSize: "",
@@ -135,7 +135,7 @@ export const ArtworkData = [
   },
   {
     name: "Opsidijan",
-    type: ["youtube", "audio"],
+    type: ["youtube", "video", "audio"],
     src: "//www.youtube.com/embed/mOA0kEdJ9zw",
     desc: "Smaragd",
     gridSize: "",
@@ -165,7 +165,7 @@ export const ArtworkData = [
   },
   {
     name: "Ametist",
-    type: ["youtube", "audio"],
+    type: ["youtube", "video", "audio"],
     src: "//www.youtube.com/embed/xEAxqil5-m0",
     desc: "Smaragd",
     gridSize: "",
@@ -194,7 +194,7 @@ export const ArtworkData = [
 
   {
     name: "Beril",
-    type: ["youtube", "audio"],
+    type: ["youtube", "video", "audio"],
     src: "//www.youtube.com/embed/M1LgnRHupU8",
     desc: "Smaragd",
     gridSize: "",
@@ -202,7 +202,7 @@ export const ArtworkData = [
 
   {
     name: "Vrvot na Trkaloto",
-    type: ["youtube"],
+    type: ["youtube", "video"],
     src: "//www.youtube.com/embed/VF8CRfzoeGY",
     desc: "Smaragd",
     gridSize: "wide",
