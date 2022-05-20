@@ -130,7 +130,6 @@ const About = (props) => {
   ];
   const toggleContainer = (index) => {
     const containers = document.getElementsByClassName("info-container");
-    const contents = document.querySelectorAll("#info-content");
 
     // for (let item of containers) {
     //   if (item === containers[index]) {
