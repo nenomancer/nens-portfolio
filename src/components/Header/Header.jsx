@@ -31,13 +31,14 @@ const Header = (props) => {
   const onClickHandler = () => {
     props.setShowAbout(true);
     document.querySelector("#logo").style.animationPlayState = "paused";
+    document.querySelector("#circle").style.animationPlayState = "paused";
   };
   return (
     <div className="header">
       <div className="logo-container" onClick={onClickHandler}>
         {/* <img className="" src="gallery/profile-pic.jpg" alt="profile-pic" /> */}
         <img src="icons/nens-logo.png" alt="nens-logo" id="logo" />
-        <span id="about-me">More info</span>
+        <span id="circle"></span>
       </div>
 
       {/* <div className="logo">

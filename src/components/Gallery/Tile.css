@@ -96,33 +96,6 @@ img {
   width: 100%;
 }
 
-/* img {
-  width: 1000px;
-  height: 600px;
-  border-radius: 10px;
-}
-
-.right-arrow{
-  position: absolute;
-  top: 50%;
-  right: 32px;
-  font-size: 3rem;
-  color: #000;
-  cursor: pointer;
-  user-select: none;
-}
-
-.left-arrow{
-  position: absolute;
-  top: 50%;
-  left: 32px;
-  font-size: 3rem;
-  color: #000;
-  cursor: pointer;
-  user-select: none;
-} */
-
-
 @media (max-width: 700px) {
   /* .gallery {
     grid-template-columns: repeat(250px);

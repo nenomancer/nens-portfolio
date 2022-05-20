@@ -170,6 +170,12 @@
   border-bottom: 1px solid var(--color-modal);
 }
 
+#info-content {
+  height: 120px;
+  width: 100px;
+  background-color: blue;
+}
+
 /* STYLES FOR AN OPEN CONTAINER  */
 
 .open {

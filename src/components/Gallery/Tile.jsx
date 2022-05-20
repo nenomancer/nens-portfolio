@@ -13,9 +13,7 @@ const Tile = (props) => {
       </div>
       <div className="tile__img-container">
         {/* RENDER IMG IF THE ARTWORK IS A PHOTO */}
-        {props.type[0] === "photo" && (
-          <img src={props.src} alt={props.name} />
-        )}
+        {props.type[0] === "photo" && <img src={props.src} alt={props.name} />}
 
         {/* RENDER VIDEO IF THE ARTWORK IS A VIDEO */}
         {props.type[0] === "video" && (

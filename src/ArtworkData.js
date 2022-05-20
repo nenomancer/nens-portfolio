@@ -34,6 +34,7 @@ export const ArtworkData = [
     name: "Stairway",
     type: ["video", "audio"],
     src: "https://i.imgur.com/T1Eploe.mp4",
+    poster: "https://i.imgur.com/d4dRaRz.png",
     desc: "Inspired by the intro of Marvel's \"What If...\" series, I was trying to achieve a procedural shading based on the camera's position.",
     gridSize: "",
   },

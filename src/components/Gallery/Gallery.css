@@ -35,28 +35,17 @@ body {
 .gallery {
   right: 0.5rem;
   width: 95%;
-  max-height: 2400px;
+  max-height: 5000px;
+  height: max-content;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 2fr));
+  /* grid-template-columns: repeat(auto-fill, minmax(250px, 2fr)); */
+  /* grid-template-rows: repeat(auto-fill, minmax(250px, 50px)); */
   grid-template-rows: repeat(auto-fill, minmax(250px, 2fr));
+  /* grid-auto-rows: minmax(min-content, max-content); */
   grid-auto-flow: dense;
   grid-gap: 0.5rem;
   overflow: hidden;
   margin: 0.5rem auto;
   border-radius: 0.5rem;
 }
-
-.stars {
-  background-color: red;
-}
-
-.stars-front {
-  background-color: orange;
-  width: 1px;
-  height: 1px;
-}
-
-/* @media (max-width: 700px) {
-  .gallery {
-  }
-} */
