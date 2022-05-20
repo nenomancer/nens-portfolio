@@ -37,7 +37,10 @@ const Header = (props) => {
     <div className="header">
       <div className="logo-container" onClick={onClickHandler}>
         {/* <img className="" src="gallery/profile-pic.jpg" alt="profile-pic" /> */}
-        <img src="icons/nens-logo.png" alt="nens-logo" id="logo" />
+        {/* <img src="icons/nens-logo.png" alt="nens-logo" id="logo" /> */}
+        <div id="logo">
+          <span>N</span>
+        </div>
         <span id="circle"></span>
       </div>
 

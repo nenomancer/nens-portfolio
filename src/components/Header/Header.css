@@ -25,18 +25,36 @@
 }
 
 #logo {
-  position: inherit;
-  min-width: 2rem;
-  max-width: 2.5rem;
+  height: 2.5rem;
+  font-family: Josefin Sans;
+  font-size: 1.5rem;
+  width: 2.5rem;
+  /* max-width: 2.5rem; */
   transform: scale(1);
-  background-color: black;
+  color: white;
+  border: 2px solid white;
   border-radius: 50%;
-
+  background-color: black;
   transition: all 0.1s ease-in-out;
 
   animation: logoScale 3s infinite;
   animation-delay: 2s;
   animation-timing-function: ease;
+}
+
+#logo span {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -25%);
+  display: block;
+  /* background-color: red; */
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+
+  height: 100%;
 }
 
 #circle {
@@ -104,10 +122,14 @@
 @keyframes logoScale {
   0% {
     transform: scale(1);
+    color: white;
+    border-color: white;
   }
 
   5% {
     transform: scale(1.15);
+    color: var(--color-accent);
+    border-color: var(--color-accent);
   }
 
   7% {
@@ -116,6 +138,8 @@
 
   10% {
     transform: scale(1.03);
+    color: white;
+    border-color: white;
   }
   13% {
     transform: scale(0.98);
@@ -141,6 +165,7 @@
   5% {
     opacity: 1;
     transform: scale(1.1);
+    border-color: white;
     border-width: 2.5px;
   }
 
@@ -148,11 +173,13 @@
     opacity: 0;
     transform: scale(2);
     border-width: 1px;
+    border-color: var(--color-accent);
   }
 
   100% {
     opacity: 0;
     transform: scale(2);
     border-width: 0;
+    border-color: var(--color-accent);
   }
 }
