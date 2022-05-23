@@ -79,6 +79,20 @@ const About = (props) => {
       info: "Excellent grasp of it's functions and capabilities",
       level: 10,
     },
+    {
+      type: "visual",
+      name: "Unity",
+      icon: "icons/software/unity.png",
+      info: "Excellent grasp of it's functions and capabilities.",
+      level: 10,
+    },
+    {
+      type: "visual",
+      name: "Unreal Engine",
+      icon: "icons/software/unreal.png",
+      info: "Excellent grasp of it's functions and capabilities.",
+      level: 10,
+    },
   ];
 
   const audioIcons = [
@@ -124,6 +138,34 @@ const About = (props) => {
       type: "code",
       name: "CSS3",
       icon: "icons/software/css.png",
+      info: "Excellent grasp of it's functions and capabilities.",
+      level: 10,
+    },
+    {
+      type: "code",
+      name: "JavaScript",
+      icon: "icons/software/javascript.png",
+      info: "Excellent grasp of it's functions and capabilities.",
+      level: 10,
+    },
+    {
+      type: "code",
+      name: "Code",
+      icon: "icons/software/code.png",
+      info: "Excellent grasp of it's functions and capabilities.",
+      level: 10,
+    },
+    {
+      type: "code",
+      name: "React",
+      icon: "icons/software/react.png",
+      info: "Excellent grasp of it's functions and capabilities.",
+      level: 10,
+    },
+    {
+      type: "code",
+      name: "Git",
+      icon: "icons/software/git.png",
       info: "Excellent grasp of it's functions and capabilities.",
       level: 10,
     },

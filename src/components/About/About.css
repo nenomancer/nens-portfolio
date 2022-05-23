@@ -197,9 +197,11 @@
 .skills-container {
   /* display: inline; */
   /* background-color: red; */
+  /* width: 90%; */
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  /* margin: 0 1rem; */
+  gap: 2rem 0;
   padding-top: 0.5rem;
   padding-bottom: 1.5rem;
 }
