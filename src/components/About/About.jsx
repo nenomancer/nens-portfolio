@@ -83,15 +83,15 @@ const About = (props) => {
       type: "visual",
       name: "Unity",
       icon: "icons/software/unity.png",
-      info: "Excellent grasp of it's functions and capabilities.",
-      level: 10,
+      info: "Very good grasp of it's functions and capabilities.",
+      level: 8,
     },
     {
       type: "visual",
       name: "Unreal Engine",
       icon: "icons/software/unreal.png",
-      info: "Excellent grasp of it's functions and capabilities.",
-      level: 10,
+      info: "Very good grasp of it's functions and capabilities.",
+      level: 7,
     },
   ];
 
@@ -145,29 +145,29 @@ const About = (props) => {
       type: "code",
       name: "JavaScript",
       icon: "icons/software/javascript.png",
-      info: "Excellent grasp of it's functions and capabilities.",
-      level: 10,
+      info: "Very good grasp of it's functions and capabilities.",
+      level: 8,
     },
     {
       type: "code",
       name: "Code",
       icon: "icons/software/code.png",
-      info: "Excellent grasp of it's functions and capabilities.",
-      level: 10,
+      info: "Very good grasp of it's functions and capabilities.",
+      level: 9,
     },
     {
       type: "code",
       name: "React",
       icon: "icons/software/react.png",
-      info: "Excellent grasp of it's functions and capabilities.",
-      level: 10,
+      info: "Very good grasp of it's functions and capabilities.",
+      level: 8,
     },
     {
       type: "code",
       name: "Git",
       icon: "icons/software/git.png",
-      info: "Excellent grasp of it's functions and capabilities.",
-      level: 10,
+      info: "Good grasp of it's functions and capabilities.",
+      level: 7,
     },
   ];
   const toggleContainer = (index) => {
@@ -197,7 +197,7 @@ const About = (props) => {
   };
 
   const clickCopyHandler = (e) => {
-    alert(e.target.textContent);
+    // alert(e.target.textContent);
     navigator.clipboard.writeText(e.target.textContent);
   };
 
