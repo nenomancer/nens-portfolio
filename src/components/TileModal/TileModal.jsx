@@ -41,6 +41,11 @@ const TileModal = (props) => {
           className="nav-right nav-icons"
           onClick={() => props.navigationClick("right")}
         />
+        {/* IMAGE MODAL INFO */}
+        <div id="info">
+          <h2>{props.selectedTile.name}</h2>
+          <span>{props.selectedTile.desc}</span>
+        </div>
         {/* SHOW IMAGE IN TILE MODAL*/}
         <div className="tile">
           {/* RENDER IMG IF THE ARTWORK IS A PHOTO */}
@@ -53,7 +58,6 @@ const TileModal = (props) => {
             <video
               height="100%"
               width="100%"
-              controls
               className="video"
               poster={props.selectedTile.thumb}
             >
@@ -62,7 +66,7 @@ const TileModal = (props) => {
           )}
 
           {/* RENDER IFRAME IF THE ARTWORK IS A YOUTUBE VIDEO  */}
-          {props.selectedTile.type[0] === ("youtube") && (
+          {props.selectedTile.type[0] === "youtube" && (
             <iframe
               title={props.selectedTile.name}
               width="100%"
@@ -72,11 +76,6 @@ const TileModal = (props) => {
             ></iframe>
           )}
         </div>
-        {/* IMAGE MODAL INFO */}
-        {/* <div id="info">
-          <h2>{props.selectedTile.name}</h2>
-          <span>{props.selectedTile.desc}</span>
-        </div> */}
       </div>
       {/* IMAGE MODAL BACKDROP */}
       <div className="backdrop" onClick={() => props.setShowTileModal(false)} />

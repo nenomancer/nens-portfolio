@@ -1,7 +1,7 @@
 export const ArtworkData = [
   {
     name: "Earth 6",
-    type: ["photo", ],
+    type: ["photo"],
     src: "https://i.imgur.com/OzrD9LB.png",
     tags: ["3d blender sci-fi planets"],
     desc: "One of my first procedural planet renders. I was going for an earth-like planet with it's own moon.",
@@ -11,14 +11,14 @@ export const ArtworkData = [
     name: "Selfie",
     type: ["photo"],
     src: "https://i.imgur.com/BW0DZAi.png",
-    desc: "I was learning to rig when I did this one, added some realistic texture with the hair particle system.",
+    desc: "Played around with rigging in Blender. I was going for a miniature plush toy look. The final render is a bit different from the original sketches I'd done. Originally the eyes were planned as paper cutouts, but I instead opted for buttons with phosphorescent threads.",
     gridSize: "tall wide",
   },
   {
     name: "Topaz",
     type: ["youtube", "video", "audio"],
     src: "//www.youtube.com/embed/dO-GHJkrh5A",
-    desc: "Track 6 from \"Neizbruseni Kamenja\" EP",
+    desc: 'Track 6 from "Neizbruseni Kamenja" EP',
     gridSize: "",
   },
   {
@@ -35,7 +35,7 @@ export const ArtworkData = [
     type: ["video", "audio"],
     src: "https://i.imgur.com/T1Eploe.mp4",
     poster: "https://i.imgur.com/d4dRaRz.png",
-    desc: "Inspired by the intro of Marvel's \"What If...\" series, I was trying to achieve a procedural shading based on the camera's position.",
+    desc: "A.I. animation using two prompts. I animated the zoom attribute, while changing the prompt weights over time. Made with VQGAN+CLIP on Google Colab.",
     gridSize: "",
   },
   {
@@ -58,7 +58,7 @@ export const ArtworkData = [
     name: "Opal",
     type: ["youtube", "video", "audio"],
     src: "//www.youtube.com/embed/KsevmMGJ3Cw",
-    desc: "Track 2 from \"Neizbruseni Kamenja\" EP",
+    desc: 'Track 2 from "Neizbruseni Kamenja" EP',
     gridSize: "",
   },
   {
@@ -80,7 +80,7 @@ export const ArtworkData = [
     name: "Smaragd",
     type: ["youtube", "video", "audio"],
     src: "//www.youtube.com/embed/3UDbgvsJYYU",
-    desc: "Track 1 from \"Neizbruseni Kamenja\" EP",
+    desc: 'Track 1 from "Neizbruseni Kamenja" EP',
     gridSize: "",
   },
   {
@@ -117,7 +117,7 @@ export const ArtworkData = [
     name: "Zhad",
     type: ["youtube", "video", "audio"],
     src: "//www.youtube.com/embed/1TlzEe03FDY",
-    desc: "Track 5 from \"Neizbruseni Kamenja\" EP",
+    desc: 'Track 5 from "Neizbruseni Kamenja" EP',
     gridSize: "",
   },
   {
@@ -138,7 +138,7 @@ export const ArtworkData = [
     name: "Opsidijan",
     type: ["youtube", "video", "audio"],
     src: "//www.youtube.com/embed/mOA0kEdJ9zw",
-    desc: "Track 7 from \"Neizbruseni Kamenja\" EP",
+    desc: 'Track 7 from "Neizbruseni Kamenja" EP',
     gridSize: "",
   },
 
@@ -168,7 +168,7 @@ export const ArtworkData = [
     name: "Ametist",
     type: ["youtube", "video", "audio"],
     src: "//www.youtube.com/embed/xEAxqil5-m0",
-    desc: "Track 4 from \"Neizbruseni Kamenja\" EP",
+    desc: 'Track 4 from "Neizbruseni Kamenja" EP',
     gridSize: "",
   },
   {
@@ -197,7 +197,7 @@ export const ArtworkData = [
     name: "Beril",
     type: ["youtube", "video", "audio"],
     src: "//www.youtube.com/embed/M1LgnRHupU8",
-    desc: "Track 3 from \"Neizbruseni Kamenja\" EP",
+    desc: 'Track 3 from "Neizbruseni Kamenja" EP',
     gridSize: "",
   },
 
