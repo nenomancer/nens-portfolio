@@ -1,7 +1,7 @@
 export const ArtworkData = [
   {
     name: "Earth 6",
-    type: ["photo"],
+    type: ["photo", ],
     src: "https://i.imgur.com/OzrD9LB.png",
     tags: ["3d blender sci-fi planets"],
     desc: "One of my first procedural planet renders. I was going for an earth-like planet with it's own moon.",
@@ -18,7 +18,7 @@ export const ArtworkData = [
     name: "Topaz",
     type: ["youtube", "video", "audio"],
     src: "//www.youtube.com/embed/dO-GHJkrh5A",
-    desc: "Smaragd",
+    desc: "Track 6 from \"Neizbruseni Kamenja\" EP",
     gridSize: "",
   },
   {
@@ -58,7 +58,7 @@ export const ArtworkData = [
     name: "Opal",
     type: ["youtube", "video", "audio"],
     src: "//www.youtube.com/embed/KsevmMGJ3Cw",
-    desc: "Smaragd",
+    desc: "Track 2 from \"Neizbruseni Kamenja\" EP",
     gridSize: "",
   },
   {
@@ -80,7 +80,7 @@ export const ArtworkData = [
     name: "Smaragd",
     type: ["youtube", "video", "audio"],
     src: "//www.youtube.com/embed/3UDbgvsJYYU",
-    desc: "Smaragd",
+    desc: "Track 1 from \"Neizbruseni Kamenja\" EP",
     gridSize: "",
   },
   {
@@ -117,7 +117,7 @@ export const ArtworkData = [
     name: "Zhad",
     type: ["youtube", "video", "audio"],
     src: "//www.youtube.com/embed/1TlzEe03FDY",
-    desc: "Smaragd",
+    desc: "Track 5 from \"Neizbruseni Kamenja\" EP",
     gridSize: "",
   },
   {
@@ -138,7 +138,7 @@ export const ArtworkData = [
     name: "Opsidijan",
     type: ["youtube", "video", "audio"],
     src: "//www.youtube.com/embed/mOA0kEdJ9zw",
-    desc: "Smaragd",
+    desc: "Track 7 from \"Neizbruseni Kamenja\" EP",
     gridSize: "",
   },
 
@@ -168,7 +168,7 @@ export const ArtworkData = [
     name: "Ametist",
     type: ["youtube", "video", "audio"],
     src: "//www.youtube.com/embed/xEAxqil5-m0",
-    desc: "Smaragd",
+    desc: "Track 4 from \"Neizbruseni Kamenja\" EP",
     gridSize: "",
   },
   {
@@ -197,7 +197,7 @@ export const ArtworkData = [
     name: "Beril",
     type: ["youtube", "video", "audio"],
     src: "//www.youtube.com/embed/M1LgnRHupU8",
-    desc: "Smaragd",
+    desc: "Track 3 from \"Neizbruseni Kamenja\" EP",
     gridSize: "",
   },
 
@@ -205,7 +205,7 @@ export const ArtworkData = [
     name: "Vrvot na Trkaloto",
     type: ["youtube", "video"],
     src: "//www.youtube.com/embed/VF8CRfzoeGY",
-    desc: "Smaragd",
+    desc: "Mixed 3D and 2D animation, made in Blender.",
     gridSize: "wide",
   },
 ];
