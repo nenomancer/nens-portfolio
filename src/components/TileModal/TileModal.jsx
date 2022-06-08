@@ -34,18 +34,16 @@ const TileModal = (props) => {
           onClick={() => props.setShowTileModal(false)}
         />
         <MdNavigateBefore
-          className="nav-left nav-icons"
+          className="nav-icons"
+          id="nav-left"
           onClick={() => props.navigationClick("left")}
         />
         <MdNavigateNext
-          className="nav-right nav-icons"
+          className="nav-icons"
+          id="nav-right"
           onClick={() => props.navigationClick("right")}
         />
-        {/* IMAGE MODAL INFO */}
-        <div id="info">
-          <h2>{props.selectedTile.name}</h2>
-          <span>{props.selectedTile.desc}</span>
-        </div>
+
         {/* SHOW IMAGE IN TILE MODAL*/}
         <div className="tile">
           {/* RENDER IMG IF THE ARTWORK IS A PHOTO */}
@@ -59,6 +57,7 @@ const TileModal = (props) => {
               height="100%"
               width="100%"
               className="video"
+              controls
               poster={props.selectedTile.thumb}
             >
               <source src={props.selectedTile.src} type="video/mp4" />
@@ -71,10 +70,17 @@ const TileModal = (props) => {
               title={props.selectedTile.name}
               width="100%"
               height="100%"
-              src={`${props.selectedTile.src}?modestbranding=0&autoplay=1&showinfo=0&controls=0`}
+              src={`${props.selectedTile.src}?modestbranding=0&autoplay=0&showinfo=0&controls=1`}
               frameborder="0"
             ></iframe>
           )}
+        </div>
+        {/* IMAGE MODAL INFO */}
+        <div id="info">
+          <h1>{props.selectedTile.name}</h1>
+          {props.selectedTile.desc.split("\n").map((str) => (
+            <p>{str}</p>
+          ))}
         </div>
       </div>
       {/* IMAGE MODAL BACKDROP */}

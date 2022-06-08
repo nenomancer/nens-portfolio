@@ -4,7 +4,8 @@ export const ArtworkData = [
     type: ["photo"],
     src: "https://i.imgur.com/OzrD9LB.png",
     tags: ["3d blender sci-fi planets"],
-    desc: "One of my first procedural planet renders. I was going for an earth-like planet with it's own moon.",
+    desc: `A planet made in Blender using a sphere and the shader editor. I was going for an earth-like planet, so the terrain is mainly divided into land and water, each having it's own variations in height/depth. On top of that, there is a layer of procedural clouds which are lit by the sun.
+    The direction of the light controls two other aspects as well; firstly, the thin blue layer, which indicates the atmosphere, is only visible where it's hit by the light; whereas in the areas where the light doesn't hit the object, as indication for populated cities a glow is revealed, based on a combination of noise textures.`,
     gridSize: "",
   },
   {
@@ -34,6 +35,14 @@ export const ArtworkData = [
     name: "Stairway",
     type: ["video", "audio"],
     src: "https://i.imgur.com/T1Eploe.mp4",
+    poster: "https://i.imgur.com/d4dRaRz.png",
+    desc: "A.I. animation using two prompts. I animated the zoom attribute, while changing the prompt weights over time. Made with VQGAN+CLIP on Google Colab.",
+    gridSize: "",
+  },
+  {
+    name: "Ice Fractals",
+    type: ["video", "audio"],
+    src: "https://i.imgur.com/2uhc4v9.mp4",
     poster: "https://i.imgur.com/d4dRaRz.png",
     desc: "A.I. animation using two prompts. I animated the zoom attribute, while changing the prompt weights over time. Made with VQGAN+CLIP on Google Colab.",
     gridSize: "",

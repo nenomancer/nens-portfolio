@@ -21,12 +21,13 @@
 
 .tile-modal-container {
   position: relative;
-  width: 90%;
-  /* z-index: 15; */
+  width: 70%;
+  height: 95vh;
   display: grid;
+  grid-template-rows: 5fr 1fr;
   align-items: center;
+  justify-items: center;
   margin: 0 auto;
-  padding: 1rem;
   border-radius: 0.5rem;
   background-color: var(--color-modal);
   overflow: hidden;
@@ -35,8 +36,9 @@
 .tile {
   text-align: center;
   position: relative;
-  height: 90vh;
-  pointer-events: none;
+  height: 70vh;
+  width: 80%;
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, .5);
 }
 
 .tile img,
@@ -46,11 +48,12 @@
 }
 
 #info {
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+  /* background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)); */
+  /* background-color: red; */
   color: var(--color-text-primary);
-  position: absolute;
+  /* position: absolute; */
   bottom: 0;
-  width: 100%;
+  width: 90%;
   /* height: 20%; */
   z-index: 10;
   padding: 1rem;
@@ -59,12 +62,12 @@
   cursor: pointer;
 }
 
-#info:hover {
-  /* background-color: hsla(0, 0%, 4%, 90%); */
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
-  /* background: linear-gradient(rgba(var(--color-bg), 0), rgba(var(--color-modal), 1)); */
-  color: var(--color-text-primary);
-  /* pointer-events: none; */
+#info h1 {
+  margin-bottom: .5rem;
+}
+
+#info p {
+  margin-bottom: .5rem;
 }
 
 /* .tile video {
@@ -76,7 +79,7 @@
 .nav-icons {
   position: absolute;
   /* background-color: red; */
-  color: transparent;
+  color: hsl(0, 0%, 30%);;
   height: 50%;
   width: 10%;
   z-index: 1;
@@ -88,7 +91,11 @@
   color: var(--color-text-primary);
 }
 
-.nav-right {
+#nav-left {
+  left: 0;
+}
+
+#nav-right {
   /* background-color: yellow; */
   right: 0;
 }
