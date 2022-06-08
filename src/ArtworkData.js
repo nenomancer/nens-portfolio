@@ -12,7 +12,8 @@ export const ArtworkData = [
     name: "Selfie",
     type: ["photo"],
     src: "https://i.imgur.com/BW0DZAi.png",
-    desc: "Played around with rigging in Blender. I was going for a miniature plush toy look. The final render is a bit different from the original sketches I'd done. Originally the eyes were planned as paper cutouts, but I instead opted for buttons with phosphorescent threads.",
+    desc: `Played around with rigging in Blender. I was going for a miniature plush toy look. The final render is a bit different from the original sketches I'd done. Originally the eyes were planned as paper cutouts, but I instead opted for buttons with phosphorescent threads.
+    For the environment, I used an HDRI of a cityscape in the night, then I blasted the character with a bunch of lights, going for an over-the-top style.`,
     gridSize: "tall wide",
   },
   {
@@ -214,7 +215,8 @@ export const ArtworkData = [
     name: "Vrvot na Trkaloto",
     type: ["youtube", "video"],
     src: "//www.youtube.com/embed/VF8CRfzoeGY",
-    desc: "Mixed 3D and 2D animation, made in Blender.",
+    desc: `I made this looping animation for a track called "Vrvot na Trkaloto". I was given a concept art for the environment and two characters, which I recreated in Blender. The environment itself is 3D, so I made sure for some elements to dynamically react to certain frequencies of the song.
+    The final look of the character differs a bit from the original concept, since they had to be optimized for animation. I made sure to give them both a distinct walking style. There are of course a couple of easter eggs and unique animated moments, such as the cross flipping over at 0:44.`,
     gridSize: "wide",
   },
 ];
