@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Gallery.css";
 import Tile from "./Tile";
-import TileModal from "../TileModal/TileModal";
+import Modal from "../Modal/Modal";
 
 const Gallery = (props) => {
   const [current, setCurrent] = useState({});
@@ -15,7 +15,7 @@ const Gallery = (props) => {
   const tileClickHandler = (index) => {
     const selectedTile = props.artwork[index];
     setCurrent(selectedTile);
-    props.setShowTileModal(true);
+    props.setShowModal(true);
   };
 
   // HANDLE MODAL NAVIGATION
@@ -52,11 +52,11 @@ const Gallery = (props) => {
   return (
     <div className={"gallery"}>
       {/* displaying the tile modal */}
-      {props.showTileModal && (
-        <TileModal
+      {props.showModal && (
+        <Modal
           artwork={props.artwork}
-          showTileModal={props.showTileModal}
-          setShowTileModal={props.setShowTileModal}
+          showModal={props.showModal}
+          setShowModal={props.setShowModal}
           selectedTile={current}
           setSelectedTile={props.setSelectedTile}
           navigationClick={(type) => navigationClickHandler(type)}

@@ -35,36 +35,40 @@ const Header = (props) => {
   };
   return (
     <div className="header">
+      <svg viewBox="0 0 100 80" width="40" height="40">
+        <rect width="100" height="20"></rect>
+        <rect y="30" width="100" height="20"></rect>
+        <rect y="60" width="100" height="20"></rect>
+      </svg>
       <div className="logo-container" onClick={onClickHandler}>
-        {/* <img className="" src="gallery/profile-pic.jpg" alt="profile-pic" /> */}
-        {/* <img src="icons/nens-logo.png" alt="nens-logo" id="logo" /> */}
         <div id="logo">
           <span>N</span>
         </div>
         <span id="circle"></span>
       </div>
 
-      {/* <div className="logo">
-          <span className="logo-main">N</span>
-          <span className="logo-sub">ebojsa Kovacevik</span>
-        </div> */}
-      <ul className="nav-items">
-        {navItems.map((navItem, index) => {
-          return (
-            <li key={navItem.id} className="nav-item">
-              <span
-                className={index === selectedIndex ? "active" : ""}
-                onClick={() => {
-                  setSelectedIndex(index);
-                  props.onSetFilter(navItem.title.toLowerCase());
-                }}
-              >
-                {navItem.title}
-              </span>
-            </li>
-          );
-        })}
-      </ul>
+      <aside className="sidebar">
+        <div className="top-sidebar"></div>
+        <div className="middle-sidebar"></div>
+        <div className="bottom-sidebar"></div>
+        {/* <ul className="nav-items">
+          {navItems.map((navItem, index) => {
+            return (
+              <li key={navItem.id} className="nav-item">
+                <span
+                  className={index === selectedIndex ? "active" : ""}
+                  onClick={() => {
+                    setSelectedIndex(index);
+                    props.onSetFilter(navItem.title.toLowerCase());
+                  }}
+                >
+                  {navItem.title}
+                </span>
+              </li>
+            );
+          })}
+        </ul> */}
+      </aside>
     </div>
   );
 };

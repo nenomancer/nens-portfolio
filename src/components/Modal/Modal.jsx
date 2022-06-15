@@ -1,15 +1,15 @@
 import React, { useEffect } from "react";
-import "./TileModal.css";
+import "./Modal.css";
 
 import { IoClose } from "react-icons/io5";
 import { MdNavigateNext } from "react-icons/md";
 import { MdNavigateBefore } from "react-icons/md";
 
-const TileModal = (props) => {
+const Modal = (props) => {
   // HANDLE KEY NAVIGATION
   const handleyKey = (e) => {
     if (e.key === "Escape") {
-      props.setShowTileModal(false);
+      props.setShowModal(false);
     } else if (e.key === "ArrowRight") {
       props.navigationClick("right");
     } else if (e.key === "ArrowLeft") {
@@ -31,7 +31,7 @@ const TileModal = (props) => {
       <div className="tile-modal-container">
         <IoClose
           id="close-button"
-          onClick={() => props.setShowTileModal(false)}
+          onClick={() => props.setShowModal(false)}
         />
         <MdNavigateBefore
           className="nav-icons"
@@ -84,9 +84,9 @@ const TileModal = (props) => {
         </div>
       </div>
       {/* IMAGE MODAL BACKDROP */}
-      <div className="backdrop" onClick={() => props.setShowTileModal(false)} />
+      <div className="backdrop" onClick={() => props.setShowModal(false)} />
     </div>
   );
 };
 
-export default TileModal;
+export default Modal;

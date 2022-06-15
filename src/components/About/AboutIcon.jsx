@@ -9,14 +9,14 @@ function AboutIcon(props) {
         <span>{props.icon.name}</span>
       </div>
 
-      <div className="tooltip">
+      {/* <div className="tooltip">
         {props.icon.level && (
           <progress value={props.icon.level} max="10">
             {props.icon.level}/10
           </progress>
         )}
         {props.icon.info}
-      </div>
+      </div> */}
     </div>
   );
 }

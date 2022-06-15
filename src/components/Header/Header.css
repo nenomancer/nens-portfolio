@@ -85,7 +85,7 @@
 }
 
 /* -------------- NAVBAR -------------- */
-.nav-items {
+.nav {
   list-style: none;
   display: flex;
   height: 100%;
