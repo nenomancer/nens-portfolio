@@ -51,7 +51,9 @@ function App() {
       <div className="navbar">
         <h1>NENS</h1>
         <nav>
-          <a href="#home" onMouseDown={navClickHandler}>Home</a>
+          <a href="#home" onMouseDown={navClickHandler}>
+            Home
+          </a>
           <a href="#about" className="active">
             About
           </a>
@@ -92,68 +94,87 @@ function App() {
           </section>
           {/* ------ SECTION ABOUT -------  */}
           <section id="about">
-            <div className="content-left">
+            <div className="content">
               <h3>About Me</h3>
-              <p>
-                Hi there! My name's Neno, I am a senior VFX artist with over 6
-                years of experience working in the movie industry. My tasks
-                someting someting creative and logical problems.
-              </p>
-              <p>
-                As a passionate problem-solver, I used automation in my everyday
-                work, as well as optimizing the procedures, and organizing my
-                projects for easy readability.
-              </p>
+              <div className="content-left">
+                <p>
+                  Hi there! My name's Neno, I am a senior VFX artist with over 6
+                  years of experience working in the movie industry. My tasks
+                  someting someting creative and logical problems.
+                </p>
+                <p>
+                  As a passionate problem-solver, I used automation in my
+                  everyday work, as well as optimizing the procedures, and
+                  organizing my projects for easy readability.
+                </p>
+              </div>
+              <div className="content-right">
+                <ul>
+                  <li>
+                    Name: <span>Nebojsa Kovacevik</span>
+                  </li>
+                  <li>
+                    Email: <span>nebojsa.kovacevik@gmail.com</span>
+                  </li>
+                  <li>
+                    Phone: <span>+389 71 909 352</span>
+                  </li>
+                  <li>
+                    Location: <span>Skopje, Macedonia</span>
+                  </li>
+                </ul>
+
+                {/* <ul>
+                  <li>
+                    <div className="item">
+                      <span className="item-left">Name:</span>
+                      <span className="item-right">Nebojsa Kovacevik</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="item">
+                      <span className="item-left">Adress:</span>
+                      <span className="item-right">Skopje, Macedonia</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="item">
+                      <span className="item-left">Email:</span>
+                      <span className="item-right">
+                        nebojsa.kovacevik@gmail.com
+                      </span>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="item">
+                      <span className="item-left">Phone:</span>
+                      <span className="item-right">+389 71 909 352</span>
+                    </div>
+                  </li>
+                </ul> */}
+              </div>
             </div>
-            <div className="content-right">
-              <ul>
-                <li>
-                  <div className="item">
-                    <span className="item-left">Name:</span>
-                    <span className="item-right">Nebojsa Kovacevik</span>
-                  </div>
-                </li>
-                <li>
-                  <div className="item">
-                    <span className="item-left">Adress:</span>
-                    <span className="item-right">Skopje, Macedonia</span>
-                  </div>
-                </li>
-                <li>
-                  <div className="item">
-                    <span className="item-left">Email:</span>
-                    <span className="item-right">
-                      nebojsa.kovacevik@gmail.com
-                    </span>
-                  </div>
-                </li>
-                <li>
-                  <div className="item">
-                    <span className="item-left">Phone:</span>
-                    <span className="item-right">+389 71 909 352</span>
-                  </div>
-                </li>
-              </ul>
+            <div className="content">
+              <div className="content-left">
+                <h3>Services</h3>
+                <ul>
+                  <li>Front-end Development</li>
+                  <li>3D & Graphic Design</li>
+                  <li>Animation</li>
+                  <li>Sound Design</li>
+                </ul>
+              </div>
+              <div className="content-right">
+                <h3>Interests</h3>
+                <ul>
+                  <li>Drawing & Animation</li>
+                  <li>Music & Audio Production</li>
+                  <li>Automation & Procedural somethin</li>
+                  <li>Photography</li>
+                </ul>
+              </div>
             </div>
-            <div id="services">
-            <div className="content-left">
-              <h3>Services</h3>
-              <ul>
-                <li>Front-end Development</li>
-                <li>3D & Graphic Design</li>
-                <li>Animation</li>
-                <li>Sound Design</li>
-              </ul>
-            </div>
-            <div className="content-right">
-              <h3>Interests</h3>
-              <ul>
-                <li>Drawing & Animation</li>
-                <li>Music & Audio Production</li>
-                <li>Automation & Procedural somethin</li>
-                <li>Photography</li>
-              </ul>
-            </div>
+
             <div className="content">
               <div className="content-left">
                 <h3>Programming</h3>
@@ -172,10 +193,9 @@ function App() {
                 </ul>
               </div>
             </div>
-          </div>
           </section>
           {/* ----------- SECTION SERVICES ----------  */}
-          
+
           {/* ---------- SECTION CREATIVE PORTFOLIO ------------ */}
           <section id="portfolio">
             <h3>Portfolio</h3>
