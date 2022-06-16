@@ -31,27 +31,47 @@ function App() {
   //   setShowAbout(true);
   // };
 
+  // ------ NEW STUFF --------
+
+  const [isActive, setIsActive] = useState();
+  const navItems = document.querySelectorAll("a");
+
+  const navClickHandler = (e) => {
+    console.log(`event: ${e}`);
+    for (let item of navItems) {
+    }
+  };
+
+  // for (let item of navItems) {
+  //   item.addEventListener("mousedown", navClickHandler);
+  // }
+
   return (
     <Fragment>
-      <div className="header">
+      <div className="navbar">
         <h1>NENS</h1>
-        <ul className="nav">
+        <nav>
+          <a href="#home" onMouseDown={navClickHandler}>Home</a>
+          <a href="#about" className="active">
+            About
+          </a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+          {/* <div className="highlight"></div> */}
+        </nav>
+        {/* <ul className="nav">
           <li className="nav-item">
-            <a href="#home">Home</a>
           </li>
           <li className="nav-item">
-            <a href="#about">About</a>
           </li>
           <li className="nav-item">
-            <a href="#portfolio">Portfolio</a>
           </li>
           <li className="nav-item">
-            <a href="#services">Services</a>
           </li>
           <li className="nav-item">
-            <a href="#contact">Contact</a>
           </li>
-        </ul>
+        </ul> */}
       </div>
       <div className="main-section">
         <div className="left">
@@ -65,7 +85,7 @@ function App() {
             <div>
               <h1>Nebojsa Kovacevik</h1>
               <span></span>
-              <h3>A creative solution for your problems.</h3>
+              <h3>A solution for all your creative problems.</h3>
               <div className="btn btn-accent">Get in Touch</div>
               <div className="btn">Download CV</div>
             </div>
@@ -96,9 +116,7 @@ function App() {
                 <li>
                   <div className="item">
                     <span className="item-left">Adress:</span>
-                    <span className="item-right">
-                      Rugjer Boshkovikj 11, Skopje, MK
-                    </span>
+                    <span className="item-right">Skopje, Macedonia</span>
                   </div>
                 </li>
                 <li>
@@ -117,8 +135,7 @@ function App() {
                 </li>
               </ul>
             </div>
-          </section>
-          <section id="services">
+            <div id="services">
             <div className="content-left">
               <h3>Services</h3>
               <ul>
@@ -155,7 +172,10 @@ function App() {
                 </ul>
               </div>
             </div>
+          </div>
           </section>
+          {/* ----------- SECTION SERVICES ----------  */}
+          
           {/* ---------- SECTION CREATIVE PORTFOLIO ------------ */}
           <section id="portfolio">
             <h3>Portfolio</h3>
