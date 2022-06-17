@@ -4,6 +4,7 @@ import { ArtworkData } from "./ArtworkData";
 // import Gallery from "./components/Gallery/Gallery";
 // import Header from "./components/Header/Header";
 import "../src/sass/styles.scss";
+import Section from "./components/Section";
 function App() {
   // ---------- GALLERY FILTER ----------
 
@@ -46,6 +47,11 @@ function App() {
   //   item.addEventListener("mousedown", navClickHandler);
   // }
 
+  window.addEventListener("resize", () => {
+    const width = document.querySelector(".tile").offsetWidth;
+    console.log(width);
+  });
+
   return (
     <Fragment>
       <div className="navbar">
@@ -83,7 +89,7 @@ function App() {
         {/* ---------------- RIGHT SECTION --------------  */}
         <div className="right">
           {/* ---------- SECTION HOME ----------------  */}
-          <section id="home">
+          <Section id={"home"}>
             <div>
               <h1>Nebojsa Kovacevik</h1>
               <span></span>
@@ -91,7 +97,16 @@ function App() {
               <div className="btn btn-accent">Get in Touch</div>
               <div className="btn">Download CV</div>
             </div>
-          </section>
+          </Section>
+          {/* <section id="home">
+            <div>
+              <h1>Nebojsa Kovacevik</h1>
+              <span></span>
+              <h3>A solution for all your creative problems.</h3>
+              <div className="btn btn-accent">Get in Touch</div>
+              <div className="btn">Download CV</div>
+            </div>
+          </section> */}
           {/* ------ SECTION ABOUT -------  */}
           <section id="about">
             <div className="content">
@@ -123,40 +138,11 @@ function App() {
                     Location: <span>Skopje, Macedonia</span>
                   </li>
                 </ul>
-
-                {/* <ul>
-                  <li>
-                    <div className="item">
-                      <span className="item-left">Name:</span>
-                      <span className="item-right">Nebojsa Kovacevik</span>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="item">
-                      <span className="item-left">Adress:</span>
-                      <span className="item-right">Skopje, Macedonia</span>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="item">
-                      <span className="item-left">Email:</span>
-                      <span className="item-right">
-                        nebojsa.kovacevik@gmail.com
-                      </span>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="item">
-                      <span className="item-left">Phone:</span>
-                      <span className="item-right">+389 71 909 352</span>
-                    </div>
-                  </li>
-                </ul> */}
               </div>
             </div>
             <div className="content">
               <div className="content-left">
-                <h3>Services</h3>
+                <h3>Skills</h3>
                 <ul>
                   <li>Front-end Development</li>
                   <li>3D & Graphic Design</li>
@@ -197,15 +183,39 @@ function App() {
           {/* ----------- SECTION SERVICES ----------  */}
 
           {/* ---------- SECTION CREATIVE PORTFOLIO ------------ */}
-          <section id="portfolio">
-            <h3>Portfolio</h3>
-            <ul>
-              <li>All</li>
-              <li>Visual</li>
-              <li>Audio</li>
-              <li>Code</li>
-            </ul>
-          </section>
+          <Section id={"portfolio"}>
+            <div className="content">
+              <h3>Portfolio</h3>
+              <nav>
+                <li>All</li>
+                <li>Visual</li>
+                <li>Audio</li>
+                <li>Code</li>
+              </nav>
+              <div className="gallery">
+                {ArtworkData.map((item) => (
+                  <div className="tile">
+                    {item.type[0] === "photo" && <img src={item.src} />}
+                    {item.type[0] === "video" && (
+                      <video>
+                        <source src={item.src} type="video/mp4" />
+                      </video>
+                    )}
+                    {item.type[0] === "youtube" && (
+                      <img
+                        // GET THE FULL LINK OF THE VIDEO, AND ONLY TAKE  THE LAST 11 CHARACTERS,
+                        // WHICH IS THE VIDEO'S ID NUMBER
+                        src={`https://i3.ytimg.com/vi/${item.src.slice(
+                          item.src.length - 11
+                        )}/0.jpg`}
+                        alt={item.name}
+                      />
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Section>
         </div>
       </div>
     </Fragment>
