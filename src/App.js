@@ -5,6 +5,8 @@ import { ArtworkData } from "./ArtworkData";
 // import Header from "./components/Header/Header";
 import "../src/sass/styles.scss";
 import Section from "./components/Section";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 function App() {
   // ---------- GALLERY FILTER ----------
 
@@ -108,7 +110,7 @@ function App() {
             </div>
           </section> */}
           {/* ------ SECTION ABOUT -------  */}
-          <section id="about">
+          <Section id={"about"}>
             <div className="content">
               <h3>About Me</h3>
               <div className="content-left">
@@ -125,12 +127,18 @@ function App() {
               </div>
               <div className="content-right">
                 <ul>
-                  <li>
-                    Name: <span>Nebojsa Kovacevik</span>
-                  </li>
-                  <li>
-                    Email: <span>nebojsa.kovacevik@gmail.com</span>
-                  </li>
+                  <div className="item">
+                    <li>
+                      <span>Name:</span> <span>Nebojsa Kovacevik</span>
+                    </li>
+                  </div>
+                  <div className="item">
+                    <li>
+                      <span> Email:</span>
+                      <span>nebojsa.kovacevik@gmail.com</span>
+                    </li>
+                  </div>
+
                   <li>
                     Phone: <span>+389 71 909 352</span>
                   </li>
@@ -179,7 +187,7 @@ function App() {
                 </ul>
               </div>
             </div>
-          </section>
+          </Section>
           {/* ----------- SECTION SERVICES ----------  */}
 
           {/* ---------- SECTION CREATIVE PORTFOLIO ------------ */}
@@ -217,6 +225,12 @@ function App() {
             </div>
           </Section>
         </div>
+      </div>
+
+      <div className="footer">
+        <span>Copyright 2022</span>
+        <FontAwesomeIcon icon="fa-brands fa-instagram" />
+        <div className="social">INSTA GITHUB LINKEDIN FACEBOOK</div>
       </div>
     </Fragment>
   );

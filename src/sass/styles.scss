@@ -3,7 +3,7 @@ $bg-color-light: hsl(210, 0%, 90%);
 $text-color-light: hsl(200, 100%, 0%);
 
 $height-content: 84vh;
-$height-navbar: 8vh;
+$height-navbar: 6vh;
 $padding-sides: 0 4rem;
 
 html,
@@ -127,7 +127,7 @@ body {
     // height: $height;
     overflow-y: scroll;
     scroll-behavior: smooth;
-    scroll-snap-type: y proximity;
+    scroll-snap-type: y;
     scrollbar-width: none;
     width: 100%;
     padding: 2rem;
@@ -137,11 +137,11 @@ body {
 section {
   // height: $height-content;
   // min-height: 80vh;
-  min-height: calc(100vh - $height-navbar);
+  min-height: calc(100vh - calc(2 * $height-navbar));
   display: grid;
   // grid-template-columns: 1fr 1fr;
-  scroll-snap-align: start;
-  // border: 1px solid;
+  scroll-snap-align: start end;
+  border: 1px solid;
   // padding: 4rem;
 }
 
@@ -193,10 +193,11 @@ section {
   & > div {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 6rem;
+    // column-gap: 6rem;
     margin-bottom: 4rem;
-    &:nth-child(1) h3 {
+    &:nth-child(2) h3 {
       grid-column-end: span 2;
+      background-color: red;
     }
   }
   h3 {
@@ -225,7 +226,7 @@ section {
   }
   .content-right,
   .content-left {
-    width: 40ch;
+    // width: 40ch;
   }
   .content-right ul:first-child {
     li {
@@ -247,6 +248,36 @@ section {
 
 #portfolio {
   padding: 6rem;
+  nav {
+    position: relative;
+    height: calc($height-navbar / 2);
+    background-color: red;
+    display: flex;
+    align-items: center;
+    // div {
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   width: 150px;
+    //   height: 10px;
+    //   opacity: 0;
+    //   z-index: 1;
+    //   pointer-events: none;
+    // }
+    li {
+      padding: 1rem 2rem;
+      text-align: center;
+      list-style: none;
+      transition: background 0.25s;
+      border: 1px solid;
+      &:hover {
+        background: #eee;
+      }
+    }
+    .active {
+      background-color: blue;
+    }
+  }
   .gallery {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -271,6 +302,17 @@ section {
       }
     }
   }
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 100;
+  width: 100%;
+  background-color: $bg-color-light;
+  height: $height-navbar;
+  box-shadow: 0 0px 20px rgba($color: #000000, $alpha: 0.1);
+  z-index: 1;
 }
 
 @media (max-width: 800px) {
