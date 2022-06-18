@@ -2,7 +2,8 @@
 
 .header {
   background-color: orange;
-  position: fixed;
+  /* position: fixed; */
+
   left: 0;
   top: 0;
   width: 5rem;

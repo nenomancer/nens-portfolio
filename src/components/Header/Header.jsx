@@ -10,11 +10,11 @@ const Header = (props) => {
       id: 1,
     },
     {
-      title: "Photo",
+      title: "Images",
       id: 2,
     },
     {
-      title: "Video",
+      title: "Videos",
       id: 3,
     },
     {
@@ -36,18 +36,13 @@ const Header = (props) => {
   return (
     <div className="header">
       <div className="logo-container" onClick={onClickHandler}>
-        {/* <img className="" src="gallery/profile-pic.jpg" alt="profile-pic" /> */}
-        {/* <img src="icons/nens-logo.png" alt="nens-logo" id="logo" /> */}
         <div id="logo">
           <span>N</span>
         </div>
         <span id="circle"></span>
       </div>
 
-      {/* <div className="logo">
-          <span className="logo-main">N</span>
-          <span className="logo-sub">ebojsa Kovacevik</span>
-        </div> */}
+    
       <ul className="nav-items">
         {navItems.map((navItem, index) => {
           return (
