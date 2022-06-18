@@ -4,21 +4,23 @@ export const ArtworkData = [
     type: ["images"],
     src: "https://i.imgur.com/OzrD9LB.png",
     tags: ["3d blender sci-fi planets"],
-    desc: "One of my first procedural planet renders. I was going for an earth-like planet with it's own moon.",
+    desc: `A planet made in Blender using a sphere and the shader editor. I was going for an earth-like planet, so the terrain is mainly divided into land and water, each having it's own variations in height/depth. On top of that, there is a layer of procedural clouds which are lit by the sun.
+    The direction of the light controls two other aspects as well; firstly, the thin blue layer, which indicates the atmosphere, is only visible where it's hit by the light; whereas in the areas where the light doesn't hit the object, as indication for populated cities a glow is revealed, based on a combination of noise textures.`,
     gridSize: "",
   },
   {
     name: "Selfie",
     type: ["images"],
     src: "https://i.imgur.com/BW0DZAi.png",
-    desc: "I was learning to rig when I did this one, added some realistic texture with the hair particle system.",
+    desc: `Played around with rigging in Blender. I was going for a miniature plush toy look. The final render is a bit different from the original sketches I'd done. Originally the eyes were planned as paper cutouts, but I instead opted for buttons with phosphorescent threads.
+    For the environment, I used an HDRI of a cityscape in the night, then I blasted the character with a bunch of lights, going for an over-the-top style.`,
     gridSize: "tall wide",
   },
   {
     name: "Topaz",
     type: ["youtube", "videos", "audio"],
     src: "//www.youtube.com/embed/dO-GHJkrh5A",
-    desc: "Smaragd",
+    desc: 'Track 6 from "Neizbruseni Kamenja" EP',
     gridSize: "",
   },
   {
@@ -35,7 +37,15 @@ export const ArtworkData = [
     type: ["videos", "audio"],
     src: "https://i.imgur.com/T1Eploe.mp4",
     poster: "https://i.imgur.com/d4dRaRz.png",
-    desc: "Inspired by the intro of Marvel's \"What If...\" series, I was trying to achieve a procedural shading based on the camera's position.",
+    desc: "A.I. animation using two prompts. I animated the zoom attribute, while changing the prompt weights over time. Made with VQGAN+CLIP on Google Colab.",
+    gridSize: "",
+  },
+  {
+    name: "Ice Fractals",
+    type: ["video", "audio"],
+    src: "https://i.imgur.com/2uhc4v9.mp4",
+    poster: "https://i.imgur.com/d4dRaRz.png",
+    desc: "A.I. animation using two prompts. I animated the zoom attribute, while changing the prompt weights over time. Made with VQGAN+CLIP on Google Colab.",
     gridSize: "",
   },
   {
@@ -58,7 +68,7 @@ export const ArtworkData = [
     name: "Opal",
     type: ["youtube", "videos", "audio"],
     src: "//www.youtube.com/embed/KsevmMGJ3Cw",
-    desc: "Smaragd",
+    desc: 'Track 2 from "Neizbruseni Kamenja" EP',
     gridSize: "",
   },
   {
@@ -80,7 +90,7 @@ export const ArtworkData = [
     name: "Smaragd",
     type: ["youtube", "videos", "audio"],
     src: "//www.youtube.com/embed/3UDbgvsJYYU",
-    desc: "Smaragd",
+    desc: 'Track 1 from "Neizbruseni Kamenja" EP',
     gridSize: "",
   },
   {
@@ -117,7 +127,7 @@ export const ArtworkData = [
     name: "Zhad",
     type: ["youtube", "videos", "audio"],
     src: "//www.youtube.com/embed/1TlzEe03FDY",
-    desc: "Smaragd",
+    desc: 'Track 5 from "Neizbruseni Kamenja" EP',
     gridSize: "",
   },
   {
@@ -138,7 +148,7 @@ export const ArtworkData = [
     name: "Opsidijan",
     type: ["youtube", "videos", "audio"],
     src: "//www.youtube.com/embed/mOA0kEdJ9zw",
-    desc: "Smaragd",
+    desc: 'Track 7 from "Neizbruseni Kamenja" EP',
     gridSize: "",
   },
 
@@ -168,7 +178,7 @@ export const ArtworkData = [
     name: "Ametist",
     type: ["youtube", "videos", "audio"],
     src: "//www.youtube.com/embed/xEAxqil5-m0",
-    desc: "Smaragd",
+    desc: 'Track 4 from "Neizbruseni Kamenja" EP',
     gridSize: "",
   },
   {
@@ -197,7 +207,7 @@ export const ArtworkData = [
     name: "Beril",
     type: ["youtube", "videos", "audio"],
     src: "//www.youtube.com/embed/M1LgnRHupU8",
-    desc: "Smaragd",
+    desc: 'Track 3 from "Neizbruseni Kamenja" EP',
     gridSize: "",
   },
 
@@ -205,7 +215,8 @@ export const ArtworkData = [
     name: "Vrvot na Trkaloto",
     type: ["youtube", "videos"],
     src: "//www.youtube.com/embed/VF8CRfzoeGY",
-    desc: "Smaragd",
+    desc: `I made this looping animation for a track called "Vrvot na Trkaloto". I was given a concept art for the environment and two characters, which I recreated in Blender. The environment itself is 3D, so I made sure for some elements to dynamically react to certain frequencies of the song.
+    The final look of the character differs a bit from the original concept, since they had to be optimized for animation. I made sure to give them both a distinct walking style. There are of course a couple of easter eggs and unique animated moments, such as the cross flipping over at 0:44.`,
     gridSize: "wide",
   },
 ];
