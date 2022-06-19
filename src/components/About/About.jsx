@@ -205,7 +205,7 @@ const About = (props) => {
     <div className="about">
       <div className="about-container">
         <IoClose id="close-button" onClick={() => props.setShowAbout(false)} />
-        <div id="about-header">
+        <div id="about-sidebar">
           <img id="profile-pic" src="https://imgur.com/fLFzM2Y.png" alt="" />
 
           <div>
@@ -267,7 +267,7 @@ const About = (props) => {
         {/* ABOUT  */}
         <div className="info-container open" onClick={() => toggleContainer(0)}>
           {/* NAME AND CONTACT INFO  */}
-          <h1 id="info-header">About</h1>
+          <h1 id="info-sidebar">About</h1>
           {/* ABOUT THIS WEBSITE  */}
           <span id="info-content">
             <h2>This Website</h2>
@@ -288,7 +288,7 @@ const About = (props) => {
 
         {/* WORK EXPERIENCE  */}
         <div className="info-container" onClick={() => toggleContainer(1)}>
-          <h1 id="info-header">Work Experience</h1>
+          <h1 id="info-sidebar">Work Experience</h1>
           <span id="info-content">
             <h2>
               VFX Artist,{" "}
@@ -319,7 +319,7 @@ const About = (props) => {
 
         {/* LATEST PROJECTS  */}
         <div className="info-container" onClick={() => toggleContainer(2)}>
-          <h1 id="info-header">Latest Projects</h1>
+          <h1 id="info-sidebar">Latest Projects</h1>
           <span id="info-content">
             <h2>
               <a
@@ -360,7 +360,7 @@ const About = (props) => {
           id="skills-container"
           onClick={() => toggleContainer(3)}
         >
-          <h1 id="info-header">Skills</h1>
+          <h1 id="info-sidebar">Skills</h1>
           <span id="info-content">
             <h2>Visual</h2>
             <div className="skills-container">

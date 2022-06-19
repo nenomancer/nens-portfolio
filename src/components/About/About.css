@@ -78,7 +78,7 @@
 
 /* TOP CONTAINER STYLES  */
 
-#about-header {
+#about-sidebar {
   position: relative;
   display: flex;
   width: 100%;
@@ -91,7 +91,7 @@
   word-wrap: break-word;
 }
 
-#about-header div {
+#about-sidebar div {
   width: 65%;
 }
 

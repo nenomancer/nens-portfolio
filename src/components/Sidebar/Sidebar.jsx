@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./Header.css";
+import "./Sidebar.css";
 
-const Header = (props) => {
+const Sidebar = (props) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const navItems = [
@@ -34,7 +34,7 @@ const Header = (props) => {
     document.querySelector("#circle").style.animationPlayState = "paused";
   };
   return (
-    <div className="header">
+    <aside className="sidebar">
       <div className="logo-container" onClick={onClickHandler}>
         <div id="logo">
           <span>N</span>
@@ -42,7 +42,6 @@ const Header = (props) => {
         <span id="circle"></span>
       </div>
 
-    
       <ul className="nav-items">
         {navItems.map((navItem, index) => {
           return (
@@ -60,8 +59,8 @@ const Header = (props) => {
           );
         })}
       </ul>
-    </div>
+    </aside>
   );
 };
 
-export default Header;
+export default Sidebar;
