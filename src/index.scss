@@ -1,0 +1,114 @@
+$accent-color: hsl(192, 100%, 75%);
+$dark: hsl(0, 0, 2);
+$medium-dark: hsl(0, 0, 8);
+$medium: hsl(0, 0, 12);
+
+/* SIZE VARS  */
+$header-height: 4rem;
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  /* CSS VARIABLES */
+}
+
+body {
+  margin: 0;
+  font-family: "Radio Canada", "sans-serif";
+  -webkit-font-smoothing: antialiased;
+  color: white;
+  /* overflow-y: hidden; */
+}
+
+.header {
+  background-color: $dark;
+  height: $header-height;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  #name {
+    font-size: 1.8rem;
+    font-weight: bolder;
+    letter-spacing: 0.25rem;
+  }
+  #menu-button {
+    height: $header-height;
+    width: $header-height;
+    display: flex;
+    justify-content: center;
+    #menu-icon {
+      width: 25px;
+      height: 100%;
+      // margin: 0 2rem;
+      cursor: pointer;
+    }
+  }
+}
+
+.sidebar {
+  background-color: $dark;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  left: 0;
+  align-items: center;
+
+  width: 12rem;
+  height: calc(100vh - $header-height);
+
+  .sidebar-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    list-style: none;
+    width: 100%;
+    .sidebar-list-item {
+      display: flex;
+      align-items: center;
+      padding: 1rem 0;
+      width: 100%;
+      border-bottom: 1px solid $medium-dark;
+      &:hover {
+        background-color: $medium-dark;
+        cursor: pointer;
+      }
+      .sidebar-icon {
+        width: 25px;
+        height: 25px;
+        margin: 0 calc($header-height / 3);
+      }
+    }
+  }
+  /* overflow: hidden; */
+}
+
+/* .header {
+  background-color: red;
+  height: var(--height-header);
+}
+
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: 250px;
+  width: 90%;
+  height: calc(100vh - var(--height-header));
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  grid-auto-flow: dense;
+  gap: 0.5rem;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  margin: 0.5rem;
+  scrollbar-width: none;
+} */

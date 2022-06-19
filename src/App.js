@@ -9,6 +9,7 @@ import { MdAutoAwesomeMosaic } from "react-icons/md";
 import { MdPhotoLibrary } from "react-icons/md";
 import { MdVideoLibrary } from "react-icons/md";
 import { MdLibraryMusic } from "react-icons/md";
+import { MdPerson } from "react-icons/md";
 
 function App() {
   // ---------- GALLERY FILTER ----------
@@ -41,26 +42,32 @@ function App() {
     <Fragment>
       {showAbout && <About setShowAbout={setShowAbout} />}
       <header className="header">
-        <GiHamburgerMenu id="btn-menu" onClick={() => setShowAbout(true)} />
+        <div id="menu-button">
+          <GiHamburgerMenu id="menu-icon" onClick={() => setShowAbout(true)} />
+        </div>
         <span id="name">NENS</span>
       </header>
       <aside className="sidebar">
         <ul className="sidebar-list">
           <li className="sidebar-list-item active">
-            <MdAutoAwesomeMosaic />
-            <div className="sidebar-hidden">All</div>
+            <MdAutoAwesomeMosaic className="sidebar-icon" />
+            <div className="hidden-sidebar">All</div>
           </li>
           <li className="sidebar-list-item active">
-            <MdPhotoLibrary />
-            <div className="sidebar-hidden">Images</div>
+            <MdPhotoLibrary className="sidebar-icon" />
+            <div className="hidden-sidebar">Images</div>
           </li>
           <li className="sidebar-list-item active">
-            <MdVideoLibrary />
-            <div className="sidebar-hidden">Video</div>
+            <MdVideoLibrary className="sidebar-icon" />
+            <div className="hidden-sidebar">Video</div>
           </li>
           <li className="sidebar-list-item active">
-            <MdLibraryMusic />
-            <div className="sidebar-hidden">Audio</div>
+            <MdLibraryMusic className="sidebar-icon" />
+            <div className="hidden-sidebar">Audio</div>
+          </li>
+          <li className="sidebar-list-item active">
+            <MdPerson className="sidebar-icon" />
+            <div className="hidden-sidebar">About</div>
           </li>
         </ul>
       </aside>
