@@ -23,11 +23,12 @@ body {
   font-family: "Radio Canada", "sans-serif";
   -webkit-font-smoothing: antialiased;
   color: white;
-  /* overflow-y: hidden; */
+  height: 100vh;
+  overflow-y: hidden;
 }
 
 .header {
-  background-color: $dark;
+  background-color: $medium;
   height: $header-height;
   display: flex;
   align-items: center;
@@ -44,9 +45,8 @@ body {
     display: flex;
     justify-content: center;
     #menu-icon {
-      width: 25px;
+    //   width: 25px;
       height: 100%;
-      // margin: 0 2rem;
       cursor: pointer;
     }
   }
@@ -54,12 +54,13 @@ body {
 
 .sidebar {
   background-color: $dark;
+  position: absolute;
+  left: 0;
+  top: $header-height;
   display: flex;
   flex-direction: column;
   position: sticky;
-  left: 0;
   align-items: center;
-
   width: 12rem;
   height: calc(100vh - $header-height);
 
@@ -70,29 +71,60 @@ body {
     list-style: none;
     width: 100%;
     .sidebar-list-item {
+      position: relative;
       display: flex;
       align-items: center;
-      padding: 1rem 0;
+      height: 4rem;
       width: 100%;
       border-bottom: 1px solid $medium-dark;
       &:hover {
         background-color: $medium-dark;
         cursor: pointer;
       }
+
       .sidebar-icon {
-        width: 25px;
-        height: 25px;
+        // width: 25px;
+        height: 100%;
         margin: 0 calc($header-height / 3);
       }
     }
   }
+  .active {
+    background-color: $medium-dark;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      height: 100%;
+      background-color: red;
+      width: 3px;
+    }
+  }
   /* overflow: hidden; */
+}
+
+.gallery {
+  position: absolute;
+  top: $header-height;
+  right: 0;
+  height: calc(100vh - $header-height);
+  width: calc(100vw - 12rem);
+  display: grid;
+  gap: 0.5rem;
+  padding: 2rem;
+  grid-auto-rows: 250px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-flow: dense;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  background-color: $dark;
 }
 
 /* .header {
   background-color: red;
   height: var(--height-header);
 }
+
 
 
 .gallery {

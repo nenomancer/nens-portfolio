@@ -37,6 +37,23 @@ function App() {
   // const onShowAboutHandler = () => {
   //   setShowAbout(true);
   // };
+  const menuItems = document.querySelectorAll(".sidebar-list-item");
+  const menuClickHandler = (e) => {
+    e.stopPropagation();
+    console.log(e.target.textContent);
+    setFilterType(e.target.textContent.toLowerCase());
+    for (let item of menuItems) {
+      if (item.textContent === e.target.textContent) {
+        e.target.classList.add("active");
+      } else {
+        item.classList.remove("active");
+      }
+    }
+  };
+
+  // for (let item of menuItems) {
+  //   item.addEventListener("click", menuClickHandler);
+  // }
 
   return (
     <Fragment>
@@ -49,30 +66,30 @@ function App() {
       </header>
       <aside className="sidebar">
         <ul className="sidebar-list">
-          <li className="sidebar-list-item active">
+          <li className="sidebar-list-item active" onClick={menuClickHandler}>
             <MdAutoAwesomeMosaic className="sidebar-icon" />
             <div className="hidden-sidebar">All</div>
           </li>
-          <li className="sidebar-list-item active">
+          <li className="sidebar-list-item " onClick={menuClickHandler}>
             <MdPhotoLibrary className="sidebar-icon" />
             <div className="hidden-sidebar">Images</div>
           </li>
-          <li className="sidebar-list-item active">
+          <li className="sidebar-list-item " onClick={menuClickHandler}>
             <MdVideoLibrary className="sidebar-icon" />
-            <div className="hidden-sidebar">Video</div>
+            <div className="hidden-sidebar">Videos</div>
           </li>
-          <li className="sidebar-list-item active">
+          <li className="sidebar-list-item " onClick={menuClickHandler}>
             <MdLibraryMusic className="sidebar-icon" />
             <div className="hidden-sidebar">Audio</div>
           </li>
-          <li className="sidebar-list-item active">
+          <li className="sidebar-list-item ">
             <MdPerson className="sidebar-icon" />
             <div className="hidden-sidebar">About</div>
           </li>
         </ul>
       </aside>
-      {/* <Sidebar setShowAbout={setShowAbout} onSetFilter={setFilterType} />
-      <Gallery
+      {/* <Sidebar setShowAbout={setShowAbout} onSetFilter={setFilterType} /> */}
+      {/* <Gallery
         artwork={filteredTiles}
         viewHandler={viewHandler}
         showTileModal={showTileModal}
@@ -80,6 +97,7 @@ function App() {
         selectedImg={selectedImg}
         setSelectedImg={setSelectedImg}
       /> */}
+      <footer>Footer</footer>
     </Fragment>
   );
 }
