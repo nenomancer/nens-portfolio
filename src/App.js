@@ -89,15 +89,15 @@ function App() {
         </ul>
       </aside>
       {/* <Sidebar setShowAbout={setShowAbout} onSetFilter={setFilterType} /> */}
-      {/* <Gallery
+      <Gallery
         artwork={filteredTiles}
         viewHandler={viewHandler}
         showTileModal={showTileModal}
         setShowTileModal={setShowTileModal}
         selectedImg={selectedImg}
         setSelectedImg={setSelectedImg}
-      /> */}
-      <footer>Footer</footer>
+      />
+      {/* <footer>Footer</footer> */}
     </Fragment>
   );
 }
