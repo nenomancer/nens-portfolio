@@ -48,17 +48,17 @@ function App() {
   // MAKE ARRAY OUT OF MENU ITEMS
   const menuItems = document.querySelectorAll(".sidebar-list-item");
   const menuClickHandler = (e) => {
-    e.stopPropagation();
+    // e.stopPropagation();
     // SET FILTER TYPE BASED ON TEXT CONTENT OF MENU ITEM
     setFilterType(e.target.textContent.toLowerCase());
-    for (let item of menuItems) {
-      // SET ACTIVE CLASS FOR CLICKED ITEM
+    // SET ACTIVE CLASS FOR CLICKED ITEM
+    menuItems.forEach((item) => {
       if (item.textContent === e.target.textContent) {
         e.target.classList.add("active");
       } else {
         item.classList.remove("active");
       }
-    }
+    });
   };
 
   const sidebar = document.querySelector(".sidebar");
@@ -83,23 +83,18 @@ function App() {
     }
   };
 
-  // const closeSidebar = () => {
-  //   listItemTexts.forEach((text, index) => {
-  //     text.classList.remove("text-fade-in");
-  //   });
-  //   sidebar.style.flexBasis = "5rem";
-  // };
+  const aboutContainer = document.querySelector(".about-container");
+  const aboutCard = document.querySelector(".about-card");
 
-  let isAboutOpen = false;
   const aboutClickHandler = () => {
-    setShowAbout(true);
-    
+    aboutContainer.classList.toggle("open");
+    aboutCard.classList.toggle("open");
   };
   return (
     <Fragment>
       {/* {showAbout && <About setShowAbout={setShowAbout} />} */}
       <header className="header">
-        <div id="menu-button" onClick={toggleMenu}>
+        <div id="menu-button" onMouseUp={toggleMenu}>
           <GiHamburgerMenu id="menu-icon" />
         </div>
         <span id="name">NENS</span>
@@ -144,19 +139,17 @@ function App() {
             </li>
           </ul>
         </aside>
-        <div className="content-container">
-          <div className="about-container">
-            <div className="card">About</div>
-          </div>
-          <Gallery
-            artwork={filteredTiles}
-            viewHandler={viewHandler}
-            showTileModal={showTileModal}
-            setShowTileModal={setShowTileModal}
-            selectedImg={selectedImg}
-            setSelectedImg={setSelectedImg}
-          />
+        <div className="about-container">
+          <div className="about-card">About</div>
         </div>
+        <Gallery
+          artwork={filteredTiles}
+          viewHandler={viewHandler}
+          showTileModal={showTileModal}
+          setShowTileModal={setShowTileModal}
+          selectedImg={selectedImg}
+          setSelectedImg={setSelectedImg}
+        />
       </main>
       {/* <footer>Footer</footer> */}
     </Fragment>

@@ -11,6 +11,8 @@ $sidebar-width: 4rem;
 //   sidebarWidth: $sidebar-width;
 // }
 
+$box-shadow: 0 0 20px 0 black;
+$timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
 *,
 *::before,
 *::after {
@@ -29,7 +31,6 @@ body {
   -webkit-font-smoothing: antialiased;
   background-color: $dark;
   color: white;
-  height: 100vh;
   overflow-y: hidden;
 }
 
@@ -40,7 +41,7 @@ body {
   align-items: center;
   position: sticky;
   top: 0;
-  box-shadow: 0 0 20px 0 black;
+  box-shadow: $box-shadow;
   z-index: 10;
   #name {
     font-size: 1.8rem;
@@ -65,26 +66,23 @@ body {
 
 main {
   display: flex;
-  overflow: hidden;
+  // overflow: hidden;
+  // scroll-behavior: none;
 }
 
 .sidebar {
   background-color: $dark;
-  // position: absolute;
-  // left: 0;
   top: $header-height;
   display: flex;
   flex-direction: column;
   position: sticky;
   align-items: center;
-  // width: 4rem;
-  // height: calc(100vh - $header-height);
-  box-shadow: 0 0 20px 0 black;
+  box-shadow: $box-shadow;
   flex-basis: 5rem;
   flex-grow: 1;
   flex-shrink: 0;
   z-index: 5;
-  transition: 250ms ease-in-out;
+  transition: 250ms $timing-function;
   .sidebar-list {
     display: flex;
     flex-direction: column;
@@ -102,7 +100,7 @@ main {
       font-weight: 200;
       font-size: 16px;
       overflow: hidden;
-      transition: all 250ms ease-in-out;
+      transition: all 250ms $timing-function;
       &:hover,
       &:focus {
         background-color: $medium-dark;
@@ -142,7 +140,8 @@ main {
         opacity: 0;
         transform: translateX(150px);
         width: 0;
-        transition: opacity 250ms ease-in-out, transform 250ms ease-in-out;
+        transition: opacity 250ms $timing-function,
+          transform 250ms $timing-function;
         transition-delay: 0;
       }
 
@@ -169,14 +168,14 @@ main {
       div {
         // transform: scale(0);
         // opacity: 0;
-        animation: closeItems 250ms ease-in-out;
+        animation: closeItems 250ms $timing-function;
       }
     }
     // .open-items {
     //   background-color: red;
     //   // display: none;
     //   opacity: 0;
-    //   animation: openItems 250ms ease-in-out;
+    //   animation: openItems 250ms $timing-function;
     // }
     .sidebar-list-item.active {
       background-color: $medium-dark;
@@ -194,19 +193,34 @@ main {
 }
 
 .about-container {
-  background-color: rgba(0, 0, 0, 0.95);
-  // height: 100%;
+  height: 100%;
+  width: 100vw;
+  background-color: $dark;
+  position: absolute;
+  z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
-  .card {
+  transform: translateX(-100%);
+  transition: transform 500ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  box-shadow: $box-shadow;
+  .about-card {
     background-color: red;
     width: 750px;
+    transform: translateX(-200%);
     height: 400px;
+    transition: transform 750ms cubic-bezier(0.455, 0.03, 0.515, 0.955) 150ms;
+    &.open {
+      transform: translateX(0);
+    }
+  }
+  &.open {
+    transform: translateX(0);
   }
 }
 
 .gallery {
+  height: calc(100vh - $header-height);
   // height: 100%;
   display: grid;
   gap: 0.5rem;
@@ -217,19 +231,11 @@ main {
   overflow-y: scroll;
   scrollbar-width: none;
   background-color: $dark;
-
+  z-index: 0;
   .youtube {
     scale: (1.2);
   }
 }
 
-.content-container {
-  // transform: translateX(calc(-100vw - 1rem));
-  height: calc(100vh - $header-height );
-  display: grid;
-  flex-basis: calc(200vw + 2rem);
-  flex-shrink: 0;
-  grid-template-columns: 1fr 1fr;
-}
 @media (max-width: 600px) {
 }
