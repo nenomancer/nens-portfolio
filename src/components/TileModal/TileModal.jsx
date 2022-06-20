@@ -78,8 +78,8 @@ const TileModal = (props) => {
         {/* IMAGE MODAL INFO */}
         <div id="info">
           <h1>{props.selectedTile.name}</h1>
-          {props.selectedTile.desc.split("\n").map((str) => (
-            <p>{str}</p>
+          {props.selectedTile.desc.split("\n").map((str, index) => (
+            <p key={index}>{str}</p>
           ))}
         </div>
       </div>

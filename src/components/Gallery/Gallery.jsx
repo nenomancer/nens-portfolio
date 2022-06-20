@@ -13,6 +13,7 @@ const Gallery = (props) => {
 
   // HANDLE CLICK ON TILE
   const tileClickHandler = (index) => {
+    props.closeSidebar();
     const selectedTile = props.artwork[index];
     setCurrent(selectedTile);
     props.setShowTileModal(true);

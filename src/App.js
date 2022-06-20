@@ -49,7 +49,6 @@ function App() {
   const menuItems = document.querySelectorAll(".sidebar-list-item");
   const menuClickHandler = (e) => {
     e.stopPropagation();
-    console.log(e.target.textContent);
     setFilterType(e.target.textContent.toLowerCase());
     for (let item of menuItems) {
       if (item.textContent === e.target.textContent) {
@@ -83,6 +82,17 @@ function App() {
     }
   };
 
+  const closeSidebar = () => {
+    listItemTexts.forEach((text, index) => {
+      text.classList.remove("text-fade-in");
+    });
+    sidebar.style.flexBasis = "5rem";
+  };
+
+  const aboutClickHandler = () => {
+    closeSidebar();
+    setShowAbout(true);
+  };
   return (
     <Fragment>
       {showAbout && <About setShowAbout={setShowAbout} />}
@@ -91,11 +101,11 @@ function App() {
           <GiHamburgerMenu id="menu-icon" />
         </div>
         <span id="name">NENS</span>
-        <div className="icons">
+        {/* <div className="icons">
           <GrInstagram />
           <GrLinkedin />
           <GrFacebook />
-        </div>
+        </div> */}
       </header>
       <main>
         <aside className="sidebar">
@@ -124,7 +134,7 @@ function App() {
               </div>
               <div className="list-item-text">Audio</div>
             </li>
-            <li className="sidebar-list-item" onClick={() => setShowAbout(true)}>
+            <li className="sidebar-list-item" onClick={aboutClickHandler}>
               <div className="list-item-icon">
                 <MdInfo className="sidebar-icon" />
               </div>
@@ -140,6 +150,7 @@ function App() {
           setShowTileModal={setShowTileModal}
           selectedImg={selectedImg}
           setSelectedImg={setSelectedImg}
+          closeSidebar={closeSidebar}
         />
       </main>
       {/* <footer>Footer</footer> */}
