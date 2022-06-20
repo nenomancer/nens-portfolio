@@ -10,6 +10,7 @@ import { MdAutoAwesomeMosaic } from "react-icons/md";
 import { MdPhotoLibrary } from "react-icons/md";
 import { MdVideoLibrary } from "react-icons/md";
 import { MdLibraryMusic } from "react-icons/md";
+import { MdInfo } from "react-icons/md";
 import { MdPerson } from "react-icons/md";
 
 // IMPORT HEADER ICONS
@@ -59,36 +60,34 @@ function App() {
     }
   };
 
-  // console.log(variables.sidebarWidth);
-
-  // variables.sidebarWidth = `${10}rem`;
-
   const sidebar = document.querySelector(".sidebar");
-  const textItems = [...document.querySelectorAll('[data-text-display]')];
+  const listItemTexts = [...document.querySelectorAll(".list-item-text")];
+  const listItemIcons = [...document.querySelectorAll(".list-item-icon")];
+  let isMenuOpen = false;
+  const toggleMenu = () => {
+    listItemTexts.forEach((text, index) => {
+      text.classList.toggle("text-fade-in");
+    });
+    if (!isMenuOpen) {
+      // OPEN MENU
+      sidebar.style.flexBasis = "14rem";
 
-  function toggleTextItems() {
-    for (let item of textItems) {
-      item.style.classList.toggle('open-items');
-    }
-  }
-
-  let sidebarOpen = false;
-  function toggleSidebar() {
-    if (!sidebarOpen) {
-      sidebar.style.flexBasis = `${12}rem`;
-      sidebarOpen = true;
-      toggleTextItems();
+      isMenuOpen = true;
     } else {
-      sidebar.style.flexBasis = `${4}rem`;
-      sidebarOpen = false;
+      // CLOSE MENU
+      sidebar.style.flexBasis = "5rem";
+      // listItemTexts.forEach((text) => {
+      //   text.classList.add("text-fade-in");
+      // });
+      isMenuOpen = false;
     }
-  }
+  };
 
   return (
     <Fragment>
       {showAbout && <About setShowAbout={setShowAbout} />}
       <header className="header">
-        <div id="menu-button" onClick={toggleSidebar}>
+        <div id="menu-button" onClick={toggleMenu}>
           <GiHamburgerMenu id="menu-icon" />
         </div>
         <span id="name">NENS</span>
@@ -99,27 +98,37 @@ function App() {
         </div>
       </header>
       <main>
-        <aside className="sidebar open">
+        <aside className="sidebar">
           <ul className="sidebar-list">
             <li className="sidebar-list-item active" onClick={menuClickHandler}>
-              <MdAutoAwesomeMosaic className="sidebar-icon" />
-              <div className="open-items" data-text-display>All</div>
+              <div className="list-item-icon">
+                <MdAutoAwesomeMosaic className="sidebar-icon" />
+              </div>
+              <div className="list-item-text active">All</div>
             </li>
             <li className="sidebar-list-item " onClick={menuClickHandler}>
-              <MdPhotoLibrary className="sidebar-icon" />
-              <div className="open-items" data-text-display>Images</div>
+              <div className="list-item-icon">
+                <MdPhotoLibrary className="sidebar-icon" />
+              </div>
+              <div className="list-item-text">Images</div>
             </li>
             <li className="sidebar-list-item " onClick={menuClickHandler}>
-              <MdVideoLibrary className="sidebar-icon" />
-              <div className="open-items" data-text-display>Videos</div>
+              <div className="list-item-icon">
+                <MdVideoLibrary className="sidebar-icon" />
+              </div>
+              <div className="list-item-text">Videos</div>
             </li>
             <li className="sidebar-list-item " onClick={menuClickHandler}>
-              <MdLibraryMusic className="sidebar-icon" />
-              <div className="open-items" data-text-display>Audio</div>
+              <div className="list-item-icon">
+                <MdLibraryMusic className="sidebar-icon" />
+              </div>
+              <div className="list-item-text">Audio</div>
             </li>
-            <li className="sidebar-list-item ">
-              <MdPerson className="sidebar-icon" />
-              <div className="open-items" data-text-display>About</div>
+            <li className="sidebar-list-item" onClick={() => setShowAbout(true)}>
+              <div className="list-item-icon">
+                <MdInfo className="sidebar-icon" />
+              </div>
+              <div className="list-item-text">About</div>
             </li>
           </ul>
         </aside>

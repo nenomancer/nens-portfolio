@@ -1,6 +1,6 @@
 $accent-color: hsl(192, 100%, 75%);
 $dark: hsl(0, 0, 2);
-$medium-dark: hsl(0, 0, 8);
+$medium-dark: hsl(0, 0, 3);
 $medium: hsl(0, 0, 12);
 
 /* SIZE VARS  */
@@ -39,20 +39,25 @@ body {
   align-items: center;
   position: sticky;
   top: 0;
+  box-shadow: 0 0 20px 0 black;
+  z-index: 10;
   #name {
     font-size: 1.8rem;
     font-weight: bolder;
     letter-spacing: 0.25rem;
+    margin-left: 1rem;
   }
   #menu-button {
     height: $header-height;
     width: $header-height;
     display: flex;
     justify-content: center;
+    margin: 0 0.5rem;
+    cursor: pointer;
+
     #menu-icon {
-      //   width: 25px;
+      width: 20px;
       height: 100%;
-      cursor: pointer;
     }
   }
   .icons {
@@ -71,6 +76,10 @@ main {
   display: flex;
 }
 
+main {
+  display: flex;
+}
+
 .sidebar {
   background-color: $dark;
   // position: absolute;
@@ -80,35 +89,91 @@ main {
   flex-direction: column;
   position: sticky;
   align-items: center;
-  // width: 40rem;
-  flex-basis: $sidebar-width;
-  flex-grow: 0;
+  // width: 4rem;
+  // height: calc(100vh - $header-height);
+  box-shadow: 0 0 20px 0 black;
+  flex-basis: 5rem;
+  flex-grow: 1;
   flex-shrink: 0;
-  height: calc(100vh - $header-height);
-  border-right: 1px solid $medium-dark;
+  z-index: 5;
   transition: 250ms ease-in-out;
   .sidebar-list {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: flex-start;
     list-style: none;
     width: 100%;
+    height: 100%;
     .sidebar-list-item {
       position: relative;
       display: flex;
       align-items: center;
       height: 4rem;
       width: 100%;
-      border-bottom: 1px solid $medium-dark;
+      font-weight: 200;
+      font-size: 16px;
+      overflow: hidden;
       &:hover {
         background-color: $medium-dark;
         cursor: pointer;
       }
 
-      .sidebar-icon {
-        // width: 25px;
+      // DISABLE CLICK EVENTS ON CHILDREN
+      & > * {
+        pointer-events: none;
+      }
+
+      // PUSH ABOUT ICON AT THE BOTTOM
+      &:last-child {
+        margin-top: auto;
+      }
+
+      // CENTER ICON IMAGE INSIDE CONTAINER
+      .list-item-icon {
         height: 100%;
-        margin: 0 calc($header-height / 3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      // MENU ICON STYLES
+      .sidebar-icon {
+        box-sizing: content-box;
+        width: 20px;
+        height: 100%;
+        justify-self: start;
+        transform: translateX(30px);
+      }
+
+      // MENU TEXT STYLES
+      .list-item-text {
+        opacity: 0;
+        transform: translateX(150px);
+        width: 0;
+        transition: all 250ms ease-in-out;
+        transition-delay: 0;
+      }
+
+      $animation-delay: 25ms;
+      // SEPARATE DELAYS
+      &:nth-child(2) .list-item-text {
+        transition-delay: $animation-delay;
+      }
+      &:nth-child(3) .list-item-text {
+        transition-delay: calc($animation-delay * 2);
+      }
+      &:nth-child(4) .list-item-text {
+        transition-delay: calc($animation-delay * 3);
+      }
+      &:nth-child(5) .list-item-text {
+        transition-delay: calc($animation-delay * 4);
+      }
+
+      .text-fade-in {
+        opacity: 1;
+        width: 20px;
+        transform: translateX(70px) scale(1);
       }
       div {
         // transform: scale(0);
@@ -122,54 +187,23 @@ main {
       opacity: 0;
       animation: openItems 250ms ease-in-out;
     }
-  }
-
-  @keyframes openItems {
-    0% {
-      opacity: 0;
-      transform: scale(0);
-    }
-
-    100% {
-      opacity: 1;
-      transform: scale(1);
-    }
-    
-  }
-
-  @keyframes closeItems {
-    0% {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    100% {
-      opacity: 0;
-      transform: scale(0);
-    }
-  }
-
-
-  .active {
-    background-color: $medium-dark;
-    &::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      height: 100%;
-      background-color: red;
-      width: 3px;
+    .sidebar-list-item.active {
+      background-color: $medium-dark;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        height: 100%;
+        background-color: red;
+        width: 3px;
+      }
     }
   }
   /* overflow: hidden; */
 }
 
 .gallery {
-  // position: absolute;
-  // top: $header-height;
-  // right: 0;
   height: calc(100vh - $header-height);
-  // width: calc(100vw - $sidebar-width);
   display: grid;
   gap: 0.5rem;
   padding: 1rem;
@@ -179,29 +213,11 @@ main {
   overflow-y: scroll;
   scrollbar-width: none;
   background-color: $dark;
+
+  .youtube {
+    scale: (1.2);
+  }
 }
 
-/* .header {
-  background-color: red;
-  height: var(--height-header);
+@media (max-width: 600px) {
 }
-
-
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-auto-rows: 250px;
-  width: 90%;
-  height: calc(100vh - var(--height-header));
-
-  position: absolute;
-  top: 0;
-  right: 0;
-  grid-auto-flow: dense;
-  gap: 0.5rem;
-  overflow-y: scroll;
-  scroll-behavior: smooth;
-  margin: 0.5rem;
-  scrollbar-width: none;
-} */

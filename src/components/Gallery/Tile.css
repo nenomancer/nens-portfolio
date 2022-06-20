@@ -18,7 +18,7 @@
 
 
 
-img, video{
+img, video, .youtube{
   height: 100%;
   width: 100%;
   object-fit: cover;

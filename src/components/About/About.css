@@ -18,7 +18,7 @@
   left: 0;
   z-index: -1;
   min-height: 100%;
-  opacity: 0.95;
+  /* opacity: 0.95; */
 }
 
 /* DEFAULT TEXT STYLES  */
