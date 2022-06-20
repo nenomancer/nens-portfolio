@@ -9,6 +9,7 @@ import { MdAutoAwesomeMosaic } from "react-icons/md";
 import { MdPhotoLibrary } from "react-icons/md";
 import { MdVideoLibrary } from "react-icons/md";
 import { MdLibraryMusic } from "react-icons/md";
+import { MdInfo } from "react-icons/md";
 import { MdPerson } from "react-icons/md";
 
 function App() {
@@ -110,9 +111,9 @@ function App() {
               </div>
               <div className="list-item-text">Audio</div>
             </li>
-            <li className="sidebar-list-item ">
+            <li className="sidebar-list-item" onClick={() => setShowAbout(true)}>
               <div className="list-item-icon">
-                <MdPerson className="sidebar-icon" />
+                <MdInfo className="sidebar-icon" />
               </div>
               <div className="list-item-text">About</div>
             </li>

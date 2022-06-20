@@ -69,10 +69,10 @@ main {
   position: sticky;
   align-items: center;
   // width: 4rem;
-  height: calc(100vh - $header-height);
+  // height: calc(100vh - $header-height);
   box-shadow: 0 0 20px 0 black;
   flex-basis: 5rem;
-  flex-grow: 0;
+  flex-grow: 1;
   flex-shrink: 0;
   z-index: 5;
   transition: 250ms ease-in-out;
@@ -80,6 +80,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: flex-start;
     list-style: none;
     width: 100%;
     height: 100%;
@@ -100,7 +101,7 @@ main {
         pointer-events: none;
       }
       &:last-child {
-        justify-self: flex-end;
+        margin-top: auto;
       }
       .list-item-icon {
         height: 100%;
@@ -149,11 +150,7 @@ main {
 }
 
 .gallery {
-  // position: absolute;
-  // top: $header-height;
-  // right: 0;
   height: calc(100vh - $header-height);
-  // width: calc(100vw - 12rem);
   display: grid;
   gap: 0.5rem;
   padding: 1rem;
@@ -169,27 +166,5 @@ main {
   }
 }
 
-/* .header {
-  background-color: red;
-  height: var(--height-header);
+@media (max-width: 600px) {
 }
-
-
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-auto-rows: 250px;
-  width: 90%;
-  height: calc(100vh - var(--height-header));
-
-  position: absolute;
-  top: 0;
-  right: 0;
-  grid-auto-flow: dense;
-  gap: 0.5rem;
-  overflow-y: scroll;
-  scroll-behavior: smooth;
-  margin: 0.5rem;
-  scrollbar-width: none;
-} */
