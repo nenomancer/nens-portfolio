@@ -66,7 +66,6 @@ function App() {
   const listItemIcons = [...document.querySelectorAll(".list-item-icon")];
   let isMenuOpen = false;
   const toggleMenu = () => {
-    
     if (!isMenuOpen) {
       // OPEN MENU
       sidebar.style.flexBasis = "14rem";
@@ -84,16 +83,17 @@ function App() {
     }
   };
 
-  const closeSidebar = () => {
-    listItemTexts.forEach((text, index) => {
-      text.classList.remove("text-fade-in");
-    });
-    sidebar.style.flexBasis = "5rem";
-  };
+  // const closeSidebar = () => {
+  //   listItemTexts.forEach((text, index) => {
+  //     text.classList.remove("text-fade-in");
+  //   });
+  //   sidebar.style.flexBasis = "5rem";
+  // };
 
+  let isAboutOpen = false;
   const aboutClickHandler = () => {
-    closeSidebar();
     setShowAbout(true);
+    
   };
   return (
     <Fragment>
@@ -144,20 +144,19 @@ function App() {
             </li>
           </ul>
         </aside>
-        {/* <div className="about-container">
-          <div className="card">
-            About
+        <div className="content-container">
+          <div className="about-container">
+            <div className="card">About</div>
           </div>
-        </div> */}
-        <Gallery
-          artwork={filteredTiles}
-          viewHandler={viewHandler}
-          showTileModal={showTileModal}
-          setShowTileModal={setShowTileModal}
-          selectedImg={selectedImg}
-          setSelectedImg={setSelectedImg}
-          closeSidebar={closeSidebar}
-        />
+          <Gallery
+            artwork={filteredTiles}
+            viewHandler={viewHandler}
+            showTileModal={showTileModal}
+            setShowTileModal={setShowTileModal}
+            selectedImg={selectedImg}
+            setSelectedImg={setSelectedImg}
+          />
+        </div>
       </main>
       {/* <footer>Footer</footer> */}
     </Fragment>

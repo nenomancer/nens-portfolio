@@ -1,6 +1,6 @@
-$accent-color: hsl(192, 100%, 75%);
-$dark: hsl(0, 0, 2);
-$medium-dark: hsl(0, 0, 3);
+$accent-color: hsl(0, 89%, 57%);
+$dark: hsl(0, 0, 3);
+$medium-dark: hsl(0, 0, 5);
 $medium: hsl(0, 0, 12);
 
 /* SIZE VARS  */
@@ -27,6 +27,7 @@ body {
   margin: 0;
   font-family: "Radio Canada", "sans-serif";
   -webkit-font-smoothing: antialiased;
+  background-color: $dark;
   color: white;
   height: 100vh;
   overflow-y: hidden;
@@ -60,24 +61,11 @@ body {
       height: 100%;
     }
   }
-  .icons {
-    position: absolute;
-    right: 0;
-    margin-right: 1rem;
-    // background-color: red;
-    & > * {
-      margin-right: 0.5rem;
-      color: red;
-    }
-  }
 }
 
 main {
   display: flex;
-}
-
-main {
-  display: flex;
+  overflow: hidden;
 }
 
 .sidebar {
@@ -114,8 +102,11 @@ main {
       font-weight: 200;
       font-size: 16px;
       overflow: hidden;
-      &:hover {
+      transition: all 250ms ease-in-out;
+      &:hover,
+      &:focus {
         background-color: $medium-dark;
+        color: $accent-color;
         cursor: pointer;
       }
 
@@ -151,7 +142,7 @@ main {
         opacity: 0;
         transform: translateX(150px);
         width: 0;
-        transition: all 250ms ease-in-out;
+        transition: opacity 250ms ease-in-out, transform 250ms ease-in-out;
         transition-delay: 0;
       }
 
@@ -181,12 +172,12 @@ main {
         animation: closeItems 250ms ease-in-out;
       }
     }
-    .open-items {
-      background-color: red;
-      // display: none;
-      opacity: 0;
-      animation: openItems 250ms ease-in-out;
-    }
+    // .open-items {
+    //   background-color: red;
+    //   // display: none;
+    //   opacity: 0;
+    //   animation: openItems 250ms ease-in-out;
+    // }
     .sidebar-list-item.active {
       background-color: $medium-dark;
       &::before {
@@ -194,8 +185,8 @@ main {
         position: absolute;
         left: 0;
         height: 100%;
-        background-color: red;
-        width: 3px;
+        background-color: $accent-color;
+        width: 0.25rem;
       }
     }
   }
@@ -204,16 +195,7 @@ main {
 
 .about-container {
   background-color: rgba(0, 0, 0, 0.95);
-  position: absolute;
-  z-index: 50;
-  // top:50%;
-  // left: 50%;
-  // transform: translate(-50%, -50%);
-  // width: 80%;
-  // height: 80%;
-  height: 100vh;
-  width: 100vw;
-  top: 0;
+  // height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -225,7 +207,7 @@ main {
 }
 
 .gallery {
-  height: calc(100vh - $header-height);
+  // height: 100%;
   display: grid;
   gap: 0.5rem;
   padding: 1rem;
@@ -241,5 +223,13 @@ main {
   }
 }
 
+.content-container {
+  // transform: translateX(calc(-100vw - 1rem));
+  height: calc(100vh - $header-height );
+  display: grid;
+  flex-basis: calc(200vw + 2rem);
+  flex-shrink: 0;
+  grid-template-columns: 1fr 1fr;
+}
 @media (max-width: 600px) {
 }
