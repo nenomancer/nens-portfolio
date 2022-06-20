@@ -51,10 +51,6 @@ function App() {
     }
   };
 
-  // for (let item of menuItems) {
-  //   item.addEventListener("click", menuClickHandler);
-  // }
-
   return (
     <Fragment>
       {showAbout && <About setShowAbout={setShowAbout} />}

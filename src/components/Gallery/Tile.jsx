@@ -27,6 +27,7 @@ const Tile = (props) => {
           <img
             // GET THE FULL LINK OF THE VIDEO, AND ONLY TAKE  THE LAST 11 CHARACTERS,
             // WHICH IS THE VIDEO'S ID NUMBER
+            className="youtube"
             src={`https://i3.ytimg.com/vi/${props.src.slice(
               props.src.length - 11
             )}/0.jpg`}
