@@ -60,39 +60,41 @@ function App() {
         </div>
         <span id="name">NENS</span>
       </header>
-      <aside className="sidebar">
-        <ul className="sidebar-list">
-          <li className="sidebar-list-item active" onClick={menuClickHandler}>
-            <MdAutoAwesomeMosaic className="sidebar-icon" />
-            <div className="hidden-sidebar">All</div>
-          </li>
-          <li className="sidebar-list-item " onClick={menuClickHandler}>
-            <MdPhotoLibrary className="sidebar-icon" />
-            <div className="hidden-sidebar">Images</div>
-          </li>
-          <li className="sidebar-list-item " onClick={menuClickHandler}>
-            <MdVideoLibrary className="sidebar-icon" />
-            <div className="hidden-sidebar">Videos</div>
-          </li>
-          <li className="sidebar-list-item " onClick={menuClickHandler}>
-            <MdLibraryMusic className="sidebar-icon" />
-            <div className="hidden-sidebar">Audio</div>
-          </li>
-          <li className="sidebar-list-item ">
-            <MdPerson className="sidebar-icon" />
-            <div className="hidden-sidebar">About</div>
-          </li>
-        </ul>
-      </aside>
-      {/* <Sidebar setShowAbout={setShowAbout} onSetFilter={setFilterType} /> */}
-      <Gallery
-        artwork={filteredTiles}
-        viewHandler={viewHandler}
-        showTileModal={showTileModal}
-        setShowTileModal={setShowTileModal}
-        selectedImg={selectedImg}
-        setSelectedImg={setSelectedImg}
-      />
+      <main>
+        <aside className="sidebar">
+          <ul className="sidebar-list">
+            <li className="sidebar-list-item active" onClick={menuClickHandler}>
+              <MdAutoAwesomeMosaic className="sidebar-icon" />
+              <div className="list-item-text active">All</div>
+            </li>
+            <li className="sidebar-list-item " onClick={menuClickHandler}>
+              <MdPhotoLibrary className="sidebar-icon" />
+              <div className="list-item-text">Images</div>
+            </li>
+            <li className="sidebar-list-item " onClick={menuClickHandler}>
+              <MdVideoLibrary className="sidebar-icon" />
+              <div className="list-item-text">Videos</div>
+            </li>
+            <li className="sidebar-list-item " onClick={menuClickHandler}>
+              <MdLibraryMusic className="sidebar-icon" />
+              <div className="list-item-text">Audio</div>
+            </li>
+            <li className="sidebar-list-item ">
+              <MdPerson className="sidebar-icon" />
+              <div className="list-item-text">About</div>
+            </li>
+          </ul>
+        </aside>
+        {/* <Sidebar setShowAbout={setShowAbout} onSetFilter={setFilterType} /> */}
+        <Gallery
+          artwork={filteredTiles}
+          viewHandler={viewHandler}
+          showTileModal={showTileModal}
+          setShowTileModal={setShowTileModal}
+          selectedImg={selectedImg}
+          setSelectedImg={setSelectedImg}
+        />
+      </main>
       {/* <footer>Footer</footer> */}
     </Fragment>
   );

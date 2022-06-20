@@ -55,6 +55,10 @@ body {
   }
 }
 
+main {
+  display: flex;
+}
+
 .sidebar {
   background-color: $dark;
   position: absolute;
@@ -64,9 +68,12 @@ body {
   flex-direction: column;
   position: sticky;
   align-items: center;
-  width: 12rem;
+  // width: 4rem;
   height: calc(100vh - $header-height);
   box-shadow: 0 0 20px 0 black;
+  flex-basis: 4rem;
+  flex-grow: 0;
+  flex-shrink: 0;
   z-index: 5;
   .sidebar-list {
     display: flex;
@@ -101,8 +108,28 @@ body {
         margin: 0 2.5rem;
         // margin: 0 calc($header-height / 2);
       }
+      .list-item-text {
+        color: red;
+        opacity: 0;
+        display: none;
+      }
+
+      .list-item-text.active {
+        opacity: 1;
+        animation: menuTextFadeIn 250ms linear;
+      }
     }
   }
+
+  @keyframes menuTextFadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 100;
+    }
+  }
+
   .active {
     background-color: $medium-dark;
     &::before {
@@ -117,13 +144,12 @@ body {
   /* overflow: hidden; */
 }
 
-
 .gallery {
-  position: absolute;
-  top: $header-height;
-  right: 0;
+  // position: absolute;
+  // top: $header-height;
+  // right: 0;
   height: calc(100vh - $header-height);
-  width: calc(100vw - 12rem);
+  // width: calc(100vw - 12rem);
   display: grid;
   gap: 0.5rem;
   padding: 1rem;
