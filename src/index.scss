@@ -5,6 +5,11 @@ $medium: hsl(0, 0, 12);
 
 /* SIZE VARS  */
 $header-height: 4rem;
+$sidebar-width: 4rem;
+
+// :export {
+//   sidebarWidth: $sidebar-width;
+// }
 
 *,
 *::before,
@@ -50,20 +55,38 @@ body {
       cursor: pointer;
     }
   }
+  .icons {
+    position: absolute;
+    right: 0;
+    margin-right: 1rem;
+    // background-color: red;
+    & > * {
+      margin-right: 0.5rem;
+      color: red;
+    }
+  }
+}
+
+main {
+  display: flex;
 }
 
 .sidebar {
   background-color: $dark;
-  position: absolute;
-  left: 0;
+  // position: absolute;
+  // left: 0;
   top: $header-height;
   display: flex;
   flex-direction: column;
   position: sticky;
   align-items: center;
-  width: 12rem;
+  // width: 40rem;
+  flex-basis: $sidebar-width;
+  flex-grow: 0;
+  flex-shrink: 0;
   height: calc(100vh - $header-height);
   border-right: 1px solid $medium-dark;
+  transition: 250ms ease-in-out;
   .sidebar-list {
     display: flex;
     flex-direction: column;
@@ -87,8 +110,46 @@ body {
         height: 100%;
         margin: 0 calc($header-height / 3);
       }
+      div {
+        // transform: scale(0);
+        // opacity: 0;
+        animation: closeItems 250ms ease-in-out;
+      }
+    }
+    .open-items {
+      background-color: red;
+      // display: none;
+      opacity: 0;
+      animation: openItems 250ms ease-in-out;
     }
   }
+
+  @keyframes openItems {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    
+  }
+
+  @keyframes closeItems {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    100% {
+      opacity: 0;
+      transform: scale(0);
+    }
+  }
+
+
   .active {
     background-color: $medium-dark;
     &::before {
@@ -104,11 +165,11 @@ body {
 }
 
 .gallery {
-  position: absolute;
-  top: $header-height;
-  right: 0;
+  // position: absolute;
+  // top: $header-height;
+  // right: 0;
   height: calc(100vh - $header-height);
-  width: calc(100vw - 12rem);
+  // width: calc(100vw - $sidebar-width);
   display: grid;
   gap: 0.5rem;
   padding: 1rem;
