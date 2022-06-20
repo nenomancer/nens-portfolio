@@ -62,7 +62,7 @@ function App() {
     });
     if (!isMenuOpen) {
       // OPEN MENU
-      sidebar.style.flexBasis = "12rem";
+      sidebar.style.flexBasis = "14rem";
 
       isMenuOpen = true;
     } else {
