@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
 import { ArtworkData } from "./ArtworkData";
-import About from "./components/About/About";
+// import About from "./components/About/About";
 import Gallery from "./components/Gallery/Gallery";
 import Sidebar from "./components/Sidebar/Sidebar";
 
@@ -21,36 +21,38 @@ import { GrFacebook } from "react-icons/gr";
 import variables from "./index.scss";
 
 function App() {
-  // ---------- GALLERY FILTER ----------
+  // GALLERY FILTER STATES
 
   const [filterType, setFilterType] = useState("all"); // This is for the top filterType bar
   const [filteredTiles, setFilteredTiles] = useState([]); // This is for the ArtworkData tiles
 
+  // FILTER THROUGH TILES BASED ON FILTER TYPE
   useEffect(() => {
     filterType === "all"
       ? setFilteredTiles(ArtworkData)
       : setFilteredTiles(
           ArtworkData.filter((item) => item.type.includes(filterType))
-        ); // SETS WHICH TILES ARE VISIBLE
+        );
   }, [filterType]);
 
-  // -------- IMAGE MODAL ---------
+  // IMAGE MODAL STATES
   const [showTileModal, setShowTileModal] = useState(false);
   const [selectedImg, setSelectedImg] = useState({});
   const [showAbout, setShowAbout] = useState(false);
 
+  // SHOW IMAGE MODAL
   const viewHandler = () => {
     setShowTileModal(true);
   };
 
-  // const onShowAboutHandler = () => {
-  //   setShowAbout(true);
-  // };
+  // MAKE ARRAY OUT OF MENU ITEMS
   const menuItems = document.querySelectorAll(".sidebar-list-item");
   const menuClickHandler = (e) => {
     e.stopPropagation();
+    // SET FILTER TYPE BASED ON TEXT CONTENT OF MENU ITEM
     setFilterType(e.target.textContent.toLowerCase());
     for (let item of menuItems) {
+      // SET ACTIVE CLASS FOR CLICKED ITEM
       if (item.textContent === e.target.textContent) {
         e.target.classList.add("active");
       } else {
@@ -64,20 +66,20 @@ function App() {
   const listItemIcons = [...document.querySelectorAll(".list-item-icon")];
   let isMenuOpen = false;
   const toggleMenu = () => {
-    listItemTexts.forEach((text, index) => {
-      text.classList.toggle("text-fade-in");
-    });
+    
     if (!isMenuOpen) {
       // OPEN MENU
       sidebar.style.flexBasis = "14rem";
-
+      listItemTexts.forEach((text, index) => {
+        text.classList.add("text-fade-in");
+      });
       isMenuOpen = true;
     } else {
       // CLOSE MENU
       sidebar.style.flexBasis = "5rem";
-      // listItemTexts.forEach((text) => {
-      //   text.classList.add("text-fade-in");
-      // });
+      listItemTexts.forEach((text) => {
+        text.classList.remove("text-fade-in");
+      });
       isMenuOpen = false;
     }
   };
@@ -95,7 +97,7 @@ function App() {
   };
   return (
     <Fragment>
-      {showAbout && <About setShowAbout={setShowAbout} />}
+      {/* {showAbout && <About setShowAbout={setShowAbout} />} */}
       <header className="header">
         <div id="menu-button" onClick={toggleMenu}>
           <GiHamburgerMenu id="menu-icon" />
@@ -142,7 +144,11 @@ function App() {
             </li>
           </ul>
         </aside>
-        {/* <Sidebar setShowAbout={setShowAbout} onSetFilter={setFilterType} /> */}
+        {/* <div className="about-container">
+          <div className="card">
+            About
+          </div>
+        </div> */}
         <Gallery
           artwork={filteredTiles}
           viewHandler={viewHandler}

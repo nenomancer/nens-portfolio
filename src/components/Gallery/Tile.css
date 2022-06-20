@@ -1,8 +1,10 @@
 .tile__container {
   overflow: hidden;
-  z-index: 2;
   position: relative;
-  /* max-height: 500px; */
+}
+
+.hidden {
+  transform: translateX(-100%);
 }
 .tile__container:hover {
   cursor: pointer;
