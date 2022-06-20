@@ -71,10 +71,11 @@ main {
   // width: 4rem;
   height: calc(100vh - $header-height);
   box-shadow: 0 0 20px 0 black;
-  flex-basis: 4rem;
+  flex-basis: 5rem;
   flex-grow: 0;
   flex-shrink: 0;
   z-index: 5;
+  transition: 250ms ease-in-out;
   .sidebar-list {
     display: flex;
     flex-direction: column;
@@ -90,6 +91,7 @@ main {
       width: 100%;
       font-weight: 200;
       font-size: 16px;
+      overflow: hidden;
       &:hover {
         background-color: $medium-dark;
         cursor: pointer;
@@ -98,47 +100,49 @@ main {
         pointer-events: none;
       }
       &:last-child {
-        align-self: flex-end;
         justify-self: flex-end;
+      }
+      .list-item-icon {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
       .sidebar-icon {
+        box-sizing: content-box;
         width: 20px;
         height: 100%;
-        margin: 0 2.5rem;
+        justify-self: start;
+        transform: translateX(30px);
+        // padding: 0 2rem;
+        // margin: 0 2.5rem;
         // margin: 0 calc($header-height / 2);
       }
       .list-item-text {
-        color: red;
         opacity: 0;
-        display: none;
+        transform: translateX(150px);
+        width: 0;
+        transition: all 250ms ease-in-out;
       }
 
-      .list-item-text.active {
+      .text-fade-in {
         opacity: 1;
-        animation: menuTextFadeIn 250ms linear;
+        width: 20px;
+        transform: translateX(60px) scale(1);
+        // display: block;
       }
     }
-  }
-
-  @keyframes menuTextFadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 100;
-    }
-  }
-
-  .active {
-    background-color: $medium-dark;
-    &::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      height: 100%;
-      background-color: red;
-      width: 3px;
+    .sidebar-list-item.active {
+      background-color: $medium-dark;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        height: 100%;
+        background-color: red;
+        width: 3px;
+      }
     }
   }
   /* overflow: hidden; */

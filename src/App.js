@@ -51,12 +51,35 @@ function App() {
     }
   };
 
+  const sidebar = document.querySelector(".sidebar");
+  const listItemTexts = [...document.querySelectorAll(".list-item-text")];
+  const listItemIcons = [...document.querySelectorAll(".list-item-icon")];
+  let isMenuOpen = false;
+  const toggleMenu = () => {
+    listItemTexts.forEach((text, index) => {
+      text.classList.toggle("text-fade-in");
+    });
+    if (!isMenuOpen) {
+      // OPEN MENU
+      sidebar.style.flexBasis = "12rem";
+
+      isMenuOpen = true;
+    } else {
+      // CLOSE MENU
+      sidebar.style.flexBasis = "5rem";
+      // listItemTexts.forEach((text) => {
+      //   text.classList.add("text-fade-in");
+      // });
+      isMenuOpen = false;
+    }
+  };
+
   return (
     <Fragment>
       {showAbout && <About setShowAbout={setShowAbout} />}
       <header className="header">
-        <div id="menu-button">
-          <GiHamburgerMenu id="menu-icon" onClick={() => setShowAbout(true)} />
+        <div id="menu-button" onClick={toggleMenu}>
+          <GiHamburgerMenu id="menu-icon" />
         </div>
         <span id="name">NENS</span>
       </header>
@@ -64,23 +87,33 @@ function App() {
         <aside className="sidebar">
           <ul className="sidebar-list">
             <li className="sidebar-list-item active" onClick={menuClickHandler}>
-              <MdAutoAwesomeMosaic className="sidebar-icon" />
+              <div className="list-item-icon">
+                <MdAutoAwesomeMosaic className="sidebar-icon" />
+              </div>
               <div className="list-item-text active">All</div>
             </li>
             <li className="sidebar-list-item " onClick={menuClickHandler}>
-              <MdPhotoLibrary className="sidebar-icon" />
+              <div className="list-item-icon">
+                <MdPhotoLibrary className="sidebar-icon" />
+              </div>
               <div className="list-item-text">Images</div>
             </li>
             <li className="sidebar-list-item " onClick={menuClickHandler}>
-              <MdVideoLibrary className="sidebar-icon" />
+              <div className="list-item-icon">
+                <MdVideoLibrary className="sidebar-icon" />
+              </div>
               <div className="list-item-text">Videos</div>
             </li>
             <li className="sidebar-list-item " onClick={menuClickHandler}>
-              <MdLibraryMusic className="sidebar-icon" />
+              <div className="list-item-icon">
+                <MdLibraryMusic className="sidebar-icon" />
+              </div>
               <div className="list-item-text">Audio</div>
             </li>
             <li className="sidebar-list-item ">
-              <MdPerson className="sidebar-icon" />
+              <div className="list-item-icon">
+                <MdPerson className="sidebar-icon" />
+              </div>
               <div className="list-item-text">About</div>
             </li>
           </ul>
