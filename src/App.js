@@ -69,7 +69,7 @@ function App() {
     if (!isMenuOpen) {
       // OPEN MENU
       sidebar.style.flexBasis = "14rem";
-      listItemTexts.forEach((text, index) => {
+      listItemTexts.forEach((text) => {
         text.classList.add("text-fade-in");
       });
       isMenuOpen = true;
@@ -94,10 +94,10 @@ function App() {
     <Fragment>
       {/* {showAbout && <About setShowAbout={setShowAbout} />} */}
       <header className="header">
-        <div id="menu-button" onMouseUp={toggleMenu}>
-          <GiHamburgerMenu id="menu-icon" />
+        <div className="header-button" onMouseUp={toggleMenu}>
+          <GiHamburgerMenu className="icon" />
         </div>
-        <span id="name">NENS</span>
+        <span className="header-name">NENS</span>
         {/* <div className="icons">
           <GrInstagram />
           <GrLinkedin />
@@ -109,38 +109,42 @@ function App() {
           <ul className="sidebar-list">
             <li className="sidebar-list-item active" onClick={menuClickHandler}>
               <div className="list-item-icon">
-                <MdAutoAwesomeMosaic className="sidebar-icon" />
+                <MdAutoAwesomeMosaic className="icon sidebar-icon" />
               </div>
               <div className="list-item-text active">All</div>
             </li>
             <li className="sidebar-list-item " onClick={menuClickHandler}>
               <div className="list-item-icon">
-                <MdPhotoLibrary className="sidebar-icon" />
+                <MdPhotoLibrary className="icon sidebar-icon" />
               </div>
               <div className="list-item-text">Images</div>
             </li>
             <li className="sidebar-list-item " onClick={menuClickHandler}>
               <div className="list-item-icon">
-                <MdVideoLibrary className="sidebar-icon" />
+                <MdVideoLibrary className="icon sidebar-icon" />
               </div>
               <div className="list-item-text">Videos</div>
             </li>
             <li className="sidebar-list-item " onClick={menuClickHandler}>
               <div className="list-item-icon">
-                <MdLibraryMusic className="sidebar-icon" />
+                <MdLibraryMusic className="icon sidebar-icon" />
               </div>
               <div className="list-item-text">Audio</div>
             </li>
             <li className="sidebar-list-item" onClick={aboutClickHandler}>
               <div className="list-item-icon">
-                <MdInfo className="sidebar-icon" />
+                <MdInfo className="icon sidebar-icon" />
               </div>
               <div className="list-item-text">About</div>
             </li>
           </ul>
         </aside>
         <div className="about-container">
-          <div className="about-card">About</div>
+          <div className="about-card">
+            <div className="about-header">
+              <h1 className="about-name">Nebojsa Kovacevik</h1>
+            </div>
+          </div>
         </div>
         <Gallery
           artwork={filteredTiles}
