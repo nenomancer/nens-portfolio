@@ -90,7 +90,7 @@ function App() {
   const aboutClickHandler = () => {
     aboutContainer.classList.toggle("open");
     aboutCard.classList.toggle("open");
-
+    document.querySelector('.gallery').classList.toggle('open');
     aboutButton.classList.toggle("about-btn-toggle");
   };
   return (
@@ -146,25 +146,32 @@ function App() {
             </li>
           </ul>
         </aside>
-        <div className="about-container">
-          <div className="about-card">
-            <div className="about-header">
-              <h1 className="about-name">Nebojsa Kovacevik</h1>
-              <div>
-                <span>nebojsa.kovacevik@gmail.com</span> |{" "}
-                <span>+389 71 909 352</span>
+        <div className="CONTET">
+          <div className="about-container">
+            <div className="about-card">
+              <div className="about-header">
+                <h1 className="about-name">Nebojsa Kovacevik</h1>
+                <div>
+                  <span>nebojsa.kovacevik@gmail.com</span> |{" "}
+                  <span>+389 71 909 352</span>
+                </div>
               </div>
+              <p>
+                Hello there! My name is Neno and I am a passionate front-end
+                developer, always interested in learning and implementing new
+                technologies, optimizing my workflow.
+              </p>
             </div>
           </div>
+          <Gallery
+            artwork={filteredTiles}
+            viewHandler={viewHandler}
+            showTileModal={showTileModal}
+            setShowTileModal={setShowTileModal}
+            selectedImg={selectedImg}
+            setSelectedImg={setSelectedImg}
+          />
         </div>
-        <Gallery
-          artwork={filteredTiles}
-          viewHandler={viewHandler}
-          showTileModal={showTileModal}
-          setShowTileModal={setShowTileModal}
-          selectedImg={selectedImg}
-          setSelectedImg={setSelectedImg}
-        />
       </main>
       {/* <footer>Footer</footer> */}
     </Fragment>
