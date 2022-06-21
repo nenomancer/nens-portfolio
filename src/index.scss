@@ -31,7 +31,7 @@ body {
   -webkit-font-smoothing: antialiased;
   background-color: $dark;
   color: white;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 .icon {
@@ -196,10 +196,10 @@ main {
   /* overflow: hidden; */
 }
 
-
 .about-container {
   height: calc(100vh - $header-height);
-  width: 100vw;
+  // width: calc(100vw - $sidebar-width);
+  // width: 100%;
   background-color: $dark;
   position: absolute;
   z-index: 2;
@@ -211,21 +211,40 @@ main {
   transition: transform 500ms $timing-function;
   box-shadow: $box-shadow;
   .about-card {
-    border: 1px solid red;
-    width: 80%;
-    transform: translateX(-200%);
+    padding: 2rem;
+    width: calc(100vw - $sidebar-width - $sidebar-width);
+    height: 100%;
+    // transform: translateX(-200%);
+    // transition: transform 750ms $timing-function 150ms;
 
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
     // height: 400px;
-    transition: transform 750ms $timing-function 150ms;
-    &.open {
-      transform: translateX(0);
+  
+    // &.open {
+    //   transform: translateX(0);
+    // }
+
+    .about-header {
+      margin-bottom: 2rem;
+      .about-name {
+        font-size: 3rem;
+        text-transform: uppercase;
+      }
+    }
+    .left {
+      width: 40%;
+      p {
+        margin-bottom: 1rem;
+        line-height: 24px;
+      }
     }
   }
   &.open {
     transform: translateX(0);
   }
 }
-
 
 .gallery {
   height: calc(100vh - $header-height);

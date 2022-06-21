@@ -47,8 +47,6 @@ function App() {
 
   // MAKE ARRAY OUT OF MENU ITEMS
   const menuItems = [...document.querySelectorAll(".sidebar-list-item")];
-  const first = menuItems[0];
-  const [activeMenuItem, setActiveMenuItem] = useState(first);
 
   const menuClickHandler = (e) => {
     // toggleAbout();
@@ -56,11 +54,10 @@ function App() {
     setFilterType(e.target.textContent.toLowerCase());
     // SET ACTIVE CLASS FOR CLICKED ITEM
     menuItems.forEach((item) => {
-      if (item.textContent === e.target.textContent) {
-        setActiveMenuItem(e.target);
-        e.target.classList.add("active");
-      } else {
+      if (item.textContent !== e.target.textContent) {
         item.classList.remove("active");
+      } else {
+        e.target.classList.add("active");
       }
     });
   };
@@ -108,12 +105,9 @@ function App() {
 
   const aboutClickHandler = () => {
     aboutContainer.classList.toggle("open");
-    aboutCard.classList.toggle("open");
+    // aboutCard.classList.toggle("open");
     document.querySelector(".gallery").classList.toggle("open");
     aboutButton.classList.toggle("about-btn-toggle");
-    // activeMenuItem.classList.toggle('active');
-    console.log(activeMenuItem);
-    // toggleAbout("open");
   };
   return (
     <Fragment>
@@ -168,21 +162,31 @@ function App() {
             </li>
           </ul>
         </aside>
-        <div className="CONTET">
+        <div>
           <div className="about-container">
             <div className="about-card">
-              <div className="about-header">
-                <h1 className="about-name">Nebojsa Kovacevik</h1>
-                <div>
-                  <span>nebojsa.kovacevik@gmail.com</span> |{" "}
-                  <span>+389 71 909 352</span>
+              <img src="https://i.imgur.com/xpeKyE5.jpg"></img>
+              <div className="about-content">
+                <div className="about-header">
+                  <h1 className="about-name">Nebojsa Kovacevik</h1>
+                  <div>
+                    <span>nebojsa.kovacevik@gmail.com</span> |{" "}
+                    <span>+389 71 909 352</span>
+                  </div>
+                </div>
+                <div className="left">
+                  <p>
+                    Hello there! My name is Neno and I am a passionate front-end
+                    developer, always interested in learning and implementing
+                    new technologies, and optimizing my workflow.
+                  </p>
+                  <p>
+                    Hello there! My name is Neno and I am a passionate front-end
+                    developer, always interested in learning and implementing
+                    new technologies, and optimizing my workflow.
+                  </p>
                 </div>
               </div>
-              <p>
-                Hello there! My name is Neno and I am a passionate front-end
-                developer, always interested in learning and implementing new
-                technologies, optimizing my workflow.
-              </p>
             </div>
           </div>
           <Gallery
