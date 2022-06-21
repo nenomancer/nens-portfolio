@@ -85,10 +85,13 @@ function App() {
 
   const aboutContainer = document.querySelector(".about-container");
   const aboutCard = document.querySelector(".about-card");
+  const aboutButton = document.querySelector("#about-list-item");
 
   const aboutClickHandler = () => {
     aboutContainer.classList.toggle("open");
     aboutCard.classList.toggle("open");
+
+    aboutButton.classList.toggle("about-btn-toggle");
   };
   return (
     <Fragment>
@@ -131,7 +134,11 @@ function App() {
               </div>
               <div className="list-item-text">Audio</div>
             </li>
-            <li className="sidebar-list-item" onClick={aboutClickHandler}>
+            <li
+              className="sidebar-list-item"
+              id="about-list-item"
+              onClick={aboutClickHandler}
+            >
               <div className="list-item-icon">
                 <MdInfo className="icon sidebar-icon" />
               </div>
@@ -143,6 +150,10 @@ function App() {
           <div className="about-card">
             <div className="about-header">
               <h1 className="about-name">Nebojsa Kovacevik</h1>
+              <div>
+                <span>nebojsa.kovacevik@gmail.com</span> |{" "}
+                <span>+389 71 909 352</span>
+              </div>
             </div>
           </div>
         </div>
