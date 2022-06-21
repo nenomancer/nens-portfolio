@@ -46,14 +46,18 @@ function App() {
   };
 
   // MAKE ARRAY OUT OF MENU ITEMS
-  const menuItems = document.querySelectorAll(".sidebar-list-item");
+  const menuItems = [...document.querySelectorAll(".sidebar-list-item")];
+  const first = menuItems[0];
+  const [activeMenuItem, setActiveMenuItem] = useState(first);
+
   const menuClickHandler = (e) => {
-    // e.stopPropagation();
+    // toggleAbout();
     // SET FILTER TYPE BASED ON TEXT CONTENT OF MENU ITEM
     setFilterType(e.target.textContent.toLowerCase());
     // SET ACTIVE CLASS FOR CLICKED ITEM
     menuItems.forEach((item) => {
       if (item.textContent === e.target.textContent) {
+        setActiveMenuItem(e.target);
         e.target.classList.add("active");
       } else {
         item.classList.remove("active");
@@ -64,6 +68,7 @@ function App() {
   const sidebar = document.querySelector(".sidebar");
   const listItemTexts = [...document.querySelectorAll(".list-item-text")];
   const listItemIcons = [...document.querySelectorAll(".list-item-icon")];
+
   let isMenuOpen = false;
   const toggleMenu = () => {
     if (!isMenuOpen) {
@@ -87,11 +92,28 @@ function App() {
   const aboutCard = document.querySelector(".about-card");
   const aboutButton = document.querySelector("#about-list-item");
 
+  const toggleAbout = (open) => {
+    if (open) {
+      aboutContainer.classList.toggle("open");
+      aboutCard.classList.toggle("open");
+      document.querySelector(".gallery").classList.toggle("open");
+      aboutButton.classList.toggle("about-btn-toggle");
+    } else {
+      aboutContainer.classList.remove("open");
+      aboutCard.classList.remove("open");
+      document.querySelector(".gallery").classList.remove("open");
+      aboutButton.classList.remove("about-btn-toggle");
+    }
+  };
+
   const aboutClickHandler = () => {
     aboutContainer.classList.toggle("open");
     aboutCard.classList.toggle("open");
-    document.querySelector('.gallery').classList.toggle('open');
+    document.querySelector(".gallery").classList.toggle("open");
     aboutButton.classList.toggle("about-btn-toggle");
+    // activeMenuItem.classList.toggle('active');
+    console.log(activeMenuItem);
+    // toggleAbout("open");
   };
   return (
     <Fragment>
