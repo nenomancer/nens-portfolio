@@ -49,7 +49,9 @@ function App() {
   const menuItems = [...document.querySelectorAll(".sidebar-list-item")];
 
   const menuClickHandler = (e) => {
-    // toggleAbout();
+    // closeMenu();
+    // toggleMenu();
+    toggleAbout("close");
     // SET FILTER TYPE BASED ON TEXT CONTENT OF MENU ITEM
     setFilterType(e.target.textContent.toLowerCase());
     // SET ACTIVE CLASS FOR CLICKED ITEM
@@ -67,58 +69,29 @@ function App() {
   const listItemIcons = [...document.querySelectorAll(".list-item-icon")];
 
   let isMenuOpen = false;
-
-  // MEDIA QUERIES
+  const openMenu = () => {
+    sidebar.classList.add("sidebar-open");
+    listItemTexts.forEach((text) => {
+      text.classList.add("text-fade-in");
+    });
+    isMenuOpen = true;
+  };
+  const closeMenu = () => {
+    // CLOSE MENU
+    sidebar.classList.remove("sidebar-open");
+    listItemTexts.forEach((text) => {
+      text.classList.remove("text-fade-in");
+    });
+    isMenuOpen = false;
+  };
 
   const toggleMenu = () => {
     if (!isMenuOpen) {
-      // OPEN MENU
-      sidebar.classList.add("sidebar-open");
-      listItemTexts.forEach((text) => {
-        text.classList.add("text-fade-in");
-      });
-      // if (window.screen.width <= 600) {
-      //   sidebar.style.flexBasis = "100vw";
-      //   listItemTexts.forEach((text) => {
-      //     text.classList.add("text-fade-in");
-      //   });
-      // } else {
-      //   sidebar.style.flexBasis = "14rem";
-      //   listItemTexts.forEach((text) => {
-      //     text.classList.add("text-fade-in");
-      //   });
-      isMenuOpen = true;
+      openMenu();
     } else {
-      // CLOSE MENU
-      sidebar.classList.remove("sidebar-open");
-      listItemTexts.forEach((text) => {
-        text.classList.remove("text-fade-in");
-      });
-      isMenuOpen = false;
+      closeMenu();
     }
   };
-
-  // let screenSize = "";
-  // window.addEventListener("resize", () => {
-  //   if (window.screen.width <= 600) {
-  //     screenSize = "phone";
-  //   }
-  //   console.log(screenSize);
-  //   if (!isMenuOpen) {
-  //     if (window.screen.width <= 600) {
-  //       sidebar.style.flexBasis = 0;
-  //       sidebar.style.width = 0;
-  //     } else {
-  //       sidebar.style.flexBasis = "5rem";
-  //     }
-  //   } else {
-  //     if (window.screen.width <= 600) {
-  //       sidebar.style.flexBasis = "100vw";
-  //     } else {
-  //       sidebar.style.flexBasis = "14rem";
-  //     }
-  //   }
-  // });
 
   const aboutContainer = document.querySelector(".about-container");
   const aboutCard = document.querySelector(".about-card");
@@ -138,11 +111,20 @@ function App() {
   //   }
   // };
 
+  const toggleAbout = (state) => {
+    if (state === "toggle") {
+      aboutContainer.classList.toggle("open");
+      document.querySelector(".gallery").classList.toggle("open");
+      aboutButton.classList.toggle("about-btn-toggle");
+    } else if (state === "close") {
+      aboutContainer.classList.remove("open");
+      document.querySelector(".gallery").classList.remove("open");
+      aboutButton.classList.remove("about-btn-toggle");
+    }
+  };
+
   const aboutClickHandler = () => {
-    aboutContainer.classList.toggle("open");
-    // aboutCard.classList.toggle("open");
-    document.querySelector(".gallery").classList.toggle("open");
-    aboutButton.classList.toggle("about-btn-toggle");
+    // toggleAbout();
   };
 
   return (
@@ -189,7 +171,7 @@ function App() {
             <li
               className="sidebar-list-item"
               id="about-list-item"
-              onClick={aboutClickHandler}
+              onClick={() => toggleAbout("toggle")}
             >
               <div className="list-item-icon">
                 <MdInfo className="icon sidebar-icon" />

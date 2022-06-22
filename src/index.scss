@@ -8,7 +8,7 @@ $header-height: 4rem;
 $sidebar-width: 4rem;
 
 $height: calc(100vh - $header-height);
-$padding: 1rem;
+$padding: 2rem;
 
 // :export {
 //   sidebarWidth: $sidebar-width;
@@ -75,6 +75,8 @@ body {
 main {
   display: flex;
   // overflow: hidden;
+  // height: $height;
+
   // scroll-behavior: none;
 }
 
@@ -226,31 +228,30 @@ main {
   .about-card {
     width: calc(100vw - $sidebar-width - $sidebar-width);
     height: 100%;
-    // transform: translateX(-200%);
-    // transition: transform 750ms $timing-function 150ms;
 
     display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 4rem;
+    // gap: 4rem;
     // height: 400px;
 
-    // &.open {
-    //   transform: translateX(0);
     .about-img {
       height: calc($height - calc($padding * 2));
-      background-color: red;
       // width: 100%;
 
       img {
         // object-fit: contain;
       }
     }
+    .about-content {
+      overflow-y: scroll;
+    }
     .about-section {
       display: grid;
-
+      padding: $padding;
       p {
         margin-bottom: 1rem;
         line-height: 24px;
+        width: 100%;
       }
 
       .right {
