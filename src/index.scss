@@ -7,6 +7,9 @@ $medium: hsl(0, 0, 12);
 $header-height: 4rem;
 $sidebar-width: 4rem;
 
+$height: calc(100vh - $header-height);
+$padding: 1rem;
+
 // :export {
 //   sidebarWidth: $sidebar-width;
 // }
@@ -31,7 +34,8 @@ body {
   -webkit-font-smoothing: antialiased;
   background-color: $dark;
   color: white;
-  overflow: hidden;
+  // overflow: hidden;
+  overflow-x: hidden;
 }
 
 .icon {
@@ -193,7 +197,6 @@ main {
       }
     }
   }
-  /* overflow: hidden; */
 }
 
 .sidebar-open {
@@ -201,22 +204,26 @@ main {
 }
 
 .about-container {
-  height: calc(100vh - $header-height);
-  // width: calc(100vw - $sidebar-width);
-  // width: 100%;
+  height: $height;
+  width: calc(100vw - $sidebar-width);
+  padding: $padding;
+
   background-color: $dark;
+
   position: absolute;
   z-index: 2;
+
   display: flex;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
+
   transform: translateX(-100%);
   transition: transform 500ms $timing-function;
+
   box-shadow: $box-shadow;
-  padding: 1rem;
+  overflow-y: scroll;
   .about-card {
-    // padding: 2rem;
     width: calc(100vw - $sidebar-width - $sidebar-width);
     height: 100%;
     // transform: translateX(-200%);
@@ -229,23 +236,26 @@ main {
 
     // &.open {
     //   transform: translateX(0);
+    .about-img {
+      height: calc($height - calc($padding * 2));
+      background-color: red;
+      // width: 100%;
 
+      img {
+        // object-fit: contain;
+      }
+    }
     .about-section {
       display: grid;
-      // gridtempl
-      .left,
-      .right {
-        display: inline-block;
+
+      p {
+        margin-bottom: 1rem;
+        line-height: 24px;
       }
-      .left {
-        // width: 40%;
-        p {
-          margin-bottom: 1rem;
-          line-height: 24px;
-        }
-      }
+
       .right {
         // width: 40%;
+        overflow-y: scroll;
         p {
           margin-bottom: 1rem;
           line-height: 24px;
@@ -253,11 +263,9 @@ main {
       }
       .about-title {
         text-transform: uppercase;
-        margin-bottom: 1rem;
         display: flex;
         height: 100px;
         align-items: center;
-        background-color: red;
         h1 {
           flex-shrink: 0;
         }
@@ -277,10 +285,10 @@ main {
 }
 
 .gallery {
-  height: calc(100vh - $header-height);
+  height: $height;
   display: grid;
   gap: 0.5rem;
-  padding: 1rem;
+  padding: $padding;
   grid-auto-rows: 250px;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-auto-flow: dense;
@@ -306,8 +314,11 @@ main {
     flex-basis: 5rem;
   }
 
-  .about-card {
-    // width: 100vw;
+  .about-container {
+    width: 100vw;
+    .about-card {
+      grid-template-columns: 1fr;
+    }
   }
   .icon {
   }

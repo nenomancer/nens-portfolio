@@ -201,38 +201,32 @@ function App() {
         <div>
           <div className="about-container">
             <div className="about-card">
-              <img src="https://i.imgur.com/xpeKyE5.jpg"></img>
+              <div className="about-img">
+                <img src="https://i.imgur.com/xpeKyE5.jpg"></img>
+              </div>
               <div className="about-content">
+                {/* ABOUT SECTION  */}
                 <div className="about-section">
                   <div className="about-title">
                     <h1>About Me</h1>
                     <span></span>
                   </div>
-                  <div className="left">
-                    <p>
-                      Hello there! My name is Neno and I am a passionate
-                      front-end developer, always interested in learning and
-                      implementing new technologies, and optimizing my workflow.
-                    </p>
-                    <p>
-                      Hello there! My name is Neno and I am a passionate
-                      front-end developer, always interested in learning and
-                      implementing new technologies, and optimizing my workflow.
-                    </p>
-                  </div>
-                  <div className="right">
-                    <p>
-                      Hello there! My name is Neno and I am a passionate
-                      front-end developer, always interested in learning and
-                      implementing new technologies, and optimizing my workflow.
-                    </p>
-                    <p>
-                      Hello there! My name is Neno and I am a passionate
-                      front-end developer, always interested in learning and
-                      implementing new technologies, and optimizing my workflow.
-                    </p>
-                  </div>
+                  <p>
+                    Hello there! My name is Nebojsa Kovacevik and I am a
+                    passionate front-end developer, always interested in
+                    learning and implementing new technologies, and improving my
+                    workflow.
+                  </p>
+                  <p>
+                    As a senior VFX artist and CG generalist for the past 6+
+                    years, I have been tasked with problems of high complexity,
+                    which required not only artistic skills, but logical
+                    problem-solving, automation and optimization with the help
+                    of scripting languages.
+                  </p>
                 </div>
+
+                {/* SERVICES SECTION  */}
                 <div className="about-section">
                   <div className="left">
                     <div className="about-title">
@@ -245,6 +239,8 @@ function App() {
                       <li>Animation & Motion Graphics</li>
                     </ul>
                   </div>
+                  {/* INTERESTS SECTION  */}
+
                   <div className="right">
                     <div className="about-title">
                       <h1>Interests</h1>
