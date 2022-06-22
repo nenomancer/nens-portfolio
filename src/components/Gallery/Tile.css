@@ -18,9 +18,9 @@
   grid-column: span 2;
 }
 
-
-
-img, video, .youtube{
+img,
+video,
+.youtube {
   height: 100%;
   width: 100%;
   object-fit: cover;

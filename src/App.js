@@ -67,17 +67,30 @@ function App() {
   const listItemIcons = [...document.querySelectorAll(".list-item-icon")];
 
   let isMenuOpen = false;
+
+  // MEDIA QUERIES
+
   const toggleMenu = () => {
     if (!isMenuOpen) {
       // OPEN MENU
-      sidebar.style.flexBasis = "14rem";
+      sidebar.classList.add("sidebar-open");
       listItemTexts.forEach((text) => {
         text.classList.add("text-fade-in");
       });
+      // if (window.screen.width <= 600) {
+      //   sidebar.style.flexBasis = "100vw";
+      //   listItemTexts.forEach((text) => {
+      //     text.classList.add("text-fade-in");
+      //   });
+      // } else {
+      //   sidebar.style.flexBasis = "14rem";
+      //   listItemTexts.forEach((text) => {
+      //     text.classList.add("text-fade-in");
+      //   });
       isMenuOpen = true;
     } else {
       // CLOSE MENU
-      sidebar.style.flexBasis = "5rem";
+      sidebar.classList.remove("sidebar-open");
       listItemTexts.forEach((text) => {
         text.classList.remove("text-fade-in");
       });
@@ -85,23 +98,45 @@ function App() {
     }
   };
 
+  // let screenSize = "";
+  // window.addEventListener("resize", () => {
+  //   if (window.screen.width <= 600) {
+  //     screenSize = "phone";
+  //   }
+  //   console.log(screenSize);
+  //   if (!isMenuOpen) {
+  //     if (window.screen.width <= 600) {
+  //       sidebar.style.flexBasis = 0;
+  //       sidebar.style.width = 0;
+  //     } else {
+  //       sidebar.style.flexBasis = "5rem";
+  //     }
+  //   } else {
+  //     if (window.screen.width <= 600) {
+  //       sidebar.style.flexBasis = "100vw";
+  //     } else {
+  //       sidebar.style.flexBasis = "14rem";
+  //     }
+  //   }
+  // });
+
   const aboutContainer = document.querySelector(".about-container");
   const aboutCard = document.querySelector(".about-card");
   const aboutButton = document.querySelector("#about-list-item");
 
-  const toggleAbout = (open) => {
-    if (open) {
-      aboutContainer.classList.toggle("open");
-      aboutCard.classList.toggle("open");
-      document.querySelector(".gallery").classList.toggle("open");
-      aboutButton.classList.toggle("about-btn-toggle");
-    } else {
-      aboutContainer.classList.remove("open");
-      aboutCard.classList.remove("open");
-      document.querySelector(".gallery").classList.remove("open");
-      aboutButton.classList.remove("about-btn-toggle");
-    }
-  };
+  // const toggleAbout = (open) => {
+  //   if (open) {
+  //     aboutContainer.classList.toggle("open");
+  //     aboutCard.classList.toggle("open");
+  //     document.querySelector(".gallery").classList.toggle("open");
+  //     aboutButton.classList.toggle("about-btn-toggle");
+  //   } else {
+  //     aboutContainer.classList.remove("open");
+  //     aboutCard.classList.remove("open");
+  //     document.querySelector(".gallery").classList.remove("open");
+  //     aboutButton.classList.remove("about-btn-toggle");
+  //   }
+  // };
 
   const aboutClickHandler = () => {
     aboutContainer.classList.toggle("open");
@@ -109,6 +144,7 @@ function App() {
     document.querySelector(".gallery").classList.toggle("open");
     aboutButton.classList.toggle("about-btn-toggle");
   };
+
   return (
     <Fragment>
       {/* {showAbout && <About setShowAbout={setShowAbout} />} */}
@@ -167,24 +203,59 @@ function App() {
             <div className="about-card">
               <img src="https://i.imgur.com/xpeKyE5.jpg"></img>
               <div className="about-content">
-                <div className="about-header">
-                  <h1 className="about-name">Nebojsa Kovacevik</h1>
-                  <div>
-                    <span>nebojsa.kovacevik@gmail.com</span> |{" "}
-                    <span>+389 71 909 352</span>
+                <div className="about-section">
+                  <div className="about-title">
+                    <h1>About Me</h1>
+                    <span></span>
+                  </div>
+                  <div className="left">
+                    <p>
+                      Hello there! My name is Neno and I am a passionate
+                      front-end developer, always interested in learning and
+                      implementing new technologies, and optimizing my workflow.
+                    </p>
+                    <p>
+                      Hello there! My name is Neno and I am a passionate
+                      front-end developer, always interested in learning and
+                      implementing new technologies, and optimizing my workflow.
+                    </p>
+                  </div>
+                  <div className="right">
+                    <p>
+                      Hello there! My name is Neno and I am a passionate
+                      front-end developer, always interested in learning and
+                      implementing new technologies, and optimizing my workflow.
+                    </p>
+                    <p>
+                      Hello there! My name is Neno and I am a passionate
+                      front-end developer, always interested in learning and
+                      implementing new technologies, and optimizing my workflow.
+                    </p>
                   </div>
                 </div>
-                <div className="left">
-                  <p>
-                    Hello there! My name is Neno and I am a passionate front-end
-                    developer, always interested in learning and implementing
-                    new technologies, and optimizing my workflow.
-                  </p>
-                  <p>
-                    Hello there! My name is Neno and I am a passionate front-end
-                    developer, always interested in learning and implementing
-                    new technologies, and optimizing my workflow.
-                  </p>
+                <div className="about-section">
+                  <div className="left">
+                    <div className="about-title">
+                      <h1>Services</h1>
+                      <span></span>
+                    </div>
+                    <ul>
+                      <li>Web Developoment</li>
+                      <li>3D & Graphic Design</li>
+                      <li>Animation & Motion Graphics</li>
+                    </ul>
+                  </div>
+                  <div className="right">
+                    <div className="about-title">
+                      <h1>Interests</h1>
+                      <span></span>
+                    </div>
+                    <ul>
+                      <li>Web Developoment</li>
+                      <li>3D & Graphic Design</li>
+                      <li>Animation & Motion Graphics</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
