@@ -184,7 +184,7 @@ function App() {
           <div className="about-container">
             <div className="about-card">
               <div className="about-img">
-                <img src="https://i.imgur.com/xpeKyE5.jpg"></img>
+                <img src="https://i.imgur.com/ZZMBsZH.png"></img>
               </div>
               <div className="about-content">
                 {/* ABOUT SECTION  */}
@@ -213,6 +213,34 @@ function App() {
                   <div className="left">
                     <div className="about-title">
                       <h1>Services</h1>
+                      <span></span>
+                    </div>
+                    <ul>
+                      <li>Web Developoment</li>
+                      <li>3D & Graphic Design</li>
+                      <li>Animation & Motion Graphics</li>
+                    </ul>
+                  </div>
+                  {/* INTERESTS SECTION  */}
+
+                  <div className="right">
+                    <div className="about-title">
+                      <h1>Interests</h1>
+                      <span></span>
+                    </div>
+                    <ul>
+                      <li>Web Developoment</li>
+                      <li>3D & Graphic Design</li>
+                      <li>Animation & Motion Graphics</li>
+                    </ul>
+                  </div>
+                </div>
+
+                {/* SERVICES SECTION  */}
+                <div className="about-section">
+                  <div className="left">
+                    <div className="about-title">
+                      <h1>Experience</h1>
                       <span></span>
                     </div>
                     <ul>
