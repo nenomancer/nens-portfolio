@@ -224,7 +224,6 @@ main {
   transition: transform 500ms $timing-function;
 
   box-shadow: $box-shadow;
-  overflow-y: scroll;
   .about-card {
     width: calc(100vw - $sidebar-width - $sidebar-width);
     height: 100%;
@@ -236,11 +235,17 @@ main {
 
     .about-img {
       height: calc($height - calc($padding * 2));
-      // width: 100%;
       position: relative;
+      align-self: center;
+      background-image: url("https://i.imgur.com/ZZMBsZH.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 80%;
       img {
-        // height: 100%;
-        // object-fit: fit;
+        width: 100%;
+        height: auto;
+        position: absolute;
+        bottom: 0;
       }
     }
     .about-content {
@@ -315,7 +320,10 @@ main {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1040px) {
+  body {
+    overflow-y: scroll;
+  }
   .sidebar {
     flex-basis: 0;
     width: 0;
@@ -328,6 +336,12 @@ main {
     width: 100vw;
     .about-card {
       grid-template-columns: 1fr;
+      .about-img {
+      background-position: top;
+      background-size: contain;
+      
+
+      }
     }
   }
   .icon {

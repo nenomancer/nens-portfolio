@@ -184,7 +184,7 @@ function App() {
           <div className="about-container">
             <div className="about-card">
               <div className="about-img">
-                <img src="https://i.imgur.com/ZZMBsZH.png"></img>
+                {/* <img src="https://i.imgur.com/ZZMBsZH.png"></img> */}
               </div>
               <div className="about-content">
                 {/* ABOUT SECTION  */}
