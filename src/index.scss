@@ -3,6 +3,8 @@ $dark: hsl(0, 0, 3);
 $medium-dark: hsl(0, 0, 5);
 $medium: hsl(0, 0, 12);
 
+$white: hsl(0, 0, 92);
+
 /* SIZE VARS  */
 $header-height: 4rem;
 $sidebar-width: 4rem;
@@ -33,7 +35,7 @@ body {
   font-family: "Radio Canada", "sans-serif";
   -webkit-font-smoothing: antialiased;
   background-color: $dark;
-  color: white;
+  color: $white;
   overflow: hidden;
 }
 
@@ -203,10 +205,9 @@ main {
 .about-container {
   height: $height;
   width: calc(100vw - $sidebar-width);
-  padding: $padding;
+  // padding: $padding;
 
   background-color: $dark;
-
   position: absolute;
   z-index: 2;
 
@@ -236,15 +237,47 @@ main {
       background-image: url("https://i.imgur.com/ZZMBsZH.png");
       background-size: cover;
       background-repeat: no-repeat;
-      background-position: 80%;
+      background-position: 83%;
     }
     .about-content {
       overflow-y: scroll;
       padding: calc($padding * 2);
       .about-section {
-        margin-bottom: calc($padding * 2);
+        // margin-bottom: calc($padding * 2);
         &:first-child {
           // grid-template-columns: 1fr;
+        }
+        .about-title {
+          text-transform: uppercase;
+          text-align: center;
+          position: relative;
+
+          h1 {
+            //
+            font-size: 20px;
+            // height: 100%;
+            letter-spacing: 6px;
+
+            display: grid;
+            grid-template-columns: 1fr max-content 1fr;
+
+            align-items: center;
+            gap: $padding;
+            &::before,
+            &::after {
+              content: " ";
+              height: 1px;
+              display: block;
+              top: 25%;
+              background-color: $white;
+            }
+            // &::before {
+            //   left: 0;
+            // }
+            // &::after {
+            //   right: 0;
+            // }
+          }
         }
         ul {
           li {
@@ -254,28 +287,8 @@ main {
         }
         p {
           margin-bottom: 1rem;
-          line-height: 24px;
+          line-height: 28px;
           width: 100%;
-        }
-
-        .about-title {
-          text-transform: uppercase;
-          display: flex;
-          // height: 100px;
-          margin-bottom: $padding;
-          align-items: center;
-          h1 {
-            flex-shrink: 0;
-            font-size: 20px;
-            letter-spacing: 6px;
-          }
-          span {
-            width: 100%;
-            flex-shrink: 1;
-            height: 1px;
-            margin: auto 2rem;
-            background-color: white;
-          }
         }
       }
     }
@@ -329,8 +342,8 @@ main {
       // grid-auto-rows: auto;
       // grid-template-rows: 1fr 2fr;
       .about-img {
-        background-position: 50%;
-        background-size: cover;
+        background-position: 10% 10%;
+        background-size: auto;
       }
       .about-content {
         overflow-y: hidden;

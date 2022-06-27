@@ -189,7 +189,6 @@ function App() {
                 <div className="about-section">
                   <div className="about-title">
                     <h1>About Me</h1>
-                    <span></span>
                   </div>
                   <p>
                     Hello there! My name is Nebojsa Kovacevik and I am a
@@ -201,8 +200,7 @@ function App() {
                     As a senior VFX artist and CG generalist for the past 6+
                     years, I have been tasked with problems of high complexity,
                     which required not only artistic skills, but logical
-                    problem-solving, automation and optimization with the help
-                    of scripting languages.
+                    problem-solving, automation and optimization.
                   </p>
                   <p>
                     Aside from my extensive experience in VFX, I've done many
@@ -214,22 +212,20 @@ function App() {
 
                 {/* SERVICES SECTION  */}
                 <div className="about-section">
-                  <div className="left">
-                    <div className="about-title">
-                      <h1>Services</h1>
-                      <span></span>
-                    </div>
-                    <ul>
-                      <li>Web Developoment</li>
-                      <li>3D & Graphic Design</li>
-                      <li>Animation & Motion Graphics</li>
-                    </ul>
-                    <ul>
-                      <li>Web Developoment</li>
-                      <li>3D & Graphic Design</li>
-                      <li>Animation & Motion Graphics</li>
-                    </ul>
+                  <div className="about-title">
+                    <h1>Services</h1>
+                    <span></span>
                   </div>
+                  <ul>
+                    <li>Web Developoment</li>
+                    <li>3D & Graphic Design</li>
+                    <li>Animation & Motion Graphics</li>
+                  </ul>
+                  <ul>
+                    <li>Web Developoment</li>
+                    <li>3D & Graphic Design</li>
+                    <li>Animation & Motion Graphics</li>
+                  </ul>
                   {/* INTERESTS SECTION  */}
 
                   {/* <div className="right">
