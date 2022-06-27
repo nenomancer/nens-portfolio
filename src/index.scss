@@ -70,7 +70,7 @@ body {
   position: sticky;
   top: 0;
   box-shadow: $box-shadow;
-  z-index: 10;
+  // z-index: 10;
   .header-name {
     font-family: "Radio Canada";
     font-size: 1.8rem;
@@ -111,7 +111,7 @@ main {
   flex-basis: 5rem;
   flex-grow: 1;
   flex-shrink: 0;
-  z-index: 5;
+  z-index: -1;
   transition: 250ms $timing-function;
   .sidebar-list {
     display: flex;
@@ -231,7 +231,7 @@ main {
   width: 100%;
   background-color: $dark;
   position: absolute;
-  z-index: 5;
+  z-index: -1;
 
   transform: translateY(-120%);
   transition: transform 500ms $timing-function 400ms;
@@ -335,7 +335,7 @@ main {
   overflow-y: scroll;
   scrollbar-width: none;
   background-color: $dark;
-  z-index: 0;
+  z-index: -2;
   transition: transform 500ms $timing-function;
   .youtube {
     scale: (1.2);

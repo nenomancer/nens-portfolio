@@ -28,7 +28,6 @@ const TileModal = (props) => {
 
   return (
     <div className="tile-modal">
-      <div className="tile-modal-container">
         <IoClose
           id="close-button"
           onClick={() => props.setShowTileModal(false)}
@@ -82,9 +81,8 @@ const TileModal = (props) => {
             <p key={index}>{str}</p>
           ))}
         </div>
-      </div>
       {/* IMAGE MODAL BACKDROP */}
-      <div className="backdrop" onClick={() => props.setShowTileModal(false)} />
+      {/* <div className="backdrop" onClick={() => props.setShowTileModal(false)} /> */}
     </div>
   );
 };

@@ -251,7 +251,6 @@ function App() {
             setSelectedImg={setSelectedImg}
           />
       </main>
-      {/* <footer>Footer</footer> */}
     </div>
   );
 }
