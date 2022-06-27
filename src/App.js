@@ -114,11 +114,11 @@ function App() {
   const toggleAbout = (state) => {
     if (state === "toggle") {
       aboutContainer.classList.toggle("open");
-      document.querySelector(".gallery").classList.toggle("open");
+      // document.querySelector(".gallery").classList.toggle("open");
       aboutButton.classList.toggle("about-btn-toggle");
     } else if (state === "close") {
       aboutContainer.classList.remove("open");
-      document.querySelector(".gallery").classList.remove("open");
+      // document.querySelector(".gallery").classList.remove("open");
       aboutButton.classList.remove("about-btn-toggle");
     }
   };
@@ -188,7 +188,6 @@ function App() {
             </li> */}
           </ul>
         </aside>
-        <div>
           <div className="about-container">
             <div className="about-card">
               <div className="about-img"></div>
@@ -287,7 +286,6 @@ function App() {
             selectedImg={selectedImg}
             setSelectedImg={setSelectedImg}
           />
-        </div>
       </main>
       {/* <footer>Footer</footer> */}
     </div>
