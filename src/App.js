@@ -96,51 +96,39 @@ function App() {
 
   const aboutContainer = document.querySelector(".about-container");
   const aboutCard = document.querySelector(".about-card");
-  const aboutButton = document.querySelector("#about-list-item");
+  const aboutButton = document.querySelector("#about-button");
 
-  // const toggleAbout = (open) => {
-  //   if (open) {
-  //     aboutContainer.classList.toggle("open");
-  //     aboutCard.classList.toggle("open");
-  //     document.querySelector(".gallery").classList.toggle("open");
-  //     aboutButton.classList.toggle("about-btn-toggle");
-  //   } else {
-  //     aboutContainer.classList.remove("open");
-  //     aboutCard.classList.remove("open");
-  //     document.querySelector(".gallery").classList.remove("open");
-  //     aboutButton.classList.remove("about-btn-toggle");
-  //   }
-  // };
 
   const toggleAbout = (state) => {
     if (state === "toggle") {
       aboutContainer.classList.toggle("open");
-      document.querySelector(".gallery").classList.toggle("open");
+      // document.querySelector(".gallery").classList.toggle("open");
       aboutButton.classList.toggle("about-btn-toggle");
     } else if (state === "close") {
       aboutContainer.classList.remove("open");
-      document.querySelector(".gallery").classList.remove("open");
+      // document.querySelector(".gallery").classList.remove("open");
       aboutButton.classList.remove("about-btn-toggle");
     }
   };
 
-  const aboutClickHandler = () => {
-    // toggleAbout();
-  };
 
   return (
-    <Fragment>
+    <div className="container">
       {/* {showAbout && <About setShowAbout={setShowAbout} />} */}
       <header className="header">
         <div className="header-button" onMouseUp={toggleMenu}>
           <GiHamburgerMenu className="icon" />
         </div>
         <span className="header-name">NENS</span>
-        {/* <div className="icons">
-          <GrInstagram />
-          <GrLinkedin />
-          <GrFacebook />
-        </div> */}
+
+        <div
+          className="header-button"
+          id="about-button"
+          onClick={() => toggleAbout("toggle")}
+        >
+            <MdInfo className="icon sidebar-icon" />
+        </div>
+     
       </header>
       <main>
         <aside className="sidebar">
@@ -169,7 +157,7 @@ function App() {
               </div>
               <div className="list-item-text">Audio</div>
             </li>
-            <li
+            {/* <li
               className="sidebar-list-item"
               id="about-list-item"
               onClick={() => toggleAbout("toggle")}
@@ -178,66 +166,54 @@ function App() {
                 <MdInfo className="icon sidebar-icon" />
               </div>
               <div className="list-item-text">About</div>
-            </li>
+            </li> */}
           </ul>
         </aside>
-        <div>
           <div className="about-container">
             <div className="about-card">
-              <div className="about-img">
-                <img src="https://i.imgur.com/ZZMBsZH.png"></img>
-              </div>
+              <div className="about-img"></div>
               <div className="about-content">
-                {/* ABOUT SECTION  */}
                 <div className="about-section">
                   <div className="about-title">
                     <h1>About Me</h1>
-                    <span></span>
                   </div>
                   <p>
                     Hello there! My name is Nebojsa Kovacevik and I am a
                     passionate front-end developer, always interested in
-                    learning and implementing new technologies, and improving my
-                    workflow.
+                    learning and implementing new technologies.
                   </p>
                   <p>
                     As a senior VFX artist and CG generalist for the past 6+
                     years, I have been tasked with problems of high complexity,
                     which required not only artistic skills, but logical
-                    problem-solving, automation and optimization with the help
-                    of scripting languages.
+                    problem-solving, automation and optimization.
+                  </p>
+                  <p>
+                    Aside from my extensive experience in VFX, I've done many
+                    personal projects which require skills from other fields,
+                    varying from front-end development, to hand-drawn 2D
+                    animation.
                   </p>
                 </div>
 
-                {/* SERVICES SECTION  */}
                 <div className="about-section">
-                  <div className="left">
-                    <div className="about-title">
-                      <h1>Services</h1>
-                      <span></span>
-                    </div>
-                    <ul>
-                      <li>Web Developoment</li>
-                      <li>3D & Graphic Design</li>
-                      <li>Animation & Motion Graphics</li>
-                    </ul>
+                  <div className="about-title">
+                    <h1>Services</h1>
+                    <span></span>
                   </div>
-                  {/* INTERESTS SECTION  */}
-
-                  <div className="right">
-                    <div className="about-title">
-                      <h1>Interests</h1>
-                      <span></span>
-                    </div>
-                    <ul>
-                      <li>Web Developoment</li>
-                      <li>3D & Graphic Design</li>
-                      <li>Animation & Motion Graphics</li>
-                    </ul>
-                  </div>
+                  <ul>
+                    <li>Web Developoment</li>
+                    <li>3D & Graphic Design</li>
+                    <li>Animation & Motion Graphics</li>
+                  </ul>
+                  <ul>
+                    <li>Web Developoment</li>
+                    <li>3D & Graphic Design</li>
+                    <li>Animation & Motion Graphics</li>
+                  </ul>
+               
                 </div>
 
-                {/* SERVICES SECTION  */}
                 <div className="about-section">
                   <div className="left">
                     <div className="about-title">
@@ -250,7 +226,6 @@ function App() {
                       <li>Animation & Motion Graphics</li>
                     </ul>
                   </div>
-                  {/* INTERESTS SECTION  */}
 
                   <div className="right">
                     <div className="about-title">
@@ -275,10 +250,8 @@ function App() {
             selectedImg={selectedImg}
             setSelectedImg={setSelectedImg}
           />
-        </div>
       </main>
-      {/* <footer>Footer</footer> */}
-    </Fragment>
+    </div>
   );
 }
 
