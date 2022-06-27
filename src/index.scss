@@ -42,7 +42,7 @@ body {
 }
 
 .icon {
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .header {
@@ -124,9 +124,9 @@ main {
       }
 
       // PUSH ABOUT ICON AT THE BOTTOM
-      &:last-child {
-        margin-top: auto;
-      }
+      // &:last-child {
+      //   margin-top: auto;
+      // }
 
       // CENTER ICON IMAGE INSIDE CONTAINER
       .list-item-icon {
@@ -207,8 +207,10 @@ main {
 
 .about-container {
   height: 0;
-  width: calc(100vw - $sidebar-width);
+  // width: calc(100vw - $sidebar-width);
   padding: $padding;
+  // margin-left: $padding;
+  // padding-right: calc($padding + 20px);
   overflow: hidden;
 
   background-color: $dark;
@@ -225,6 +227,7 @@ main {
     height 500ms $timing-function 450ms;
 
   box-shadow: $box-shadow;
+  // background-color: darkred;
 
   .about-card {
     width: calc(100vw - $sidebar-width - $sidebar-width);
@@ -255,7 +258,7 @@ main {
           position: relative;
           h1 {
             font-size: 20px;
-            font-weight: 400;
+            font-weight: 700;
             letter-spacing: 6px;
 
             display: grid;
@@ -287,6 +290,7 @@ main {
           }
         }
         p {
+          font-family: 'Radio Canada';
           margin-bottom: 1rem;
           line-height: 28px;
           width: 100%;
@@ -323,9 +327,6 @@ main {
 }
 
 @media (max-width: 1040px) {
-  body {
-    // overflow-y: scroll;
-  }
   .sidebar {
     flex-basis: 0;
     width: 0;
@@ -336,9 +337,8 @@ main {
 
   .about-container {
     overflow-y: scroll;
-    top: $header-height;
-    width: 100vw;
-    // padding: 0;
+    // top: $header-height;
+    // width: 100vw;
     .about-card {
       display: flex;
       flex-direction: column;

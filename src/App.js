@@ -135,6 +135,17 @@ function App() {
           <GiHamburgerMenu className="icon" />
         </div>
         <span className="header-name">NENS</span>
+
+        <div
+          className="sidebar-list-item"
+          id="about-list-item"
+          onClick={() => toggleAbout("toggle")}
+        >
+          <div className="list-item-icon">
+            <MdInfo className="icon sidebar-icon" />
+          </div>
+          <div className="list-item-text">About</div>
+        </div>
         {/* <div className="icons">
           <GrInstagram />
           <GrLinkedin />
@@ -168,7 +179,7 @@ function App() {
               </div>
               <div className="list-item-text">Audio</div>
             </li>
-            <li
+            {/* <li
               className="sidebar-list-item"
               id="about-list-item"
               onClick={() => toggleAbout("toggle")}
@@ -177,7 +188,7 @@ function App() {
                 <MdInfo className="icon sidebar-icon" />
               </div>
               <div className="list-item-text">About</div>
-            </li>
+            </li> */}
           </ul>
         </aside>
         <div>
