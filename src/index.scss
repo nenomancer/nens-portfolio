@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
 
 $accent-color: hsl(0, 89%, 57%);
+$black: hsl(0, 0, 1);
 $dark: hsl(0, 0, 3);
 $medium-dark: hsl(0, 0, 5);
 $medium: hsl(0, 0, 12);
@@ -36,9 +37,25 @@ body {
   margin: 0;
   font-family: "DM Sans", "sans-serif";
   -webkit-font-smoothing: antialiased;
-  background-color: $dark;
+  background-color: $black;
   color: $white;
   overflow: hidden;
+}
+
+.container {
+  width: 80vw;
+  height: 80vh;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  // box-shadow: $box-shadow;
+  // box-shadow: 0 0 20px 10px black;
+  box-shadow: $box-shadow;
+  border-radius: 12px;
+
+  transition: all 250ms $timing-function;
 }
 
 .icon {
@@ -290,7 +307,7 @@ main {
           }
         }
         p {
-          font-family: 'Radio Canada';
+          font-family: "Radio Canada";
           margin-bottom: 1rem;
           line-height: 28px;
           width: 100%;
@@ -326,7 +343,11 @@ main {
   }
 }
 
-@media (max-width: 1040px) {
+@media (max-width: 1024px) {
+  .container {
+    width: 90vw;
+    height: 90vh;
+  }
   .sidebar {
     flex-basis: 0;
     width: 0;

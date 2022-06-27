@@ -128,7 +128,7 @@ function App() {
   };
 
   return (
-    <Fragment>
+    <div className="container">
       {/* {showAbout && <About setShowAbout={setShowAbout} />} */}
       <header className="header">
         <div className="header-button" onMouseUp={toggleMenu}>
@@ -293,7 +293,7 @@ function App() {
         </div>
       </main>
       {/* <footer>Footer</footer> */}
-    </Fragment>
+    </div>
   );
 }
 
