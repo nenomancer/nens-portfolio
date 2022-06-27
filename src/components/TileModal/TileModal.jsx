@@ -28,10 +28,11 @@ const TileModal = (props) => {
 
   return (
     <div className="tile-modal">
-        <IoClose
-          id="close-button"
-          onClick={() => props.setShowTileModal(false)}
-        />
+      <IoClose
+        id="close-button"
+        onClick={() => props.setShowTileModal(false)}
+      />
+      <div className="tile-nav">
         <MdNavigateBefore
           className="nav-icons"
           id="nav-left"
@@ -42,45 +43,46 @@ const TileModal = (props) => {
           id="nav-right"
           onClick={() => props.navigationClick("right")}
         />
+      </div>
 
-        {/* SHOW IMAGE IN TILE MODAL*/}
-        <div className="tile">
-          {/* RENDER IMG IF THE ARTWORK IS A PHOTO */}
-          {props.selectedTile.type.includes("images") && (
-            <img src={props.selectedTile.src} alt={props.name} />
-          )}
+      {/* SHOW IMAGE IN TILE MODAL*/}
+      <div className="tile">
+        {/* RENDER IMG IF THE ARTWORK IS A PHOTO */}
+        {props.selectedTile.type.includes("images") && (
+          <img src={props.selectedTile.src} alt={props.name} />
+        )}
 
-          {/* RENDER VIDEO IF THE ARTWORK IS A VIDEO */}
-          {props.selectedTile.type[0] === "videos" && (
-            <video
-              height="100%"
-              width="100%"
-              className="video"
-              controls
-              poster={props.selectedTile.thumb}
-            >
-              <source src={props.selectedTile.src} type="video/mp4" />
-            </video>
-          )}
+        {/* RENDER VIDEO IF THE ARTWORK IS A VIDEO */}
+        {props.selectedTile.type[0] === "videos" && (
+          <video
+            height="100%"
+            width="100%"
+            className="video"
+            controls
+            poster={props.selectedTile.thumb}
+          >
+            <source src={props.selectedTile.src} type="video/mp4" />
+          </video>
+        )}
 
-          {/* RENDER IFRAME IF THE ARTWORK IS A YOUTUBE VIDEO  */}
-          {props.selectedTile.type[0] === "youtube" && (
-            <iframe
-              title={props.selectedTile.name}
-              width="100%"
-              height="100%"
-              src={`${props.selectedTile.src}?modestbranding=0&autoplay=0&showinfo=0&controls=1`}
-              frameborder="0"
-            ></iframe>
-          )}
-        </div>
-        {/* IMAGE MODAL INFO */}
-        <div id="info">
-          <h1>{props.selectedTile.name}</h1>
-          {props.selectedTile.desc.split("\n").map((str, index) => (
-            <p key={index}>{str}</p>
-          ))}
-        </div>
+        {/* RENDER IFRAME IF THE ARTWORK IS A YOUTUBE VIDEO  */}
+        {props.selectedTile.type[0] === "youtube" && (
+          <iframe
+            title={props.selectedTile.name}
+            width="100%"
+            height="100%"
+            src={`${props.selectedTile.src}?modestbranding=0&autoplay=0&showinfo=0&controls=1`}
+            frameborder="0"
+          ></iframe>
+        )}
+      </div>
+      {/* IMAGE MODAL INFO */}
+      {/* <div id="info">
+        <h1>{props.selectedTile.name}</h1>
+        {props.selectedTile.desc.split("\n").map((str, index) => (
+          <p key={index}>{str}</p>
+        ))}
+      </div> */}
       {/* IMAGE MODAL BACKDROP */}
       {/* <div className="backdrop" onClick={() => props.setShowTileModal(false)} /> */}
     </div>

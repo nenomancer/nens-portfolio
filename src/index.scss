@@ -70,7 +70,7 @@ body {
   position: sticky;
   top: 0;
   box-shadow: $box-shadow;
-  z-index: 2;
+  z-index: 10;
   .header-name {
     font-family: "Radio Canada";
     font-size: 1.8rem;
@@ -231,7 +231,7 @@ main {
   width: 100%;
   background-color: $dark;
   position: absolute;
-  z-index: 1;
+  z-index: 5;
 
   transform: translateY(-120%);
   transition: transform 500ms $timing-function 400ms;
