@@ -179,8 +179,7 @@ function App() {
                   <p>
                     Hello there! My name is Nebojsa Kovacevik and I am a
                     passionate front-end developer, always interested in
-                    learning and implementing new technologies, and improving my
-                    workflow.
+                    learning and implementing new technologies.
                   </p>
                   <p>
                     As a senior VFX artist and CG generalist for the past 6+
