@@ -251,9 +251,8 @@ main {
       margin-left: $padding;
       align-self: center;
       transform: translateY(-8%);
-      background-color: red;
       background-image: url("https://i.imgur.com/ZZMBsZH.png");
-      background-size: contain auto;
+      background-size: cover;
       background-repeat: no-repeat;
       background-position: 250%;
       opacity: 0;
@@ -321,7 +320,7 @@ main {
     transition: transform 500ms $timing-function;
     .about-card {
       .about-img {
-        background-position: 50%;
+        background-position: 65%;
         opacity: 1;
         transition: all 500ms $timing-function 500ms;
       }
