@@ -43,7 +43,7 @@ body {
 }
 
 .container {
-  width: 80vw;
+  width: 100vmin;
   height: 80vh;
   overflow: hidden;
   position: absolute;
@@ -90,6 +90,9 @@ body {
     //   width: 20px;
     //   height: 100%;
     // }
+  }
+  #about-button {
+    margin-left: auto;
   }
 }
 
@@ -194,10 +197,10 @@ main {
         animation: closeItems 250ms $timing-function;
       }
     }
-    .about-btn-toggle {
-      background-color: $medium-dark;
-      color: $accent-color;
-    }
+    // .about-btn-toggle {
+    //   background-color: $medium-dark;
+    //   color: $accent-color;
+    // }
     // .open-items {
     //   background-color: red;
     //   // display: none;
