@@ -183,9 +183,7 @@ function App() {
         <div>
           <div className="about-container">
             <div className="about-card">
-              <div className="about-img">
-                {/* <img src="https://i.imgur.com/ZZMBsZH.png"></img> */}
-              </div>
+              <div className="about-img"></div>
               <div className="about-content">
                 {/* ABOUT SECTION  */}
                 <div className="about-section">
@@ -206,6 +204,12 @@ function App() {
                     problem-solving, automation and optimization with the help
                     of scripting languages.
                   </p>
+                  <p>
+                    Aside from my extensive experience in VFX, I've done many
+                    personal projects which require skills from other fields,
+                    varying from front-end development, to hand-drawn 2D
+                    animation.
+                  </p>
                 </div>
 
                 {/* SERVICES SECTION  */}
@@ -220,10 +224,15 @@ function App() {
                       <li>3D & Graphic Design</li>
                       <li>Animation & Motion Graphics</li>
                     </ul>
+                    <ul>
+                      <li>Web Developoment</li>
+                      <li>3D & Graphic Design</li>
+                      <li>Animation & Motion Graphics</li>
+                    </ul>
                   </div>
                   {/* INTERESTS SECTION  */}
 
-                  <div className="right">
+                  {/* <div className="right">
                     <div className="about-title">
                       <h1>Interests</h1>
                       <span></span>
@@ -233,7 +242,7 @@ function App() {
                       <li>3D & Graphic Design</li>
                       <li>Animation & Motion Graphics</li>
                     </ul>
-                  </div>
+                  </div> */}
                 </div>
 
                 {/* SERVICES SECTION  */}

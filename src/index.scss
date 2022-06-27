@@ -73,7 +73,6 @@ body {
 
 main {
   display: flex;
-
 }
 
 .sidebar {
@@ -243,17 +242,13 @@ main {
       overflow-y: scroll;
       padding: calc($padding * 2);
       .about-section {
-        display: grid;
-        // padding: $padding;
-        grid-template-columns: 1fr 1fr;
         margin-bottom: calc($padding * 2);
         &:first-child {
-          grid-template-columns: 1fr;
+          // grid-template-columns: 1fr;
         }
         ul {
-          margin-bottom: 2rem;
           li {
-            margin-bottom: 12px;
+            // margin-bottom: 12px;
             list-style: none;
           }
         }
@@ -283,6 +278,8 @@ main {
           }
         }
       }
+    }
+    .about-section {
     }
   }
   &.open {
@@ -335,10 +332,10 @@ main {
         background-position: 50%;
         background-size: cover;
       }
-    }
-
-    .about-content {
-      overflow-y: hidden;
+      .about-content {
+        overflow-y: hidden;
+        padding: 0;
+      }
     }
   }
   .icon {
