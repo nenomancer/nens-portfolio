@@ -3,6 +3,7 @@ import { ArtworkData } from "./ArtworkData";
 // import About from "./components/About/About";
 import Gallery from "./components/Gallery/Gallery";
 import Sidebar from "./components/Sidebar/Sidebar";
+import Particles from "react-particles-js";
 
 // IMPORT SIDEBAR ICONS
 import { GiHamburgerMenu } from "react-icons/gi";
