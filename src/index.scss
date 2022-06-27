@@ -226,61 +226,54 @@ main {
 }
 
 .about-container {
-  height: 0;
-  // width: calc(100vw - $sidebar-width);
-  padding: $padding;
-  // margin-left: $padding;
-  // padding-right: calc($padding + 20px);
-  overflow: hidden;
-
+  // height: $height;
+  height: 100%;
+  width: 100%;
   background-color: $dark;
   position: absolute;
-  z-index: 2;
+  z-index: 5;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-
-  transform: translateX(-100%);
-  transition: transform 500ms $timing-function,
-    height 500ms $timing-function 450ms;
+  transform: translateY(-120%);
+  transition: transform 500ms $timing-function 400ms;
 
   box-shadow: $box-shadow;
-  // background-color: darkred;
 
   .about-card {
-    width: calc(100vw - $sidebar-width - $sidebar-width);
-    // height: 100%;
+    // width: calc(100vw - $sidebar-width - $sidebar-width);
+    height: 100%;
+    position: absolute;
 
     display: grid;
-    grid-template-columns: 1fr 2fr;
-
+    grid-template-columns: 3fr 4fr;
+    // display: flex;
     .about-img {
-      height: calc($height - calc($padding * 2));
-      width: 100%;
-      // position: relative;
-      // align-self: center;
-
       background-image: url("https://i.imgur.com/ZZMBsZH.png");
-      background-size: cover;
+      background-size: contain auto;
       background-repeat: no-repeat;
-      background-position: 83%;
+      background-position: 250%;
+      opacity: 0;
+      transition: all 500ms $timing-function;
+      flex-shrink: 0;
     }
 
     .about-content {
       overflow-y: scroll;
-      padding: calc($padding * 2);
+      scrollbar-width: none;
+      -webkit-scrollbar-corner: 20px;
+      padding: $padding 3rem;
+      width: 100%;
       .about-section {
+        margin-bottom: 50px;
         .about-title {
           text-transform: uppercase;
           text-align: center;
           position: relative;
           h1 {
-            font-size: 20px;
+            font-size: 14px;
             font-weight: 700;
             letter-spacing: 6px;
 
+            margin: 24px 0;
             display: grid;
             grid-template-columns: 1fr max-content 1fr;
 
@@ -319,9 +312,15 @@ main {
     }
   }
   &.open {
-    transform: translateX(0);
-    height: $height;
+    transform: translateY(0);
     transition: transform 500ms $timing-function;
+    .about-card {
+      .about-img {
+        background-position: 85%;
+        opacity: 1;
+        transition: all 500ms $timing-function 500ms;
+      }
+    }
   }
 }
 
@@ -349,7 +348,7 @@ main {
 @media (max-width: 1024px) {
   .container {
     width: 90vw;
-    height: 90vh;
+    height: 80vh;
   }
   .sidebar {
     flex-basis: 0;
