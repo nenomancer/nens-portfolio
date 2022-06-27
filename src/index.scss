@@ -70,7 +70,7 @@ body {
   position: sticky;
   top: 0;
   box-shadow: $box-shadow;
-  z-index: 1;
+  z-index: 2;
   .header-name {
     font-family: "Radio Canada";
     font-size: 1.8rem;
@@ -231,7 +231,7 @@ main {
   width: 100%;
   background-color: $dark;
   position: absolute;
-  z-index: 0;
+  z-index: 1;
 
   transform: translateY(-120%);
   transition: transform 500ms $timing-function 400ms;
@@ -247,6 +247,11 @@ main {
     grid-template-columns: 3fr 4fr;
     // display: flex;
     .about-img {
+      height: 60vmin;
+      margin-left: $padding;
+      align-self: center;
+      transform: translateY(-8%);
+      background-color: red;
       background-image: url("https://i.imgur.com/ZZMBsZH.png");
       background-size: contain auto;
       background-repeat: no-repeat;
@@ -316,7 +321,7 @@ main {
     transition: transform 500ms $timing-function;
     .about-card {
       .about-img {
-        background-position: 85%;
+        background-position: 50%;
         opacity: 1;
         transition: all 500ms $timing-function 500ms;
       }
@@ -335,7 +340,6 @@ main {
   overflow-y: scroll;
   scrollbar-width: none;
   background-color: $dark;
-  z-index: -2;
   transition: transform 500ms $timing-function;
   .youtube {
     scale: (1.2);
