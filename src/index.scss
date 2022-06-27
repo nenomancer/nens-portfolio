@@ -203,9 +203,10 @@ main {
 }
 
 .about-container {
-  height: $height;
+  height: 0;
   width: calc(100vw - $sidebar-width);
-  // padding: $padding;
+  padding: $padding;
+  overflow: hidden;
 
   background-color: $dark;
   position: absolute;
@@ -217,16 +218,16 @@ main {
   flex-shrink: 0;
 
   transform: translateX(-100%);
-  transition: transform 500ms $timing-function;
+  transition: transform 500ms $timing-function,
+    height 500ms $timing-function 450ms;
 
   box-shadow: $box-shadow;
   .about-card {
     width: calc(100vw - $sidebar-width - $sidebar-width);
-    height: 100%;
+    // height: 100%;
 
     display: grid;
     grid-template-columns: 1fr 2fr;
-    // gap: 4rem;
 
     .about-img {
       height: calc($height - calc($padding * 2));
@@ -243,19 +244,13 @@ main {
       overflow-y: scroll;
       padding: calc($padding * 2);
       .about-section {
-        // margin-bottom: calc($padding * 2);
-        &:first-child {
-          // grid-template-columns: 1fr;
-        }
         .about-title {
           text-transform: uppercase;
           text-align: center;
           position: relative;
 
           h1 {
-            //
             font-size: 20px;
-            // height: 100%;
             letter-spacing: 6px;
 
             display: grid;
@@ -292,11 +287,11 @@ main {
         }
       }
     }
-    .about-section {
-    }
   }
   &.open {
     transform: translateX(0);
+    height: $height;
+    transition: transform 500ms $timing-function;
   }
 }
 
@@ -323,7 +318,7 @@ main {
 
 @media (max-width: 1040px) {
   body {
-    overflow-y: scroll;
+    // overflow-y: scroll;
   }
   .sidebar {
     flex-basis: 0;
@@ -334,23 +329,23 @@ main {
   }
 
   .about-container {
-    height: auto;
+    overflow-y: scroll;
     width: 100vw;
     .about-card {
       display: flex;
       flex-direction: column;
-      // grid-auto-rows: auto;
-      // grid-template-rows: 1fr 2fr;
       .about-img {
-        background-position: 10% 10%;
-        background-size: auto;
+        background-position: left top;
+        background-size: cover, auto;
+        background-color: red;
       }
       .about-content {
-        overflow-y: hidden;
+        overflow-y: visible;
         padding: 0;
       }
     }
-  }
-  .icon {
+    &.open {
+      height: $height;
+    }
   }
 }
