@@ -95,21 +95,8 @@ function App() {
 
   const aboutContainer = document.querySelector(".about-container");
   const aboutCard = document.querySelector(".about-card");
-  const aboutButton = document.querySelector("#about-list-item");
+  const aboutButton = document.querySelector("#about-button");
 
-  // const toggleAbout = (open) => {
-  //   if (open) {
-  //     aboutContainer.classList.toggle("open");
-  //     aboutCard.classList.toggle("open");
-  //     document.querySelector(".gallery").classList.toggle("open");
-  //     aboutButton.classList.toggle("about-btn-toggle");
-  //   } else {
-  //     aboutContainer.classList.remove("open");
-  //     aboutCard.classList.remove("open");
-  //     document.querySelector(".gallery").classList.remove("open");
-  //     aboutButton.classList.remove("about-btn-toggle");
-  //   }
-  // };
 
   const toggleAbout = (state) => {
     if (state === "toggle") {
@@ -123,9 +110,6 @@ function App() {
     }
   };
 
-  const aboutClickHandler = () => {
-    // toggleAbout();
-  };
 
   return (
     <div className="container">
@@ -143,11 +127,7 @@ function App() {
         >
             <MdInfo className="icon sidebar-icon" />
         </div>
-        {/* <div className="icons">
-          <GrInstagram />
-          <GrLinkedin />
-          <GrFacebook />
-        </div> */}
+     
       </header>
       <main>
         <aside className="sidebar">
@@ -192,7 +172,6 @@ function App() {
             <div className="about-card">
               <div className="about-img"></div>
               <div className="about-content">
-                {/* ABOUT SECTION  */}
                 <div className="about-section">
                   <div className="about-title">
                     <h1>About Me</h1>
@@ -217,7 +196,6 @@ function App() {
                   </p>
                 </div>
 
-                {/* SERVICES SECTION  */}
                 <div className="about-section">
                   <div className="about-title">
                     <h1>Services</h1>
@@ -233,22 +211,9 @@ function App() {
                     <li>3D & Graphic Design</li>
                     <li>Animation & Motion Graphics</li>
                   </ul>
-                  {/* INTERESTS SECTION  */}
-
-                  {/* <div className="right">
-                    <div className="about-title">
-                      <h1>Interests</h1>
-                      <span></span>
-                    </div>
-                    <ul>
-                      <li>Web Developoment</li>
-                      <li>3D & Graphic Design</li>
-                      <li>Animation & Motion Graphics</li>
-                    </ul>
-                  </div> */}
+               
                 </div>
 
-                {/* SERVICES SECTION  */}
                 <div className="about-section">
                   <div className="left">
                     <div className="about-title">
@@ -261,7 +226,6 @@ function App() {
                       <li>Animation & Motion Graphics</li>
                     </ul>
                   </div>
-                  {/* INTERESTS SECTION  */}
 
                   <div className="right">
                     <div className="about-title">
