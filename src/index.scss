@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
+
 $accent-color: hsl(0, 89%, 57%);
 $dark: hsl(0, 0, 3);
 $medium-dark: hsl(0, 0, 5);
@@ -32,7 +34,7 @@ $timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
 
 body {
   margin: 0;
-  font-family: "Radio Canada", "sans-serif";
+  font-family: "DM Sans", "sans-serif";
   -webkit-font-smoothing: antialiased;
   background-color: $dark;
   color: $white;
@@ -53,6 +55,7 @@ body {
   box-shadow: $box-shadow;
   z-index: 10;
   .header-name {
+    font-family: "Radio Canada";
     font-size: 1.8rem;
     font-weight: bolder;
     letter-spacing: 0.25rem;
@@ -222,6 +225,7 @@ main {
     height 500ms $timing-function 450ms;
 
   box-shadow: $box-shadow;
+
   .about-card {
     width: calc(100vw - $sidebar-width - $sidebar-width);
     // height: 100%;
@@ -232,14 +236,15 @@ main {
     .about-img {
       height: calc($height - calc($padding * 2));
       width: 100%;
-      position: relative;
-      align-self: center;
+      // position: relative;
+      // align-self: center;
 
       background-image: url("https://i.imgur.com/ZZMBsZH.png");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: 83%;
     }
+
     .about-content {
       overflow-y: scroll;
       padding: calc($padding * 2);
@@ -248,9 +253,9 @@ main {
           text-transform: uppercase;
           text-align: center;
           position: relative;
-
           h1 {
             font-size: 20px;
+            font-weight: 400;
             letter-spacing: 6px;
 
             display: grid;
@@ -258,6 +263,7 @@ main {
 
             align-items: center;
             gap: $padding;
+
             &::before,
             &::after {
               content: " ";
@@ -330,14 +336,18 @@ main {
 
   .about-container {
     overflow-y: scroll;
+    top: $header-height;
     width: 100vw;
+    // padding: 0;
     .about-card {
       display: flex;
       flex-direction: column;
       .about-img {
         background-position: left top;
-        background-size: cover, auto;
-        background-color: red;
+        // background-position: 0% -90%;
+        background-size: contain;
+        // background-size: contain, auto;
+        // background-color: red;
       }
       .about-content {
         overflow-y: visible;
