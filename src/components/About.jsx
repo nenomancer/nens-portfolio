@@ -1,6 +1,5 @@
 import React from "react";
 import "../scss/About.scss";
-import AboutIcon from "./About/AboutIcon";
 
 import { IoClose } from "react-icons/io5";
 
