@@ -18,7 +18,7 @@ import { GrInstagram } from "react-icons/gr";
 import { GrLinkedin } from "react-icons/gr";
 import { GrFacebook } from "react-icons/gr";
 
-import variables from "./index.scss";
+// import variables from "./index.scss";
 
 function App() {
   // GALLERY FILTER STATES
