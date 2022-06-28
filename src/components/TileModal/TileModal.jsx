@@ -72,7 +72,7 @@ const TileModal = (props) => {
             width="100%"
             height="100%"
             src={`${props.selectedTile.src}?modestbranding=0&autoplay=0&showinfo=0&controls=1`}
-            frameborder="0"
+            frameBorder="0"
           ></iframe>
         )}
       </div>
