@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import "./Gallery.css";
+// import "./Gallery.css";
+import "../scss/Gallery.scss";
+import TileModal from "./TileModal";
 import Tile from "./Tile";
-import TileModal from "../TileModal/TileModal";
 
 const Gallery = (props) => {
   const [current, setCurrent] = useState({});

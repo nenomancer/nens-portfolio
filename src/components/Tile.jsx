@@ -1,8 +1,7 @@
 import React from "react";
-import "./Tile.css";
+import "../scss/Tile.scss";
 
 const Tile = (props) => {
-
   return (
     <div
       className={`${"tile__container"} ${props.gridSize}`}

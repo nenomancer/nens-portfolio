@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./TileModal.scss";
+import "../scss/TileModal.scss";
 
 import { IoClose } from "react-icons/io5";
 import { MdNavigateNext } from "react-icons/md";
