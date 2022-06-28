@@ -17,6 +17,7 @@ import { MdPerson } from "react-icons/md";
 import { GrInstagram } from "react-icons/gr";
 import { GrLinkedin } from "react-icons/gr";
 import { GrFacebook } from "react-icons/gr";
+import About from "./components/About";
 
 // import variables from "./index.scss";
 
@@ -168,7 +169,7 @@ function App() {
             </li> */}
           </ul>
         </aside>
-          <div className="about-container">
+          {/* <div className="about-container">
             <div className="about-card">
               <div className="about-img"></div>
               <div className="about-content">
@@ -240,7 +241,8 @@ function App() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
+          <About />
           <Gallery
             artwork={filteredTiles}
             viewHandler={viewHandler}
