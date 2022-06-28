@@ -12,9 +12,9 @@ $white: hsl(0, 0, 92);
 $header-height: 4rem;
 $sidebar-width: 4rem;
 
-$height-container: 80vh;
+$container-height: 80vh;
 
-$height: calc(100vh - $header-height);
+$height: 80vh;
 $padding: 2rem;
 
 // :export {
@@ -46,7 +46,7 @@ body {
 
 .container {
   width: 100vmin;
-  height: $height-container;
+  height: $height;
   overflow: hidden;
   position: absolute;
   top: 50%;
@@ -100,6 +100,7 @@ body {
 
 main {
   display: flex;
+  height: $height;
 }
 
 .sidebar {
@@ -228,7 +229,6 @@ main {
 }
 
 .about-container {
-  // height: $height;
   height: 100%;
   width: 100%;
   background-color: $dark;
@@ -331,7 +331,7 @@ main {
 }
 
 .gallery {
-  height: $height-container;
+  height: 90%;
   display: grid;
   gap: 0.5rem;
   padding: $padding;
@@ -353,7 +353,7 @@ main {
 @media (max-width: 1024px) {
   .container {
     width: 90vw;
-    height: $height-container;
+    height: $container-height;
   }
   .sidebar {
     flex-basis: 0;
