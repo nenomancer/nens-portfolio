@@ -10,14 +10,19 @@ const Sidebar = (props) => {
   const menuItems = [...document.querySelectorAll(".sidebar-list-item")];
 
   const menuClickHandler = (e) => {
-    if (e === "all") {
-      console.log(`EVENT IS ${e}`);
+    const menuTitle = e.target.innerText;
+    if (menuTitle === "all") {
+      console.log(`EVENT IS ${menuTitle}`);
+      // props.ArtworkData.map((tile) => {
+
+      // })
       return;
     } else {
-      console.log(props.galleryFilter);
       props.ArtworkData.map((tile) => {
-        if (tile.type.includes(props.galleryFilter)) {
-          tile.classList.add("visible");
+        // console.log(`TILE TYPE: ${tile.type}`);
+        // console.log(`TILE CLASSLIST: ${tile.type}, EVENT: ${e.target.innerText}`);
+        if (tile.type.includes(menuTitle.toLowerCase())) {
+          console.log(`TILE: ${tile}`);
         }
       });
     }
@@ -41,7 +46,7 @@ const Sidebar = (props) => {
       <ul className="sidebar-list">
         <li
           className="sidebar-list-item active"
-          onClick={() => menuClickHandler("all")}
+          onClick={menuClickHandler}
         >
           <div className="list-item-icon">
             <MdAutoAwesomeMosaic className="icon sidebar-icon" />
