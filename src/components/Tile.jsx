@@ -7,10 +7,10 @@ const Tile = (props) => {
       className={`${"tile__container"} ${props.gridSize}`}
       onClick={props.onClickHandler}
     >
-      <div className="tile__info">
+      {/* <div className="tile__info">
         <div className="tile__name">{props.name}</div>
         <div className="tile__desc">{props.desc}</div>
-      </div>
+      </div> */}
       <div className="tile__img-container">
         {/* RENDER IMG IF THE ARTWORK IS A PHOTO */}
         {props.type[0] === "images" && <img src={props.src} alt={props.name} />}

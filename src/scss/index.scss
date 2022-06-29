@@ -157,25 +157,7 @@ main {
   }
 }
 
-.gallery {
-  height: 90%;
-  display: grid;
-  gap: 0.5rem;
-  padding: $padding;
-  grid-auto-rows: 250px;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-auto-flow: dense;
-  overflow-y: scroll;
-  // scrollbar-width: none;
-  background-color: $dark;
-  transition: transform 500ms $timing-function;
-  .youtube {
-    scale: (1.2);
-  }
-  &.open {
-    transform: translateX(100%);
-  }
-}
+
 
 @media (max-width: 1024px) {
   .container {
