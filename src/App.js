@@ -56,10 +56,6 @@ function App() {
     setShowTileModal(true);
   };
 
-
-
-
-
   return (
     <div className="container">
       {/* {showAbout && <About setShowAbout={setShowAbout} />} */}

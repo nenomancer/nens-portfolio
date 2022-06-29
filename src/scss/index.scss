@@ -2,7 +2,6 @@
 
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
 
-
 // :export {
 //   sidebarWidth: $sidebar-width;
 // }
@@ -42,18 +41,18 @@ body {
   border-radius: 12px;
 
   transition: all 250ms $timing-function;
+  
 }
 
 .icon {
   font-size: 20px;
 }
 
-
 main {
   display: flex;
-  height: $height;
+  // height: 100%;
+  // height: $height;
 }
-
 
 .about-container {
   height: 100%;
@@ -156,8 +155,6 @@ main {
     }
   }
 }
-
-
 
 @media (max-width: 1024px) {
   .container {
