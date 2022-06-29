@@ -3,6 +3,10 @@
   position: relative;
 }
 
+.hidden {
+  border: 1px solid red;
+}
+
 .tile__container:hover {
   cursor: pointer;
 }

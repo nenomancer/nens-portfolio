@@ -5,9 +5,13 @@ import { MdAutoAwesomeMosaic } from "react-icons/md";
 import { MdPhotoLibrary } from "react-icons/md";
 import { MdVideoLibrary } from "react-icons/md";
 import { MdLibraryMusic } from "react-icons/md";
+import { ArtworkData } from "../ArtworkData";
 
 const Sidebar = (props) => {
   const menuItems = [...document.querySelectorAll(".sidebar-list-item")];
+  const galleryTiles = [...document.querySelectorAll(".tile__container")];
+
+  console.log(galleryTiles);
 
   const menuClickHandler = (e) => {
     const menuTitle = e.target.innerText;
@@ -18,11 +22,12 @@ const Sidebar = (props) => {
       // })
       return;
     } else {
-      props.ArtworkData.map((tile) => {
+      props.ArtworkData.map((tile, index) => {
         // console.log(`TILE TYPE: ${tile.type}`);
         // console.log(`TILE CLASSLIST: ${tile.type}, EVENT: ${e.target.innerText}`);
         if (tile.type.includes(menuTitle.toLowerCase())) {
-          console.log(`TILE: ${tile}`);
+          console.log(`TILE: ${index}`);
+          galleryTiles[index].classList.add("hidden");
         }
       });
     }
@@ -44,10 +49,7 @@ const Sidebar = (props) => {
   return (
     <aside className="sidebar">
       <ul className="sidebar-list">
-        <li
-          className="sidebar-list-item active"
-          onClick={menuClickHandler}
-        >
+        <li className="sidebar-list-item active" onClick={menuClickHandler}>
           <div className="list-item-icon">
             <MdAutoAwesomeMosaic className="icon sidebar-icon" />
           </div>

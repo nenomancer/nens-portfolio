@@ -56,29 +56,7 @@ function App() {
     setShowTileModal(true);
   };
 
-  // MAKE ARRAY OUT OF MENU ITEMS
-  // const menuItems = [...document.querySelectorAll(".sidebar-list-item")];
 
-  // const menuClickHandler = (e) => {
-  //   // closeMenu();
-  //   // toggleMenu();
-  //   toggleAbout("close");
-  //   // SET FILTER TYPE BASED ON TEXT CONTENT OF MENU ITEM
-  //   setGalleryFilter(e.target.textContent.toLowerCase());
-  //   // SET ACTIVE CLASS FOR CLICKED ITEM
-  //   menuItems.forEach((item) => {
-  //     if (item.textContent !== e.target.textContent) {
-  //       item.classList.remove("active");
-  //     } else {
-  //       e.target.classList.add("active");
-  //     }
-  //   });
-  // };
-
- 
-
-
-  // -------------- ABOUT CONTAINER -------------------
 
 
 
