@@ -1,8 +1,7 @@
 @import "./variables";
 
 .gallery {
-  // height: 90%;
-  height: $height;
+  height: 75vmin;
   display: grid;
   gap: 0.5rem;
   // padding: $padding;
