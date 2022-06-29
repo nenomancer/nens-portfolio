@@ -11,23 +11,20 @@ const Sidebar = (props) => {
   const menuItems = [...document.querySelectorAll(".sidebar-list-item")];
   const galleryTiles = [...document.querySelectorAll(".tile__container")];
 
-  console.log(galleryTiles);
-
   const menuClickHandler = (e) => {
     const menuTitle = e.target.innerText;
-    if (menuTitle === "all") {
-      console.log(`EVENT IS ${menuTitle}`);
-      // props.ArtworkData.map((tile) => {
 
-      // })
-      return;
+    console.log(menuTitle);
+    if (menuTitle.toLowerCase() === "all") {
+      for (let tile of galleryTiles) {
+        tile.classList.remove("hidden");
+      }
     } else {
       props.ArtworkData.map((tile, index) => {
-        // console.log(`TILE TYPE: ${tile.type}`);
-        // console.log(`TILE CLASSLIST: ${tile.type}, EVENT: ${e.target.innerText}`);
-        if (tile.type.includes(menuTitle.toLowerCase())) {
-          console.log(`TILE: ${index}`);
+        if (!tile.type.includes(menuTitle.toLowerCase())) {
           galleryTiles[index].classList.add("hidden");
+        } else {
+          galleryTiles[index].classList.remove("hidden");
         }
       });
     }
