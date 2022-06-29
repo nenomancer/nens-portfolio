@@ -5,7 +5,7 @@
   width: 100%;
   background-color: $dark;
   position: absolute;
-  z-index: 5;
+  // z-index: 5;
 
   transform: translateY(-250%);
   transition: transform 500ms $timing-function 400ms;
@@ -66,12 +66,6 @@
               top: 25%;
               background-color: $white;
             }
-            // &::before {
-            //   left: 0;
-            // }
-            // &::after {
-            //   right: 0;
-            // }
           }
         }
         ul {

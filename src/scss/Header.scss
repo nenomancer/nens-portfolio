@@ -1,0 +1,36 @@
+@import "./variables.scss";
+
+.header {
+    background-color: $dark;
+    height: $header-height;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    box-shadow: $box-shadow;
+    z-index: 10;
+    .header-name {
+      font-family: "Radio Canada";
+      font-size: 1.8rem;
+      font-weight: bolder;
+      letter-spacing: 0.25rem;
+      margin-left: 1rem;
+    }
+    .header-button {
+      height: $header-height;
+      width: 5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+  
+      // .menu-icon {
+      //   width: 20px;
+      //   height: 100%;
+      // }
+    }
+    #about-button {
+      margin-left: auto;
+    }
+  }
+  
