@@ -229,15 +229,14 @@ const About = (props) => {
 
           <div className="about-section">
             <div className="about-title">
-              <p>Services</p>
+              <p>Skills</p>
             </div>
             <ul>
-              <li>Web Developoment</li>
-              <li>Graphic Design</li>
+              <li>Javascript</li>
+              <li>React</li>
+              <li>Sass</li>
+              <li>Web Design</li>
               <li>Motion Graphics</li>
-              <li>Animation</li>
-              <li>3D Modeling & Render</li>
-              <li>Animation</li>
             </ul>
           </div>
 
