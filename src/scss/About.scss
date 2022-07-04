@@ -122,19 +122,36 @@
     text-align: right;
     .workplace {
       font-size: 18px;
+      color: $accent-color;
+      & span {
+        color: $light;
+      }
     }
     // flex-grow: 1;
   }
   .right {
     // background-color: blue;
     // flex-grow: 2;
-    border-left: 4px solid yellow;
-    padding-left: 1rem;
+    border-left: 2px solid $black;
+    padding-left: 2rem;
+    margin-left: 3rem;
+
     .position {
       margin: 0;
     }
     li {
-      list-style-type: dash;
+      list-style: none;
+      position: relative;
+      margin-left: 10px;
+      font-size: 14px;
+      line-height: 18px;
+      margin-bottom: 8px;
+      &::before {
+        content: "-";
+
+        color: $white;
+        margin-right: 4px;
+      }
     }
   }
 }
