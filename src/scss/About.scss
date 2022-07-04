@@ -6,6 +6,7 @@
   background-color: $dark;
   position: absolute;
   // z-index: 5;
+  scrollbar-width: none;
 
   transform: translateY(-250%);
   transition: transform 500ms $timing-function 400ms;
@@ -36,7 +37,6 @@
 
     .about-content {
       overflow-y: scroll;
-      scrollbar-width: none;
       -webkit-scrollbar-corner: 20px;
       padding: $padding 3rem;
       width: 100%;
@@ -68,21 +68,25 @@
             }
           }
         }
-        ul {
-          li {
-            margin-bottom: 2rem;
-            list-style: none;
-          }
-        }
-        p {
-          font-family: "Radio Canada";
-          margin-bottom: 2rem;
-          line-height: 28px;
-          width: 100%;
-        }
       }
     }
+
+    ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      li {
+        margin-bottom: 2rem;
+        list-style: none;
+      }
+    }
+    p {
+      font-family: "Radio Canada";
+      margin-bottom: 2rem;
+      line-height: 28px;
+      width: 100%;
+    }
   }
+
   &.open {
     transform: translateY(0);
     transition: transform 500ms $timing-function;

@@ -230,14 +230,11 @@ const About = (props) => {
           <div className="about-section">
             <div className="about-title">
               <h1>Services</h1>
-              <span></span>
             </div>
             <ul>
               <li>Web Developoment</li>
-              <li>3D & Graphic Design</li>
-              <li>Animation & Motion Graphics</li>
-            </ul>
-            <ul>
+              <li>Graphic Design</li>
+              <li>Motion Graphics</li>
               <li>Web Developoment</li>
               <li>3D & Graphic Design</li>
               <li>Animation & Motion Graphics</li>
@@ -248,7 +245,6 @@ const About = (props) => {
             <div className="left">
               <div className="about-title">
                 <h1>Experience</h1>
-                <span></span>
               </div>
               <ul>
                 <li>Web Developoment</li>
