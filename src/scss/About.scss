@@ -41,17 +41,13 @@
       padding-bottom: 120px;
       width: 100%;
       .about-section {
-        display: flex;
-        flex-wrap: wrap;
-        .left {
-          background-color: red;
-        }
+        // display: flex;
+        // flex-wrap: wrap;
         .about-title {
           text-transform: uppercase;
           text-align: center;
           position: relative;
           flex-basis: 100%;
-          flex-shrink: 0;
           p {
             font-weight: 700;
             letter-spacing: 6px;
@@ -73,7 +69,7 @@
             }
           }
         }
-        ul {
+        .skills {
           display: grid;
           grid-template-columns: 1fr 1fr;
           flex-grow: 1;
@@ -101,6 +97,7 @@
       }
     }
   }
+
   &.open {
     transform: translateY(0);
     transition: transform 500ms $timing-function;
@@ -110,6 +107,34 @@
         opacity: 1;
         transition: all 500ms $timing-function 500ms;
       }
+    }
+  }
+}
+
+#experience {
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+  .about-title {
+    grid-column: span 2;
+  }
+  .left {
+    // background-color: red;
+    text-align: right;
+    .workplace {
+      font-size: 18px;
+    }
+    // flex-grow: 1;
+  }
+  .right {
+    // background-color: blue;
+    // flex-grow: 2;
+    border-left: 4px solid yellow;
+    padding-left: 1rem;
+    .position {
+      margin: 0;
+    }
+    li {
+      list-style-type: dash;
     }
   }
 }

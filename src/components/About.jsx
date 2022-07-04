@@ -231,20 +231,20 @@ const About = (props) => {
             <div className="about-title">
               <p>Skills</p>
             </div>
-            <ul>
-              <li>Javascript</li>
-              <li>React</li>
-              <li>Sass</li>
-              <li>Web Design</li>
-              <li>Motion Graphics</li>
-              <li>Graphic Design</li>
+            <ul className="skills">
+              <li className="skill">Javascript</li>
+              <li className="skill">React</li>
+              <li className="skill">Sass</li>
+              <li className="skill">Web Design</li>
+              <li className="skill">Motion Graphics</li>
+              <li className="skill">Graphic Design</li>
             </ul>
           </div>
 
           <div className="about-section" id="experience">
-              <div className="about-title">
-                <p>Experience</p>
-              </div>
+            <div className="about-title">
+              <p>Experience</p>
+            </div>
             <div className="left">
               <p className="workplace">
                 FX3X STUDIO
@@ -253,14 +253,25 @@ const About = (props) => {
             </div>
             <div className="right">
               <p className="position">VFX Compositing Artist</p>
+              <ul>
+                <li>Chroma keying and background replacement</li>
+                <li>Color correction and grading</li>
+                <li>Compositing elements into a scene</li>
+                <li>
+                  Projects include: Shazam, Detective Pikachu, Aladdin,
+                  Godzilla, Spiderman: Far From Home, Doolittle, Sonic the
+                  Hedgehog, Star Trek: Discovery, Star Trek: Picard, Men in
+                  Black: International, etc...
+                </li>
+              </ul>
             </div>
           </div>
           <div className="about-section">
+            <div className="about-title">
+              <p>Interests</p>
+              <span></span>
+            </div>
             <div className="right">
-              <div className="about-title">
-                <p>Interests</p>
-                <span></span>
-              </div>
               <ul>
                 <li>Web Developoment</li>
                 <li>3D & Graphic Design</li>
