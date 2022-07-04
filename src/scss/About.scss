@@ -5,8 +5,7 @@
   width: 100%;
   background-color: $dark;
   position: absolute;
-  // z-index: 5;
-  scrollbar-width: none;
+  z-index: 5;
 
   transform: translateY(-250%);
   transition: transform 500ms $timing-function 400ms;
@@ -25,7 +24,7 @@
       height: 60vmin;
       margin-left: $padding;
       align-self: center;
-      transform: translateY(-8%);
+      // transform: translateY(-8%);
       background-image: url("https://i.imgur.com/ZZMBsZH.png");
       background-size: cover;
       background-repeat: no-repeat;
@@ -37,6 +36,7 @@
 
     .about-content {
       overflow-y: scroll;
+      scrollbar-width: none;
       -webkit-scrollbar-corner: 20px;
       padding: $padding 3rem;
       width: 100%;
@@ -66,27 +66,31 @@
               top: 25%;
               background-color: $white;
             }
+            // &::before {
+            //   left: 0;
+            // }
+            // &::after {
+            //   right: 0;
+            // }
           }
+        }
+        ul {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          li {
+            margin-bottom: 2rem;
+            list-style: none;
+          }
+        }
+        p {
+          font-family: "Radio Canada";
+          margin-bottom: 2rem;
+          line-height: 28px;
+          width: 100%;
         }
       }
     }
-
-    ul {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      li {
-        margin-bottom: 2rem;
-        list-style: none;
-      }
-    }
-    p {
-      font-family: "Radio Canada";
-      margin-bottom: 2rem;
-      line-height: 28px;
-      width: 100%;
-    }
   }
-
   &.open {
     transform: translateY(0);
     transition: transform 500ms $timing-function;
@@ -96,6 +100,33 @@
         opacity: 1;
         transition: all 500ms $timing-function 500ms;
       }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .about-container {
+    overflow-y: scroll;
+    // top: $header-height;
+    // width: 100vw;
+    .about-card {
+      display: flex;
+      flex-direction: column;
+      .about-img {
+        // background-position: left top;
+        // background-position: 0% -90%;
+        align-self: start;
+        // background-size: contain;
+        // background-size: contain, auto;
+        // background-color: red;
+      }
+      .about-content {
+        overflow-y: visible;
+        padding: 0;
+      }
+    }
+    &.open {
+      height: $height;
     }
   }
 }

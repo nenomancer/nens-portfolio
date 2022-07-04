@@ -2,10 +2,6 @@
 
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
 
-// :export {
-//   sidebarWidth: $sidebar-width;
-// }
-
 *,
 *::before,
 *::after {
@@ -15,7 +11,6 @@
   margin: 0;
   padding: 0;
 
-  /* CSS VARIABLES */
 }
 
 body {
@@ -24,7 +19,6 @@ body {
   -webkit-font-smoothing: antialiased;
   background-color: $black;
   color: $white;
-  // overflow: hidden;
 }
 
 .container {
@@ -40,7 +34,6 @@ body {
   box-shadow: $box-shadow;
   border-radius: 12px;
   transition: all 250ms $timing-function;
-  
 }
 
 .icon {
@@ -53,107 +46,7 @@ main {
   // height: $height;
 }
 
-.about-container {
-  height: 100%;
-  width: 100%;
-  background-color: $dark;
-  position: absolute;
-  z-index: 5;
 
-  transform: translateY(-250%);
-  transition: transform 500ms $timing-function 400ms;
-
-  box-shadow: $box-shadow;
-
-  .about-card {
-    // width: calc(100vw - $sidebar-width - $sidebar-width);
-    height: 100%;
-    position: absolute;
-
-    display: grid;
-    grid-template-columns: 3fr 4fr;
-    // display: flex;
-    .about-img {
-      height: 60vmin;
-      margin-left: $padding;
-      align-self: center;
-      transform: translateY(-8%);
-      background-image: url("https://i.imgur.com/ZZMBsZH.png");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: 250%;
-      opacity: 0;
-      transition: all 500ms $timing-function;
-      flex-shrink: 0;
-    }
-
-    .about-content {
-      overflow-y: scroll;
-      scrollbar-width: none;
-      -webkit-scrollbar-corner: 20px;
-      padding: $padding 3rem;
-      width: 100%;
-      .about-section {
-        margin-bottom: 50px;
-        .about-title {
-          text-transform: uppercase;
-          text-align: center;
-          position: relative;
-          h1 {
-            font-size: 14px;
-            font-weight: 700;
-            letter-spacing: 6px;
-
-            margin: 24px 0;
-            display: grid;
-            grid-template-columns: 1fr max-content 1fr;
-
-            align-items: center;
-            gap: $padding;
-
-            &::before,
-            &::after {
-              content: " ";
-              height: 1px;
-              display: block;
-              top: 25%;
-              background-color: $white;
-            }
-            // &::before {
-            //   left: 0;
-            // }
-            // &::after {
-            //   right: 0;
-            // }
-          }
-        }
-        ul {
-          li {
-            margin-bottom: 2rem;
-            list-style: none;
-          }
-        }
-        p {
-          font-family: "Radio Canada";
-          margin-bottom: 2rem;
-          line-height: 28px;
-          width: 100%;
-        }
-      }
-    }
-  }
-  &.open {
-    transform: translateY(0);
-    transition: transform 500ms $timing-function;
-    .about-card {
-      .about-img {
-        background-position: 65%;
-        opacity: 1;
-        transition: all 500ms $timing-function 500ms;
-      }
-    }
-  }
-}
 
 @media (max-width: 1024px) {
   .container {
@@ -166,29 +59,5 @@ main {
   }
   .sidebar-open {
     flex-basis: 5rem;
-  }
-
-  .about-container {
-    overflow-y: scroll;
-    // top: $header-height;
-    // width: 100vw;
-    .about-card {
-      display: flex;
-      flex-direction: column;
-      .about-img {
-        background-position: left top;
-        // background-position: 0% -90%;
-        background-size: contain;
-        // background-size: contain, auto;
-        // background-color: red;
-      }
-      .about-content {
-        overflow-y: visible;
-        padding: 0;
-      }
-    }
-    &.open {
-      height: $height;
-    }
   }
 }
