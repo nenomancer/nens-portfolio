@@ -68,10 +68,6 @@
     transition-delay: 0;
   }
 
-  .list-item-text:nth-child(2) {
-    // background-color: blue;
-  }
-
   // SEPARATE DELAYS
   &:nth-child(2) .list-item-text {
     transition-delay: 25ms;
@@ -82,20 +78,17 @@
   &:nth-child(4) .list-item-text {
     transition-delay: 75ms;
   }
-  // &:nth-child(5) .list-item-text {
-  //   transition-delay: calc($animation-delay * 4);
-  // }
 
   .text-fade-in {
     opacity: 1;
     width: 20px;
     transform: translateX(70px) scale(1);
   }
+
   div {
-    // transform: scale(0);
-    // opacity: 0;
     animation: closeItems 250ms $timing-function;
   }
+  
   &.active {
     background-color: $medium-dark;
     &::before {

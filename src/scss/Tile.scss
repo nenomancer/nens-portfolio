@@ -1,11 +1,16 @@
+@import "../scss/variables";
+
 .tile__container {
   overflow: hidden;
   position: relative;
+  transition: all 250ms $timing-function;
+  opacity: 1;
 }
 
 .hidden {
-  border: 1px solid red;
   display: none;
+  opacity: 0;
+  transform: scale(0);
 }
 
 .tile__container:hover {
