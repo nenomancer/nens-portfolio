@@ -237,21 +237,25 @@ const About = (props) => {
               <li>Sass</li>
               <li>Web Design</li>
               <li>Motion Graphics</li>
+              <li>Graphic Design</li>
             </ul>
           </div>
 
-          <div className="about-section">
-            <div className="left">
+          <div className="about-section" id="experience">
               <div className="about-title">
                 <p>Experience</p>
               </div>
-              <ul>
-                <li>Web Developoment</li>
-                <li>3D & Graphic Design</li>
-                <li>Animation & Motion Graphics</li>
-              </ul>
+            <div className="left">
+              <p className="workplace">
+                FX3X STUDIO
+                <span>2018-2021</span>
+              </p>
             </div>
-
+            <div className="right">
+              <p className="position">VFX Compositing Artist</p>
+            </div>
+          </div>
+          <div className="about-section">
             <div className="right">
               <div className="about-title">
                 <p>Interests</p>
