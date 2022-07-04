@@ -14,7 +14,7 @@
 
   .about-card {
     // width: calc(100vw - $sidebar-width - $sidebar-width);
-    height: 100%;
+    height: $height;
     position: absolute;
 
     display: grid;
@@ -38,15 +38,14 @@
       overflow-y: scroll;
       -webkit-scrollbar-corner: 20px;
       padding: $padding 3rem;
+      padding-bottom: 120px;
       width: 100%;
       .about-section {
-        // margin-bottom: 50px;
         .about-title {
           text-transform: uppercase;
           text-align: center;
           position: relative;
           p {
-            font-size: 14px;
             font-weight: 700;
             letter-spacing: 6px;
 
