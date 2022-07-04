@@ -10,7 +10,7 @@
   -moz-box-sizing: border-box;
   margin: 0;
   padding: 0;
-
+  scrollbar-width: none;
 }
 
 body {
@@ -45,8 +45,6 @@ main {
   // height: 100%;
   // height: $height;
 }
-
-
 
 @media (max-width: 1024px) {
   .container {

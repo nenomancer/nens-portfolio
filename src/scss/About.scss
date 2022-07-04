@@ -1,7 +1,7 @@
 @import "./variables";
 
 .about-container {
-  height: 100%;
+  height: $height;
   width: 100%;
   background-color: $dark;
   position: absolute;
@@ -36,7 +36,6 @@
 
     .about-content {
       overflow-y: scroll;
-      scrollbar-width: none;
       -webkit-scrollbar-corner: 20px;
       padding: $padding 3rem;
       width: 100%;

@@ -1,7 +1,7 @@
 @import "./variables";
 
 .gallery {
-  height: 75vmin;
+  height: $height;
   display: grid;
   gap: 0.5rem;
   // padding: $padding;
@@ -9,7 +9,6 @@
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-auto-flow: dense;
   overflow-y: scroll;
-  scrollbar-width: none;
   background-color: $dark;
   transition: transform 500ms $timing-function;
   .youtube {
