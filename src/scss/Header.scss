@@ -31,14 +31,28 @@
 #about-button {
   margin-left: auto;
   position: relative;
+  overflow: hidden;
 }
 
 .about-button {
   position: absolute;
-  transform: translateX(100%);
+  transition: transform 250ms $timing-function;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  color: $light;
+  transition: all 250ms $timing-function;
 }
 
 
-.active-button{
-  transform: translateX(0);
+.active-button {
+  transform: translateX(50%);
+  color: $white;
+}
+
+.toggle-bar {
+  height: 15px;
+  width: 50%;
+  background-color: black;
+  border: 1px solid $medium;
+  border-radius: 5000px;
 }

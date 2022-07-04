@@ -18,25 +18,12 @@ const Header = (props) => {
     ...document.querySelectorAll(".about-button"),
   ];
 
-  // const toggleAbout = (state) => {
-  //   if (state === "toggle") {
-  //     aboutContainer.classList.toggle("open");
-  //     openAbout.style.transform = "translateX(0)";
-  //     closeAbout.style.transform = "translateX(100%)";
-  //   } else if (state === "close") {
-  //     aboutContainer.classList.remove("open");
-  //     // document.querySelector(".gallery").classList.remove("open");
-  //     openAbout.style.transform = "translateX(100%)";
-  //     closeAbout.style.transform = "translateX(0)";
-  //   }
-  // };
 
   const [isAboutOpen, setIsAboutOpen] = useState(false);
 
   const toggleAbout = () => {
     aboutContainer.classList.toggle("open");
     openAbout.classList.toggle("active-button");
-    closeAbout.classList.toggle("active-button");
   };
 
   let isMenuOpen = false;
@@ -71,8 +58,9 @@ const Header = (props) => {
       <span className="header-name">NENS</span>
 
       <div className="header-button" id="about-button" onClick={toggleAbout}>
-        <MdInfo className="icon about-button active-button" id="open-about" />
-        <IoClose className="icon about-button" id="close-about" />
+        <MdInfo className="icon about-button" id="open-about" />
+        <div className="toggle-bar"></div>
+        {/* <IoClose className="icon about-button" id="close-about" /> */}
       </div>
     </header>
   );
