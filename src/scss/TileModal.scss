@@ -70,12 +70,17 @@
 
   font-size: 4rem;
   padding: 1rem;
-  color: hsl(0, 0%, 30%);
+  color: $medium-light;
   border-radius: 0.5rem;
   transition: all 0.25s linear;
   /* background-color: red; */
   z-index: 10;
+  cursor: pointer;
+  &:hover {
+    color: $white;
+  }
 }
+
 
 .tile-nav {
   width: 100%;
@@ -84,10 +89,9 @@
 }
 .nav-icons {
   position: absolute;
-  /* background-color: red; */
-  color: hsl(0, 0%, 30%);
-  height: 50%;
-  width: 10%;
+  color: $medium-light;
+  font-size: 4rem;
+  // width: 10%;
   z-index: 1;
   transition: all 0.25s linear;
   cursor: pointer;

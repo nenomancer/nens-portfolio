@@ -207,7 +207,7 @@ const About = (props) => {
         <div className="about-content">
           <div className="about-section">
             <div className="about-title">
-              <h1>About Me</h1>
+              <p>About Me</p>
             </div>
             <p>
               Hello there! My name is Nebojsa Kovacevik and I am a passionate
@@ -229,22 +229,22 @@ const About = (props) => {
 
           <div className="about-section">
             <div className="about-title">
-              <h1>Services</h1>
+              <p>Services</p>
             </div>
             <ul>
               <li>Web Developoment</li>
               <li>Graphic Design</li>
               <li>Motion Graphics</li>
-              <li>Web Developoment</li>
-              <li>3D & Graphic Design</li>
-              <li>Animation & Motion Graphics</li>
+              <li>Animation</li>
+              <li>3D Modeling & Render</li>
+              <li>Animation</li>
             </ul>
           </div>
 
           <div className="about-section">
             <div className="left">
               <div className="about-title">
-                <h1>Experience</h1>
+                <p>Experience</p>
               </div>
               <ul>
                 <li>Web Developoment</li>
@@ -255,7 +255,7 @@ const About = (props) => {
 
             <div className="right">
               <div className="about-title">
-                <h1>Interests</h1>
+                <p>Interests</p>
                 <span></span>
               </div>
               <ul>
