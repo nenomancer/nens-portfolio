@@ -18,7 +18,7 @@
     position: absolute;
 
     display: grid;
-    grid-template-columns: 3fr 4fr;
+    grid-template-columns: 3fr 6fr;
     // display: flex;
     .about-img {
       height: 60vmin;
@@ -44,6 +44,7 @@
         // display: flex;
         // flex-wrap: wrap;
         .about-title {
+          font-family: "IBM Plex Sans";
           text-transform: uppercase;
           text-align: center;
           position: relative;
@@ -90,8 +91,9 @@
           }
         }
         p {
-          font-family: "Radio Canada";
-          margin-bottom: 2rem;
+          // font-family: "Radio Canada";
+          margin: 0 28px;
+          margin-bottom: 28px;
           line-height: 28px;
         }
       }
@@ -103,7 +105,7 @@
     transition: transform 500ms $timing-function;
     .about-card {
       .about-img {
-        background-position: 65%;
+        background-position: 85%;
         opacity: 1;
         transition: all 500ms $timing-function 500ms;
       }
@@ -126,21 +128,33 @@
       color: $light;
     }
   }
+
   ul {
     border-left: 2px solid $black;
     padding-left: 1rem;
     margin-left: 2rem;
     #work-position {
       margin-bottom: 0.75rem;
+      &::before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        background-color: red;
+        display: inline-block;
+        margin-left: -28px;
+        transform: translateX(50%);
+        margin-right: 1rem;
+      }
     }
 
     li {
+      $line-height: 20px;
       list-style: none;
       position: relative;
       margin-left: 10px;
       font-size: 14px;
-      line-height: 18px;
-      margin-bottom: 0.25rem;
+      line-height: $line-height;
+      margin-bottom: calc($line-height / 2);
       &::before {
         content: "-";
 
