@@ -74,6 +74,8 @@
           display: grid;
           grid-template-columns: 1fr 1fr;
           flex-grow: 1;
+          // background-color: red;
+          padding: 0 $padding;
           li {
             padding: 10px 0;
             position: relative;
@@ -83,10 +85,10 @@
               display: inline-block;
               width: 0;
               height: 0;
-              border: 5px solid transparent;
+              border: 4px solid transparent;
               border-left-color: $white;
               margin-right: 0.5rem;
-              transform: translateY(-1px);
+              transform: translateY(-2px);
             }
           }
         }
@@ -119,7 +121,7 @@
   display: grid;
   grid-template-columns: 2fr 5fr;
   margin-bottom: $padding;
-
+  padding: 0 $padding/2;
   #workplace {
     font-size: 18px;
     // color: $accent-color;
@@ -137,13 +139,15 @@
       width: $size;
       height: $size;
       display: inline;
-      background-color: $accent-color;
+      background-color: $medium-dark;
+      border: 1px solid $medium;
+      box-shadow: 0 0 0 3px black;
       // margin-right: -2rem;
       // right: -2rem - 0.5rem;
       // right: -$spacing - $size/2;
       position: absolute;
       right: -$spacing -$size/2 -1px;
-      top: 5%;
+      top: $size/1.5;
       border-radius: 50%;
     }
   }
@@ -154,7 +158,7 @@
     margin-left: $spacing;
 
     #work-position {
-      margin-bottom: 0.75rem;
+      margin-bottom: 0;
     }
 
     li {

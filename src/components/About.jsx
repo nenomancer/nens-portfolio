@@ -267,20 +267,19 @@ const About = (props) => {
             <div className="experience-block">
               <p id="workplace">
                 FX3X STUDIO
-                <span>2018-2021</span>
+                <span>2015-2018</span>
                 <div id="circle"></div>
               </p>
               <ul>
                 <span id="circle"></span>
-                <p id="work-position">VFX Compositing Artist</p>
-                <li>Chroma keying and background replacement</li>
-                <li>Color correction and grading</li>
-                <li>Compositing elements into a scene</li>
+                <p id="work-position">VFX Paint Artist</p>
+                <li>Removal of unnecessary elements in a shot</li>
+                <li>Reconstruction of hidden elements/background in a shot</li>
                 <li>
-                  Projects include: Shazam, Detective Pikachu, Aladdin,
-                  Godzilla, Spiderman: Far From Home, Doolittle, Sonic the
-                  Hedgehog, Star Trek: Discovery, Star Trek: Picard, Men in
-                  Black: International, etc...
+                  Projects include: X-Men: Apocalypse, Ghost in the Shell,
+                  Alien: Covenant, Star Wars: The Last Jedi, Black Panther,
+                  Deadpool 2, Passengers, Aquaman, Spiderman: Homecoming,
+                  Mission Impossible: Fallout, Jurassic World, Venom, etc..
                 </li>
               </ul>
             </div>
