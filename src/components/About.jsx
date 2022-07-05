@@ -246,9 +246,10 @@ const About = (props) => {
               <p>Experience</p>
             </div>
             <div className="experience-block">
-              <p className="workplace">
+              <p id="workplace">
                 FX3X STUDIO
                 <span>2018-2021</span>
+                <div id="circle"></div>
               </p>
               <ul>
                 <p id="work-position">VFX Compositing Artist</p>
@@ -264,11 +265,13 @@ const About = (props) => {
               </ul>
             </div>
             <div className="experience-block">
-              <p className="workplace">
+              <p id="workplace">
                 FX3X STUDIO
                 <span>2018-2021</span>
+                <div id="circle"></div>
               </p>
               <ul>
+                <span id="circle"></span>
                 <p id="work-position">VFX Compositing Artist</p>
                 <li>Chroma keying and background replacement</li>
                 <li>Color correction and grading</li>

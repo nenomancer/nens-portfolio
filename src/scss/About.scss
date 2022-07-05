@@ -114,37 +114,47 @@
 }
 
 .experience-block {
+  $spacing: 24px;
+  $size: 12px;
   display: grid;
   grid-template-columns: 2fr 5fr;
   margin-bottom: $padding;
-  .workplace {
+
+  #workplace {
     font-size: 18px;
-    color: $accent-color;
+    // color: $accent-color;
     text-align: right;
+    margin: 0;
+    position: relative;
     & span {
       display: block;
       line-height: 6px;
       font-size: 12px;
       color: $light;
     }
+
+    #circle {
+      width: $size;
+      height: $size;
+      display: inline;
+      background-color: $accent-color;
+      // margin-right: -2rem;
+      // right: -2rem - 0.5rem;
+      // right: -$spacing - $size/2;
+      position: absolute;
+      right: -$spacing -$size/2 -1px;
+      top: 5%;
+      border-radius: 50%;
+    }
   }
 
   ul {
     border-left: 2px solid $black;
-    padding-left: 1rem;
-    margin-left: 2rem;
+    padding-left: calc($spacing / 2);
+    margin-left: $spacing;
+
     #work-position {
       margin-bottom: 0.75rem;
-      &::before {
-        content: "";
-        width: 10px;
-        height: 10px;
-        background-color: red;
-        display: inline-block;
-        margin-left: -28px;
-        transform: translateX(50%);
-        margin-right: 1rem;
-      }
     }
 
     li {
