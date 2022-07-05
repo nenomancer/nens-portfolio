@@ -6,6 +6,7 @@ import { IoClose } from "react-icons/io5";
 import { BsFacebook } from "react-icons/bs";
 import { BsLinkedin } from "react-icons/bs";
 import { BsInstagram } from "react-icons/bs";
+import { BsGithub } from "react-icons/bs";
 
 const About = (props) => {
   // const socialIcons = [
@@ -169,31 +170,6 @@ const About = (props) => {
       level: 7,
     },
   ];
-  const toggleContainer = (index) => {
-    const containers = document.getElementsByClassName("info-container");
-
-    // for (let item of containers) {
-    //   if (item === containers[index]) {
-    //     item.style.height = "max-content";
-    //     item.style.overflow = "visible";
-    //   } else {
-    //     item.style.height = "4rem";
-    //     item.style.overflow = "hidden";
-    //   }
-    // }
-
-    // for (let item of containers) {
-    //   item === containers[index]
-    //     ? item.querySelector("#info-content").style.transform = "translateX(0)"
-    //     : item.querySelector("#info-content").style.transform = "translateX(-110%)";
-    // }
-
-    for (let item of containers) {
-      item === containers[index]
-        ? item.classList.add("open")
-        : item.classList.remove("open");
-    }
-  };
 
   const clickCopyHandler = (e) => {
     // alert(e.target.textContent);
@@ -206,13 +182,70 @@ const About = (props) => {
         <div className="about-img"></div>
         <div className="about-content">
           <div className="about-section">
+            <h1 className="name">Nebojsa Kovacevik</h1>
+            <div className="contact-info">
+              <span>
+                <span className="basic-info" onClick={clickCopyHandler}>
+                  nebojsa.kovacevik@gmail.com
+                </span>
+                <span className="tooltip">Click to copy email adress</span>
+              </span>
+              <span>
+                <span className="basic-info" onClick={clickCopyHandler}>
+                  +389 71 909 352
+                </span>
+                | <span className="tooltip">Click to copy phone number</span>
+              </span>{" "}
+              <span className="basic-info">Skopje, Macedonia</span> |{" "}
+              <span>
+                <a
+                  href="https://github.com/nenomancer"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <BsGithub className="basic-info social-icons" />
+                  <span className="tooltip">Click to visit Github profile</span>
+                </a>
+                <a
+                  href="https://www.instagram.com/loopmaster.n/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <BsInstagram className="basic-info social-icons" />
+                  <span className="tooltip">
+                    Click to visit Instagram profile
+                  </span>
+                </a>
+                <a
+                  href="https://www.facebook.com/nebojsa.kovacevik/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <BsFacebook className="basic-info social-icons" />
+                  <span className="tooltip">
+                    Click to visit Facebook profile
+                  </span>
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/in/nebojsa-kovacevik/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <BsLinkedin className="basic-info social-icons" />
+                  <span className="tooltip">
+                    Click to visit LinkedIn profile
+                  </span>
+                </a>
+              </span>
+            </div>
             <div className="about-title">
               <p>About Me</p>
             </div>
             <p>
-              Hello there! My name is <strong>Nebojsa Kovacevik</strong> and I am a passionate
-              front-end developer, always interested in learning and
-              implementing new technologies.
+              Hello there! My name is <strong>Nebojsa Kovacevik</strong> and I
+              am a passionate front-end developer, always interested in learning
+              and implementing new technologies.
             </p>
             <p>
               As a senior VFX artist and CG generalist for the past 6+ years, I
@@ -260,7 +293,7 @@ const About = (props) => {
                   Projects include: Shazam, Detective Pikachu, Aladdin,
                   Godzilla, Spiderman: Far From Home, Doolittle, Sonic the
                   Hedgehog, Star Trek: Discovery, Star Trek: Picard, Men in
-                  Black: International, etc...
+                  Black: International...
                 </li>
               </ul>
             </div>
@@ -279,7 +312,7 @@ const About = (props) => {
                   Projects include: X-Men: Apocalypse, Ghost in the Shell,
                   Alien: Covenant, Star Wars: The Last Jedi, Black Panther,
                   Deadpool 2, Passengers, Aquaman, Spiderman: Homecoming,
-                  Mission Impossible: Fallout, Jurassic World, Venom, etc..
+                  Mission Impossible: Fallout, Jurassic World, Venom...
                 </li>
               </ul>
             </div>

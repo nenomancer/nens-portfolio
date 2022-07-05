@@ -8,23 +8,17 @@
 
   transform: translateY(-250%);
   transition: transform 500ms $timing-function 400ms;
-
   z-index: 5;
   box-shadow: $box-shadow;
-
   .about-card {
-    // width: calc(100vw - $sidebar-width - $sidebar-width);
     height: $height;
     position: absolute;
-
     display: grid;
     grid-template-columns: 3fr 6fr;
-    // display: flex;
     .about-img {
       height: 60vmin;
       margin-left: $padding;
       align-self: center;
-      // transform: translateY(-8%);
       background-image: url("https://i.imgur.com/ZZMBsZH.png");
       background-size: cover;
       background-repeat: no-repeat;
@@ -32,74 +26,6 @@
       opacity: 0;
       transition: all 500ms $timing-function;
       flex-shrink: 0;
-    }
-  }
-
-  .about-content {
-    overflow-y: scroll;
-    -webkit-scrollbar-corner: 20px;
-    padding: $padding 3rem;
-    padding-bottom: 120px;
-    width: 100%;
-    .about-section {
-      // display: flex;
-      // flex-wrap: wrap;
-      .about-title {
-        // font-family: "IBM Plex Sans";
-        font-size: 14px;
-        text-transform: uppercase;
-        text-align: center;
-        position: relative;
-        flex-basis: 100%;
-        letter-spacing: 7px;
-        font-weight: bolder;
-        p {
-          margin: 24px 0;
-          display: grid;
-          grid-template-columns: 1fr max-content 1fr;
-          align-items: center;
-          gap: $padding;
-
-          &::before,
-          &::after {
-            content: " ";
-            height: 1px;
-            display: block;
-            top: 25%;
-            background-color: $white;
-          }
-        }
-      }
-
-      p {
-        // font-family: "Radio Canada";
-        margin: 0 28px;
-        margin-bottom: 28px;
-        line-height: 28px;
-      }
-    }
-  }
-
-  .skills {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    flex-grow: 1;
-    // background-color: red;
-    padding: 0 $padding;
-    li {
-      padding: 10px 0;
-      position: relative;
-      list-style: none;
-      &::before {
-        content: "";
-        display: inline-block;
-        width: 0;
-        height: 0;
-        border: 4px solid transparent;
-        border-left-color: $white;
-        margin-right: 0.5rem;
-        transform: translateY(-2px);
-      }
     }
   }
 
@@ -116,23 +42,125 @@
   }
 }
 
+.name {
+  text-transform: uppercase;
+}
+
+.contact-info {
+  font-size: 12px;
+  .info {
+    border-left: 1px solid $white;
+  }
+  .tooltip {
+    visibility: hidden;
+    display: block;
+    position: absolute;
+    /* background-color: transparent; */
+    color: transparent;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    margin-top: 0.25rem;
+    z-index: 1;
+    transition: 0.25s all linear;
+  }
+
+  .icon:hover + .tooltip,
+  .basic-info:hover + .tooltip,
+  .tooltip:hover {
+    visibility: visible;
+    background-color: var(--color-tooltip);
+    box-shadow: inset 0 0 5px 2px hsl(0, 0%, 14%), 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+    /* box-shadow: 1px 3px rgba(0, 0, 0, 0.1); */
+  }
+}
+
+.about-content {
+  overflow-y: scroll;
+  -webkit-scrollbar-corner: 20px;
+  padding: $padding 3rem;
+  padding-bottom: 120px;
+  width: 100%;
+  .about-section p {
+    // font-family: "Radio Canada";
+    margin: 0 28px;
+    margin-bottom: 28px;
+    line-height: 28px;
+  }
+  .about-title {
+    // font-family: "IBM Plex Sans";
+    font-size: 14px;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    flex-basis: 100%;
+    letter-spacing: 7px;
+    font-weight: bolder;
+    p {
+      margin: 24px 0;
+      display: grid;
+      grid-template-columns: 1fr max-content 1fr;
+      align-items: center;
+      gap: $padding;
+
+      &::before,
+      &::after {
+        content: " ";
+        height: 1px;
+        display: block;
+        top: 25%;
+        background-color: $white;
+      }
+    }
+  }
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex-grow: 1;
+  // background-color: red;
+  padding: 0 $padding;
+  li {
+    padding: 10px 0;
+    position: relative;
+    list-style: none;
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border: 4px solid transparent;
+      border-left-color: $white;
+      margin-right: 0.5rem;
+      transform: translateY(-2px);
+    }
+  }
+}
+
 .experience-block {
   $spacing: 24px;
-  $size: 12px;
+  $size: 10px;
   display: grid;
   grid-template-columns: 2fr 5fr;
   margin-bottom: $padding;
   #workplace {
     font-size: 18px;
-    font-weight: 600;
-    // color: $accent-color;
+    font-weight: 500;
     text-align: right;
     margin: 0;
     position: relative;
     & span {
       display: block;
       line-height: 6px;
-      font-size: 12px;
+      font-size: 14px;
+      font-weight: 200;
       color: $light;
     }
 
@@ -142,13 +170,13 @@
       display: inline;
       background-color: $medium;
       // border: 1px solid $medium;
-      box-shadow: 0 0 0 5px black;
+      box-shadow: 0 0 0 4px black;
       // margin-right: -2rem;
       // right: -2rem - 0.5rem;
       // right: -$spacing - $size/2;
       position: absolute;
       right: -$spacing -$size/2 -1px;
-      top: $size/1.5;
+      top: $size/1.1;
       border-radius: 50%;
     }
   }
@@ -156,20 +184,19 @@
   ul {
     $row-gap: 30px;
     border-left: 2px solid $black;
-    padding-left: calc($spacing / 2);
     margin-left: $spacing;
     padding-bottom: $row-gap;
     margin-bottom: -$row-gap;
     #work-position {
       margin-bottom: 0;
-      font-size: 18px;
+      font-weight: 500;
     }
 
     li {
       $line-height: 20px;
       list-style: none;
       position: relative;
-      margin-left: 10px;
+      margin-left: $spacing + $spacing/2;
       font-size: 14px;
       line-height: $line-height;
       margin-bottom: calc($line-height / 2);
@@ -200,7 +227,7 @@
       }
       .about-content {
         overflow-y: visible;
-        padding: 0;
+        padding: 0 $padding;
       }
     }
     &.open {
