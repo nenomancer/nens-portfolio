@@ -44,7 +44,7 @@
         // display: flex;
         // flex-wrap: wrap;
         .about-title {
-          font-family: "IBM Plex Sans";
+          // font-family: "IBM Plex Sans";
           text-transform: uppercase;
           text-align: center;
           position: relative;
@@ -124,6 +124,7 @@
   padding: 0 $padding/2;
   #workplace {
     font-size: 18px;
+    font-weight: 600;
     // color: $accent-color;
     text-align: right;
     margin: 0;
@@ -159,6 +160,7 @@
 
     #work-position {
       margin-bottom: 0;
+      font-size: 18px;
     }
 
     li {

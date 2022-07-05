@@ -210,7 +210,7 @@ const About = (props) => {
               <p>About Me</p>
             </div>
             <p>
-              Hello there! My name is Nebojsa Kovacevik and I am a passionate
+              Hello there! My name is <strong>Nebojsa Kovacevik</strong> and I am a passionate
               front-end developer, always interested in learning and
               implementing new technologies.
             </p>
