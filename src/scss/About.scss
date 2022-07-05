@@ -5,11 +5,11 @@
   width: 100%;
   background-color: $dark;
   position: absolute;
-  z-index: 5;
 
   transform: translateY(-250%);
   transition: transform 500ms $timing-function 400ms;
 
+  z-index: 5;
   box-shadow: $box-shadow;
 
   .about-card {
@@ -33,71 +33,72 @@
       transition: all 500ms $timing-function;
       flex-shrink: 0;
     }
+  }
 
-    .about-content {
-      overflow-y: scroll;
-      -webkit-scrollbar-corner: 20px;
-      padding: $padding 3rem;
-      padding-bottom: 120px;
-      width: 100%;
-      .about-section {
-        // display: flex;
-        // flex-wrap: wrap;
-        .about-title {
-          // font-family: "IBM Plex Sans";
-          text-transform: uppercase;
-          text-align: center;
-          position: relative;
-          flex-basis: 100%;
-          p {
-            font-weight: 700;
-            letter-spacing: 6px;
-
-            margin: 24px 0;
-            display: grid;
-            grid-template-columns: 1fr max-content 1fr;
-
-            align-items: center;
-            gap: $padding;
-
-            &::before,
-            &::after {
-              content: " ";
-              height: 1px;
-              display: block;
-              top: 25%;
-              background-color: $white;
-            }
-          }
-        }
-        .skills {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          flex-grow: 1;
-          // background-color: red;
-          padding: 0 $padding;
-          li {
-            padding: 10px 0;
-            position: relative;
-            list-style: none;
-            &::before {
-              content: "";
-              display: inline-block;
-              width: 0;
-              height: 0;
-              border: 4px solid transparent;
-              border-left-color: $white;
-              margin-right: 0.5rem;
-              transform: translateY(-2px);
-            }
-          }
-        }
+  .about-content {
+    overflow-y: scroll;
+    -webkit-scrollbar-corner: 20px;
+    padding: $padding 3rem;
+    padding-bottom: 120px;
+    width: 100%;
+    .about-section {
+      // display: flex;
+      // flex-wrap: wrap;
+      .about-title {
+        // font-family: "IBM Plex Sans";
+        font-size: 14px;
+        text-transform: uppercase;
+        text-align: center;
+        position: relative;
+        flex-basis: 100%;
+        letter-spacing: 7px;
+        font-weight: bolder;
         p {
-          // font-family: "Radio Canada";
-          margin: 0 28px;
-          margin-bottom: 28px;
-          line-height: 28px;
+          margin: 24px 0;
+          display: grid;
+          grid-template-columns: 1fr max-content 1fr;
+          align-items: center;
+          gap: $padding;
+
+          &::before,
+          &::after {
+            content: " ";
+            height: 1px;
+            display: block;
+            top: 25%;
+            background-color: $white;
+          }
         }
+      }
+
+      p {
+        // font-family: "Radio Canada";
+        margin: 0 28px;
+        margin-bottom: 28px;
+        line-height: 28px;
+      }
+    }
+  }
+
+  .skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    flex-grow: 1;
+    // background-color: red;
+    padding: 0 $padding;
+    li {
+      padding: 10px 0;
+      position: relative;
+      list-style: none;
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border: 4px solid transparent;
+        border-left-color: $white;
+        margin-right: 0.5rem;
+        transform: translateY(-2px);
       }
     }
   }
@@ -121,7 +122,6 @@
   display: grid;
   grid-template-columns: 2fr 5fr;
   margin-bottom: $padding;
-  padding: 0 $padding/2;
   #workplace {
     font-size: 18px;
     font-weight: 600;
@@ -140,9 +140,9 @@
       width: $size;
       height: $size;
       display: inline;
-      background-color: $medium-dark;
-      border: 1px solid $medium;
-      box-shadow: 0 0 0 3px black;
+      background-color: $medium;
+      // border: 1px solid $medium;
+      box-shadow: 0 0 0 5px black;
       // margin-right: -2rem;
       // right: -2rem - 0.5rem;
       // right: -$spacing - $size/2;
@@ -154,10 +154,12 @@
   }
 
   ul {
+    $row-gap: 30px;
     border-left: 2px solid $black;
     padding-left: calc($spacing / 2);
     margin-left: $spacing;
-
+    padding-bottom: $row-gap;
+    margin-bottom: -$row-gap;
     #work-position {
       margin-bottom: 0;
       font-size: 18px;
