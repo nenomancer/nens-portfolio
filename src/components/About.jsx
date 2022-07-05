@@ -245,15 +245,31 @@ const About = (props) => {
             <div className="about-title">
               <p>Experience</p>
             </div>
-            <div className="left">
+            <div className="experience-block">
               <p className="workplace">
                 FX3X STUDIO
                 <span>2018-2021</span>
               </p>
-            </div>
-            <div className="right">
-              <p className="position">VFX Compositing Artist</p>
               <ul>
+                <p id="work-position">VFX Compositing Artist</p>
+                <li>Chroma keying and background replacement</li>
+                <li>Color correction and grading</li>
+                <li>Compositing elements into a scene</li>
+                <li>
+                  Projects include: Shazam, Detective Pikachu, Aladdin,
+                  Godzilla, Spiderman: Far From Home, Doolittle, Sonic the
+                  Hedgehog, Star Trek: Discovery, Star Trek: Picard, Men in
+                  Black: International, etc...
+                </li>
+              </ul>
+            </div>
+            <div className="experience-block">
+              <p className="workplace">
+                FX3X STUDIO
+                <span>2018-2021</span>
+              </p>
+              <ul>
+                <p id="work-position">VFX Compositing Artist</p>
                 <li>Chroma keying and background replacement</li>
                 <li>Color correction and grading</li>
                 <li>Compositing elements into a scene</li>
