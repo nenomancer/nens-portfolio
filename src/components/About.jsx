@@ -1,8 +1,6 @@
 import React from "react";
 import "../scss/About.scss";
 
-import { IoClose } from "react-icons/io5";
-
 import { BsFacebook } from "react-icons/bs";
 import { BsLinkedin } from "react-icons/bs";
 import { BsInstagram } from "react-icons/bs";
@@ -142,7 +140,6 @@ const About = (props) => {
               </ul>
             </div>
           </div>
-          
         </div>
       </div>
     </div>

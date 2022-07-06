@@ -1,25 +1,16 @@
 import React from "react";
-import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdInfo } from "react-icons/md";
-import { IoClose } from "react-icons/io5";
 
 import "../scss/Header.scss";
 
 const Header = (props) => {
   const sidebar = document.querySelector(".sidebar");
   const listItemTexts = [...document.querySelectorAll(".list-item-text")];
-  const listItemIcons = [...document.querySelectorAll(".list-item-icon")];
 
   const aboutContainer = document.querySelector(".about-container");
-  const aboutCard = document.querySelector(".about-card");
 
-  const [openAbout, closeAbout] = [
-    ...document.querySelectorAll(".about-button"),
-  ];
-
-
-  const [isAboutOpen, setIsAboutOpen] = useState(false);
+  const openAbout = document.querySelector(".about-button");
 
   const toggleAbout = () => {
     aboutContainer.classList.toggle("open");

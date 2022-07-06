@@ -1,22 +1,11 @@
-import { Fragment, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { ArtworkData } from "./ArtworkData";
-// import About from "./components/About/About";
 import Sidebar from "./components/Sidebar";
 import Gallery from "./components/Gallery";
 
-// IMPORT SIDEBAR ICONS
-
-import { MdPerson } from "react-icons/md";
-
 // IMPORT HEADER ICONS
-import { GrInstagram } from "react-icons/gr";
-import { GrLinkedin } from "react-icons/gr";
-import { GrFacebook } from "react-icons/gr";
 import About from "./components/About";
-import Aside from "./components/Sidebar";
 import Header from "./components/Header";
-
-// import variables from "./index.scss";
 
 function App() {
   // GALLERY FILTER STATES
@@ -37,10 +26,9 @@ function App() {
     if (galleryFilter === "all") {
       setFilteredTiles(ArtworkData);
     } else {
-      console.log(galleryFilter);
-      ArtworkData.map((tile) => {
+      ArtworkData.forEach((tile) => {
         if (tile.type.includes(galleryFilter)) {
-          tile.classList.add("visible");
+          return tile.classList.add("visible");
         }
       });
     }
@@ -49,7 +37,6 @@ function App() {
   // IMAGE MODAL STATES
   const [showTileModal, setShowTileModal] = useState(false);
   const [selectedImg, setSelectedImg] = useState({});
-  const [showAbout, setShowAbout] = useState(false);
 
   // SHOW IMAGE MODAL
   const viewHandler = () => {
@@ -58,10 +45,12 @@ function App() {
 
   return (
     <div className="container">
-      {/* {showAbout && <About setShowAbout={setShowAbout} />} */}
       <Header />
       <main>
-        <Sidebar ArtworkData={ArtworkData} />
+        <Sidebar
+          ArtworkData={ArtworkData}
+          setGalleryFilter={setGalleryFilter}
+        />
         <About />
         <Gallery
           artwork={ArtworkData}
@@ -70,6 +59,7 @@ function App() {
           setShowTileModal={setShowTileModal}
           selectedImg={selectedImg}
           setSelectedImg={setSelectedImg}
+          filteredTiles={filteredTiles}
         />
       </main>
     </div>

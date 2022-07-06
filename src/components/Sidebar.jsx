@@ -5,7 +5,6 @@ import { MdAutoAwesomeMosaic } from "react-icons/md";
 import { MdPhotoLibrary } from "react-icons/md";
 import { MdVideoLibrary } from "react-icons/md";
 import { MdLibraryMusic } from "react-icons/md";
-import { ArtworkData } from "../ArtworkData";
 
 const Sidebar = (props) => {
   const menuItems = [...document.querySelectorAll(".sidebar-list-item")];
@@ -14,25 +13,23 @@ const Sidebar = (props) => {
   const menuClickHandler = (e) => {
     const menuTitle = e.target.innerText;
 
-    console.log(menuTitle);
     if (menuTitle.toLowerCase() === "all") {
       for (let tile of galleryTiles) {
         tile.classList.remove("hidden");
       }
     } else {
-      props.ArtworkData.map((tile, index) => {
+      props.ArtworkData.forEach((tile, index) => {
         if (!tile.type.includes(menuTitle.toLowerCase())) {
           galleryTiles[index].classList.add("hidden");
         } else {
           galleryTiles[index].classList.remove("hidden");
         }
       });
+      // props.ArtworkData.map((tile, index) => {
+
+      // });
     }
-    // closeMenu();
-    // toggleMenu();
-    // props.toggleAbout("close");
-    // SET FILTER TYPE BASED ON TEXT CONTENT OF MENU ITEM
-    // props.setGalleryFilter(e.target.textContent.toLowerCase());
+
     // SET ACTIVE CLASS FOR CLICKED ITEM
     menuItems.forEach((item) => {
       if (item.textContent !== e.target.textContent) {
