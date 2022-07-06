@@ -10,33 +10,46 @@
   transition: transform 500ms $timing-function 400ms;
   z-index: 5;
   box-shadow: $box-shadow;
-  .about-card {
-    height: $height;
-    position: absolute;
-    display: grid;
-    grid-template-columns: 3fr 6fr;
-    .about-img {
-      height: 60vmin;
-      margin-left: $padding;
-      align-self: center;
-      background-image: url("https://i.imgur.com/ZZMBsZH.png");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: 250%;
-      opacity: 0;
-      transition: all 500ms $timing-function;
-      flex-shrink: 0;
-    }
+  @media (max-width: $breakpoint-medium) {
+    overflow-y: scroll;
   }
 
   &.open {
     transform: translateY(0);
     transition: transform 500ms $timing-function;
+    @media (max-width: $breakpoint-medium) {
+      height: $height;
+    }
     .about-card {
+      height: $height;
+      position: absolute;
+      display: grid;
+      grid-template-columns: 3fr 6fr;
+      @media (max-width: $breakpoint-medium) {
+        display: flex;
+        flex-direction: column;
+      }
       .about-img {
+        height: 60vmin;
+        margin-left: $padding;
+        align-self: center;
+        background-image: url("https://i.imgur.com/ZZMBsZH.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 250%;
+        opacity: 0;
+        transition: all 500ms $timing-function;
+        flex-shrink: 0;
         background-position: 85%;
         opacity: 1;
         transition: all 500ms $timing-function 500ms;
+        @media (max-width: $breakpoint-medium) {
+          width: 100%;
+          background-position: 0;
+          align-self: start;
+          background-size: contain;
+          background-color: red;
+        }
       }
     }
   }
@@ -50,34 +63,14 @@
   font-size: 12px;
   .info {
     border-left: 1px solid $white;
+    margin-left: 2px;
+    padding-left: 2px;
+    & span {
+      cursor: pointer;
+    }
   }
-  .tooltip {
-    visibility: hidden;
-    display: block;
-    position: absolute;
-    /* background-color: transparent; */
-    color: transparent;
-    text-align: center;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 120px;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    margin-top: 0.25rem;
-    z-index: 1;
-    transition: 0.25s all linear;
-  }
-
-  .icon:hover + .tooltip,
-  .basic-info:hover + .tooltip,
-  .tooltip:hover {
-    visibility: visible;
-    background-color: var(--color-tooltip);
-    box-shadow: inset 0 0 5px 2px hsl(0, 0%, 14%), 0 0 10px 0 rgba(0, 0, 0, 0.1);
-    color: white;
-    cursor: pointer;
-    z-index: 10;
-    /* box-shadow: 1px 3px rgba(0, 0, 0, 0.1); */
+  .social-icons {
+    color: $white;
   }
 }
 
@@ -87,14 +80,16 @@
   padding: $padding 3rem;
   padding-bottom: 120px;
   width: 100%;
+  @media (max-width: $breakpoint-medium) {
+    overflow-y: visible;
+    padding: 0 $padding;
+  }
   .about-section p {
-    // font-family: "Radio Canada";
     margin: 0 28px;
     margin-bottom: 28px;
     line-height: 28px;
   }
   .about-title {
-    // font-family: "IBM Plex Sans";
     font-size: 14px;
     text-transform: uppercase;
     text-align: center;
@@ -125,7 +120,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   flex-grow: 1;
-  // background-color: red;
   padding: 0 $padding;
   li {
     padding: 10px 0;
@@ -159,8 +153,8 @@
     & span {
       display: block;
       line-height: 6px;
-      font-size: 14px;
-      font-weight: 200;
+      font-size: 12px;
+      font-weight: 400;
       color: $light;
     }
 
@@ -169,11 +163,7 @@
       height: $size;
       display: inline;
       background-color: $medium;
-      // border: 1px solid $medium;
       box-shadow: 0 0 0 4px black;
-      // margin-right: -2rem;
-      // right: -2rem - 0.5rem;
-      // right: -$spacing - $size/2;
       position: absolute;
       right: -$spacing -$size/2 -1px;
       top: $size/1.1;
@@ -202,36 +192,8 @@
       margin-bottom: calc($line-height / 2);
       &::before {
         content: "-";
-
         margin-right: 4px;
       }
-    }
-  }
-}
-
-@media (max-width: 1024px) {
-  .about-container {
-    overflow-y: scroll;
-    // top: $header-height;
-    // width: 100vw;
-    .about-card {
-      display: flex;
-      flex-direction: column;
-      .about-img {
-        // background-position: left top;
-        // background-position: 0% -90%;
-        align-self: start;
-        // background-size: contain;
-        // background-size: contain, auto;
-        // background-color: red;
-      }
-      .about-content {
-        overflow-y: visible;
-        padding: 0 $padding;
-      }
-    }
-    &.open {
-      height: $height;
     }
   }
 }

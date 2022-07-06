@@ -184,27 +184,24 @@ const About = (props) => {
           <div className="about-section">
             <h1 className="name">Nebojsa Kovacevik</h1>
             <div className="contact-info">
-              <span>
+              <span className="info">
                 <span className="basic-info" onClick={clickCopyHandler}>
                   nebojsa.kovacevik@gmail.com
                 </span>
-                <span className="tooltip">Click to copy email adress</span>
               </span>
-              <span>
+              <span className="info">
                 <span className="basic-info" onClick={clickCopyHandler}>
                   +389 71 909 352
                 </span>
-                | <span className="tooltip">Click to copy phone number</span>
-              </span>{" "}
-              <span className="basic-info">Skopje, Macedonia</span> |{" "}
-              <span>
+              </span>
+              <span className="info">Skopje, Macedonia</span>
+              <span className="info">
                 <a
                   href="https://github.com/nenomancer"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <BsGithub className="basic-info social-icons" />
-                  <span className="tooltip">Click to visit Github profile</span>
                 </a>
                 <a
                   href="https://www.instagram.com/loopmaster.n/"
@@ -212,9 +209,6 @@ const About = (props) => {
                   rel="noopener noreferrer"
                 >
                   <BsInstagram className="basic-info social-icons" />
-                  <span className="tooltip">
-                    Click to visit Instagram profile
-                  </span>
                 </a>
                 <a
                   href="https://www.facebook.com/nebojsa.kovacevik/"
@@ -222,9 +216,6 @@ const About = (props) => {
                   rel="noopener noreferrer"
                 >
                   <BsFacebook className="basic-info social-icons" />
-                  <span className="tooltip">
-                    Click to visit Facebook profile
-                  </span>
                 </a>
 
                 <a
@@ -233,9 +224,6 @@ const About = (props) => {
                   rel="noopener noreferrer"
                 >
                   <BsLinkedin className="basic-info social-icons" />
-                  <span className="tooltip">
-                    Click to visit LinkedIn profile
-                  </span>
                 </a>
               </span>
             </div>
