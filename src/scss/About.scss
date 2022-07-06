@@ -31,14 +31,15 @@
       background-repeat: no-repeat;
       background-position: 250%;
       opacity: 0;
-      transition: all 500ms $timing-function;
+      transition: background-position 500ms $timing-function,
+        opacity 500ms $timing-function;
       flex-shrink: 0;
       @media (max-width: $breakpoint-medium) {
-        align-self: start;
-        background-color: red;
-        min-width: fit-content;
         background-size: contain;
-        background-position: 100%;
+        align-self: flex-start;
+        background-position: -250%;
+        width: 90%;
+        margin-bottom: $padding;
       }
     }
   }
@@ -53,7 +54,11 @@
       .about-img {
         background-position: 85%;
         opacity: 1;
-        transition: all 500ms $timing-function 500ms;
+        transition: background-position 500ms $timing-function 500ms,
+          opacity 500ms $timing-function 500ms;
+        @media (max-width: $breakpoint-medium) {
+          background-position: 0;
+        }
       }
     }
   }
@@ -90,13 +95,11 @@
     padding-bottom: $padding * 2;
   }
   .about-section p {
-    // font-family: "Radio Canada";
     margin: 0 28px;
     margin-bottom: 28px;
     line-height: 28px;
   }
   .about-title {
-    // font-family: "IBM Plex Sans";
     font-size: 14px;
     text-transform: uppercase;
     text-align: center;
@@ -207,17 +210,6 @@
 
         margin-right: 4px;
       }
-    }
-  }
-}
-
-@media (max-width: 1024px) {
-  .about-container {
-    .about-card {
-      .about-content {
-      }
-    }
-    &.open {
     }
   }
 }
