@@ -11,6 +11,7 @@
   overflow-y: scroll;
   background-color: $dark;
   transition: transform 500ms $timing-function;
+  padding-bottom: $padding*2;
   .youtube {
     scale: (1.2);
   }

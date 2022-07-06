@@ -39,6 +39,7 @@
         align-self: flex-start;
         background-position: -250%;
         width: 90%;
+        margin-top: $padding;
         margin-bottom: $padding;
       }
     }
@@ -66,20 +67,48 @@
 
 .name {
   text-transform: uppercase;
+  font-size: 44px;
+  line-height: 40px;
+  margin-top: $padding;
+  text-align: center;
+  @media (max-width: $breakpoint-medium) {
+    font-size: 48px;
+  }
 }
 
 .contact-info {
-  font-size: 12px;
+  font-size: 10px;
+  $spacing: 0.25rem;
+  text-align: center;
+
   .info {
-    border-left: 1px solid $white;
-    margin-left: 2px;
-    padding-left: 2px;
+    &::before {
+      content: "";
+      height: 10px;
+      width: 1px;
+      background-color: $white;
+      display: inline-block;
+      margin: 0 $spacing;
+      margin-left: $spacing * 1.5;
+      vertical-align: middle;
+    }
+    &:nth-child(1) {
+      &::before {
+        display: none;
+      }
+    }
     & span {
       cursor: pointer;
     }
   }
   .social-icons {
     color: $white;
+    margin-left: $spacing/2;
+    margin-right: $spacing/2;
+    transition: color 250ms $timing-function;
+    &:hover {
+      color: $accent-color;
+    }
   }
 }
 
