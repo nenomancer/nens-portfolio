@@ -13,6 +13,35 @@
   @media (max-width: $breakpoint-medium) {
     overflow-y: scroll;
   }
+  .about-card {
+    height: $height;
+    position: absolute;
+    display: grid;
+    grid-template-columns: 3fr 6fr;
+    @media (max-width: $breakpoint-medium) {
+      display: flex;
+      flex-direction: column;
+    }
+    .about-img {
+      height: 60vmin;
+      margin-left: $padding;
+      align-self: center;
+      background-image: url("https://i.imgur.com/ZZMBsZH.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 250%;
+      opacity: 0;
+      transition: all 500ms $timing-function;
+      flex-shrink: 0;
+      @media (max-width: $breakpoint-medium) {
+        align-self: start;
+        background-color: red;
+        min-width: fit-content;
+        background-size: contain;
+        background-position: 100%;
+      }
+    }
+  }
 
   &.open {
     transform: translateY(0);
@@ -21,34 +50,10 @@
       height: $height;
     }
     .about-card {
-      height: $height;
-      position: absolute;
-      display: grid;
-      grid-template-columns: 3fr 6fr;
-      @media (max-width: $breakpoint-medium) {
-        display: flex;
-        flex-direction: column;
-      }
       .about-img {
-        height: 60vmin;
-        margin-left: $padding;
-        align-self: center;
-        background-image: url("https://i.imgur.com/ZZMBsZH.png");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: 250%;
-        opacity: 0;
-        transition: all 500ms $timing-function;
-        flex-shrink: 0;
         background-position: 85%;
         opacity: 1;
         transition: all 500ms $timing-function 500ms;
-        @media (max-width: $breakpoint-medium) {
-          width: 100%;
-          background-position: 0;
-          align-self: start;
-          background-size: contain;
-        }
       }
     }
   }
@@ -82,13 +87,16 @@
   @media (max-width: $breakpoint-medium) {
     overflow-y: visible;
     padding: 0 $padding;
+    padding-bottom: $padding * 2;
   }
   .about-section p {
+    // font-family: "Radio Canada";
     margin: 0 28px;
     margin-bottom: 28px;
     line-height: 28px;
   }
   .about-title {
+    // font-family: "IBM Plex Sans";
     font-size: 14px;
     text-transform: uppercase;
     text-align: center;
@@ -119,6 +127,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   flex-grow: 1;
+  // background-color: red;
   padding: 0 $padding;
   li {
     padding: 10px 0;
@@ -162,7 +171,11 @@
       height: $size;
       display: inline;
       background-color: $medium;
+      // border: 1px solid $medium;
       box-shadow: 0 0 0 4px black;
+      // margin-right: -2rem;
+      // right: -2rem - 0.5rem;
+      // right: -$spacing - $size/2;
       position: absolute;
       right: -$spacing -$size/2 -1px;
       top: $size/1.1;
@@ -191,8 +204,20 @@
       margin-bottom: calc($line-height / 2);
       &::before {
         content: "-";
+
         margin-right: 4px;
       }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .about-container {
+    .about-card {
+      .about-content {
+      }
+    }
+    &.open {
     }
   }
 }
