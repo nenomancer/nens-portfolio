@@ -151,7 +151,6 @@ export const ArtworkData = [
     desc: 'Track 7 from "Neizbruseni Kamenja" EP',
     gridSize: "",
   },
-
   {
     name: "The Hidden Planet",
     type: ["images"],

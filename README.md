@@ -1,3 +1,3 @@
-# My portfolio
+Website is live at:
 
-This is my portfolio website, a personal project I started as a way to practice my web-dev skills. 
+# https://nens.netlify.app/

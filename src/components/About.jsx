@@ -305,7 +305,7 @@ const About = (props) => {
               </ul>
             </div>
           </div>
-          <div className="about-section">
+          {/* <div className="about-section">
             <div className="about-title">
               <p>Interests</p>
               <span></span>
@@ -317,7 +317,7 @@ const About = (props) => {
                 <li>Animation & Motion Graphics</li>
               </ul>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
